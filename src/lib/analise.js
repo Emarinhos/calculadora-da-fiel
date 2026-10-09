@@ -1,5 +1,6 @@
 import { CLUBE } from './estado.js';
 import { simular, pontosParaRisco, probabilidadesDoJogo } from './simulacao.js';
+import { transmissaoConfirmada } from './agenda.js';
 
 /** Risco abaixo do qual a situação é "confortável" e a partir do qual é "zona de perigo". */
 export const LIMITE_CONFORTAVEL = 0.1;
@@ -69,13 +70,21 @@ export function formatDistanciaLabel(pontos, situacao) {
 }
 
 /**
- * Data, horário e emissora dos jogos ABERTOS do Corinthians, na mesma ordem dos jogos abertos
- * de estado.jogos. Campos ausentes vêm como null (a tela mostra "a definir").
+ * Data, horário, emissora e streaming dos jogos ABERTOS do Corinthians, na mesma ordem dos jogos
+ * abertos de estado.jogos. Campos ausentes vêm como null (a tela mostra "a definir").
+ * `confirmada` = a transmissão já foi consultada no dia anterior ao jogo (ver tvConsultadaEm);
+ * antes disso o que aparece é preliminar.
  */
 export function transmissaoDosAbertos(estado) {
   return fixturesDoClube(estado).map((i) => {
     const g = estado.liga.jogos[i];
-    return { data: g.data ?? null, hora: g.hora ?? null, tv: g.tv ?? null };
+    return {
+      data: g.data ?? null,
+      hora: g.hora ?? null,
+      tv: g.tv ?? null,
+      streaming: g.streaming ?? null,
+      confirmada: transmissaoConfirmada(g),
+    };
   });
 }
 

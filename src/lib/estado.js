@@ -72,6 +72,9 @@ function validarLiga(e, erro) {
     if (g.data !== undefined && g.data !== null && !ehData(g.data)) erro(`${nome}: data inválida`);
     if (g.hora !== undefined && g.hora !== null && !/^([01][0-9]|2[0-3]):[0-5][0-9]$/.test(g.hora)) erro(`${nome}: hora inválida (use HH:MM)`);
     if (g.tv !== undefined && g.tv !== null && (typeof g.tv !== 'string' || !g.tv.trim())) erro(`${nome}: tv inválida`);
+    if (g.streaming !== undefined && g.streaming !== null && (typeof g.streaming !== 'string' || !g.streaming.trim())) erro(`${nome}: streaming inválido`);
+    // Dia em que a transmissão foi consultada (regra: 1 dia antes do jogo); sem isso a tela mostra "a confirmar"
+    if (g.tvConsultadaEm !== undefined && g.tvConsultadaEm !== null && !ehData(g.tvConsultadaEm)) erro(`${nome}: tvConsultadaEm inválida`);
   });
   tabela.forEach((t) => {
     if (restantes.has(t.clube) && t.j + restantes.get(t.clube) !== TOTAL_RODADAS) {

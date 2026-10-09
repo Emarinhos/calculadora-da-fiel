@@ -46,9 +46,15 @@ tabela da fonte, rodada realmente terminada, posição coerente). Depois valida
 `src/lib/estado-embutido.json` é uma cópia de `public/estado.json` usada se o arquivo não
 carregar; é sincronizada sozinha antes de `dev`, `build` e `test`.
 
-Cada jogo restante mostra data, horário e emissora (campos `data`, `hora` e `tv` de
-`liga.jogos`); o que ainda não foi definido aparece como "a definir". A tarefa diária também
-mantém essa agenda em dia (remarcações, TV definida).
+Cada jogo restante mostra data, horário, TV e streaming (campos `data`, `hora`, `tv` e
+`streaming` de `liga.jogos`); o que ainda não foi definido aparece como "a definir".
+
+**Gatilho da transmissão:** horário, TV e streaming são consultados na web **exatamente um dia
+antes de cada jogo do Corinthians**. Quem decide o que consultar hoje é o código, não o agente:
+`node scripts/transmissao-do-dia.mjs` (regra em `src/lib/agenda.js`). Se a consulta do dia
+anterior não confirmar, há um reforço no dia do jogo. Enquanto o jogo não foi consultado no dia
+anterior (`tvConsultadaEm`), a tela mostra a TV como "a confirmar". Remarcações de data são
+percebidas na leitura do calendário e entram sem marcar a transmissão como confirmada.
 
 ## Cenários
 

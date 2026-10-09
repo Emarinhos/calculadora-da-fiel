@@ -17,16 +17,18 @@ const brData = (iso) => iso.split('-').reverse().join('/');
 
 const DIAS = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
 
-/** Data, horário e emissora de um jogo, em duas linhas curtas. Falta de dado vira "a definir". */
+/**
+ * Data/horário, TV e streaming de um jogo, em até 3 linhas curtas. Falta de dado vira "a definir";
+ * o que ainda não foi consultado no dia anterior ao jogo aparece como "a confirmar".
+ */
 function formatarTransmissao(t) {
-  if (!t || !t.data) return { quando: 'data a definir', tv: null };
+  if (!t || !t.data) return { quando: 'data a definir', tv: 'TV a definir', streaming: null };
   const [a, m, d] = t.data.split('-');
   const dia = DIAS[new Date(Number(a), Number(m) - 1, Number(d)).getDay()];
-  const quando = `${dia} ${d}/${m}${t.hora ? ` · ${t.hora.replace(':', 'h')}` : ''}`;
-  let tv;
-  if (t.tv) tv = t.hora ? t.tv : `horário a definir · ${t.tv}`;
-  else tv = t.hora ? 'TV a definir' : 'horário e TV a definir';
-  return { quando, tv };
+  const quando = `${dia} ${d}/${m} · ${t.hora ? t.hora.replace(':', 'h') : 'horário a definir'}`;
+  const tv = t.tv ? `TV ${t.tv}${t.confirmada ? '' : ' · a confirmar'}` : 'TV a definir';
+  const streaming = t.streaming ? `Streaming ${t.streaming}${t.confirmada ? '' : ' · a confirmar'}` : null;
+  return { quando, tv, streaming };
 }
 
 function Arrow({ className = '' }) {
@@ -224,8 +226,8 @@ export default function App() {
         </div>
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between border-b-[3px] border-ink">
           <div className="flex items-center gap-3">
-            {/* O fundo branco do escudo se funde ao creme da página (multiply) */}
-            <img src={escudo} alt="Escudo do Corinthians" className="h-12 w-auto mix-blend-multiply" />
+            {/* Escudo com fundo transparente: assenta direto no creme da página */}
+            <img src={escudo} alt="Escudo do Corinthians" className="h-12 w-auto" />
             <h1 className="text-h2 tracking-wider">Calculadora da Fiel</h1>
           </div>
           <button
@@ -327,7 +329,8 @@ export default function App() {
                         return (
                           <div className="text-right text-caption leading-tight min-w-0" data-testid="transmissao">
                             <div>{t.quando}</div>
-                            {t.tv && <div className="text-ink-soft">{t.tv}</div>}
+                            <div className="text-ink-soft">{t.tv}</div>
+                            {t.streaming && <div className="text-ink-soft">{t.streaming}</div>}
                           </div>
                         );
                       })()}

@@ -59,15 +59,17 @@ export function aplicarResultados(estado, resultados, hoje) {
 }
 
 /**
- * Atualiza data/hora/emissora de jogos que ainda faltam (a CBF e as emissoras remarcam).
- * @param agenda [{rodada, mandante, visitante, data?, hora?, tv?}] (só os campos presentes mudam)
+ * Atualiza data/hora/emissora/streaming de jogos que ainda faltam (a CBF e as emissoras remarcam).
+ * `tvConsultadaEm` registra o dia em que a transmissão foi consultada (regra: 1 dia antes do jogo).
+ * @param agenda [{rodada, mandante, visitante, data?, hora?, tv?, streaming?, tvConsultadaEm?}]
+ *               (só os campos presentes mudam)
  */
 export function atualizarAgenda(estado, agenda, hoje) {
   const novo = clone(estado);
   for (const a of agenda) {
     const g = novo.liga.jogos.find((x) => x.rodada === a.rodada && x.mandante === a.mandante && x.visitante === a.visitante);
     if (!g) throw new Error(`agenda: jogo R${a.rodada} ${a.mandante} x ${a.visitante} não está entre os jogos restantes`);
-    for (const campo of ['data', 'hora', 'tv']) if (a[campo] !== undefined) g[campo] = a[campo];
+    for (const campo of ['data', 'hora', 'tv', 'streaming', 'tvConsultadaEm']) if (a[campo] !== undefined) g[campo] = a[campo];
   }
   if (hoje) novo.atualizadoEm = hoje;
   return novo;

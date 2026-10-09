@@ -81,10 +81,10 @@ test('cenário realista sem jogos abertos devolve vazio', () => {
 test('transmissão: data, hora e TV alinhadas com os jogos abertos', () => {
   const t = transmissaoDosAbertos(ESTADO_EMBUTIDO);
   assert.strictEqual(t.length, 9);
-  assert.deepStrictEqual(t[0], { data: '2026-10-11', hora: '17:30', tv: 'Globo' }); // Palmeiras x Corinthians
-  assert.deepStrictEqual(t[1], { data: '2026-10-19', hora: '20:00', tv: 'SporTV' }); // Corinthians x Vitória
-  assert.deepStrictEqual(t[4], { data: '2026-11-04', hora: '21:30', tv: null }); // São Paulo x Corinthians
-  assert.deepStrictEqual(t[6], { data: '2026-11-20', hora: '21:00', tv: null }); // Atlético Mineiro x Corinthians
+  assert.deepStrictEqual(t[0], { data: '2026-10-11', hora: '17:30', tv: 'Globo', streaming: null, confirmada: false }); // Palmeiras x Corinthians
+  assert.deepStrictEqual(t[1], { data: '2026-10-19', hora: '20:00', tv: 'SporTV', streaming: null, confirmada: false }); // Corinthians x Vitória
+  assert.deepStrictEqual(t[4], { data: '2026-11-04', hora: '21:30', tv: null, streaming: null, confirmada: false }); // São Paulo x Corinthians
+  assert.deepStrictEqual(t[6], { data: '2026-11-20', hora: '21:00', tv: null, streaming: null, confirmada: false }); // Atlético Mineiro x Corinthians
   assert(t.every((x) => /^\d{4}-\d{2}-\d{2}$/.test(x.data)));
 });
 
