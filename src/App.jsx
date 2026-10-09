@@ -206,7 +206,9 @@ export default function App() {
   const projPos = pos(displayedProjPoints);
   const corte = analise.corte;
   const cutPos = pos(corte);
-  const faltamParaTranquilo = analise.pontosConfortavel === null ? null : analise.pontosConfortavel - estado.pontos;
+  // Quanto falta, a partir do placar do cenário (tabela + marcações), e quanto ainda está sem marcação
+  const faltamParaTranquilo = analise.pontosConfortavel === null ? null : analise.pontosConfortavel - analise.pontosComMarcas;
+  const restanteSemMarca = (abertos.length - marcados) * 3;
   const gapParts = currentDistancia.label.split(/(\d+)/);
 
   return (
@@ -383,19 +385,24 @@ export default function App() {
 
           {/* Contador de pontos: 32 pts → N projetados */}
           <div className="bg-ink text-canvas px-4 py-3 flex items-center gap-2 leading-none whitespace-nowrap">
-            <span className="text-[44px] text-canvas/70 tabular-nums">{estado.pontos}</span>
+            <span className="text-[44px] text-canvas/70 tabular-nums" data-testid="pontos-com-marcas">{analise.pontosComMarcas}</span>
             <span className="text-label text-canvas/70">pts</span>
             <Arrow className="mx-1.5 flex-shrink-0" />
             <span className="text-[72px] tabular-nums transition-all duration-300">{displayedProjPoints}</span>
             <span className="text-label">projetados</span>
           </div>
+          <p className="text-caption text-ink-soft -mt-2.5" data-testid="soma-marcas">
+            {marcados > 0
+              ? `${estado.pontos} na tabela + ${analise.pontosMarcados} dos ${marcados} ${marcados === 1 ? 'jogo marcado' : 'jogos marcados'} = ${analise.pontosComMarcas} pts. ${abertos.length - marcados > 0 ? `Os outros ${abertos.length - marcados} entram pelo que o modelo espera.` : 'Todos os jogos estão marcados.'}`
+              : `${estado.pontos} pts na tabela. Os ${abertos.length} jogos restantes entram pelo que o modelo espera.`}
+          </p>
 
           {/* Pontos em disputa e meta para ficar tranquilo */}
           <div className="grid grid-cols-2 gap-2.5 text-label leading-tight">
             <div className="border-2 border-ink px-3 py-2">
               <div className="text-ink-soft">Em disputa</div>
               <div className="text-[30px] leading-none mt-1 tabular-nums">{analise.emDisputa} pts</div>
-              <div className="text-ink-soft mt-1">{abertos.length} {abertos.length === 1 ? 'jogo' : 'jogos'} · {marcados} marcado{marcados === 1 ? '' : 's'}</div>
+              <div className="text-ink-soft mt-1">{abertos.length} {abertos.length === 1 ? 'jogo' : 'jogos'} · {marcados} marcado{marcados === 1 ? '' : 's'}{marcados > 0 ? ` (${analise.pontosMarcados} pts)` : ''}</div>
             </div>
             <div className="border-2 border-ink px-3 py-2">
               <div className="text-ink-soft">Para risco abaixo de {Math.round(LIMITE_CONFORTAVEL * 100)}%</div>
@@ -403,7 +410,7 @@ export default function App() {
                 {analise.pontosConfortavel === null ? '—' : `${analise.pontosConfortavel} pts`}
               </div>
               <div className="text-ink-soft mt-1">
-                {faltamParaTranquilo === null ? '' : faltamParaTranquilo <= 0 ? 'já garantido' : `faltam ${faltamParaTranquilo} de ${analise.emDisputa}`}
+                {faltamParaTranquilo === null ? '' : faltamParaTranquilo <= 0 ? 'já garantido' : `faltam ${faltamParaTranquilo}${restanteSemMarca > 0 ? ` de ${restanteSemMarca}` : ''}`}
               </div>
             </div>
           </div>
@@ -503,7 +510,7 @@ export default function App() {
       <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-canvas border-t-[3px] border-ink px-4 flex items-center justify-between h-[72px]">
         <div className="flex flex-col justify-center min-w-0">
           <div className="text-label leading-tight">
-            {estado.pontos} pts → <span className="tabular-nums">{displayedProjPoints} proj</span>
+            <span data-testid="rodape-pontos">{analise.pontosComMarcas}</span> pts → <span className="tabular-nums">{displayedProjPoints} proj</span>
             <span className="text-ink-soft"> · </span>
             <span className={cutBelow ? 'text-risk-danger' : 'text-ink'}>{currentDistancia.label}</span>
           </div>

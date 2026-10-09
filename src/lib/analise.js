@@ -44,11 +44,19 @@ export function analisar(estado, games, { sims } = {}) {
   const diff = projecao - corte;
   const arredondado = Math.round(Math.abs(diff));
 
+  // Pontos que as marcações do usuário já somam (V=3, E=1, D=0) sobre os pontos reais
+  const marcados = abertos.filter((g) => g.result);
+  const pontosMarcados = marcados.reduce((s, g) => s + { V: 3, E: 1, D: 0 }[g.result], 0);
+
   return {
     risco: sim.risco,
     projecao,
     corte,
     emDisputa: abertos.length * 3,
+    jogosMarcados: marcados.length,
+    pontosMarcados,
+    // pontos reais + pontos dos jogos marcados: é o "placar" do cenário que o usuário monta
+    pontosComMarcas: estado.pontos + pontosMarcados,
     // total final de pontos a partir do qual o risco fica abaixo do limite "confortável"
     pontosConfortavel: pontosParaRisco(sim, LIMITE_CONFORTAVEL),
     distancia: {
