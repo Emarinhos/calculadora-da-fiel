@@ -68,6 +68,10 @@ function validarLiga(e, erro) {
       restantes.set(g.mandante, restantes.get(g.mandante) + 1);
       restantes.set(g.visitante, restantes.get(g.visitante) + 1);
     }
+    // Agenda (opcional): data AAAA-MM-DD, hora HH:MM ou null, emissora ou null
+    if (g.data !== undefined && g.data !== null && !ehData(g.data)) erro(`${nome}: data inválida`);
+    if (g.hora !== undefined && g.hora !== null && !/^([01][0-9]|2[0-3]):[0-5][0-9]$/.test(g.hora)) erro(`${nome}: hora inválida (use HH:MM)`);
+    if (g.tv !== undefined && g.tv !== null && (typeof g.tv !== 'string' || !g.tv.trim())) erro(`${nome}: tv inválida`);
   });
   tabela.forEach((t) => {
     if (restantes.has(t.clube) && t.j + restantes.get(t.clube) !== TOTAL_RODADAS) {

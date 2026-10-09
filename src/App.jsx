@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { analisar, riskLevel, formatarRisco, LIMITE_CONFORTAVEL } from './lib/analise';
+import escudo from './assets/escudo.png';
+import { analisar, riskLevel, formatarRisco, cenarioRealista, transmissaoDosAbertos, LIMITE_CONFORTAVEL } from './lib/analise';
 import { resultadoDoCenario, formaRecente, N_CONFRONTOS, JANELA_ANOS } from './lib/cenarios';
 import { FONTE_H2H, ATUALIZADO_EM } from './lib/h2h';
 import { ESTADO_EMBUTIDO, carregarEstado, jogosDoApp } from './lib/estado';
@@ -13,6 +14,20 @@ const pos = (v) => Math.min(100, Math.max(0, ((v - SCALE_MIN) / (SCALE_MAX - SCA
 const INTERVALO_RECARGA_MS = 30 * 60 * 1000;
 
 const brData = (iso) => iso.split('-').reverse().join('/');
+
+const DIAS = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
+
+/** Data, horário e emissora de um jogo, em duas linhas curtas. Falta de dado vira "a definir". */
+function formatarTransmissao(t) {
+  if (!t || !t.data) return { quando: 'data a definir', tv: null };
+  const [a, m, d] = t.data.split('-');
+  const dia = DIAS[new Date(Number(a), Number(m) - 1, Number(d)).getDay()];
+  const quando = `${dia} ${d}/${m}${t.hora ? ` · ${t.hora.replace(':', 'h')}` : ''}`;
+  let tv;
+  if (t.tv) tv = t.hora ? t.tv : `horário a definir · ${t.tv}`;
+  else tv = t.hora ? 'TV a definir' : 'horário e TV a definir';
+  return { quando, tv };
+}
 
 function Arrow({ className = '' }) {
   return (
@@ -120,6 +135,11 @@ export default function App() {
     return () => clearTimeout(timer);
   }, [projPoints]);
 
+  // Cenário realista, agenda de transmissão e posição de cada jogo entre os abertos
+  const realista = useMemo(() => cenarioRealista(estado), [estado]);
+  const transmissao = useMemo(() => transmissaoDosAbertos(estado), [estado]);
+  const posicaoNosAbertos = useMemo(() => new Map(abertos.map((g, i) => [g.id, i])), [abertos]);
+
   const handleResultChange = (id, result) => {
     const jogo = games.find((g) => g.id === id);
     if (!jogo || jogo.locked) return; // resultado real é fixo
@@ -131,7 +151,12 @@ export default function App() {
       setMarks({});
       return;
     }
-    // Cenários vêm do histórico recente de confrontos com cada adversário (lib/cenarios.js)
+    if (type === 'realistic') {
+      // Resultado mais provável de cada jogo, fechando nos pontos projetados (lib/analise.js)
+      setMarks(Object.fromEntries(abertos.map((g, i) => [g.id, realista.resultados[i] ?? null])));
+      return;
+    }
+    // Otimista e pessimista vêm do histórico recente de confrontos com cada adversário (lib/cenarios.js)
     setMarks(Object.fromEntries(abertos.map((g) => [g.id, resultadoDoCenario(g.opponent, type)])));
   };
 
@@ -198,7 +223,11 @@ export default function App() {
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between border-b-[3px] border-ink">
-          <h1 className="text-h2 tracking-wider">Calculadora da Fiel</h1>
+          <div className="flex items-center gap-3">
+            {/* O fundo branco do escudo se funde ao creme da página (multiply) */}
+            <img src={escudo} alt="Escudo do Corinthians" className="h-12 w-auto mix-blend-multiply" />
+            <h1 className="text-h2 tracking-wider">Calculadora da Fiel</h1>
+          </div>
           <button
             onClick={() => applyStressTest('reset')}
             className="min-h-[44px] px-4 border-2 border-ink text-label hover:bg-ink hover:text-canvas transition-colors"
@@ -225,39 +254,9 @@ export default function App() {
                   <span className="text-caption leading-none">{game.home ? 'Casa' : 'Fora'}</span>
                 </div>
 
-                <div className="flex-1 min-w-0 flex items-center gap-3 px-3 py-2.5">
-                  <div className="flex-1 min-w-0 flex flex-col gap-1.5">
-                    <span className="text-[24px] tracking-wider truncate leading-none">{game.opponent}</span>
-                    {game.locked ? (
-                      <span className="flex items-center gap-1.5 text-caption text-ink-soft leading-none">
-                        <Cadeado />
-                        Encerrado {game.placar.gc}×{game.placar.ga}
-                      </span>
-                    ) : (
-                      <div className="flex items-center gap-2">
-                        {/* Forma recente contra este adversário, do mais novo ao mais antigo */}
-                        <div
-                          className="flex gap-[2px]"
-                          role="img"
-                          aria-label={formaPorJogo[game.id].length
-                            ? `Últimos confrontos, do mais recente ao mais antigo: ${formaPorJogo[game.id].join(', ')}`
-                            : 'Sem confrontos recentes'}
-                        >
-                          {formaPorJogo[game.id].map((r, i) => (
-                            <span
-                              key={i}
-                              aria-hidden="true"
-                              className={`w-[17px] h-[17px] flex items-center justify-center text-[13px] leading-none border border-ink ${
-                                r === 'V' ? 'bg-ink text-canvas' : r === 'D' ? 'bg-risk-danger border-risk-danger text-canvas' : 'bg-transparent text-ink'
-                              }`}
-                            >
-                              {r}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                <div className="flex-1 min-w-0 flex flex-col gap-2 px-3 py-2.5">
+                  <div className="flex items-center justify-between gap-3">
+                  <span className="min-w-0 flex-1 text-[22px] tracking-wider truncate leading-none">{game.opponent}</span>
 
                   <div className="flex gap-1.5 flex-shrink-0" role="group" aria-label={`Resultado contra ${game.opponent}`}>
                     {[
@@ -293,6 +292,47 @@ export default function App() {
                       );
                     })}
                   </div>
+                  </div>
+
+                  {game.locked ? (
+                    <span className="flex items-center gap-1.5 text-caption text-ink-soft leading-none">
+                      <Cadeado />
+                      Encerrado {game.placar.gc}×{game.placar.ga}
+                    </span>
+                  ) : (
+                    <div className="flex items-end justify-between gap-3">
+                      {/* Forma recente contra este adversário, do mais novo ao mais antigo */}
+                      <div
+                        className="flex gap-[2px] flex-shrink-0"
+                        role="img"
+                        aria-label={formaPorJogo[game.id].length
+                          ? `Últimos confrontos, do mais recente ao mais antigo: ${formaPorJogo[game.id].join(', ')}`
+                          : 'Sem confrontos recentes'}
+                      >
+                        {formaPorJogo[game.id].map((r, i) => (
+                          <span
+                            key={i}
+                            aria-hidden="true"
+                            className={`w-[17px] h-[17px] flex items-center justify-center text-[13px] leading-none border border-ink ${
+                              r === 'V' ? 'bg-ink text-canvas' : r === 'D' ? 'bg-risk-danger border-risk-danger text-canvas' : 'bg-transparent text-ink'
+                            }`}
+                          >
+                            {r}
+                          </span>
+                        ))}
+                      </div>
+                      {/* Data, horário e emissora da transmissão */}
+                      {(() => {
+                        const t = formatarTransmissao(transmissao[posicaoNosAbertos.get(game.id)]);
+                        return (
+                          <div className="text-right text-caption leading-tight min-w-0" data-testid="transmissao">
+                            <div>{t.quando}</div>
+                            {t.tv && <div className="text-ink-soft">{t.tv}</div>}
+                          </div>
+                        );
+                      })()}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -312,11 +352,7 @@ export default function App() {
                     {delta.text}
                   </span>
                 )}
-                {isSaved ? (
-                  <span className="text-label px-2 py-1 bg-ink text-canvas">Série A</span>
-                ) : (
-                  <span className="text-label px-2 py-1 border-2 border-ink text-ink-soft">Ao vivo</span>
-                )}
+                {isSaved && <span className="text-label px-2 py-1 bg-ink text-canvas">Série A</span>}
               </div>
             </div>
 
@@ -328,7 +364,9 @@ export default function App() {
               <span className={`text-[66px] mt-2 ml-0.5 leading-none transition-colors duration-500 ${riskText}`}>%</span>
             </div>
             <p className="text-caption text-ink-soft mt-1 max-w-[260px]">
-              Chance de terminar entre os 4 últimos, em {Math.round(analise.sim.sims / 1000)} mil simulações do campeonato.
+              {marcados > 0
+                ? `Risco dado os ${marcados} ${marcados === 1 ? 'jogo marcado' : 'jogos marcados'}; o resto segue simulado (${Math.round(analise.sim.sims / 1000)} mil simulações).`
+                : `Chance de terminar entre os 4 últimos, em ${Math.round(analise.sim.sims / 1000)} mil simulações do campeonato.`}
             </p>
 
             {/* Carimbo da faixa de risco */}
@@ -438,8 +476,17 @@ export default function App() {
               Cenário pessimista
             </button>
           </div>
+          <button
+            onClick={() => applyStressTest('realistic')}
+            disabled={abertos.length === 0}
+            aria-label={`Cenário realista: resultado mais provável de cada jogo, fechando em ${estado.pontos + realista.pontos} pontos, a projeção`}
+            className="-mt-1 min-h-[56px] bg-transparent text-ink border-[3px] border-ink text-[17px] tracking-[0.14em] hover:bg-ink hover:text-canvas transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3 px-3"
+          >
+            <span>Cenário realista</span>
+            <span className="text-label tracking-[0.08em] opacity-80">fecha em {estado.pontos + realista.pontos} pts</span>
+          </button>
           <p className="text-caption text-ink-soft -mt-1">
-            Cenários pelo melhor e o pior resultado dos últimos {N_CONFRONTOS} confrontos com cada rival (até {JANELA_ANOS} anos). Fonte: {FONTE_H2H}, {dataFonte}.
+            Otimista e pessimista: melhor e pior resultado dos últimos {N_CONFRONTOS} confrontos com cada rival (até {JANELA_ANOS} anos; fonte {FONTE_H2H}, {dataFonte}). Realista: o resultado mais provável de cada jogo pelo modelo, somando exatamente a projeção.
           </p>
           <p className="text-caption text-ink-soft -mt-2" data-testid="estado-info">
             Tabela e resultados atualizados em {brData(estado.atualizadoEm)} ({estado.fonte}).

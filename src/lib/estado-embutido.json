@@ -299,52 +299,82 @@
       {
         "rodada": 30,
         "mandante": "Vasco",
-        "visitante": "Remo"
+        "visitante": "Remo",
+        "data": "2026-10-10",
+        "hora": "18:00",
+        "tv": "Record"
       },
       {
         "rodada": 30,
         "mandante": "São Paulo",
-        "visitante": "Vitória"
+        "visitante": "Vitória",
+        "data": "2026-10-10",
+        "hora": "21:00",
+        "tv": "SporTV"
       },
       {
         "rodada": 30,
         "mandante": "Atlético Mineiro",
-        "visitante": "Santos"
+        "visitante": "Santos",
+        "data": "2026-10-11",
+        "hora": "16:00",
+        "tv": "PFC"
       },
       {
         "rodada": 30,
         "mandante": "Flamengo",
-        "visitante": "Fluminense"
+        "visitante": "Fluminense",
+        "data": "2026-10-11",
+        "hora": "17:30",
+        "tv": "Globo"
       },
       {
         "rodada": 30,
         "mandante": "Palmeiras",
-        "visitante": "Corinthians"
+        "visitante": "Corinthians",
+        "data": "2026-10-11",
+        "hora": "17:30",
+        "tv": "Globo"
       },
       {
         "rodada": 30,
         "mandante": "Grêmio",
-        "visitante": "Internacional"
+        "visitante": "Internacional",
+        "data": "2026-10-11",
+        "hora": "17:30",
+        "tv": "Globo"
       },
       {
         "rodada": 30,
         "mandante": "Bahia",
-        "visitante": "Mirassol"
+        "visitante": "Mirassol",
+        "data": "2026-10-11",
+        "hora": "19:30",
+        "tv": "PFC"
       },
       {
         "rodada": 30,
         "mandante": "Coritiba",
-        "visitante": "Botafogo"
+        "visitante": "Botafogo",
+        "data": "2026-10-12",
+        "hora": "16:00",
+        "tv": "Amazon Prime"
       },
       {
         "rodada": 30,
         "mandante": "Chapecoense",
-        "visitante": "Athletico Paranaense"
+        "visitante": "Athletico Paranaense",
+        "data": "2026-10-12",
+        "hora": "19:30",
+        "tv": "PFC"
       },
       {
         "rodada": 30,
         "mandante": "Red Bull Bragantino",
-        "visitante": "Cruzeiro"
+        "visitante": "Cruzeiro",
+        "data": "2026-10-12",
+        "hora": "21:00",
+        "tv": "SporTV"
       },
       {
         "rodada": 31,
@@ -394,7 +424,10 @@
       {
         "rodada": 31,
         "mandante": "Corinthians",
-        "visitante": "Vitória"
+        "visitante": "Vitória",
+        "data": "2026-10-19",
+        "hora": "20:00",
+        "tv": "SporTV"
       },
       {
         "rodada": 32,
@@ -419,7 +452,10 @@
       {
         "rodada": 32,
         "mandante": "Vasco",
-        "visitante": "Corinthians"
+        "visitante": "Corinthians",
+        "data": "2026-10-24",
+        "hora": "18:30",
+        "tv": null
       },
       {
         "rodada": 32,
@@ -494,7 +530,10 @@
       {
         "rodada": 33,
         "mandante": "Corinthians",
-        "visitante": "Mirassol"
+        "visitante": "Mirassol",
+        "data": "2026-10-30",
+        "hora": "20:00",
+        "tv": null
       },
       {
         "rodada": 34,
@@ -529,7 +568,10 @@
       {
         "rodada": 34,
         "mandante": "São Paulo",
-        "visitante": "Corinthians"
+        "visitante": "Corinthians",
+        "data": "2026-11-04",
+        "hora": "21:30",
+        "tv": null
       },
       {
         "rodada": 34,
@@ -564,7 +606,10 @@
       {
         "rodada": 35,
         "mandante": "Corinthians",
-        "visitante": "Botafogo"
+        "visitante": "Botafogo",
+        "data": "2026-11-18",
+        "hora": null,
+        "tv": null
       },
       {
         "rodada": 35,
@@ -624,7 +669,10 @@
       {
         "rodada": 36,
         "mandante": "Atlético Mineiro",
-        "visitante": "Corinthians"
+        "visitante": "Corinthians",
+        "data": "2026-11-20",
+        "hora": "21:00",
+        "tv": null
       },
       {
         "rodada": 36,
@@ -664,7 +712,10 @@
       {
         "rodada": 37,
         "mandante": "Corinthians",
-        "visitante": "Grêmio"
+        "visitante": "Grêmio",
+        "data": "2026-11-27",
+        "hora": "21:00",
+        "tv": null
       },
       {
         "rodada": 37,
@@ -744,7 +795,10 @@
       {
         "rodada": 38,
         "mandante": "Remo",
-        "visitante": "Corinthians"
+        "visitante": "Corinthians",
+        "data": "2026-12-02",
+        "hora": null,
+        "tv": null
       }
     ]
   }

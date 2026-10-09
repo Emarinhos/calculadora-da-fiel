@@ -1,5 +1,5 @@
 import { CLUBE } from './estado.js';
-import { simular, pontosParaRisco } from './simulacao.js';
+import { simular, pontosParaRisco, probabilidadesDoJogo } from './simulacao.js';
 
 /** Risco abaixo do qual a situação é "confortável" e a partir do qual é "zona de perigo". */
 export const LIMITE_CONFORTAVEL = 0.1;
@@ -66,6 +66,66 @@ export function formatDistanciaLabel(pontos, situacao) {
   if (situacao === 'exato' || pontos === 0) return 'no corte de segurança';
   if (situacao === 'abaixo') return pontos === 1 ? 'falta 1 pt' : `faltam ${pontos} pts para o corte`;
   return pontos === 1 ? '1 pt de folga' : `${pontos} pts de folga`;
+}
+
+/**
+ * Data, horário e emissora dos jogos ABERTOS do Corinthians, na mesma ordem dos jogos abertos
+ * de estado.jogos. Campos ausentes vêm como null (a tela mostra "a definir").
+ */
+export function transmissaoDosAbertos(estado) {
+  return fixturesDoClube(estado).map((i) => {
+    const g = estado.liga.jogos[i];
+    return { data: g.data ?? null, hora: g.hora ?? null, tv: g.tv ?? null };
+  });
+}
+
+/**
+ * Cenário realista: o resultado mais provável de cada jogo aberto do Corinthians, ajustado
+ * para que a soma de pontos feche exatamente com a projeção (pontos esperados, arredondados).
+ * É a combinação de V/E/D de maior probabilidade conjunta com esse total de pontos.
+ * @returns {{resultados: string[], pontos: number}} resultados na ordem dos jogos abertos
+ */
+export function cenarioRealista(estado) {
+  const indices = fixturesDoClube(estado);
+  const probs = indices.map((i) => probabilidadesDoJogo({ tabela: estado.liga.tabela, jogo: estado.liga.jogos[i] }));
+  const n = probs.length;
+  if (n === 0) return { resultados: [], pontos: 0 };
+
+  const esperado = probs.reduce((s, p) => s + 3 * p.V + p.E, 0);
+  const valores = { V: 3, E: 1, D: 0 };
+  const log = (x) => Math.log(Math.max(x, 1e-12));
+
+  // dp[i][s] = melhor log-probabilidade conjunta com os i primeiros jogos somando s pontos
+  const max = 3 * n;
+  const dp = Array.from({ length: n + 1 }, () => new Array(max + 1).fill(-Infinity));
+  const veio = Array.from({ length: n + 1 }, () => new Array(max + 1).fill(null));
+  dp[0][0] = 0;
+  for (let i = 0; i < n; i++) {
+    for (let s = 0; s <= max; s++) {
+      if (dp[i][s] === -Infinity) continue;
+      for (const r of ['V', 'E', 'D']) {
+        const t = s + valores[r];
+        const v = dp[i][s] + log(probs[i][r]);
+        if (t <= max && v > dp[i + 1][t]) { dp[i + 1][t] = v; veio[i + 1][t] = { r, de: s }; }
+      }
+    }
+  }
+
+  // total alvo: o mais próximo da projeção entre os totais alcançáveis
+  let alvo = Math.min(max, Math.round(esperado));
+  for (let d = 0; d <= max; d++) {
+    if (alvo + d <= max && dp[n][alvo + d] > -Infinity) { alvo += d; break; }
+    if (alvo - d >= 0 && dp[n][alvo - d] > -Infinity) { alvo -= d; break; }
+  }
+
+  const resultados = new Array(n);
+  let s = alvo;
+  for (let i = n; i >= 1; i--) {
+    const passo = veio[i][s];
+    resultados[i - 1] = passo.r;
+    s = passo.de;
+  }
+  return { resultados, pontos: alvo };
 }
 
 /** "29" · "<1" · ">99": evita falsa precisão nos extremos. */

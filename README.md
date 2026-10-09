@@ -46,8 +46,19 @@ tabela da fonte, rodada realmente terminada, posição coerente). Depois valida
 `src/lib/estado-embutido.json` é uma cópia de `public/estado.json` usada se o arquivo não
 carregar; é sincronizada sozinha antes de `dev`, `build` e `test`.
 
-Cenários otimista/pessimista usam os últimos 5 confrontos com cada rival (`src/lib/h2h.js`,
-fonte: ogol.com.br).
+Cada jogo restante mostra data, horário e emissora (campos `data`, `hora` e `tv` de
+`liga.jogos`); o que ainda não foi definido aparece como "a definir". A tarefa diária também
+mantém essa agenda em dia (remarcações, TV definida).
+
+## Cenários
+
+- **Otimista / pessimista:** melhor e pior resultado dos últimos 5 confrontos com cada rival
+  (`src/lib/h2h.js`, fonte: ogol.com.br).
+- **Realista:** o resultado mais provável de cada jogo pelo mesmo modelo da simulação,
+  escolhendo a combinação mais provável que soma exatamente os pontos projetados
+  (`cenarioRealista` em `src/lib/analise.js`). O risco mostrado depois de marcar jogos é
+  condicionado a eles: por isso o cenário realista dá um risco menor que o baseline, que
+  inclui a incerteza dos próprios jogos do Corinthians.
 
 ## Publicação
 

@@ -215,6 +215,32 @@ export function simular({ tabela, jogos, clube = 'Corinthians', marcas = {}, sim
 }
 
 /**
+ * Probabilidade de V/E/D do `clube` em um jogo, pelo mesmo modelo Poisson da simulação.
+ * @returns {{V:number, E:number, D:number}}
+ */
+export function probabilidadesDoJogo({ tabela, jogo, clube = 'Corinthians', parametros = PARAMETROS }) {
+  const { mapa } = forcas(tabela, { encolhimento: parametros.encolhimento });
+  const razao = parametros.mandoRazao;
+  const media = tabela.reduce((s, t) => s + t.gp, 0) / tabela.reduce((s, t) => s + t.j, 0);
+  const m = mapa.get(jogo.mandante);
+  const v = mapa.get(jogo.visitante);
+  const pmfCasa = pmfPoisson(((media * 2 * razao) / (1 + razao)) * m.ataque * v.defesa, parametros.maxGols);
+  const pmfFora = pmfPoisson(((media * 2) / (1 + razao)) * v.ataque * m.defesa, parametros.maxGols);
+  let casa = 0;
+  let empate = 0;
+  let fora = 0;
+  for (let h = 0; h < pmfCasa.length; h++) {
+    for (let a = 0; a < pmfFora.length; a++) {
+      const p = pmfCasa[h] * pmfFora[a];
+      if (h > a) casa += p; else if (h < a) fora += p; else empate += p;
+    }
+  }
+  const total = casa + empate + fora; // normaliza a cauda truncada
+  const eMandante = jogo.mandante === clube;
+  return { V: (eMandante ? casa : fora) / total, E: empate / total, D: (eMandante ? fora : casa) / total };
+}
+
+/**
  * Total final de pontos a partir do qual o risco condicional cai abaixo de `alvo`
  * (fração, ex.: 0.30): 1 + o maior total com risco condicional >= alvo.
  * Ignora totais com poucas simulações para não depender de ruído.

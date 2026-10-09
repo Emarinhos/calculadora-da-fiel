@@ -7,13 +7,14 @@
 //   "hoje": "2026-10-12",
 //   "resultados": [ { "rodada": 30, "mandante": "Palmeiras", "visitante": "Corinthians", "gm": 0, "gv": 1 }, ... ],
 //   "tabelaFonte": [ { "clube": "Flamengo", "pts": 64, "j": 30, "gp": 59, "gc": 26 }, ... ],   // recomendado: confere as contas
-//   "posicao": { "rodada": 30, "posicao": 14 }   // opcional: só quando TODOS os jogos da rodada terminaram
+//   "posicao": { "rodada": 30, "posicao": 14 },   // opcional: só quando TODOS os jogos da rodada terminaram
+//   "agenda": [ { "rodada": 35, "mandante": "Corinthians", "visitante": "Botafogo", "data": "2026-11-18", "hora": "21:30", "tv": "Globo" } ]   // opcional: remarcações / TV definida
 // }
 //
 // Nada é gravado se alguma conta não fechar, se a tabela calculada divergir da fonte
 // ou se o estado resultante for inválido. Código de saída 0 = gravado; 1 = recusado.
 import fs from 'node:fs';
-import { aplicarResultados, registrarPosicao, compararComFonte, posicaoCalculada, validarEstado } from '../src/lib/aplicar.js';
+import { aplicarResultados, atualizarAgenda, registrarPosicao, compararComFonte, posicaoCalculada, validarEstado } from '../src/lib/aplicar.js';
 
 const [entradaArq] = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 if (!entradaArq) {
@@ -33,6 +34,7 @@ function recusar(msg) {
 let novo;
 try {
   novo = aplicarResultados(atual, entrada.resultados || [], entrada.hoje);
+  if (entrada.agenda) novo = atualizarAgenda(novo, entrada.agenda, entrada.hoje);
   if (entrada.posicao) {
     const { rodada, posicao } = entrada.posicao;
     const faltam = novo.liga.jogos.filter((g) => g.rodada === rodada);

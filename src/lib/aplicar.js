@@ -58,6 +58,21 @@ export function aplicarResultados(estado, resultados, hoje) {
   return novo;
 }
 
+/**
+ * Atualiza data/hora/emissora de jogos que ainda faltam (a CBF e as emissoras remarcam).
+ * @param agenda [{rodada, mandante, visitante, data?, hora?, tv?}] (só os campos presentes mudam)
+ */
+export function atualizarAgenda(estado, agenda, hoje) {
+  const novo = clone(estado);
+  for (const a of agenda) {
+    const g = novo.liga.jogos.find((x) => x.rodada === a.rodada && x.mandante === a.mandante && x.visitante === a.visitante);
+    if (!g) throw new Error(`agenda: jogo R${a.rodada} ${a.mandante} x ${a.visitante} não está entre os jogos restantes`);
+    for (const campo of ['data', 'hora', 'tv']) if (a[campo] !== undefined) g[campo] = a[campo];
+  }
+  if (hoje) novo.atualizadoEm = hoje;
+  return novo;
+}
+
 /** Registra a posição medida no fim de uma rodada (e o histórico dela). */
 export function registrarPosicao(estado, { rodada, posicao, hoje }) {
   const novo = clone(estado);
