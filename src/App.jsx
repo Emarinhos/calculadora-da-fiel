@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { calculateRisk, pontosProjetados, distanciaCorte, riskLevel, riscoBaseline } from './lib/risk';
+import { analisar, riskLevel, formatarRisco, LIMITE_CONFORTAVEL } from './lib/analise';
 import { resultadoDoCenario, formaRecente, N_CONFRONTOS, JANELA_ANOS } from './lib/cenarios';
 import { FONTE_H2H, ATUALIZADO_EM } from './lib/h2h';
-import { ESTADO_EMBUTIDO, carregarEstado, jogosDoApp, contextoDe } from './lib/estado';
+import { ESTADO_EMBUTIDO, carregarEstado, jogosDoApp } from './lib/estado';
 
 // Escala da "linha do corte": do pior (todas derrotas) ao melhor (todas vitórias) cenário
 const SCALE_MIN = 30;
@@ -57,20 +57,24 @@ export default function App() {
     };
   }, []);
 
-  const ctx = useMemo(() => contextoDe(estado), [estado]);
-
   // Jogos encerrados vêm travados do estado; os abertos recebem a marcação do usuário
   const games = useMemo(
     () => jogosDoApp(estado).map((g) => (g.locked ? g : { ...g, result: marks[g.id] ?? null })),
     [estado, marks]
   );
-  // O modelo só enxerga jogos abertos: os encerrados já estão nos pontos do estado
+  // Jogos encerrados já estão nos pontos da tabela: só os abertos entram na simulação
   const abertos = useMemo(() => games.filter((g) => !g.locked), [games]);
 
-  const calculatedRisk = useMemo(() => calculateRisk(abertos, ctx), [abertos, ctx]);
-  const currentDistancia = useMemo(() => distanciaCorte(abertos, ctx), [abertos, ctx]);
-  const projPoints = useMemo(() => Math.round(pontosProjetados(abertos, ctx)), [abertos, ctx]);
-  const baseline = useMemo(() => riscoBaseline(abertos, ctx), [abertos, ctx]);
+  // Risco real: simulação do campeonato inteiro com as marcações do usuário
+  const analise = useMemo(() => analisar(estado, games), [estado, games]);
+  // Referência sem nenhuma marcação (muda só quando o estado muda)
+  const analiseBase = useMemo(() => analisar(estado, jogosDoApp(estado)), [estado]);
+
+  const calculatedRisk = analise.risco;
+  const currentDistancia = analise.distancia;
+  const projPoints = Math.round(analise.projecao);
+  const baseline = analiseBase.risco;
+  const marcados = abertos.filter((g) => g.result !== null).length;
 
   // Estado e animação de 400ms do percentual com suporte a prefers-reduced-motion
   const [displayedRisk, setDisplayedRisk] = useState(calculatedRisk);
@@ -140,8 +144,8 @@ export default function App() {
   // Delta em relação ao baseline
   const delta = useMemo(() => {
     const diff = calculatedRisk - baseline;
-    if (Math.abs(diff) < 0.05) return null;
-    const formatted = Math.abs(diff).toFixed(1).replace('.', ',');
+    if (Math.abs(diff) < 0.5) return null;
+    const formatted = String(Math.round(Math.abs(diff)));
     if (diff < 0) {
       return {
         text: `▼ ${formatted} pp`,
@@ -159,14 +163,11 @@ export default function App() {
   // Faixa de risco atual
   const currentLevel = useMemo(() => riskLevel(displayedRisk), [displayedRisk]);
 
-  // Jogos restantes sem marcação
-  const remainingGames = useMemo(() => abertos.filter((g) => g.result === null).length, [abertos]);
+  // Rebaixamento praticamente descartado nas simulações
+  const isSaved = calculatedRisk < 1;
 
-  // Com o modelo logístico, risco mínimo é ~0.7% no cenário otimista (abaixo de 1.0%)
-  const isSaved = calculatedRisk <= 1.0;
-
-  // Identidade preto e creme: vermelho do brasão só na zona de perigo (> 60)
-  const isDanger = displayedRisk > 60;
+  // Identidade preto e creme: vermelho do brasão só na zona de perigo (risco >= 40%)
+  const isDanger = currentLevel.level === 'danger';
   const riskText = isDanger ? 'text-risk-danger' : 'text-ink';
 
   const cutBelow = currentDistancia.situacao === 'abaixo';
@@ -176,7 +177,9 @@ export default function App() {
   const stripeInk = `${(1 + (12 * clampedRisk) / 100).toFixed(2)}px`;
 
   const projPos = pos(displayedProjPoints);
-  const cutPos = pos(estado.corte);
+  const corte = analise.corte;
+  const cutPos = pos(corte);
+  const faltamParaTranquilo = analise.pontosConfortavel === null ? null : analise.pontosConfortavel - estado.pontos;
   const gapParts = currentDistancia.label.split(/(\d+)/);
 
   return (
@@ -320,10 +323,13 @@ export default function App() {
             {/* Percentual com aria-live="polite" */}
             <div aria-live="polite" aria-atomic="true" className="flex items-start mt-2">
               <span className={`text-display tabular-nums transition-colors duration-500 ${riskText}`}>
-                {displayedRisk.toFixed(1).replace('.', ',')}
+                {formatarRisco(displayedRisk)}
               </span>
               <span className={`text-[66px] mt-2 ml-0.5 leading-none transition-colors duration-500 ${riskText}`}>%</span>
             </div>
+            <p className="text-caption text-ink-soft mt-1 max-w-[260px]">
+              Chance de terminar entre os 4 últimos, em {Math.round(analise.sim.sims / 1000)} mil simulações do campeonato.
+            </p>
 
             {/* Carimbo da faixa de risco */}
             <div
@@ -343,6 +349,24 @@ export default function App() {
             <span className="text-label">projetados</span>
           </div>
 
+          {/* Pontos em disputa e meta para ficar tranquilo */}
+          <div className="grid grid-cols-2 gap-2.5 text-label leading-tight">
+            <div className="border-2 border-ink px-3 py-2">
+              <div className="text-ink-soft">Em disputa</div>
+              <div className="text-[30px] leading-none mt-1 tabular-nums">{analise.emDisputa} pts</div>
+              <div className="text-ink-soft mt-1">{abertos.length} {abertos.length === 1 ? 'jogo' : 'jogos'} · {marcados} marcado{marcados === 1 ? '' : 's'}</div>
+            </div>
+            <div className="border-2 border-ink px-3 py-2">
+              <div className="text-ink-soft">Para risco abaixo de {Math.round(LIMITE_CONFORTAVEL * 100)}%</div>
+              <div className="text-[30px] leading-none mt-1 tabular-nums">
+                {analise.pontosConfortavel === null ? '—' : `${analise.pontosConfortavel} pts`}
+              </div>
+              <div className="text-ink-soft mt-1">
+                {faltamParaTranquilo === null ? '' : faltamParaTranquilo <= 0 ? 'já garantido' : `faltam ${faltamParaTranquilo} de ${analise.emDisputa}`}
+              </div>
+            </div>
+          </div>
+
           {/* A lacuna até o corte, desenhada */}
           <div>
             <p className="text-[34px] leading-[1.05]">
@@ -356,12 +380,12 @@ export default function App() {
             <div
               className="relative h-[100px] mt-3"
               role="img"
-              aria-label={`Escala de pontos: projeção de ${displayedProjPoints}, corte em ${estado.corte}`}
+              aria-label={`Escala de pontos: projeção de ${displayedProjPoints}, corte em ${corte}`}
             >
               <span className="absolute left-0 top-0 text-caption text-ink-soft">Rebaixamento</span>
               <span className="absolute right-0 top-0 text-caption text-ink-soft">Segurança</span>
               <span className="absolute top-0 -translate-x-1/2 text-label text-risk-danger whitespace-nowrap" style={{ left: `${cutPos}%` }}>
-                Corte {estado.corte}
+                Corte {corte}
               </span>
 
               {/* Zona de rebaixamento (hachurada) e zona segura */}
@@ -392,7 +416,7 @@ export default function App() {
           </div>
 
           <div className="text-caption text-ink-soft">
-            {estado.posicao}º lugar após a rodada {estado.posicaoRodada} · {remainingGames} {remainingGames === 1 ? 'jogo restante' : 'jogos restantes'} · corte estimado em {estado.corte} pts
+            {estado.posicao}º lugar após a rodada {estado.posicaoRodada} · corte estimado em {corte} pts (mediana do 16º nas simulações)
           </div>
 
           {/* Controls (Stress Test) */}
@@ -434,7 +458,7 @@ export default function App() {
             <span className={cutBelow ? 'text-risk-danger' : 'text-ink'}>{currentDistancia.label}</span>
           </div>
           <div aria-live="polite" aria-atomic="true" className="flex items-baseline gap-0.5 mt-0.5">
-            <span className={`text-[32px] tabular-nums leading-none ${riskText}`}>{displayedRisk.toFixed(1).replace('.', ',')}</span>
+            <span className={`text-[32px] tabular-nums leading-none ${riskText}`}>{formatarRisco(displayedRisk)}</span>
             <span className={`text-[18px] leading-none ${riskText}`}>%</span>
           </div>
         </div>

@@ -9,7 +9,10 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "validar:estado": "node scripts/validar-estado.mjs",
-    "test": "node --test src/lib/risk.test.js src/lib/cenarios.test.js src/lib/estado.test.js"
+    "test": "node --test \"src/lib/*.test.js\"",
+    "predev": "node scripts/sync-embutido.mjs",
+    "prebuild": "node scripts/sync-embutido.mjs",
+    "pretest": "node scripts/sync-embutido.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.54.0",

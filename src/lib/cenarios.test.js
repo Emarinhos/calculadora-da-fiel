@@ -2,12 +2,14 @@ import test from 'node:test';
 import assert from 'node:assert';
 import { resultadoDe, confrontosRecentes, resultadoDoCenario, formaRecente } from './cenarios.js';
 import { H2H } from './h2h.js';
-import { INITIAL_GAMES } from './data.js';
-import { calculateRisk } from './risk.js';
+import { ESTADO_EMBUTIDO, jogosDoApp } from './estado.js';
+import { analisar } from './analise.js';
 
 // Data fixa: os testes não dependem do relógio
 const HOJE = new Date('2026-10-09T12:00:00Z');
 const op = { hoje: HOJE };
+const jogos = jogosDoApp(ESTADO_EMBUTIDO);
+const adversarios = jogos.map((g) => g.opponent);
 
 test('resultadoDe usa o placar dos 90 minutos', () => {
   assert.strictEqual(resultadoDe({ gc: 2, ga: 1 }), 'V');
@@ -16,9 +18,9 @@ test('resultadoDe usa o placar dos 90 minutos', () => {
 });
 
 test('todos os adversários restantes têm histórico na janela', () => {
-  INITIAL_GAMES.forEach((g) => {
-    assert(H2H[g.opponent], `sem dados para ${g.opponent}`);
-    assert(confrontosRecentes(g.opponent, op).length > 0, `sem confrontos recentes para ${g.opponent}`);
+  adversarios.forEach((nome) => {
+    assert(H2H[nome], `sem dados para ${nome}`);
+    assert(confrontosRecentes(nome, op).length > 0, `sem confrontos recentes para ${nome}`);
   });
 });
 
@@ -40,13 +42,10 @@ test('formaRecente do Palmeiras', () => {
 });
 
 test('cenário por jogo: melhor/pior resultado dos últimos 5', () => {
-  // Vasco: V V E V V -> nunca perdeu: pior caso é empate
   assert.strictEqual(resultadoDoCenario('Vasco', 'optimistic', op), 'V');
   assert.strictEqual(resultadoDoCenario('Vasco', 'pessimistic', op), 'E');
-  // Botafogo: D E E D D -> nunca venceu: melhor caso é empate
   assert.strictEqual(resultadoDoCenario('Botafogo', 'optimistic', op), 'E');
   assert.strictEqual(resultadoDoCenario('Botafogo', 'pessimistic', op), 'D');
-  // Remo: só 3 jogos na janela (V V D)
   assert.strictEqual(resultadoDoCenario('Remo', 'optimistic', op), 'V');
   assert.strictEqual(resultadoDoCenario('Remo', 'pessimistic', op), 'D');
 });
@@ -58,14 +57,14 @@ test('adversário sem histórico retorna null', () => {
 
 test('cenários do calendário: 25 pts no otimista, 3 pts no pessimista', () => {
   const pts = (r) => (r === 'V' ? 3 : r === 'E' ? 1 : 0);
-  const soma = (tipo) => INITIAL_GAMES.reduce((s, g) => s + pts(resultadoDoCenario(g.opponent, tipo, op)), 0);
+  const soma = (tipo) => adversarios.reduce((s, nome) => s + pts(resultadoDoCenario(nome, tipo, op)), 0);
   assert.strictEqual(soma('optimistic'), 25);
   assert.strictEqual(soma('pessimistic'), 3);
 });
 
 test('o cenário otimista tem risco menor que o baseline e o pessimista, maior', () => {
-  const aplica = (tipo) => INITIAL_GAMES.map((g) => ({ ...g, result: resultadoDoCenario(g.opponent, tipo, op) }));
-  const base = calculateRisk(INITIAL_GAMES);
-  assert(calculateRisk(aplica('optimistic')) < base);
-  assert(calculateRisk(aplica('pessimistic')) > base);
+  const aplica = (tipo) => jogos.map((g) => ({ ...g, result: resultadoDoCenario(g.opponent, tipo, op) }));
+  const base = analisar(ESTADO_EMBUTIDO, jogos).risco;
+  assert(analisar(ESTADO_EMBUTIDO, aplica('optimistic')).risco < base);
+  assert(analisar(ESTADO_EMBUTIDO, aplica('pessimistic')).risco > base);
 });
