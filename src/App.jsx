@@ -501,25 +501,34 @@ export default function App() {
 
       {/* Mobile Sticky Footer: mantém o risco visível enquanto se rola pelos jogos */}
       <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-canvas border-t-[3px] border-ink px-4 flex items-center justify-between h-[72px]">
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center min-w-0">
           <div className="text-label leading-tight">
             {estado.pontos} pts → <span className="tabular-nums">{displayedProjPoints} proj</span>
             <span className="text-ink-soft"> · </span>
             <span className={cutBelow ? 'text-risk-danger' : 'text-ink'}>{currentDistancia.label}</span>
           </div>
-          <div aria-live="polite" aria-atomic="true" className="flex items-baseline gap-0.5 mt-0.5">
-            <span className={`text-[32px] tabular-nums leading-none ${riskText}`}>{formatarRisco(displayedRisk)}</span>
-            <span className={`text-[18px] leading-none ${riskText}`}>%</span>
+          <div className="flex items-center gap-2 mt-0.5">
+            <div aria-live="polite" aria-atomic="true" className="flex items-baseline gap-0.5">
+              <span className={`text-[32px] tabular-nums leading-none ${riskText}`}>{formatarRisco(displayedRisk)}</span>
+              <span className={`text-[18px] leading-none ${riskText}`}>%</span>
+            </div>
+            {delta && (
+              <span className={`text-label px-1.5 py-0.5 border-2 text-center whitespace-nowrap ${delta.className}`}>
+                {delta.text}
+              </span>
+            )}
           </div>
         </div>
 
-        <div className="min-w-[60px] flex items-center justify-end">
-          {delta && (
-            <span className={`text-label px-1.5 py-0.5 border-2 text-center whitespace-nowrap ${delta.className}`}>
-              {delta.text}
-            </span>
-          )}
-        </div>
+        {/* Resetar também no rodapé: some as marcações e volta ao risco inicial */}
+        <button
+          onClick={() => applyStressTest('reset')}
+          disabled={marcados === 0}
+          aria-label="Resetar as marcações dos jogos"
+          className="flex-shrink-0 min-h-[44px] min-w-[44px] px-3 border-2 border-ink text-label hover:bg-ink hover:text-canvas transition-colors disabled:opacity-35 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-ink"
+        >
+          Resetar
+        </button>
       </div>
     </div>
   );
