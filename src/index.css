@@ -1,0 +1,47 @@
+:root {
+  --bg-canvas: #FDFAEF;
+  --ink: #0B0B0B;
+  --ink-soft: #4A4943; /* texto secundário sobre creme, contraste ~8:1 */
+  --risk-danger: #B5202A; /* vermelho do brasão, só para risco alto */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background-color: var(--bg-canvas);
+  /* Grão de papel impresso, bem sutil */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  color: var(--ink);
+  font-family: 'Fjalla One', sans-serif;
+  /* Versalete: capitular maior + resto em caixa-alta menor.
+     Fjalla One só tem 1 peso: libera só a síntese de versalete, nunca de negrito/itálico. */
+  font-variant-caps: small-caps;
+  font-synthesis: small-caps;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* Listras da camisa: a espessura da listra preta (--ink-w) vem do risco */
+.stripes {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--ink) 0 var(--ink-w, 7px),
+    var(--bg-canvas) var(--ink-w, 7px) 14px
+  );
+}
+
+/* Ingresso: picote semicircular na linha do canhoto (60px) */
+.ticket {
+  -webkit-mask:
+    radial-gradient(circle 9px at 60px 0, #0000 97%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle 9px at 60px 100%, #0000 97%, #000) bottom / 100% 51% no-repeat;
+  mask:
+    radial-gradient(circle 9px at 60px 0, #0000 97%, #000) top / 100% 51% no-repeat,
+    radial-gradient(circle 9px at 60px 100%, #0000 97%, #000) bottom / 100% 51% no-repeat;
+}

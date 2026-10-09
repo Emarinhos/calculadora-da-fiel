@@ -1,0 +1,90 @@
+{
+  "versao": 1,
+  "atualizadoEm": "2026-10-09",
+  "fonte": "ogol.com.br",
+  "base": {
+    "pontos": 32,
+    "jogosDisputados": 29
+  },
+  "pontos": 32,
+  "jogosDisputados": 29,
+  "posicao": 16,
+  "posicaoRodada": 29,
+  "posicaoAtualizadaEm": "2026-10-09",
+  "corte": 45,
+  "jogos": [
+    {
+      "id": 1,
+      "rodada": 30,
+      "adversario": "Palmeiras",
+      "casa": false,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 2,
+      "rodada": 31,
+      "adversario": "Vitória",
+      "casa": true,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 3,
+      "rodada": 32,
+      "adversario": "Vasco",
+      "casa": false,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 4,
+      "rodada": 33,
+      "adversario": "Mirassol",
+      "casa": true,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 5,
+      "rodada": 34,
+      "adversario": "São Paulo",
+      "casa": false,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 6,
+      "rodada": 35,
+      "adversario": "Botafogo",
+      "casa": true,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 7,
+      "rodada": 36,
+      "adversario": "Atlético-MG",
+      "casa": false,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 8,
+      "rodada": 37,
+      "adversario": "Grêmio",
+      "casa": true,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 9,
+      "rodada": 38,
+      "adversario": "Remo",
+      "casa": false,
+      "resultado": null,
+      "placar": null
+    }
+  ],
+  "historico": []
+}
