@@ -236,7 +236,8 @@ export default function App() {
             <div className="absolute left-4 md:left-8 bottom-0 bg-ink text-canvas px-3.5 pt-2 pb-1.5 text-[22px] tracking-wider leading-none">
               Corinthians · {estado.posicao}º
             </div>
-            <div className="absolute right-4 md:right-8 top-2 bg-canvas text-ink border-2 border-ink px-2 py-1 text-caption leading-none">
+            {/* Legenda das listras: só no desktop (no celular a tela fica limpa) */}
+            <div className="hidden lg:block absolute right-8 top-2 bg-canvas text-ink border-2 border-ink px-2 py-1 text-caption leading-none">
               Listras = risco
             </div>
           </div>
@@ -383,19 +384,26 @@ export default function App() {
               </span>
               <span className={`text-[66px] mt-2 ml-0.5 leading-none transition-colors duration-500 ${riskText}`}>%</span>
             </div>
-            <p className="text-caption text-ink-soft mt-1 max-w-[260px]">
-              {marcados > 0
-                ? `Risco dado os ${marcados} ${marcados === 1 ? 'jogo marcado' : 'jogos marcados'}; o resto segue simulado (${Math.round(analise.sim.sims / 1000)} mil simulações).`
-                : `Chance de terminar entre os 4 últimos, em ${Math.round(analise.sim.sims / 1000)} mil simulações do campeonato.`}
-            </p>
 
-            {/* Carimbo da faixa de risco */}
+            {/* Carimbo da faixa de risco: sobe só sobre o número; a legenda vem depois, sem sobreposição */}
             <div
-              className={`self-end -mt-4 mr-1 -rotate-[5deg] border-[3px] px-3 py-1 text-[22px] tracking-wider leading-none bg-canvas transition-colors duration-500 ${isDanger ? 'border-risk-danger text-risk-danger' : 'border-ink text-ink'}`}
+              className={`self-end -mt-3 mr-1 mb-3 -rotate-[5deg] border-[3px] px-3 py-1 text-[22px] tracking-wider leading-none bg-canvas transition-colors duration-500 ${isDanger ? 'border-risk-danger text-risk-danger' : 'border-ink text-ink'}`}
               style={{ outline: '1px solid currentColor', outlineOffset: '2px' }}
             >
               {currentLevel.label}
             </div>
+
+            {/* Legenda completa no desktop; no celular só o essencial (jogos marcados) */}
+            <p className="hidden lg:block text-caption text-ink-soft max-w-[300px]" data-testid="legenda-risco">
+              {marcados > 0
+                ? `Risco dado os ${marcados} ${marcados === 1 ? 'jogo marcado' : 'jogos marcados'}; o resto segue simulado (${Math.round(analise.sim.sims / 1000)} mil simulações).`
+                : `Chance de terminar entre os 4 últimos, em ${Math.round(analise.sim.sims / 1000)} mil simulações do campeonato.`}
+            </p>
+            {marcados > 0 && (
+              <p className="lg:hidden text-caption text-ink-soft" data-testid="legenda-risco-curta">
+                Com {marcados} {marcados === 1 ? 'jogo marcado' : 'jogos marcados'}
+              </p>
+            )}
           </div>
 
           {/* Contador de pontos: 32 pts → N projetados */}
@@ -406,11 +414,16 @@ export default function App() {
             <span className="text-[72px] tabular-nums transition-all duration-300">{displayedProjPoints}</span>
             <span className="text-label">projetados</span>
           </div>
-          <p className="text-caption text-ink-soft -mt-2.5" data-testid="soma-marcas">
+          <p className="hidden lg:block text-caption text-ink-soft -mt-2.5" data-testid="soma-marcas">
             {marcados > 0
               ? `${estado.pontos} na tabela + ${analise.pontosMarcados} dos ${marcados} ${marcados === 1 ? 'jogo marcado' : 'jogos marcados'} = ${analise.pontosComMarcas} pts. ${abertos.length - marcados > 0 ? `Os outros ${abertos.length - marcados} entram pelo que o modelo espera.` : 'Todos os jogos estão marcados.'}`
               : `${estado.pontos} pts na tabela. Os ${abertos.length} jogos restantes entram pelo que o modelo espera.`}
           </p>
+          {marcados > 0 && (
+            <p className="lg:hidden text-caption text-ink-soft -mt-2.5" data-testid="soma-marcas-curta">
+              {estado.pontos} na tabela + {analise.pontosMarcados} pts marcados
+            </p>
+          )}
 
           {/* Pontos em disputa e meta para ficar tranquilo */}
           <div className="grid grid-cols-2 gap-2.5 text-label leading-tight">
@@ -425,7 +438,13 @@ export default function App() {
                 {analise.pontosConfortavel === null ? '—' : `${analise.pontosConfortavel} pts`}
               </div>
               <div className="text-ink-soft mt-1">
-                {faltamParaTranquilo === null ? '' : faltamParaTranquilo <= 0 ? 'já garantido' : `faltam ${faltamParaTranquilo}${restanteSemMarca > 0 ? ` de ${restanteSemMarca}` : ''}`}
+                {faltamParaTranquilo === null
+                  ? ''
+                  : faltamParaTranquilo <= 0
+                    ? 'já garantido'
+                    : faltamParaTranquilo > restanteSemMarca
+                      ? 'fora de alcance'
+                      : `faltam ${faltamParaTranquilo} de ${restanteSemMarca}`}
               </div>
             </div>
           </div>
@@ -478,8 +497,11 @@ export default function App() {
             </div>
           </div>
 
-          <div className="text-caption text-ink-soft">
+          <div className="hidden lg:block text-caption text-ink-soft">
             {estado.posicao}º lugar após a rodada {estado.posicaoRodada} · corte estimado em {corte} pts (mediana do 16º nas simulações)
+          </div>
+          <div className="lg:hidden text-caption text-ink-soft" data-testid="posicao-curta">
+            {estado.posicao}º após a rodada {estado.posicaoRodada} · corte {corte} pts
           </div>
 
           {/* Controls (Stress Test) */}
@@ -513,13 +535,20 @@ export default function App() {
             <span>Cenário realista</span>
             <span className="text-label tracking-[0.08em] opacity-80">fecha em {estado.pontos + realista.pontos} pts</span>
           </button>
-          <p className="text-caption text-ink-soft -mt-1">
+          {/* Explicações dos cenários e fontes: só no desktop */}
+          <p className="hidden lg:block text-caption text-ink-soft -mt-1">
             Otimista e pessimista: melhor e pior resultado dos últimos {N_CONFRONTOS} confrontos com cada rival (até {JANELA_ANOS} anos; fonte {FONTE_H2H}, {dataFonte}). Realista: o resultado mais provável de cada jogo pelo modelo, somando exatamente a projeção.
           </p>
-          <p className="text-caption text-ink-soft -mt-2" data-testid="estado-info">
+          <p className="hidden lg:block text-caption text-ink-soft -mt-2" data-testid="estado-info">
             Tabela e resultados atualizados em {brData(estado.atualizadoEm)} ({estado.fonte}).
             {avisoEstado && ' Usando dados embutidos: não consegui ler o arquivo de estado.'}
           </p>
+          {/* No celular, só o aviso quando os dados reais não carregaram */}
+          {avisoEstado && (
+            <p className="lg:hidden text-caption text-ink-soft" data-testid="estado-aviso">
+              Usando dados embutidos (arquivo indisponível).
+            </p>
+          )}
         </section>
 
       </main>

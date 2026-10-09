@@ -19,7 +19,8 @@ e a distância até o corte.
 - **Em disputa**: pontos que ainda podem ser feitos (3 por jogo aberto), com quantos jogos e pontos
   você já marcou.
 - **Para risco abaixo de 10%**: total de pontos finais necessário (calculado das simulações) e quantos
-  faltam a partir do seu cenário.
+  faltam a partir do seu cenário ("faltam 12 de 27"). Com todos os jogos já marcados mostra "já garantido"
+  ou "fora de alcance", nunca uma meta impossível.
 - **Lacuna até o corte**, desenhada numa escala: zona de rebaixamento hachurada, linha vermelha do corte
   (mediana do 16º colocado nas simulações) e marcador da projeção.
 - **Cenários** (botões): otimista, pessimista e realista (ver [Cenários](#cenários)). Os botões ficam
@@ -27,6 +28,12 @@ e a distância até o corte.
   apaga o destaque, e refazer o cenário exato à mão o acende de novo. O estado é exposto em `aria-pressed`.
 - **Resetar**: no topo e, no celular, também no rodapé fixo (desabilitado enquanto não há marcações).
 - **Rodapé fixo (celular)**: pontos, projeção, risco e variação em pp ficam visíveis enquanto se rola pelos jogos.
+- **Celular enxuto**: abaixo de 1024 px as legendas são reduzidas ao essencial e **nenhuma fonte é declarada**
+  (sem "ogol.com.br", sem "Listras = risco", sem a explicação das simulações nem a dos cenários). Só ficam
+  linhas curtas, como "16º após a rodada 29 · corte 43 pts", "Com 3 jogos marcados" e "32 na tabela + 5 pts
+  marcados". No desktop as legendas completas e as fontes continuam. O aviso de "dados embutidos" aparece nos dois.
+- **Carimbo sem sobreposição**: o carimbo da faixa de risco sobe só sobre o número; a legenda do percentual
+  vem sempre abaixo dele, então os dois nunca se encostam (testado em larguras de 320 a 430 px e nas três faixas).
 - **Cada jogo (ingresso)**: rodada, casa/fora, adversário, **forma recente** contra ele (últimos
   confrontos, do mais novo ao mais antigo) e **data, horário, TV e streaming** da transmissão.
 - **Jogo encerrado**: aparece travado ("Encerrado 1×0", botões desabilitados). O resultado real não pode
@@ -201,4 +208,5 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | `ffad0c9` | 09/10/2026 | Botão **Resetar também no rodapé** do celular. |
 | `e1540df` | 09/10/2026 | **Contador soma as marcações** ao placar atual (tabela + pontos marcados), legenda da conta, "em disputa" mostra os marcados. |
 | `7d96d48` | 09/10/2026 | README completo: funções, dados, tarefa diária, estrutura, testes e histórico. |
-| (este) | 09/10/2026 | Botões de cenário só ficam pretos quando o cenário está de fato marcado (antes o Otimista era sempre preto); hover dos botões de ação passou a um tom leve para não parecer "marcado" no celular. |
+| `25a8fe9` | 09/10/2026 | Botões de cenário só ficam pretos quando o cenário está de fato marcado (antes o Otimista era sempre preto); hover dos botões de ação passou a um tom leve para não parecer "marcado" no celular. |
+| (este) | 09/10/2026 | Versão de celular com legendas reduzidas e sem fontes; carimbo de risco não sobrepõe mais a legenda do percentual; "para risco abaixo de 10%" passa a dizer "fora de alcance" quando todos os jogos já estão marcados. |
