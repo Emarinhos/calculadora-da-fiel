@@ -142,6 +142,21 @@ export default function App() {
   const transmissao = useMemo(() => transmissaoDosAbertos(estado), [estado]);
   const posicaoNosAbertos = useMemo(() => new Map(abertos.map((g, i) => [g.id, i])), [abertos]);
 
+  // Resultado que cada cenário marcaria em cada jogo aberto (para saber qual está "marcado de fato")
+  const alvosCenario = useMemo(() => {
+    const ab = jogosDoApp(estado).filter((g) => !g.locked);
+    return {
+      optimistic: ab.map((g) => resultadoDoCenario(g.opponent, 'optimistic')),
+      pessimistic: ab.map((g) => resultadoDoCenario(g.opponent, 'pessimistic')),
+      realistic: realista.resultados,
+    };
+  }, [estado, realista]);
+  // Um cenário só está ativo quando as marcações atuais são exatamente as dele
+  const cenarioAtivo = (tipo) => {
+    const alvo = alvosCenario[tipo];
+    return abertos.length > 0 && alvo.some(Boolean) && abertos.every((g, i) => (g.result ?? null) === (alvo[i] ?? null));
+  };
+
   const handleResultChange = (id, result) => {
     const jogo = games.find((g) => g.id === id);
     if (!jogo || jogo.locked) return; // resultado real é fixo
@@ -234,7 +249,7 @@ export default function App() {
           </div>
           <button
             onClick={() => applyStressTest('reset')}
-            className="min-h-[44px] px-4 border-2 border-ink text-label hover:bg-ink hover:text-canvas transition-colors"
+            className="min-h-[44px] px-4 border-2 border-ink text-label hover:bg-ink/10 transition-colors"
           >
             Resetar
           </button>
@@ -472,16 +487,18 @@ export default function App() {
             <button
               onClick={() => applyStressTest('optimistic')}
               disabled={abertos.length === 0}
+              aria-pressed={cenarioAtivo('optimistic')}
               aria-label="Cenário otimista: melhor resultado do histórico recente em cada jogo"
-              className="min-h-[56px] bg-ink text-canvas border-2 border-ink text-[17px] tracking-[0.14em] hover:opacity-90 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed"
+              className={`min-h-[56px] border-2 border-ink text-[17px] tracking-[0.14em] transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${cenarioAtivo('optimistic') ? 'bg-ink text-canvas' : 'bg-transparent text-ink hover:bg-ink/10'}`}
             >
               Cenário otimista
             </button>
             <button
               onClick={() => applyStressTest('pessimistic')}
               disabled={abertos.length === 0}
+              aria-pressed={cenarioAtivo('pessimistic')}
               aria-label="Cenário pessimista: pior resultado do histórico recente em cada jogo"
-              className="min-h-[56px] bg-transparent text-ink border-2 border-ink text-[17px] tracking-[0.14em] hover:bg-ink hover:text-canvas transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              className={`min-h-[56px] border-2 border-ink text-[17px] tracking-[0.14em] transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${cenarioAtivo('pessimistic') ? 'bg-ink text-canvas' : 'bg-transparent text-ink hover:bg-ink/10'}`}
             >
               Cenário pessimista
             </button>
@@ -489,8 +506,9 @@ export default function App() {
           <button
             onClick={() => applyStressTest('realistic')}
             disabled={abertos.length === 0}
+            aria-pressed={cenarioAtivo('realistic')}
             aria-label={`Cenário realista: resultado mais provável de cada jogo, fechando em ${estado.pontos + realista.pontos} pontos, a projeção`}
-            className="-mt-1 min-h-[56px] bg-transparent text-ink border-[3px] border-ink text-[17px] tracking-[0.14em] hover:bg-ink hover:text-canvas transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3 px-3"
+            className={`-mt-1 min-h-[56px] border-[3px] border-ink text-[17px] tracking-[0.14em] transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-3 px-3 ${cenarioAtivo('realistic') ? 'bg-ink text-canvas' : 'bg-transparent text-ink hover:bg-ink/10'}`}
           >
             <span>Cenário realista</span>
             <span className="text-label tracking-[0.08em] opacity-80">fecha em {estado.pontos + realista.pontos} pts</span>
@@ -532,7 +550,7 @@ export default function App() {
           onClick={() => applyStressTest('reset')}
           disabled={marcados === 0}
           aria-label="Resetar as marcações dos jogos"
-          className="flex-shrink-0 min-h-[44px] min-w-[44px] px-3 border-2 border-ink text-label hover:bg-ink hover:text-canvas transition-colors disabled:opacity-35 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-ink"
+          className="flex-shrink-0 min-h-[44px] min-w-[44px] px-3 border-2 border-ink text-label hover:bg-ink/10 transition-colors disabled:opacity-35 disabled:cursor-not-allowed disabled:hover:bg-transparent"
         >
           Resetar
         </button>

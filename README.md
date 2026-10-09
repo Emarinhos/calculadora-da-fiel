@@ -22,7 +22,9 @@ e a distância até o corte.
   faltam a partir do seu cenário.
 - **Lacuna até o corte**, desenhada numa escala: zona de rebaixamento hachurada, linha vermelha do corte
   (mediana do 16º colocado nas simulações) e marcador da projeção.
-- **Cenários** (botões): otimista, pessimista e realista (ver [Cenários](#cenários)).
+- **Cenários** (botões): otimista, pessimista e realista (ver [Cenários](#cenários)). Os botões ficam
+  vazados e **só ficam pretos quando aquele cenário está de fato marcado nos jogos**: mudar um jogo à mão
+  apaga o destaque, e refazer o cenário exato à mão o acende de novo. O estado é exposto em `aria-pressed`.
 - **Resetar**: no topo e, no celular, também no rodapé fixo (desabilitado enquanto não há marcações).
 - **Rodapé fixo (celular)**: pontos, projeção, risco e variação em pp ficam visíveis enquanto se rola pelos jogos.
 - **Cada jogo (ingresso)**: rodada, casa/fora, adversário, **forma recente** contra ele (últimos
@@ -198,4 +200,5 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | `a690aa7` | 09/10/2026 | **Transmissão consultada um dia antes do jogo** (`src/lib/agenda.js`, `scripts/transmissao-do-dia.mjs`), campo de streaming, "a confirmar" até a consulta, escudo recortado de verdade (fundo transparente, sem faixa cinza). |
 | `ffad0c9` | 09/10/2026 | Botão **Resetar também no rodapé** do celular. |
 | `e1540df` | 09/10/2026 | **Contador soma as marcações** ao placar atual (tabela + pontos marcados), legenda da conta, "em disputa" mostra os marcados. |
-| (este) | 09/10/2026 | README completo: funções, dados, tarefa diária, estrutura e histórico. |
+| `7d96d48` | 09/10/2026 | README completo: funções, dados, tarefa diária, estrutura, testes e histórico. |
+| (este) | 09/10/2026 | Botões de cenário só ficam pretos quando o cenário está de fato marcado (antes o Otimista era sempre preto); hover dos botões de ação passou a um tom leve para não parecer "marcado" no celular. |
