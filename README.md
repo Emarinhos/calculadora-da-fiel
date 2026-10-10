@@ -30,6 +30,14 @@ e a distância até o corte.
   `color-scheme: light`, então o navegador não inverte as cores). Um botão discreto (lua/sol) ao lado do Resetar, no topo
   e no rodapé do celular, liga o fundo escuro; a escolha fica salva no aparelho (`localStorage`, chave `tema`).
   O tema escuro troca as variáveis de cor em `src/index.css` (`:root[data-theme='dark']`).
+  A página declara `color-scheme: only light` (no `<meta>` e no CSS) para o navegador **não escurecer por conta própria**
+  (o escurecimento forçado do Samsung Internet repintava o app com cores erradas; o `only` é o que o impede nas versões
+  recentes, a partir da 24.0.6.15). Só quando a pessoa liga o nosso botão a página declara `dark`.
+- **Independente do aparelho**: a fonte Fjalla One vem do próprio app (`@fontsource/fjalla-one`, licença OFL), sem
+  Google Fonts, então não falha com bloqueio de rede ou economia de dados. A página tem `translate="no"` (o tradutor
+  automático não mexe em "Corinthians"). Com letra grande no Android (equivale a ~1,5× em tela de 250 px) não há rolagem
+  lateral: o contador de pontos e o título usam `clamp()`, o cabeçalho quebra os botões para a linha de baixo e o
+  texto do rodapé fixo é cortado com reticências em vez de empurrar os botões.
 - **Resetar**: no topo e, no celular, também no rodapé fixo (desabilitado enquanto não há marcações).
 - **Rodapé fixo (celular)**: pontos, projeção, risco e variação em pp ficam visíveis enquanto se rola pelos jogos.
 - **Celular enxuto**: abaixo de 1024 px as legendas são reduzidas ao essencial e **nenhuma fonte é declarada**
@@ -248,4 +256,6 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | `0302014` | 09/10/2026 | Versão de celular com legendas reduzidas e sem fontes; carimbo de risco não sobrepõe mais a legenda do percentual; "para risco abaixo de 10%" passa a dizer "fora de alcance" quando todos os jogos já estão marcados. |
 | `1eb8861` | 10/10/2026 | **Últimas notícias**: bloco acima dos confrontos no desktop e letreiro no rodapé do celular; campo `noticias` no estado, validado; `src/lib/noticias.js` e `scripts/atualizar-noticias.mjs`. |
 | `7c195bd` | 10/10/2026 | **Notícias a cada 2 horas pelo GitHub Actions** (`noticias.yml`), sem depender do Claude aberto; feeds RSS do ge e do Meu Timão; commit só se mudou e deploy chamado no final. |
-| (este) | 10/10/2026 | README: seção "Notícias", limitações e histórico. |
+| `b421dd8` | 10/10/2026 | README: seção "Notícias", limitações e histórico. |
+| `6a30f9b` | 10/10/2026 | Tema claro por padrão com botão para fundo escuro; letreiro não trava mais depois de tocar num link. |
+| (este) | 10/10/2026 | Tema claro garantido em aparelhos com modo escuro forçado (`color-scheme: only light`), fonte hospedada no app, `translate="no"` e ajustes para letra grande no celular. |

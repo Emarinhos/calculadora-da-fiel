@@ -307,13 +307,13 @@ export default function App() {
             </div>
           </div>
         </div>
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 flex items-center justify-between border-b-[3px] border-ink">
-          <div className="flex items-center gap-3">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b-[3px] border-ink">
+          <div className="flex items-center gap-3 flex-1 basis-0 min-w-[160px]">
             {/* Escudo com fundo transparente: assenta direto no creme da página */}
-            <img src={escudo} alt="Escudo do Corinthians" className="h-12 w-auto" />
-            <h1 className="text-h2 tracking-wider">Calculadora da Fiel</h1>
+            <img src={escudo} alt="Escudo do Corinthians" className="h-12 w-auto flex-shrink-0" />
+            <h1 className="text-[clamp(15px,5.3vw,20px)] md:text-h2 leading-tight tracking-wider break-words min-w-0">Calculadora da Fiel</h1>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-shrink-0 ml-auto">
             <BotaoTema escuro={escuro} onClick={alternarTema} />
             <button
               onClick={() => applyStressTest('reset')}
@@ -498,11 +498,11 @@ export default function App() {
           </div>
 
           {/* Contador de pontos: 32 pts → N projetados */}
-          <div className="bg-ink text-canvas px-4 py-3 flex items-center gap-2 leading-none whitespace-nowrap">
-            <span className="text-[44px] text-canvas/70 tabular-nums" data-testid="pontos-com-marcas">{analise.pontosComMarcas}</span>
+          <div className="bg-ink text-canvas px-4 py-3 flex flex-wrap items-center gap-x-2 gap-y-1 leading-none">
+            <span className="text-[clamp(28px,11.8vw,44px)] text-canvas/70 tabular-nums" data-testid="pontos-com-marcas">{analise.pontosComMarcas}</span>
             <span className="text-label text-canvas/70">pts</span>
             <Arrow className="mx-1.5 flex-shrink-0" />
-            <span className="text-[72px] tabular-nums transition-all duration-300">{displayedProjPoints}</span>
+            <span className="text-[clamp(44px,19.3vw,72px)] tabular-nums transition-all duration-300">{displayedProjPoints}</span>
             <span className="text-label">projetados</span>
           </div>
           <p className="hidden lg:block text-caption text-ink-soft -mt-2.5" data-testid="soma-marcas">
@@ -649,7 +649,7 @@ export default function App() {
       {/* Mobile Sticky Footer: mantém o risco visível enquanto se rola pelos jogos */}
       <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-canvas border-t-[3px] border-ink px-4 flex items-center justify-between h-[72px]">
         <div className="flex flex-col justify-center min-w-0">
-          <div className="text-label leading-tight">
+          <div className="text-label leading-tight truncate">
             <span data-testid="rodape-pontos">{analise.pontosComMarcas}</span> pts → <span className="tabular-nums">{displayedProjPoints} proj</span>
             <span className="text-ink-soft"> · </span>
             <span className={cutBelow ? 'text-risk-danger' : 'text-ink'}>{currentDistancia.label}</span>

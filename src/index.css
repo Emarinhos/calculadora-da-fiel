@@ -3,7 +3,7 @@
   --ink: #0B0B0B;
   --ink-soft: #4A4943; /* texto secundário sobre creme, contraste ~8:1 */
   --risk-danger: #B5202A; /* vermelho do brasão, só para risco alto */
-  color-scheme: light; /* claro por padrão, mesmo com o celular em modo escuro */
+  color-scheme: only light; /* "only": o navegador não pode escurecer a página por conta própria */
 }
 
 /* Tema escuro: só quando a pessoa escolhe (botão ao lado de Resetar). Preto e creme trocam de lugar. */
