@@ -41,7 +41,7 @@ e a distância até o corte.
 - **Últimas notícias**: no desktop, um bloco "Últimas notícias" (5 mais recentes) acima da lista de confrontos;
   no celular, um letreiro que corre no rodapé, acima da barra fixa, como painel de bolsa (pausa ao tocar; sem
   animação se o aparelho pedir menos movimento). Cada item abre a matéria ou o post original em outra aba.
-  Fontes: feed RSS do ge (Corinthians) e posts do @MeuTimao no X. O campo some se não houver notícias.
+  Fontes: feeds RSS do ge (Corinthians) e do Meu Timão, atualizados a cada 2 horas pelo GitHub Actions (`.github/workflows/noticias.yml`), sem depender do Claude aberto. O campo some se não houver notícias.
 - **Dados reais atualizados sozinhos** (ver [Dados reais](#dados-reais-e-atualização-automática)).
 - **Identidade visual** própria: Fjalla One em versalete, preto e creme, escudo do clube ao lado do título,
   e as **listras da camisa no topo cuja espessura acompanha o risco** (mais preto = mais perigo).
@@ -165,10 +165,11 @@ src/lib/agenda.js             gatilho da transmissão (um dia antes)
 src/lib/estado-embutido.json  cópia de public/estado.json (gerada)
 scripts/aplicar-resultados.mjs  grava resultados/posição/agenda com todas as conferências
 scripts/transmissao-do-dia.mjs  quais jogos têm a transmissão para consultar hoje
-scripts/atualizar-noticias.mjs  grava `noticias` (RSS do ge + posts do X passados em JSON)
+scripts/atualizar-noticias.mjs  grava `noticias` (RSS do ge e do Meu Timão; posts do X opcionais em JSON)
 scripts/validar-estado.mjs      valida public/estado.json
 scripts/sync-embutido.mjs       copia o estado para a cópia embutida
 .github/workflows/pages.yml     validação, testes, build e publicação
+.github/workflows/noticias.yml  a cada 2 h: atualiza as notícias, faz commit e chama o deploy
 ```
 
 ### Testes (`npm test`, mais de 80 testes em `src/lib/`)
@@ -218,4 +219,4 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | `7d96d48` | 09/10/2026 | README completo: funções, dados, tarefa diária, estrutura, testes e histórico. |
 | `25a8fe9` | 09/10/2026 | Botões de cenário só ficam pretos quando o cenário está de fato marcado (antes o Otimista era sempre preto); hover dos botões de ação passou a um tom leve para não parecer "marcado" no celular. |
 | (este) | 09/10/2026 | Versão de celular com legendas reduzidas e sem fontes; carimbo de risco não sobrepõe mais a legenda do percentual; "para risco abaixo de 10%" passa a dizer "fora de alcance" quando todos os jogos já estão marcados. |
-| (este) | 10/10/2026 | **Últimas notícias**: bloco acima dos confrontos no desktop e letreiro no rodapé do celular; campo `noticias` no estado, validado; `scripts/atualizar-noticias.mjs` (RSS do ge + posts do @MeuTimao). |
+| (este) | 10/10/2026 | **Últimas notícias**: bloco acima dos confrontos no desktop e letreiro no rodapé do celular; campo `noticias` no estado, validado; `scripts/atualizar-noticias.mjs` (RSS do ge e do Meu Timão), atualizado a cada 2 horas pelo GitHub Actions. |

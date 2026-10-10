@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { dataDoIdDoX, tituloCurto, mesclarNoticias, noticiasDoJogo, validarNoticias } from './noticias.js';
 import { validarEstado, ESTADO_EMBUTIDO } from './estado.js';
-import { noticiasDoRss, noticiasDoX } from '../../scripts/atualizar-noticias.mjs';
+import { noticiasDoRss, noticiasDoRssMeuTimao, noticiasDoX } from '../../scripts/atualizar-noticias.mjs';
 
 const n = (titulo, data, url = `https://ge.globo.com/${titulo}`) => ({ titulo, fonte: 'ge', url, data });
 const ehData = (v) => /^\d{4}-\d{2}-\d{2}$/.test(v);
@@ -60,4 +60,12 @@ test('posts do X: data pelo id e link do post', () => {
   const r = noticiasDoX([{ id: '2108915744087920953', texto: 'Texto https://t.co/z' }, { id: 'abc', texto: 'x' }]);
   assert.equal(r.length, 1);
   assert.deepEqual([r[0].titulo, r[0].data, r[0].url], ['Texto', '2026-10-10', 'https://x.com/MeuTimao/status/2108915744087920953']);
+});
+
+test('RSS do Meu Timão: data é o dia do pubDate (horário de Brasília) e item sem data é ignorado', () => {
+  const xml = `<item><title>Dérbi no CT</title><link>https://www.meutimao.com.br/noticias-do-corinthians/1/x</link><pubDate>Sat, 10 Oct 2026 23:47:00 -0300</pubDate></item>
+               <item><title>sem data</title><link>https://www.meutimao.com.br/y</link></item>`;
+  const r = noticiasDoRssMeuTimao(xml);
+  assert.equal(r.length, 1);
+  assert.deepEqual([r[0].titulo, r[0].data, r[0].fonte], ['Dérbi no CT', '2026-10-10', 'Meu Timão']);
 });
