@@ -241,7 +241,7 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | `e1540df` | 09/10/2026 | **Contador soma as marcações** ao placar atual (tabela + pontos marcados), legenda da conta, "em disputa" mostra os marcados. |
 | `7d96d48` | 09/10/2026 | README completo: funções, dados, tarefa diária, estrutura, testes e histórico. |
 | `25a8fe9` | 09/10/2026 | Botões de cenário só ficam pretos quando o cenário está de fato marcado (antes o Otimista era sempre preto); hover dos botões de ação passou a um tom leve para não parecer "marcado" no celular. |
-| (este) | 09/10/2026 | Versão de celular com legendas reduzidas e sem fontes; carimbo de risco não sobrepõe mais a legenda do percentual; "para risco abaixo de 10%" passa a dizer "fora de alcance" quando todos os jogos já estão marcados. |
+| `0302014` | 09/10/2026 | Versão de celular com legendas reduzidas e sem fontes; carimbo de risco não sobrepõe mais a legenda do percentual; "para risco abaixo de 10%" passa a dizer "fora de alcance" quando todos os jogos já estão marcados. |
 | `1eb8861` | 10/10/2026 | **Últimas notícias**: bloco acima dos confrontos no desktop e letreiro no rodapé do celular; campo `noticias` no estado, validado; `src/lib/noticias.js` e `scripts/atualizar-noticias.mjs`. |
 | `7c195bd` | 10/10/2026 | **Notícias a cada 2 horas pelo GitHub Actions** (`noticias.yml`), sem depender do Claude aberto; feeds RSS do ge e do Meu Timão; commit só se mudou e deploy chamado no final. |
 | (este) | 10/10/2026 | README: seção "Notícias", limitações e histórico. |
