@@ -41,7 +41,7 @@ e a distância até o corte.
 - **Últimas notícias**: no desktop, um bloco "Últimas notícias" (5 mais recentes) acima da lista de confrontos;
   no celular, um letreiro que corre no rodapé, acima da barra fixa, como painel de bolsa (pausa ao tocar; sem
   animação se o aparelho pedir menos movimento). Cada item abre a matéria ou o post original em outra aba.
-  Fontes: feeds RSS do ge (Corinthians) e do Meu Timão, atualizados a cada 2 horas pelo GitHub Actions (`.github/workflows/noticias.yml`), sem depender do Claude aberto. O campo some se não houver notícias.
+  Fontes: feeds RSS do ge (Corinthians) e do Meu Timão, atualizados a cada 2 horas pelo GitHub Actions (`.github/workflows/noticias.yml`), sem depender do Claude aberto. O bloco some se não houver notícias.
 - **Dados reais atualizados sozinhos** (ver [Dados reais](#dados-reais-e-atualização-automática)).
 - **Identidade visual** própria: Fjalla One em versalete, preto e creme, escudo do clube ao lado do título,
   e as **listras da camisa no topo cuja espessura acompanha o risco** (mais preto = mais perigo).
@@ -149,6 +149,27 @@ Calendário previsto da posição (jogos pelo calendário do ogol, sujeito a rem
 R31 em 20/10, R32 em 27/10, R33 em 31/10, R34 em 07/11, R35 em 19/11, R36 em 21/11, R37 em 28/11 e
 R38 em 03/12.
 
+### Notícias (a cada 2 horas, sem depender do Claude)
+
+O workflow `.github/workflows/noticias.yml` roda **a cada 2 horas** (cron `17 */2 * * *`, em UTC) nos servidores
+do GitHub, e também sob demanda (aba Actions → "Atualizar notícias" → Run workflow).
+
+1. `scripts/atualizar-noticias.mjs` lê o RSS do ge (`ge.globo.com/rss/ge/futebol/times/corinthians/`, data tirada da
+   URL da matéria) e o RSS do Meu Timão (`www.meutimao.com.br/feed`, data do `pubDate` no horário de Brasília),
+   pega até 8 itens de cada, junta com as notícias já gravadas, remove repetidas (mesmo link) e as com mais de
+   7 dias, ordena da mais nova para a mais antiga e guarda no máximo 12 em `noticias`.
+2. O estado inteiro é validado antes de gravar; se ficaria inválido, nada é gravado.
+3. Se `public/estado.json` mudou, o workflow faz commit só dele e de `src/lib/estado-embutido.json` e chama o
+   `pages.yml` (push feito com o `GITHUB_TOKEN` não dispara outros workflows, por isso o deploy é chamado de propósito).
+   Se não houve notícia nova, termina sem commit e sem republicar.
+4. Se um feed falhar (ex.: bloqueio anti-robô do Meu Timão), o script avisa no log e segue com o outro e com o
+   que já estava gravado.
+
+A notícia chega ao site em até 2 horas depois de sair; quem está com o app aberto vê em até mais 30 minutos
+(intervalo de recarga do `estado.json`). Guardamos só título curto, fonte, data e o link original, nunca o texto.
+O script ainda aceita um arquivo JSON com posts do X (`node scripts/atualizar-noticias.mjs posts.json`), mas isso só
+vale rodando local: o X exige navegador e não é usado no agendamento.
+
 ## Estrutura do projeto
 
 ```
@@ -159,7 +180,7 @@ src/lib/simulacao.js          Monte Carlo (Poisson), probabilidades por jogo
 src/lib/analise.js            risco, faixas, corte, cenário realista, soma das marcações
 src/lib/cenarios.js, h2h.js   cenários otimista/pessimista e histórico de confrontos
 src/lib/estado.js             validação e carga do estado
-src/lib/noticias.js           notícias: mesclar, validar, título curto, data do id do X
+src/lib/noticias.js           notícias: mesclar, validar, título curto, notícia por adversário
 src/lib/aplicar.js            aplica resultados, posição e agenda (funções puras)
 src/lib/agenda.js             gatilho da transmissão (um dia antes)
 src/lib/estado-embutido.json  cópia de public/estado.json (gerada)
@@ -183,7 +204,7 @@ scripts/sync-embutido.mjs       copia o estado para a cópia embutida
 | `cenarios.test.js` | últimos 5 confrontos, janela de 5 anos, cenários otimista/pessimista |
 | `estado.test.js` | validação do estado e da liga, carga com falha de arquivo |
 | `aplicar.test.js` | aplicação de resultados, posição, agenda e conferência com a fonte |
-| `noticias.test.js` | mesclar/recentes/repetidas, validação, RSS do ge, posts do X |
+| `noticias.test.js` | mesclar/recentes/repetidas, validação, RSS do ge e do Meu Timão, posts do X, notícia por adversário |
 | `agenda.test.js` | gatilho de um dia antes, reforço, remarcação |
 | `_fixtures.js` | apoio: uma rodada completa de resultados para os testes |
 
@@ -198,7 +219,9 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 
 ## Limitações conhecidas
 
-- A atualização automática depende do app do Claude estar aberto às 8h.
+- A atualização de resultados, posição e transmissão depende do app do Claude estar aberto às 8h. As notícias não: rodam no GitHub.
+- As notícias dependem dos feeds do ge e do Meu Timão; o GitHub pode atrasar execuções agendadas em horário de pico
+  e desativa o agendamento após 60 dias sem atividade no repositório (os commits automáticos contam como atividade).
 - Posição só muda no fim da rodada; jogo adiado dentro de uma rodada atrasa a posição dela
   (hoje só o Chapecoense × Vasco, da R21, está adiado e não bloqueia as próximas).
 - Emissoras e horários vêm do calendário do ogol (que lê logos de TV); só valem como confirmados depois
@@ -219,4 +242,6 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | `7d96d48` | 09/10/2026 | README completo: funções, dados, tarefa diária, estrutura, testes e histórico. |
 | `25a8fe9` | 09/10/2026 | Botões de cenário só ficam pretos quando o cenário está de fato marcado (antes o Otimista era sempre preto); hover dos botões de ação passou a um tom leve para não parecer "marcado" no celular. |
 | (este) | 09/10/2026 | Versão de celular com legendas reduzidas e sem fontes; carimbo de risco não sobrepõe mais a legenda do percentual; "para risco abaixo de 10%" passa a dizer "fora de alcance" quando todos os jogos já estão marcados. |
-| (este) | 10/10/2026 | **Últimas notícias**: bloco acima dos confrontos no desktop e letreiro no rodapé do celular; campo `noticias` no estado, validado; `scripts/atualizar-noticias.mjs` (RSS do ge e do Meu Timão), atualizado a cada 2 horas pelo GitHub Actions. |
+| `1eb8861` | 10/10/2026 | **Últimas notícias**: bloco acima dos confrontos no desktop e letreiro no rodapé do celular; campo `noticias` no estado, validado; `src/lib/noticias.js` e `scripts/atualizar-noticias.mjs`. |
+| `7c195bd` | 10/10/2026 | **Notícias a cada 2 horas pelo GitHub Actions** (`noticias.yml`), sem depender do Claude aberto; feeds RSS do ge e do Meu Timão; commit só se mudou e deploy chamado no final. |
+| (este) | 10/10/2026 | README: seção "Notícias", limitações e histórico. |
