@@ -801,5 +801,67 @@
         "tv": null
       }
     ]
-  }
+  },
+  "noticias": [
+    {
+      "titulo": "Emiliano Díaz comenta recusa ao Corinthians, cita lealdade e promete: \"Um dia eu vou voltar\"",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/10/emiliano-diaz-comenta-recusa-ao-corinthians-cita-lealdade-e-promete-um-dia-eu-vou-voltar.ghtml",
+      "data": "2026-10-10"
+    },
+    {
+      "titulo": "Fã de Diniz e de Brasfoot: quem é William Batista, interino que comandará o Corinthians no Dérbi",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/10/fa-de-diniz-e-de-brasfoot-quem-e-william-batista-interino-que-comandara-o-corinthians-no-derbi.ghtml",
+      "data": "2026-10-10"
+    },
+    {
+      "titulo": "Brasileirão 2026: veja onde assistir ao vivo aos jogos da 30ª rodada",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/10/10/brasileirao-2026-veja-onde-assistir-ao-vivo-aos-jogos-da-30a-rodada.ghtml",
+      "data": "2026-10-10"
+    },
+    {
+      "titulo": "A Gaviões da Fiel convocou os torcedores do Corinthians para apoiar o elenco neste domingo, antes do clássico contra o…",
+      "fonte": "Meu Timão",
+      "url": "https://x.com/MeuTimao/status/2108915744087920953",
+      "data": "2026-10-10"
+    },
+    {
+      "titulo": "Torcedores do Corinthians organizarão um ato em defesa da intervenção judicial na gestão do clube na próxima…",
+      "fonte": "Meu Timão",
+      "url": "https://x.com/MeuTimao/status/2108905465199358371",
+      "data": "2026-10-10"
+    },
+    {
+      "titulo": "Corinthians e Sorocaba empatam no jogo de ida das quartas da Liga Futsal",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/sp/tem-esporte/futsal/noticia/2026/10/09/corinthians-e-sorocaba-empatam-no-jogo-de-ida-das-quartas-da-liga-futsal.ghtml",
+      "data": "2026-10-09"
+    },
+    {
+      "titulo": "Favoritismos #30: dicas, palpites e chances no Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/10/09/favoritismos-30-dicas-palpites-e-chances-no-brasileirao.ghtml",
+      "data": "2026-10-09"
+    },
+    {
+      "titulo": "Palpites e dicas para Palmeiras x Corinthians pelo Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/10/09/palpites-e-dicas-para-palmeiras-x-corinthians-pelo-brasileirao.ghtml",
+      "data": "2026-10-09"
+    },
+    {
+      "titulo": "Bastidores: Corinthians tem dia de sondagens, recusas e indefinição sobre novo técnico",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/09/bastidores-corinthians-tem-dia-de-sondagens-recusas-e-indefinicao-sobre-novo-tecnico.ghtml",
+      "data": "2026-10-09"
+    },
+    {
+      "titulo": "Treino do Corinthians: interino tem primeiro contato com elenco e inicia preparação para o Dérbi",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/09/treino-do-corinthians-interino-tem-primeiro-contato-com-elenco-e-inicia-preparacao-para-o-derbi.ghtml",
+      "data": "2026-10-09"
+    }
+  ]
 }

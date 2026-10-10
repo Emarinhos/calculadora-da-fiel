@@ -45,3 +45,24 @@ button:focus-visible {
     radial-gradient(circle 9px at 60px 0, #0000 97%, #000) top / 100% 51% no-repeat,
     radial-gradient(circle 9px at 60px 100%, #0000 97%, #000) bottom / 100% 51% no-repeat;
 }
+
+/* Letreiro de notícias (celular): corre da direita para a esquerda, como painel de bolsa.
+   A trilha tem o conteúdo duplicado, então -50% emenda sem salto. Pausa ao tocar. */
+@keyframes letreiro {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.letreiro-trilha {
+  display: flex;
+  width: max-content;
+  animation: letreiro var(--letreiro-dur, 60s) linear infinite;
+}
+.letreiro:hover .letreiro-trilha,
+.letreiro:active .letreiro-trilha,
+.letreiro:focus-within .letreiro-trilha {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .letreiro { overflow-x: auto; }
+  .letreiro-trilha { animation: none; }
+}

@@ -1,4 +1,5 @@
 import dadosEmbutidos from './estado-embutido.json' with { type: 'json' };
+import { validarNoticias } from './noticias.js';
 
 /**
  * Estado real da temporada, mantido em public/estado.json (versao 2).
@@ -182,6 +183,8 @@ export function validarEstado(e) {
       if (!ehInt(h.rodada) || !ehInt(h.posicao) || !ehInt(h.pontos) || !ehData(h.atualizadoEm)) erro(`historico[${i}] inválido`);
     });
   }
+
+  validarNoticias(e.noticias, erro, ehData);
 
   return { ok: erros.length === 0, erros };
 }

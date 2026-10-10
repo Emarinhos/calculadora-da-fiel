@@ -38,6 +38,10 @@ e a distância até o corte.
   confrontos, do mais novo ao mais antigo) e **data, horário, TV e streaming** da transmissão.
 - **Jogo encerrado**: aparece travado ("Encerrado 1×0", botões desabilitados). O resultado real não pode
   ser alterado nem entra nas marcações.
+- **Últimas notícias**: no desktop, um bloco "Últimas notícias" (5 mais recentes) acima da lista de confrontos;
+  no celular, um letreiro que corre no rodapé, acima da barra fixa, como painel de bolsa (pausa ao tocar; sem
+  animação se o aparelho pedir menos movimento). Cada item abre a matéria ou o post original em outra aba.
+  Fontes: feed RSS do ge (Corinthians) e posts do @MeuTimao no X. O campo some se não houver notícias.
 - **Dados reais atualizados sozinhos** (ver [Dados reais](#dados-reais-e-atualização-automática)).
 - **Identidade visual** própria: Fjalla One em versalete, preto e creme, escudo do clube ao lado do título,
   e as **listras da camisa no topo cuja espessura acompanha o risco** (mais preto = mais perigo).
@@ -108,6 +112,7 @@ Tudo vem de `public/estado.json` (versão 2). Jogo com resultado preenchido fica
 | `liga.tabela` | classificação dos 20 times (pts, j, v, e, d, gp, gc) |
 | `liga.jogos` | todos os jogos que ainda faltam na liga, com `data`, `hora`, `tv`, `streaming` e `tvConsultadaEm` |
 | `historico` | posição e pontos a cada rodada registrada |
+| `noticias` | (opcional) até 12 itens `{ titulo, fonte, url, data }`, só recentes (até 7 dias); guarda título e link, nunca o texto |
 
 `src/lib/estado.js` valida tudo (contas da tabela, 38 jogos por time, coerência com os jogos do Corinthians,
 ordem das rodadas). Se o arquivo falhar ou for inválido, o app usa a cópia embutida
@@ -154,11 +159,13 @@ src/lib/simulacao.js          Monte Carlo (Poisson), probabilidades por jogo
 src/lib/analise.js            risco, faixas, corte, cenário realista, soma das marcações
 src/lib/cenarios.js, h2h.js   cenários otimista/pessimista e histórico de confrontos
 src/lib/estado.js             validação e carga do estado
+src/lib/noticias.js           notícias: mesclar, validar, título curto, data do id do X
 src/lib/aplicar.js            aplica resultados, posição e agenda (funções puras)
 src/lib/agenda.js             gatilho da transmissão (um dia antes)
 src/lib/estado-embutido.json  cópia de public/estado.json (gerada)
 scripts/aplicar-resultados.mjs  grava resultados/posição/agenda com todas as conferências
 scripts/transmissao-do-dia.mjs  quais jogos têm a transmissão para consultar hoje
+scripts/atualizar-noticias.mjs  grava `noticias` (RSS do ge + posts do X passados em JSON)
 scripts/validar-estado.mjs      valida public/estado.json
 scripts/sync-embutido.mjs       copia o estado para a cópia embutida
 .github/workflows/pages.yml     validação, testes, build e publicação
@@ -175,6 +182,7 @@ scripts/sync-embutido.mjs       copia o estado para a cópia embutida
 | `cenarios.test.js` | últimos 5 confrontos, janela de 5 anos, cenários otimista/pessimista |
 | `estado.test.js` | validação do estado e da liga, carga com falha de arquivo |
 | `aplicar.test.js` | aplicação de resultados, posição, agenda e conferência com a fonte |
+| `noticias.test.js` | mesclar/recentes/repetidas, validação, RSS do ge, posts do X |
 | `agenda.test.js` | gatilho de um dia antes, reforço, remarcação |
 | `_fixtures.js` | apoio: uma rodada completa de resultados para os testes |
 
@@ -210,3 +218,4 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | `7d96d48` | 09/10/2026 | README completo: funções, dados, tarefa diária, estrutura, testes e histórico. |
 | `25a8fe9` | 09/10/2026 | Botões de cenário só ficam pretos quando o cenário está de fato marcado (antes o Otimista era sempre preto); hover dos botões de ação passou a um tom leve para não parecer "marcado" no celular. |
 | (este) | 09/10/2026 | Versão de celular com legendas reduzidas e sem fontes; carimbo de risco não sobrepõe mais a legenda do percentual; "para risco abaixo de 10%" passa a dizer "fora de alcance" quando todos os jogos já estão marcados. |
+| (este) | 10/10/2026 | **Últimas notícias**: bloco acima dos confrontos no desktop e letreiro no rodapé do celular; campo `noticias` no estado, validado; `scripts/atualizar-noticias.mjs` (RSS do ge + posts do @MeuTimao). |

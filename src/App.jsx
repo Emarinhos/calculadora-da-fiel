@@ -5,6 +5,7 @@ import { resultadoDoCenario, formaRecente, N_CONFRONTOS, JANELA_ANOS } from './l
 import { FONTE_H2H, ATUALIZADO_EM } from './lib/h2h';
 import { ESTADO_EMBUTIDO, carregarEstado, jogosDoApp } from './lib/estado';
 
+
 // Escala da "linha do corte": do pior (todas derrotas) ao melhor (todas vitórias) cenário
 const SCALE_MIN = 30;
 const SCALE_MAX = 60;
@@ -45,6 +46,37 @@ function Cadeado({ className = '' }) {
       <rect x="1.5" y="7" width="11" height="8" />
       <path d="M4 7V4.5a3 3 0 0 1 6 0V7" />
     </svg>
+  );
+}
+
+/** Letreiro de notícias no rodapé do celular: itens lado a lado, conteúdo duplicado para o loop emendar. */
+function Letreiro({ noticias }) {
+  if (!noticias.length) return null;
+  const segundos = Math.max(30, Math.round(noticias.reduce((t, n) => t + n.titulo.length + n.fonte.length, 0) * 0.14));
+  const itens = (oculto) => noticias.map((n) => (
+    <a
+      key={`${oculto ? 'b' : 'a'}-${n.url}`}
+      href={n.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      tabIndex={oculto ? -1 : 0}
+      className="flex-shrink-0 px-5 text-caption leading-none whitespace-nowrap"
+    >
+      <span className="text-canvas/60">{n.fonte}</span> {n.titulo}<span className="ml-5 text-canvas/40" aria-hidden="true">◆</span>
+    </a>
+  ));
+  return (
+    <div
+      role="region"
+      aria-label="Últimas notícias do Corinthians"
+      data-testid="letreiro"
+      className="letreiro fixed bottom-[72px] left-0 right-0 z-50 lg:hidden h-[30px] bg-ink text-canvas flex items-center overflow-hidden"
+    >
+      <div className="letreiro-trilha items-center" style={{ '--letreiro-dur': `${segundos}s` }}>
+        {itens(false)}
+        <span className="contents" aria-hidden="true">{itens(true)}</span>
+      </div>
+    </div>
   );
 }
 
@@ -257,10 +289,33 @@ export default function App() {
         </div>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 md:px-8 mt-6 lg:mt-8 flex flex-col lg:grid lg:grid-cols-[1fr_380px] lg:gap-8 lg:items-start pb-28 lg:pb-8">
+      <main className="max-w-6xl mx-auto px-4 md:px-8 mt-6 lg:mt-8 flex flex-col lg:grid lg:grid-cols-[1fr_380px] lg:gap-8 lg:items-start pb-40 lg:pb-8">
 
         {/* Matches Section (Left column on Desktop) */}
         <section className="order-2 lg:order-1 pt-6 lg:pt-0">
+          {/* Últimas notícias (só no desktop; no celular correm no letreiro do rodapé) */}
+          {(estado.noticias ?? []).length > 0 && (
+            <div className="hidden lg:block mb-8" data-testid="noticias">
+              <h2 className="text-label tracking-[0.2em] pb-2 mb-1 border-b-[3px] border-ink">Últimas notícias</h2>
+              <ul>
+                {estado.noticias.slice(0, 5).map((n) => (
+                  <li key={n.url} className="border-b border-ink/30">
+                    <a
+                      href={n.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-baseline gap-3 py-2 hover:underline"
+                    >
+                      <span className="w-[78px] flex-shrink-0 text-caption text-ink-soft">{n.fonte}</span>
+                      <span className="min-w-0 flex-1 text-[17px] leading-tight">{n.titulo}</span>
+                      <span className="flex-shrink-0 text-caption text-ink-soft tabular-nums">{n.data.slice(8)}/{n.data.slice(5, 7)}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <h2 className="text-label tracking-[0.2em] pb-2 mb-3 border-b-[3px] border-ink">
             Confrontos · {abertos.length} {abertos.length === 1 ? 'restante' : 'restantes'}
           </h2>
@@ -552,6 +607,8 @@ export default function App() {
         </section>
 
       </main>
+
+      <Letreiro noticias={estado.noticias ?? []} />
 
       {/* Mobile Sticky Footer: mantém o risco visível enquanto se rola pelos jogos */}
       <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-canvas border-t-[3px] border-ink px-4 flex items-center justify-between h-[72px]">
