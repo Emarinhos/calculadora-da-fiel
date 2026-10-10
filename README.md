@@ -1,4 +1,4 @@
-# Calculadora da Fiel
+﻿# Calculadora da Fiel
 
 Simulador de rebaixamento do Corinthians no Brasileirão 2026. O torcedor marca vitória, empate ou
 derrota nos jogos que faltam e vê, na hora, o **risco real de rebaixamento**, os pontos projetados
@@ -26,6 +26,10 @@ e a distância até o corte.
 - **Cenários** (botões): otimista, pessimista e realista (ver [Cenários](#cenários)). Os botões ficam
   vazados e **só ficam pretos quando aquele cenário está de fato marcado nos jogos**: mudar um jogo à mão
   apaga o destaque, e refazer o cenário exato à mão o acende de novo. O estado é exposto em `aria-pressed`.
+- **Tema claro por padrão**: o app é sempre creme e preto, mesmo com o celular em modo escuro (a página declara
+  `color-scheme: light`, então o navegador não inverte as cores). Um botão discreto (lua/sol) ao lado do Resetar, no topo
+  e no rodapé do celular, liga o fundo escuro; a escolha fica salva no aparelho (`localStorage`, chave `tema`).
+  O tema escuro troca as variáveis de cor em `src/index.css` (`:root[data-theme='dark']`).
 - **Resetar**: no topo e, no celular, também no rodapé fixo (desabilitado enquanto não há marcações).
 - **Rodapé fixo (celular)**: pontos, projeção, risco e variação em pp ficam visíveis enquanto se rola pelos jogos.
 - **Celular enxuto**: abaixo de 1024 px as legendas são reduzidas ao essencial e **nenhuma fonte é declarada**
@@ -39,7 +43,7 @@ e a distância até o corte.
 - **Jogo encerrado**: aparece travado ("Encerrado 1×0", botões desabilitados). O resultado real não pode
   ser alterado nem entra nas marcações.
 - **Últimas notícias**: no desktop, um bloco "Últimas notícias" (5 mais recentes) acima da lista de confrontos;
-  no celular, um letreiro que corre no rodapé, acima da barra fixa, como painel de bolsa (pausa ao tocar; sem
+  no celular, um letreiro que corre no rodapé, acima da barra fixa, como painel de bolsa (pausa só enquanto o dedo segura; sem
   animação se o aparelho pedir menos movimento). Cada item abre a matéria ou o post original em outra aba.
   Fontes: feeds RSS do ge (Corinthians) e do Meu Timão, atualizados a cada 2 horas pelo GitHub Actions (`.github/workflows/noticias.yml`), sem depender do Claude aberto. O bloco some se não houver notícias.
 - **Dados reais atualizados sozinhos** (ver [Dados reais](#dados-reais-e-atualização-automática)).

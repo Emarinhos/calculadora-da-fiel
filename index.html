@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Claro por padrão: avisa o navegador que a página é clara, para o modo escuro do celular não inverter as cores -->
+    <meta name="color-scheme" content="light" />
+    <meta name="supported-color-schemes" content="light" />
+    <script>
+      // Aplica o tema escolhido antes de pintar (evita piscar). Sem escolha = claro, mesmo com o celular em modo escuro.
+      try { if (localStorage.getItem('tema') === 'escuro') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+    </script>
     <title>Calculadora da Fiel - Pro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -3,6 +3,16 @@
   --ink: #0B0B0B;
   --ink-soft: #4A4943; /* texto secundário sobre creme, contraste ~8:1 */
   --risk-danger: #B5202A; /* vermelho do brasão, só para risco alto */
+  color-scheme: light; /* claro por padrão, mesmo com o celular em modo escuro */
+}
+
+/* Tema escuro: só quando a pessoa escolhe (botão ao lado de Resetar). Preto e creme trocam de lugar. */
+:root[data-theme='dark'] {
+  --bg-canvas: #121211;
+  --ink: #F3EFE2;
+  --ink-soft: #B4B1A5;
+  --risk-danger: #EE5058;
+  color-scheme: dark;
 }
 
 @tailwind base;
@@ -47,7 +57,7 @@ button:focus-visible {
 }
 
 /* Letreiro de notícias (celular): corre da direita para a esquerda, como painel de bolsa.
-   A trilha tem o conteúdo duplicado, então -50% emenda sem salto. Pausa ao tocar. */
+   A trilha tem o conteúdo duplicado, então -50% emenda sem salto. */
 @keyframes letreiro {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -57,10 +67,14 @@ button:focus-visible {
   width: max-content;
   animation: letreiro var(--letreiro-dur, 60s) linear infinite;
 }
-.letreiro:hover .letreiro-trilha,
+/* Pausa só enquanto o dedo está segurando, com o mouse em cima ou com foco de teclado.
+   No toque, :hover e :focus ficam "grudados" no link depois do clique e travariam o letreiro. */
 .letreiro:active .letreiro-trilha,
-.letreiro:focus-within .letreiro-trilha {
+.letreiro:has(a:focus-visible) .letreiro-trilha {
   animation-play-state: paused;
+}
+@media (hover: hover) {
+  .letreiro:hover .letreiro-trilha { animation-play-state: paused; }
 }
 @media (prefers-reduced-motion: reduce) {
   .letreiro { overflow-x: auto; }

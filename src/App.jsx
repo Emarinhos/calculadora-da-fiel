@@ -40,6 +40,30 @@ function Arrow({ className = '' }) {
   );
 }
 
+/** Botão discreto de tema: ícone de meia-lua (vai para o escuro) ou de sol (volta para o claro). */
+function BotaoTema({ escuro, onClick, className = '' }) {
+  return (
+    <button
+      onClick={onClick}
+      aria-pressed={escuro}
+      aria-label={escuro ? 'Voltar para o fundo claro' : 'Mudar para o fundo escuro'}
+      title={escuro ? 'Fundo claro' : 'Fundo escuro'}
+      className={`flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center border-2 border-ink/40 text-ink-soft hover:text-ink hover:border-ink transition-colors ${className}`}
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+        {escuro ? (
+          <>
+            <circle cx="12" cy="12" r="4.5" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" />
+          </>
+        ) : (
+          <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" />
+        )}
+      </svg>
+    </button>
+  );
+}
+
 function Cadeado({ className = '' }) {
   return (
     <svg width="14" height="16" viewBox="0 0 14 16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" className={className}>
@@ -86,6 +110,15 @@ export default function App() {
   const [avisoEstado, setAvisoEstado] = useState(null);
   // Marcações do usuário só valem para jogos ainda abertos
   const [marks, setMarks] = useState({});
+  // Tema: claro por padrão; a escolha da pessoa fica salva neste aparelho
+  const [escuro, setEscuro] = useState(() => document.documentElement.dataset.theme === 'dark');
+  const alternarTema = () => {
+    const proximo = !escuro;
+    setEscuro(proximo);
+    if (proximo) document.documentElement.dataset.theme = 'dark';
+    else delete document.documentElement.dataset.theme;
+    try { localStorage.setItem('tema', proximo ? 'escuro' : 'claro'); } catch { /* sem armazenamento: vale só nesta visita */ }
+  };
 
   useEffect(() => {
     let vivo = true;
@@ -280,12 +313,15 @@ export default function App() {
             <img src={escudo} alt="Escudo do Corinthians" className="h-12 w-auto" />
             <h1 className="text-h2 tracking-wider">Calculadora da Fiel</h1>
           </div>
-          <button
-            onClick={() => applyStressTest('reset')}
-            className="min-h-[44px] px-4 border-2 border-ink text-label hover:bg-ink/10 transition-colors"
-          >
-            Resetar
-          </button>
+          <div className="flex items-center gap-2">
+            <BotaoTema escuro={escuro} onClick={alternarTema} />
+            <button
+              onClick={() => applyStressTest('reset')}
+              className="min-h-[44px] px-4 border-2 border-ink text-label hover:bg-ink/10 transition-colors"
+            >
+              Resetar
+            </button>
+          </div>
         </div>
       </header>
 
@@ -631,7 +667,9 @@ export default function App() {
           </div>
         </div>
 
-        {/* Resetar também no rodapé: some as marcações e volta ao risco inicial */}
+        {/* Tema e Resetar também no rodapé: Resetar some as marcações e volta ao risco inicial */}
+        <div className="flex-shrink-0 flex items-center gap-2">
+        <BotaoTema escuro={escuro} onClick={alternarTema} />
         <button
           onClick={() => applyStressTest('reset')}
           disabled={marcados === 0}
@@ -640,6 +678,7 @@ export default function App() {
         >
           Resetar
         </button>
+        </div>
       </div>
     </div>
   );
