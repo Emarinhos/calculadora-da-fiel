@@ -6,6 +6,7 @@ import { resultadoDoCenario, formaRecente, N_CONFRONTOS, JANELA_ANOS } from './l
 import { FONTE_H2H, ATUALIZADO_EM } from './lib/h2h';
 import { ESTADO_EMBUTIDO, carregarEstado, jogosDoApp } from './lib/estado';
 import { linhasDaTabela, riscoVigente } from './lib/liga';
+import { aoVivo } from './lib/agenda';
 
 
 // Escala da "linha do corte": do pior (todas derrotas) ao melhor (todas vitórias) cenário
@@ -15,9 +16,6 @@ const pos = (v) => Math.min(100, Math.max(0, ((v - SCALE_MIN) / (SCALE_MAX - SCA
 
 // Recarrega public/estado.json a cada 30 min e ao voltar para a aba
 const INTERVALO_RECARGA_MS = 30 * 60 * 1000;
-
-// Google mostra a classificação do Brasileirão Série A atualizada em tempo real
-const URL_TABELA = 'https://www.google.com/search?q=tabela+brasileir%C3%A3o+s%C3%A9rie+a';
 
 const brData = (iso) => iso.split('-').reverse().join('/');
 
@@ -134,6 +132,12 @@ export default function App() {
   // Marcações do usuário só valem para jogos ainda abertos
   const [marks, setMarks] = useState({});
   // Tabela da liga: no desktop abre por botão; no celular é a faixa da esquerda (arrastar os jogos para a direita)
+  // Relógio para o indicador "ao vivo" (confere de 30 em 30 segundos)
+  const [agora, setAgora] = useState(() => Date.now());
+  useEffect(() => {
+    const t = setInterval(() => setAgora(Date.now()), 30000);
+    return () => clearInterval(t);
+  }, []);
   const [tabelaAberta, setTabelaAberta] = useState(false);
   const [aba, setAba] = useState('jogos');
   const trilhaRef = useRef(null);
@@ -337,20 +341,9 @@ export default function App() {
       <header>
         <div className="stripes h-[72px] md:h-[92px] relative" style={{ '--ink-w': stripeInk }}>
           <div className="max-w-6xl mx-auto px-4 md:px-8 h-full relative">
-            {/* A posição leva à tabela do Brasileirão em tempo real no Google */}
-            <a
-              href={URL_TABELA}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Corinthians em ${estado.posicao}º lugar. Abrir a tabela do Brasileirão em tempo real no Google`}
-              title="Ver a tabela ao vivo no Google"
-              className="absolute left-4 md:left-8 bottom-0 bg-ink text-canvas px-3.5 pt-2 pb-1.5 text-[22px] tracking-wider leading-none flex items-center gap-2 hover:underline"
-            >
+            <div className="absolute left-4 md:left-8 bottom-0 bg-ink text-canvas px-3.5 pt-2 pb-1.5 text-[22px] tracking-wider leading-none">
               Corinthians · {estado.posicao}º
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                <path d="M4 1.5h6.5V8M10.5 1.5L1.5 10.5" />
-              </svg>
-            </a>
+            </div>
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b-[3px] border-ink">
@@ -510,10 +503,16 @@ export default function App() {
                       </div>
                       {/* Data, horário e emissora da transmissão */}
                       {(() => {
-                        const t = formatarTransmissao(transmissao[posicaoNosAbertos.get(game.id)]);
+                        const bruto = transmissao[posicaoNosAbertos.get(game.id)];
+                        const t = formatarTransmissao(bruto);
                         return (
                           <div className="text-right text-caption leading-tight min-w-0" data-testid="transmissao">
-                            <div>{t.quando}</div>
+                            <div className="flex items-center justify-end gap-1.5">
+                              {aoVivo(bruto, agora) && (
+                                <span role="img" aria-label="Jogo ao vivo agora" title="Ao vivo" data-testid="ao-vivo" className="ao-vivo-ponto inline-block w-2.5 h-2.5 rounded-full bg-risk-danger" />
+                              )}
+                              {t.quando}
+                            </div>
                             <div className="text-ink-soft">{t.tv}</div>
                             {t.streaming && <div className="text-ink-soft">{t.streaming}</div>}
                           </div>

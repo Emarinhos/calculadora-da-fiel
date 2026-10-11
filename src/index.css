@@ -91,3 +91,13 @@ button:focus-visible {
   right: 3px;
   border-right: 2px dashed var(--bg-canvas);
 }
+
+/* Bolinha "ao vivo": pisca durante o jogo. Sem animação se o aparelho pedir menos movimento (fica fixa). */
+@keyframes piscar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.15; }
+}
+.ao-vivo-ponto { animation: piscar 1.2s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .ao-vivo-ponto { animation: none; }
+}

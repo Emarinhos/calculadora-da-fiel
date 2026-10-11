@@ -40,7 +40,8 @@ e a distância até o corte.
   texto do rodapé fixo é cortado com reticências em vez de empurrar os botões.
 - **Resetar**: botão discreto com ícone de seta circular, ao lado do botão de tema, no topo e, no celular, também no rodapé fixo
   (no rodapé fica desabilitado enquanto não há marcações).
-- **Posição com link**: o selo "Corinthians · 16º" no topo abre a tabela do Brasileirão em tempo real no Google.
+- **Ao vivo**: durante o jogo (do horário marcado até 130 minutos depois, em horário de Brasília) uma bolinha vermelha pisca
+  ao lado da data e hora do ingresso; conferido a cada 30 segundos, sem animação se o aparelho pedir menos movimento.
 - **Rodapé fixo (celular)**: pontos, projeção, risco e variação em pp ficam visíveis enquanto se rola pelos jogos.
 - **Celular enxuto**: abaixo de 1024 px as legendas são reduzidas ao essencial e **nenhuma fonte é declarada**
   (sem "ogol.com.br", sem "Listras = risco", sem a explicação das simulações nem a dos cenários). Só ficam
@@ -307,3 +308,4 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | (este) | 10/10/2026 | Tema claro garantido em aparelhos com modo escuro forçado (`color-scheme: only light`), fonte hospedada no app, `translate="no"` e ajustes para letra grande no celular. |
 | (este) | 11/10/2026 | Transmissão confirmada sozinha pelo GitHub (matéria "onde assistir" do ge, um dia antes e no dia do jogo); botão Resetar com ícone; selo da posição leva à tabela ao vivo do Google; legenda das listras removida; tracejado do ingresso volta a aparecer no tema escuro. |
 | (este) | 11/10/2026 | **Tabela do Brasileirão** com risco de rebaixamento de todos os clubes e etiqueta do jogo restante contra o Corinthians (botão no desktop; faixa que se arrasta no celular); risco calculado fora do navegador e gravado em `liga.risco`. |
+| (este) | 11/10/2026 | Bolinha vermelha piscando no jogo ao vivo; o selo da posição deixou de ser link para o Google (a tabela do app o substitui). |

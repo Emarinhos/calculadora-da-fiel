@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert';
 import { ESTADO_EMBUTIDO, validarEstado } from './estado.js';
-import { somaDias, transmissaoConfirmada, transmissaoAConsultar } from './agenda.js';
+import { somaDias, transmissaoConfirmada, transmissaoAConsultar, aoVivo, DURACAO_AO_VIVO_MIN } from './agenda.js';
 import { transmissaoDosAbertos } from './analise.js';
 import { atualizarAgenda } from './aplicar.js';
 import { clone, estadoSemConsulta } from './_fixtures.js';
@@ -77,4 +77,22 @@ test('validação recusa streaming e tvConsultadaEm inválidos', () => {
   assert.match(validarEstado(a).erros.join(' '), /streaming inválido/);
   const b = clone(ESTADO_EMBUTIDO); b.liga.jogos[0].tvConsultadaEm = 'ontem';
   assert.match(validarEstado(b).erros.join(' '), /tvConsultadaEm inválida/);
+});
+
+test('ao vivo: do apito inicial (Brasília) até 130 min depois', () => {
+  const jogo = { data: '2026-10-11', hora: '17:30' }; // 17h30 em Brasília = 20h30 UTC
+  const inicio = Date.UTC(2026, 9, 11, 20, 30);
+  assert.strictEqual(aoVivo(jogo, inicio - 60000), false); // 1 min antes
+  assert.strictEqual(aoVivo(jogo, inicio), true);
+  assert.strictEqual(aoVivo(jogo, inicio + 90 * 60000), true);
+  assert.strictEqual(aoVivo(jogo, inicio + DURACAO_AO_VIVO_MIN * 60000 - 1), true);
+  assert.strictEqual(aoVivo(jogo, inicio + DURACAO_AO_VIVO_MIN * 60000), false);
+});
+
+test('ao vivo: jogo que passa da meia-noite UTC e dados faltando', () => {
+  const noite = { data: '2026-10-11', hora: '21:30' }; // 00h30 UTC do dia 12
+  assert.strictEqual(aoVivo(noite, Date.UTC(2026, 9, 12, 1, 0)), true);
+  assert.strictEqual(aoVivo({ data: '2026-10-11', hora: null }, Date.UTC(2026, 9, 11, 20, 40)), false);
+  assert.strictEqual(aoVivo(undefined, Date.now()), false);
+  assert.strictEqual(aoVivo({ data: null, hora: '17:30' }, Date.now()), false);
 });

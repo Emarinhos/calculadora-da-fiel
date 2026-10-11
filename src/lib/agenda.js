@@ -38,3 +38,19 @@ export function transmissaoAConsultar(estado, hoje) {
     })
     .sort((a, b) => a.rodada - b.rodada);
 }
+
+/** Duração considerada "ao vivo" a partir do apito inicial: 2 tempos, intervalo e acréscimos. */
+export const DURACAO_AO_VIVO_MIN = 130;
+
+/**
+ * O jogo está acontecendo agora? Usa data e horário de Brasília (UTC-3, sem horário de verão desde 2019).
+ * @param jogo   { data: 'AAAA-MM-DD', hora: 'HH:MM' | null } (item de transmissaoDosAbertos)
+ * @param agoraMs instante atual em milissegundos (Date.now())
+ */
+export function aoVivo(jogo, agoraMs) {
+  if (!jogo?.data || !jogo.hora) return false;
+  const [a, m, d] = jogo.data.split('-').map(Number);
+  const [h, min] = jogo.hora.split(':').map(Number);
+  const inicio = Date.UTC(a, m - 1, d, h + 3, min);
+  return agoraMs >= inicio && agoraMs < inicio + DURACAO_AO_VIVO_MIN * 60000;
+}
