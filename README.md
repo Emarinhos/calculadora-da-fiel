@@ -221,6 +221,13 @@ A notícia chega ao site em até 2 horas depois de sair; quem está com o app ab
 O script ainda aceita um arquivo JSON com posts do X (`node scripts/atualizar-noticias.mjs posts.json`), mas isso só
 vale rodando local: o X exige navegador e não é usado no agendamento.
 
+## Medição de uso
+
+O site conta acessos com o **GoatCounter** (`emarinhos.goatcounter.com`): sem cookies, sem dados pessoais e sem aviso de consentimento.
+O script fica em `index.html`; `src/lib/medir.js` registra cliques como eventos (`evento/...`): marcar jogo, os 3 cenários, resetar,
+tema claro/escuro, abrir a tabela (desktop) e a aba da tabela (celular), e clique em notícia (bloco ou letreiro). Bloqueador de anúncios
+ou falta de rede apenas desligam a medição; o app não depende dela. O painel mostra visitas, aparelho, navegador e origem.
+
 ## Estrutura do projeto
 
 ```
@@ -309,3 +316,4 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | (este) | 11/10/2026 | Transmissão confirmada sozinha pelo GitHub (matéria "onde assistir" do ge, um dia antes e no dia do jogo); botão Resetar com ícone; selo da posição leva à tabela ao vivo do Google; legenda das listras removida; tracejado do ingresso volta a aparecer no tema escuro. |
 | (este) | 11/10/2026 | **Tabela do Brasileirão** com risco de rebaixamento de todos os clubes e etiqueta do jogo restante contra o Corinthians (botão no desktop; faixa que se arrasta no celular); risco calculado fora do navegador e gravado em `liga.risco`. |
 | (este) | 11/10/2026 | Bolinha vermelha piscando no jogo ao vivo; o selo da posição deixou de ser link para o Google (a tabela do app o substitui). |
+| (este) | 12/10/2026 | Medição de uso com GoatCounter (acessos e cliques em funções, sem cookies). |

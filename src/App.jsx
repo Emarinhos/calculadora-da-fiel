@@ -7,6 +7,7 @@ import { FONTE_H2H, ATUALIZADO_EM } from './lib/h2h';
 import { ESTADO_EMBUTIDO, carregarEstado, jogosDoApp } from './lib/estado';
 import { linhasDaTabela, riscoVigente } from './lib/liga';
 import { aoVivo } from './lib/agenda';
+import { medir } from './lib/medir';
 
 
 // Escala da "linha do corte": do pior (todas derrotas) ao melhor (todas vitórias) cenário
@@ -104,6 +105,7 @@ function Letreiro({ noticias }) {
       href={n.url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => medir('noticia-letreiro', `Notícia no letreiro (${n.fonte})`)}
       tabIndex={oculto ? -1 : 0}
       className="flex-shrink-0 px-5 text-caption leading-none whitespace-nowrap"
     >
@@ -143,6 +145,7 @@ export default function App() {
   const trilhaRef = useRef(null);
   const reduzMovimento = () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const irParaAba = (destino) => {
+    medir(`aba-${destino}`, `Aba ${destino} (celular)`);
     const el = trilhaRef.current;
     if (!el) return;
     el.scrollTo({ left: destino === 'tabela' ? 0 : el.children[1].offsetLeft, behavior: reduzMovimento() ? 'auto' : 'smooth' });
@@ -156,6 +159,7 @@ export default function App() {
   const [escuro, setEscuro] = useState(() => document.documentElement.dataset.theme === 'dark');
   const alternarTema = () => {
     const proximo = !escuro;
+    medir(proximo ? 'tema-escuro' : 'tema-claro', proximo ? 'Tema escuro ligado' : 'Tema claro ligado');
     setEscuro(proximo);
     if (proximo) document.documentElement.dataset.theme = 'dark';
     else delete document.documentElement.dataset.theme;
@@ -268,10 +272,12 @@ export default function App() {
   const handleResultChange = (id, result) => {
     const jogo = games.find((g) => g.id === id);
     if (!jogo || jogo.locked) return; // resultado real é fixo
+    medir('marcar-jogo', 'Marcou V/E/D num jogo');
     setMarks((prev) => ({ ...prev, [id]: prev[id] === result ? null : result }));
   };
 
   const applyStressTest = (type) => {
+    medir(type === 'reset' ? 'resetar' : `cenario-${type}`, type === 'reset' ? 'Resetar' : `Cenário ${type}`);
     if (type === 'reset') {
       setMarks({});
       return;
@@ -374,6 +380,7 @@ export default function App() {
                       href={n.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => medir('noticia', `Notícia (${n.fonte})`)}
                       className="flex items-baseline gap-3 py-2 hover:underline"
                     >
                       <span className="w-[78px] flex-shrink-0 text-caption text-ink-soft">{n.fonte}</span>
@@ -417,7 +424,7 @@ export default function App() {
               Confrontos · {abertos.length} {abertos.length === 1 ? 'restante' : 'restantes'}
             </h2>
             <button
-              onClick={() => setTabelaAberta((v) => !v)}
+              onClick={() => { medir(tabelaAberta ? 'tabela-ocultar' : 'tabela-abrir', 'Tabela (desktop)'); setTabelaAberta((v) => !v); }}
               aria-expanded={tabelaAberta}
               className="hidden lg:block -mb-1 px-3 min-h-[36px] border-2 border-ink text-label tracking-[0.12em] hover:bg-ink/10 transition-colors"
             >
