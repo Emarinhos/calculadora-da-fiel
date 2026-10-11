@@ -804,6 +804,18 @@
   },
   "noticias": [
     {
+      "titulo": "Palmeiras x Corinthians: onde assistir ao vivo, horário e escalações",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/sp/futebol/brasileirao-serie-a/noticia/2026/10/11/palmeiras-x-corinthians-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Corinthians visita o Palmeiras para tentar encerrar jejum de vitórias; saiba tudo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541694/corinthians-visita-o-palmeiras-para-tentar-encerrar-jejum-de-vitorias-saiba-tudo",
+      "data": "2026-10-11"
+    },
+    {
       "titulo": "Escalação do Corinthians: técnico interino prepara mudanças no ataque contra o Palmeiras",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/10/escalacao-do-corinthians-tecnico-interino-prepara-mudancas-no-ataque-contra-o-palmeiras.ghtml",
@@ -840,6 +852,12 @@
       "data": "2026-10-10"
     },
     {
+      "titulo": "Ídolo do Corinthians destaca confiança para Dérbi e defende intervenção judicial no Parque São Jorge",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541721/idolo-do-corinthians-destaca-confianca-para-derbi-e-defende-intervencao-judicial-no-parque-sao-jorge",
+      "data": "2026-10-10"
+    },
+    {
       "titulo": "Moscardo chega aos 20 gols e se isola na artilharia do Sub-17 do Corinthians; veja o ranking",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/541732/moscardo-chega-aos-20-gols-e-se-isola-na-artilharia-do-sub-17-do-corinthians-veja-o-ranking",
@@ -855,24 +873,6 @@
       "titulo": "Goleiro do Corinthians minimiza dificuldades financeiras no futsal e prega foco em quadra",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/541742/goleiro-do-corinthians-minimiza-dificuldades-financeiras-no-futsal-e-prega-foco-em-quadra",
-      "data": "2026-10-10"
-    },
-    {
-      "titulo": "Breno Bidon fica perto de atingir marca seleta entre jogadores do Corinthians; saiba qual",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541726/breno-bidon-fica-perto-de-atingir-marca-seleta-entre-jogadores-do-corinthians-saiba-qual",
-      "data": "2026-10-10"
-    },
-    {
-      "titulo": "Goleiro do Corinthians projeta Dérbi pelo Campeonato Brasileiro",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541749/goleiro-do-corinthians-projeta-derbi-pelo-campeonato-brasileiro",
-      "data": "2026-10-10"
-    },
-    {
-      "titulo": "Fiel aponta alternativas para dupla suspensa no clássico contra o Palmeiras",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541720/fiel-aponta-alternativas-para-dupla-suspensa-no-classico-contra-o-palmeiras",
       "data": "2026-10-10"
     }
   ]
