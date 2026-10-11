@@ -4,7 +4,7 @@ import { ESTADO_EMBUTIDO, jogosDoApp, validarEstado } from './estado.js';
 import { cenarioRealista, transmissaoDosAbertos, analisar, fixturesDoClube } from './analise.js';
 import { probabilidadesDoJogo } from './simulacao.js';
 import { atualizarAgenda } from './aplicar.js';
-import { estadoAposR30, clone } from './_fixtures.js';
+import { estadoAposR30, estadoSemConsulta, clone } from './_fixtures.js';
 
 const PTS = { V: 3, E: 1, D: 0 };
 const fixtures = (e) => fixturesDoClube(e).map((i) => e.liga.jogos[i]);
@@ -79,7 +79,7 @@ test('cenário realista sem jogos abertos devolve vazio', () => {
 });
 
 test('transmissão: data, hora e TV alinhadas com os jogos abertos', () => {
-  const t = transmissaoDosAbertos(ESTADO_EMBUTIDO);
+  const t = transmissaoDosAbertos(estadoSemConsulta());
   assert.strictEqual(t.length, 9);
   assert.deepStrictEqual(t[0], { data: '2026-10-11', hora: '17:30', tv: 'Globo', streaming: null, confirmada: false }); // Palmeiras x Corinthians
   assert.deepStrictEqual(t[1], { data: '2026-10-19', hora: '20:00', tv: 'SporTV', streaming: null, confirmada: false }); // Corinthians x Vitória

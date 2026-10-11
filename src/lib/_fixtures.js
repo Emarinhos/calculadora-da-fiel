@@ -18,6 +18,16 @@ export const RODADA_30 = [
   { rodada: 30, mandante: 'Red Bull Bragantino', visitante: 'Cruzeiro', gm: 1, gv: 0 },
 ];
 
+/** Estado como estava antes da consulta de transmissão do Palmeiras x Corinthians (o estado real muda todo dia). */
+export function estadoSemConsulta() {
+  const e = clone(ESTADO_EMBUTIDO);
+  const g = e.liga.jogos.find((j) => j.rodada === 30 && j.mandante === 'Palmeiras');
+  Object.assign(g, { tv: 'Globo' });
+  delete g.streaming;
+  delete g.tvConsultadaEm;
+  return e;
+}
+
 export const estadoAposR30 = () => aplicarResultados(ESTADO_EMBUTIDO, RODADA_30, '2026-10-12');
 
 /** Jogos do app (formato jogosDoApp) com `result` marcado em todos os abertos. */

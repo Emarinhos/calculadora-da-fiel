@@ -1,6 +1,6 @@
 {
   "versao": 2,
-  "atualizadoEm": "2026-10-09",
+  "atualizadoEm": "2026-10-11",
   "fonte": "ogol.com.br",
   "base": {
     "pontos": 32,
@@ -334,7 +334,8 @@
         "visitante": "Corinthians",
         "data": "2026-10-11",
         "hora": "17:30",
-        "tv": "Globo"
+        "tv": "Globo e Premiere",
+        "tvConsultadaEm": "2026-10-11"
       },
       {
         "rodada": 30,

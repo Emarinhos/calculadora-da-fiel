@@ -4,7 +4,7 @@ import { ESTADO_EMBUTIDO, validarEstado } from './estado.js';
 import { somaDias, transmissaoConfirmada, transmissaoAConsultar } from './agenda.js';
 import { transmissaoDosAbertos } from './analise.js';
 import { atualizarAgenda } from './aplicar.js';
-import { clone } from './_fixtures.js';
+import { clone, estadoSemConsulta } from './_fixtures.js';
 
 const consultar = (estado, hoje) => transmissaoAConsultar(estado, hoje).map((x) => `R${x.rodada}`);
 
@@ -15,17 +15,19 @@ test('somaDias: virada de mês, de ano e ano bissexto', () => {
   assert.strictEqual(somaDias('2026-10-11', -1), '2026-10-10');
 });
 
+const SEM = estadoSemConsulta();
+
 test('gatilho: a transmissão é consultada exatamente 1 dia antes do jogo', () => {
   // Palmeiras x Corinthians é em 2026-10-11
-  assert.deepStrictEqual(consultar(ESTADO_EMBUTIDO, '2026-10-09'), []); // 2 dias antes: ainda não
-  assert.deepStrictEqual(consultar(ESTADO_EMBUTIDO, '2026-10-10'), ['R30']); // 1 dia antes: SIM
-  assert.strictEqual(transmissaoAConsultar(ESTADO_EMBUTIDO, '2026-10-10')[0].motivo, 'um dia antes do jogo');
+  assert.deepStrictEqual(consultar(SEM, '2026-10-09'), []); // 2 dias antes: ainda não
+  assert.deepStrictEqual(consultar(SEM, '2026-10-10'), ['R30']); // 1 dia antes: SIM
+  assert.strictEqual(transmissaoAConsultar(SEM, '2026-10-10')[0].motivo, 'um dia antes do jogo');
 });
 
 test('gatilho: no dia do jogo só reforça se a consulta de ontem não confirmou', () => {
-  assert.deepStrictEqual(consultar(ESTADO_EMBUTIDO, '2026-10-11'), ['R30']);
-  assert.match(transmissaoAConsultar(ESTADO_EMBUTIDO, '2026-10-11')[0].motivo, /reforço/);
-  const feito = atualizarAgenda(ESTADO_EMBUTIDO, [{ rodada: 30, mandante: 'Palmeiras', visitante: 'Corinthians', tvConsultadaEm: '2026-10-10' }]);
+  assert.deepStrictEqual(consultar(SEM, '2026-10-11'), ['R30']);
+  assert.match(transmissaoAConsultar(SEM, '2026-10-11')[0].motivo, /reforço/);
+  const feito = atualizarAgenda(SEM, [{ rodada: 30, mandante: 'Palmeiras', visitante: 'Corinthians', tvConsultadaEm: '2026-10-10' }]);
   assert.deepStrictEqual(consultar(feito, '2026-10-11'), []);
   assert.deepStrictEqual(consultar(feito, '2026-10-10'), []); // não consulta duas vezes
 });
