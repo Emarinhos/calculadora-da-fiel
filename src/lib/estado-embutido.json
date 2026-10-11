@@ -831,6 +831,12 @@
   },
   "noticias": [
     {
+      "titulo": "Seedorf pede apoio da torcida do Corinthians e promete \"fazer o melhor\"",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/seedorf-pede-apoio-da-torcida-do-corinthians-e-promete-fazer-o-melhor.ghtml",
+      "data": "2026-10-11"
+    },
+    {
       "titulo": "Corinthians anuncia patrocínio máster até o fim de 2026",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/corinthians-anuncia-patrocinio-master-ate-o-fim-de-2026.ghtml",
@@ -867,6 +873,12 @@
       "data": "2026-10-11"
     },
     {
+      "titulo": "Jogo da vida? Corinthians encara o Palmeiras sob risco de entrar na zona de rebaixamento",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541768/jogo-da-vida-corinthians-encara-o-palmeiras-sob-risco-de-entrar-na-zona-de-rebaixamento",
+      "data": "2026-10-11"
+    },
+    {
       "titulo": "Imprensa internacional destaca surpresa com contratação de Seedorf pelo Corinthians; confira",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/541794/imprensa-internacional-destaca-surpresa-com-contratacao-de-seedorf-pelo-corinthians-confira",
@@ -888,18 +900,6 @@
       "titulo": "Osmar Stabile explica escolha do Corinthians por Clarence Seedorf",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/541787/osmar-stabile-explica-escolha-do-corinthians-por-clarence-seedorf",
-      "data": "2026-10-11"
-    },
-    {
-      "titulo": "Corinthians tem desfalques por suspensão e lista de oito pendurados para enfrentar o Palmeiras",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541766/corinthians-tem-desfalques-por-suspensao-e-lista-de-oito-pendurados-para-enfrentar-o-palmeiras",
-      "data": "2026-10-11"
-    },
-    {
-      "titulo": "Premiações e chegada ao Brasil: veja bastidores da negociação do Corinthians por Seedorf",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541779/premiacoes-e-chegada-ao-brasil-veja-bastidores-da-negociacao-do-corinthians-por-seedorf",
       "data": "2026-10-11"
     }
   ]
