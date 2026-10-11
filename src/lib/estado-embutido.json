@@ -804,6 +804,12 @@
   },
   "noticias": [
     {
+      "titulo": "Escalação do Corinthians: técnico interino prepara mudanças no ataque contra o Palmeiras",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/10/escalacao-do-corinthians-tecnico-interino-prepara-mudancas-no-ataque-contra-o-palmeiras.ghtml",
+      "data": "2026-10-10"
+    },
+    {
       "titulo": "Corinthians fecha com startup de IA financeira até o fim de 2026 e encaminha patrocínio máster",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/10/corinthians-fecha-com-startup-de-ia-financeira-ate-o-fim-de-2026-e-encaminha-patrocinio-master.ghtml",
@@ -834,45 +840,39 @@
       "data": "2026-10-10"
     },
     {
-      "titulo": "Técnico do Corinthians avalia empate na ida das quartas da LNF e projeta decisão fora de casa",
+      "titulo": "Moscardo chega aos 20 gols e se isola na artilharia do Sub-17 do Corinthians; veja o ranking",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541744/tecnico-do-corinthians-avalia-empate-na-ida-das-quartas-da-lnf-e-projeta-decisao-fora-de-casa",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541732/moscardo-chega-aos-20-gols-e-se-isola-na-artilharia-do-sub-17-do-corinthians-veja-o-ranking",
       "data": "2026-10-10"
     },
     {
-      "titulo": "Meio-campista do Corinthians é titular em vitória do Brasil; dupla de ataque entra no segundo tempo",
+      "titulo": "Corinthians é superado pelo Nacional e se complica na Liga Sul-Americana de Basquete",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541719/meio-campista-do-corinthians-e-titular-em-vitoria-do-brasil-dupla-de-ataque-entra-no-segundo-tempo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541745/corinthians-e-superado-pelo-nacional-e-se-complica-na-liga-sul-americana-de-basquete",
       "data": "2026-10-10"
     },
     {
-      "titulo": "Corinthians volta a ter interino contra o Palmeiras após mais de três anos",
+      "titulo": "Goleiro do Corinthians minimiza dificuldades financeiras no futsal e prega foco em quadra",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541669/corinthians-volta-a-ter-interino-contra-o-palmeiras-apos-mais-de-tres-anos",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541742/goleiro-do-corinthians-minimiza-dificuldades-financeiras-no-futsal-e-prega-foco-em-quadra",
       "data": "2026-10-10"
     },
     {
-      "titulo": "Atacante do Corinthians celebra gol e desempenho da equipe após classificação no Paulista Sub-17",
+      "titulo": "Breno Bidon fica perto de atingir marca seleta entre jogadores do Corinthians; saiba qual",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541727/atacante-do-corinthians-celebra-gol-e-desempenho-da-equipe-apos-classificacao-no-paulista-sub-17",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541726/breno-bidon-fica-perto-de-atingir-marca-seleta-entre-jogadores-do-corinthians-saiba-qual",
       "data": "2026-10-10"
     },
     {
-      "titulo": "Corinthians recebe negativa de Javier Mascherano para assumir comando técnico",
+      "titulo": "Goleiro do Corinthians projeta Dérbi pelo Campeonato Brasileiro",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541735/corinthians-recebe-negativa-de-javier-mascherano-para-assumir-comando-tecnico",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541749/goleiro-do-corinthians-projeta-derbi-pelo-campeonato-brasileiro",
       "data": "2026-10-10"
     },
     {
-      "titulo": "Zagueira do Corinthians é relacionada para a primeira Libertadores da carreira",
+      "titulo": "Fiel aponta alternativas para dupla suspensa no clássico contra o Palmeiras",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541666/zagueira-do-corinthians-e-relacionada-para-a-primeira-libertadores-da-carreira",
-      "data": "2026-10-10"
-    },
-    {
-      "titulo": "Conheça William Batista, técnico interino do Corinthians para enfrentar o Palmeiras",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541668/conheca-william-batista-tecnico-interino-do-corinthians-para-enfrentar-o-palmeiras",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541720/fiel-aponta-alternativas-para-dupla-suspensa-no-classico-contra-o-palmeiras",
       "data": "2026-10-10"
     }
   ]
