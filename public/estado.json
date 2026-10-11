@@ -801,7 +801,33 @@
         "hora": null,
         "tv": null
       }
-    ]
+    ],
+    "risco": {
+      "jogosDisputados": 578,
+      "sims": 20000,
+      "clubes": {
+        "Flamengo": 0,
+        "Palmeiras": 0,
+        "Fluminense": 0,
+        "Athletico Paranaense": 0,
+        "Cruzeiro": 0,
+        "Bahia": 0,
+        "Atlético Mineiro": 0,
+        "Santos": 0.1,
+        "Coritiba": 4.2,
+        "Red Bull Bragantino": 1.4,
+        "São Paulo": 3.1,
+        "Vitória": 9.7,
+        "Botafogo": 7.7,
+        "Vasco": 9.3,
+        "Mirassol": 32.7,
+        "Corinthians": 29.2,
+        "Internacional": 43,
+        "Grêmio": 61.8,
+        "Remo": 98,
+        "Chapecoense": 100
+      }
+    }
   },
   "noticias": [
     {

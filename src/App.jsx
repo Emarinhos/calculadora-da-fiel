@@ -1,9 +1,11 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useLayoutEffect, useRef } from 'react';
+import TabelaLiga from './TabelaLiga';
 import escudo from './assets/escudo.png';
 import { analisar, riskLevel, formatarRisco, cenarioRealista, transmissaoDosAbertos, LIMITE_CONFORTAVEL } from './lib/analise';
 import { resultadoDoCenario, formaRecente, N_CONFRONTOS, JANELA_ANOS } from './lib/cenarios';
 import { FONTE_H2H, ATUALIZADO_EM } from './lib/h2h';
 import { ESTADO_EMBUTIDO, carregarEstado, jogosDoApp } from './lib/estado';
+import { linhasDaTabela, riscoVigente } from './lib/liga';
 
 
 // Escala da "linha do corte": do pior (todas derrotas) ao melhor (todas vitórias) cenário
@@ -131,6 +133,21 @@ export default function App() {
   const [avisoEstado, setAvisoEstado] = useState(null);
   // Marcações do usuário só valem para jogos ainda abertos
   const [marks, setMarks] = useState({});
+  // Tabela da liga: no desktop abre por botão; no celular é a faixa da esquerda (arrastar os jogos para a direita)
+  const [tabelaAberta, setTabelaAberta] = useState(false);
+  const [aba, setAba] = useState('jogos');
+  const trilhaRef = useRef(null);
+  const reduzMovimento = () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const irParaAba = (destino) => {
+    const el = trilhaRef.current;
+    if (!el) return;
+    el.scrollTo({ left: destino === 'tabela' ? 0 : el.children[1].offsetLeft, behavior: reduzMovimento() ? 'auto' : 'smooth' });
+  };
+  // No celular a trilha abre nos jogos (faixa da direita); a tabela fica à esquerda
+  useLayoutEffect(() => {
+    const el = trilhaRef.current;
+    if (el && window.matchMedia('(max-width: 1023px)').matches) el.scrollLeft = el.children[1].offsetLeft;
+  }, []);
   // Tema: claro por padrão; a escolha da pessoa fica salva neste aparelho
   const [escuro, setEscuro] = useState(() => document.documentElement.dataset.theme === 'dark');
   const alternarTema = () => {
@@ -161,6 +178,7 @@ export default function App() {
   }, []);
 
   // Jogos encerrados vêm travados do estado; os abertos recebem a marcação do usuário
+  const linhasLiga = useMemo(() => linhasDaTabela(estado), [estado]);
   const games = useMemo(
     () => jogosDoApp(estado).map((g) => (g.locked ? g : { ...g, result: marks[g.id] ?? null })),
     [estado, marks]
@@ -375,9 +393,44 @@ export default function App() {
             </div>
           )}
 
-          <h2 className="text-label tracking-[0.2em] pb-2 mb-3 border-b-[3px] border-ink">
-            Confrontos · {abertos.length} {abertos.length === 1 ? 'restante' : 'restantes'}
-          </h2>
+          {/* Celular: abas Jogos | Tabela (a trilha também desliza com o dedo) */}
+          <div className="lg:hidden flex mb-3 border-2 border-ink" role="tablist" aria-label="Jogos ou tabela">
+            {[['tabela', 'Tabela'], ['jogos', 'Jogos']].map(([id, nome]) => (
+              <button
+                key={id}
+                role="tab"
+                aria-selected={aba === id}
+                onClick={() => irParaAba(id)}
+                className={`flex-1 min-h-[44px] text-[17px] tracking-[0.14em] transition-colors ${aba === id ? 'bg-ink text-canvas' : 'bg-transparent text-ink'}`}
+              >
+                {nome}
+              </button>
+            ))}
+          </div>
+
+          {/* Trilha: no celular são duas faixas lado a lado (tabela à esquerda, jogos à direita); no desktop, uma sobre a outra */}
+          <div
+            ref={trilhaRef}
+            onScroll={(e) => setAba(e.currentTarget.scrollLeft < e.currentTarget.children[1].offsetLeft / 2 ? 'tabela' : 'jogos')}
+            className="relative flex gap-4 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:block lg:gap-0 lg:overflow-visible"
+          >
+            <div className={`flex-[0_0_100%] min-w-0 snap-start lg:mb-8 ${tabelaAberta ? '' : 'lg:hidden'}`}>
+              <TabelaLiga linhas={linhasLiga} rodada={estado.posicaoRodada} vigente={riscoVigente(estado)} />
+            </div>
+
+            <div className="flex-[0_0_100%] min-w-0 snap-start">
+          <div className="flex items-end justify-between gap-3 pb-2 mb-3 border-b-[3px] border-ink">
+            <h2 className="text-label tracking-[0.2em]">
+              Confrontos · {abertos.length} {abertos.length === 1 ? 'restante' : 'restantes'}
+            </h2>
+            <button
+              onClick={() => setTabelaAberta((v) => !v)}
+              aria-expanded={tabelaAberta}
+              className="hidden lg:block -mb-1 px-3 min-h-[36px] border-2 border-ink text-label tracking-[0.12em] hover:bg-ink/10 transition-colors"
+            >
+              {tabelaAberta ? 'Ocultar tabela' : 'Ver tabela'}
+            </button>
+          </div>
 
           <div className="flex flex-col gap-2.5">
             {games.map((game) => (
@@ -471,6 +524,8 @@ export default function App() {
                 </div>
               </div>
             ))}
+          </div>
+            </div>
           </div>
         </section>
 

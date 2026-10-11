@@ -52,6 +52,11 @@ e a distância até o corte.
   confrontos, do mais novo ao mais antigo) e **data, horário, TV e streaming** da transmissão.
 - **Jogo encerrado**: aparece travado ("Encerrado 1×0", botões desabilitados). O resultado real não pode
   ser alterado nem entra nas marcações.
+- **Tabela do Brasileirão com risco de todos os clubes**: os 20 times, com posição (critérios da CBF), pontos, jogos, saldo,
+  **risco de rebaixamento de cada clube** (barra + %) e uma etiqueta "Jogo R32 · fora" com o jogo que o Corinthians ainda faz
+  contra aquele clube. A linha vermelha marca o corte do 16º e os 4 últimos têm uma borda vermelha. No desktop abre pelo botão
+  "Ver tabela" ao lado de "Confrontos", acima da lista; no celular é a faixa da esquerda: arraste os jogos para a direita (ou use
+  as abas Tabela | Jogos). O risco mostrado é o da situação atual, sem as marcações do usuário.
 - **Últimas notícias**: no desktop, um bloco "Últimas notícias" (5 mais recentes) acima da lista de confrontos;
   no celular, um letreiro que corre no rodapé, acima da barra fixa, como painel de bolsa (pausa só enquanto o dedo segura; sem
   animação se o aparelho pedir menos movimento). Cada item abre a matéria ou o post original em outra aba.
@@ -127,6 +132,7 @@ Tudo vem de `public/estado.json` (versão 2). Jogo com resultado preenchido fica
 | `liga.tabela` | classificação dos 20 times (pts, j, v, e, d, gp, gc) |
 | `liga.jogos` | todos os jogos que ainda faltam na liga, com `data`, `hora`, `tv`, `streaming` e `tvConsultadaEm` |
 | `historico` | posição e pontos a cada rodada registrada |
+| `liga.risco` | (opcional) risco de rebaixamento de cada clube e a soma de jogos da tabela a que pertence |
 | `noticias` | (opcional) até 12 itens `{ titulo, fonte, url, data }`, só recentes (até 7 dias); guarda título e link, nunca o texto |
 
 `src/lib/estado.js` valida tudo (contas da tabela, 38 jogos por time, coerência com os jogos do Corinthians,
@@ -181,6 +187,18 @@ O mesmo workflow `noticias.yml` (a cada 2 horas) roda `scripts/confirmar-transmi
 
 A tarefa diária do Claude (8h) continua existindo para resultados e posição, e pode confirmar transmissão como reforço.
 
+### Risco de todos os clubes (recalculado a cada atualização da tabela)
+
+O risco de cada clube sai da **mesma simulação** do risco do Corinthians (`src/lib/simulacao.js`, 20 mil sorteios do campeonato
+inteiro), rodada uma vez por clube **fora do navegador** e gravada em `liga.risco` do `estado.json`
+(`{ jogosDisputados, sims, clubes: { clube: % } }`). O app só lê e desenha: não simula nada extra, então a tela não fica mais lenta.
+
+- `scripts/calcular-riscos.mjs` recalcula quando a tabela mudou (compara a soma de jogos disputados com a gravada) e não grava
+  nada se já está em dia. A simulação é determinística, então tabela igual dá números iguais e nenhum commit à toa.
+- Roda no `noticias.yml` (a cada 2 horas) e dentro de `scripts/aplicar-resultados.mjs`, logo que resultados novos mudam a tabela.
+- Se a tabela mudar e o risco não for recalculado, o app não mostra número velho: a coluna fica "—" e o celular avisa "Risco em atualização".
+- A posição, os pontos e os resultados continuam vindo da tarefa diária (ogol); o risco é consequência deles.
+
 ### Notícias (a cada 2 horas, sem depender do Claude)
 
 O workflow `.github/workflows/noticias.yml` roda **a cada 2 horas** (cron `17 */2 * * *`, em UTC) nos servidores
@@ -212,6 +230,8 @@ src/lib/simulacao.js          Monte Carlo (Poisson), probabilidades por jogo
 src/lib/analise.js            risco, faixas, corte, cenário realista, soma das marcações
 src/lib/cenarios.js, h2h.js   cenários otimista/pessimista e histórico de confrontos
 src/lib/estado.js             validação e carga do estado
+src/lib/liga.js                classificação, risco de cada clube e duelo restante com o Corinthians
+src/TabelaLiga.jsx            tabela da liga na tela
 src/lib/transmissao-ge.js      achar a matéria do jogo e extrair hora/TV/streaming
 src/lib/noticias.js           notícias: mesclar, validar, título curto, notícia por adversário
 src/lib/aplicar.js            aplica resultados, posição e agenda (funções puras)
@@ -219,12 +239,13 @@ src/lib/agenda.js             gatilho da transmissão (um dia antes)
 src/lib/estado-embutido.json  cópia de public/estado.json (gerada)
 scripts/aplicar-resultados.mjs  grava resultados/posição/agenda com todas as conferências
 scripts/transmissao-do-dia.mjs  quais jogos têm a transmissão para consultar hoje
+scripts/calcular-riscos.mjs      grava o risco de todos os clubes em liga.risco
 scripts/confirmar-transmissao.mjs  confirma hora/TV/streaming pela matéria "onde assistir" do ge
 scripts/atualizar-noticias.mjs  grava `noticias` (RSS do ge e do Meu Timão; posts do X opcionais em JSON)
 scripts/validar-estado.mjs      valida public/estado.json
 scripts/sync-embutido.mjs       copia o estado para a cópia embutida
 .github/workflows/pages.yml     validação, testes, build e publicação
-.github/workflows/noticias.yml  a cada 2 h: notícias + transmissão, commit só se mudou e chama o deploy
+.github/workflows/noticias.yml  a cada 2 h: notícias + transmissão + riscos, commit só se mudou e chama o deploy
 ```
 
 ### Testes (`npm test`, mais de 80 testes em `src/lib/`)
@@ -238,6 +259,7 @@ scripts/sync-embutido.mjs       copia o estado para a cópia embutida
 | `cenarios.test.js` | últimos 5 confrontos, janela de 5 anos, cenários otimista/pessimista |
 | `estado.test.js` | validação do estado e da liga, carga com falha de arquivo |
 | `aplicar.test.js` | aplicação de resultados, posição, agenda e conferência com a fonte |
+| `liga.test.js` | classificação e desempates, riscos (determinísticos, soma ~400%), risco vigente x velho, duelos, validação |
 | `transmissao-ge.test.js` | matéria certa do jogo, horário, TV x streaming, apelidos do ge, gatilho |
 | `noticias.test.js` | mesclar/recentes/repetidas, validação, RSS do ge e do Meu Timão, posts do X, notícia por adversário |
 | `agenda.test.js` | gatilho de um dia antes, reforço, remarcação |
@@ -284,3 +306,4 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | `6a30f9b` | 10/10/2026 | Tema claro por padrão com botão para fundo escuro; letreiro não trava mais depois de tocar num link. |
 | (este) | 10/10/2026 | Tema claro garantido em aparelhos com modo escuro forçado (`color-scheme: only light`), fonte hospedada no app, `translate="no"` e ajustes para letra grande no celular. |
 | (este) | 11/10/2026 | Transmissão confirmada sozinha pelo GitHub (matéria "onde assistir" do ge, um dia antes e no dia do jogo); botão Resetar com ícone; selo da posição leva à tabela ao vivo do Google; legenda das listras removida; tracejado do ingresso volta a aparecer no tema escuro. |
+| (este) | 11/10/2026 | **Tabela do Brasileirão** com risco de rebaixamento de todos os clubes e etiqueta do jogo restante contra o Corinthians (botão no desktop; faixa que se arrasta no celular); risco calculado fora do navegador e gravado em `liga.risco`. |

@@ -28,6 +28,7 @@ jobs:
           node-version: 22
       - run: node scripts/atualizar-noticias.mjs
       - run: node scripts/confirmar-transmissao.mjs
+      - run: node scripts/calcular-riscos.mjs
       - run: node scripts/validar-estado.mjs
       - name: Commit e deploy, só se mudou
         env:

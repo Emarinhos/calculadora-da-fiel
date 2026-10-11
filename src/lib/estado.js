@@ -83,6 +83,20 @@ function validarLiga(e, erro) {
     }
   });
 
+  // Risco de rebaixamento de cada clube (opcional; calculado por scripts/calcular-riscos.mjs)
+  const risco = liga.risco;
+  if (risco !== undefined) {
+    if (!risco || !ehInt(risco.jogosDisputados) || !ehInt(risco.sims) || typeof risco.clubes !== 'object' || !risco.clubes) {
+      erro('liga.risco inválido (precisa de jogosDisputados, sims e clubes)');
+    } else {
+      for (const nome of nomes) {
+        const v = risco.clubes[nome];
+        if (typeof v !== 'number' || !(v >= 0 && v <= 100)) erro(`liga.risco.clubes: ${nome} ausente ou fora de 0 a 100`);
+      }
+      if (Object.keys(risco.clubes).some((k) => !nomes.has(k))) erro('liga.risco.clubes tem clube que não está na tabela');
+    }
+  }
+
   // Coerência com os campos próprios do Corinthians
   const eu = tabela.find((t) => t.clube === CLUBE);
   if (eu) {

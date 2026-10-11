@@ -14,6 +14,7 @@
 // Nada é gravado se alguma conta não fechar, se a tabela calculada divergir da fonte
 // ou se o estado resultante for inválido. Código de saída 0 = gravado; 1 = recusado.
 import fs from 'node:fs';
+import { comRiscos } from '../src/lib/liga.js';
 import { aplicarResultados, atualizarAgenda, registrarPosicao, compararComFonte, posicaoCalculada, validarEstado } from '../src/lib/aplicar.js';
 
 const [entradaArq] = process.argv.slice(2).filter((a) => !a.startsWith('--'));
@@ -56,6 +57,9 @@ if (entrada.tabelaFonte) {
   const div = compararComFonte(novo, entrada.tabelaFonte);
   if (div.length) recusar('a tabela calculada diverge da fonte:\n- ' + div.join('\n- '));
 }
+
+// A tabela mudou: recalcula o risco de todos os clubes com a mesma simulação (para a tela da tabela)
+if ((entrada.resultados || []).length) novo = comRiscos(novo);
 
 const { ok, erros } = validarEstado(novo);
 if (!ok) recusar('estado resultante inválido:\n- ' + erros.join('\n- '));
