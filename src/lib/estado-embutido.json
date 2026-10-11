@@ -805,6 +805,12 @@
   },
   "noticias": [
     {
+      "titulo": "Corinthians anuncia patrocínio máster até o fim de 2026",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/corinthians-anuncia-patrocinio-master-ate-o-fim-de-2026.ghtml",
+      "data": "2026-10-11"
+    },
+    {
       "titulo": "Contrato de Seedorf com o Corinthians prevê rescisão em caso de rebaixamento à Série B",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/contrato-de-seedorf-com-o-corinthians-preve-rescisao-em-caso-de-rebaixamento-a-serie-b.ghtml",
@@ -835,6 +841,18 @@
       "data": "2026-10-11"
     },
     {
+      "titulo": "Imprensa internacional destaca surpresa com contratação de Seedorf pelo Corinthians; confira",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541794/imprensa-internacional-destaca-surpresa-com-contratacao-de-seedorf-pelo-corinthians-confira",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Corinthians oficializa Shopee como patrocinadora máster até o fim do Brasileirão",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541793/corinthians-oficializa-shopee-como-patrocinadora-master-ate-o-fim-do-brasileirao",
+      "data": "2026-10-11"
+    },
+    {
       "titulo": "Vitorioso como jogador e pouca experiência no banco: conheça Seedorf, novo técnico do Corinthians",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/541781/vitorioso-como-jogador-e-pouca-experiencia-no-banco-conheca-seedorf-novo-tecnico-do-corinthians",
@@ -856,24 +874,6 @@
       "titulo": "Premiações e chegada ao Brasil: veja bastidores da negociação do Corinthians por Seedorf",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/541779/premiacoes-e-chegada-ao-brasil-veja-bastidores-da-negociacao-do-corinthians-por-seedorf",
-      "data": "2026-10-11"
-    },
-    {
-      "titulo": "Corinthians anuncia Clarence Seedorf como novo técnico até o fim de 2027",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541775/corinthians-anuncia-clarence-seedorf-como-novo-tecnico-ate-o-fim-de-2027",
-      "data": "2026-10-11"
-    },
-    {
-      "titulo": "Goleiro do Corinthians avalia empate do Corinthians e acredita em classificação contra o Magnus",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541740/goleiro-do-corinthians-avalia-empate-do-corinthians-e-acredita-em-classificacao-contra-o-magnus",
-      "data": "2026-10-11"
-    },
-    {
-      "titulo": "Moscardo iguala recorde no Sub-17 do Corinthians após gol sobre a Ponte Preta; saiba qual",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541734/moscardo-iguala-recorde-no-sub-17-do-corinthians-apos-gol-sobre-a-ponte-preta-saiba-qual",
       "data": "2026-10-11"
     }
   ]
