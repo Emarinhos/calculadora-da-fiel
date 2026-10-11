@@ -38,7 +38,9 @@ e a distância até o corte.
   automático não mexe em "Corinthians"). Com letra grande no Android (equivale a ~1,5× em tela de 250 px) não há rolagem
   lateral: o contador de pontos e o título usam `clamp()`, o cabeçalho quebra os botões para a linha de baixo e o
   texto do rodapé fixo é cortado com reticências em vez de empurrar os botões.
-- **Resetar**: no topo e, no celular, também no rodapé fixo (desabilitado enquanto não há marcações).
+- **Resetar**: botão discreto com ícone de seta circular, ao lado do botão de tema, no topo e, no celular, também no rodapé fixo
+  (no rodapé fica desabilitado enquanto não há marcações).
+- **Posição com link**: o selo "Corinthians · 16º" no topo abre a tabela do Brasileirão em tempo real no Google.
 - **Rodapé fixo (celular)**: pontos, projeção, risco e variação em pp ficam visíveis enquanto se rola pelos jogos.
 - **Celular enxuto**: abaixo de 1024 px as legendas são reduzidas ao essencial e **nenhuma fonte é declarada**
   (sem "ogol.com.br", sem "Listras = risco", sem a explicação das simulações nem a dos cenários). Só ficam
@@ -56,7 +58,8 @@ e a distância até o corte.
   Fontes: feeds RSS do ge (Corinthians) e do Meu Timão, atualizados a cada 2 horas pelo GitHub Actions (`.github/workflows/noticias.yml`), sem depender do Claude aberto. O bloco some se não houver notícias.
 - **Dados reais atualizados sozinhos** (ver [Dados reais](#dados-reais-e-atualização-automática)).
 - **Identidade visual** própria: Fjalla One em versalete, preto e creme, escudo do clube ao lado do título,
-  e as **listras da camisa no topo cuja espessura acompanha o risco** (mais preto = mais perigo).
+  e as **listras da camisa no topo cuja espessura acompanha o risco** (mais preto = mais perigo; sem legenda).
+  O tracejado do canhoto do ingresso é desenhado dentro do canhoto, na cor do fundo, então aparece nos dois temas.
 
 ## Rodar e testar
 
@@ -161,6 +164,23 @@ Calendário previsto da posição (jogos pelo calendário do ogol, sujeito a rem
 R31 em 20/10, R32 em 27/10, R33 em 31/10, R34 em 07/11, R35 em 19/11, R36 em 21/11, R37 em 28/11 e
 R38 em 03/12.
 
+### Transmissão confirmada sozinha (sem depender do Claude)
+
+O mesmo workflow `noticias.yml` (a cada 2 horas) roda `scripts/confirmar-transmissao.mjs`, que aplica a regra de
+`src/lib/agenda.js`: o jogo do Corinthians é consultado **um dia antes** e, se não confirmou, **no dia do jogo**.
+
+1. Procura no RSS do ge a matéria "onde assistir" daquele jogo (título com os dois clubes e "onde assistir", URL com data
+   até 2 dias do jogo; apelidos como Atlético-MG e Athletico-PR são tratados em `src/lib/transmissao-ge.js`).
+2. Lê na matéria o horário ("às 17h30") e a frase "... transmitem ao vivo", separando TV (Globo, SporTV, Premiere, Band,
+   SBT, Record, ESPN) de streaming (ge tv, Globoplay, Prime Video, CazéTV, Disney+). Sem essa frase não grava TV nenhuma
+   (nunca deduz).
+3. Grava `hora`, `tv`, `streaming` e `tvConsultadaEm` pelo `atualizarAgenda`; o estado inteiro é validado antes. O app deixa de
+   dizer "a confirmar" quando `tvConsultadaEm` é de um dia antes do jogo em diante.
+4. Matéria ainda não publicada: não grava e tenta de novo 2 horas depois. O ge costuma publicar a matéria de um jogo de
+   domingo na madrugada do próprio dia (por volta das 4h), então a confirmação tende a chegar nas primeiras horas do dia do jogo.
+
+A tarefa diária do Claude (8h) continua existindo para resultados e posição, e pode confirmar transmissão como reforço.
+
 ### Notícias (a cada 2 horas, sem depender do Claude)
 
 O workflow `.github/workflows/noticias.yml` roda **a cada 2 horas** (cron `17 */2 * * *`, em UTC) nos servidores
@@ -192,17 +212,19 @@ src/lib/simulacao.js          Monte Carlo (Poisson), probabilidades por jogo
 src/lib/analise.js            risco, faixas, corte, cenário realista, soma das marcações
 src/lib/cenarios.js, h2h.js   cenários otimista/pessimista e histórico de confrontos
 src/lib/estado.js             validação e carga do estado
+src/lib/transmissao-ge.js      achar a matéria do jogo e extrair hora/TV/streaming
 src/lib/noticias.js           notícias: mesclar, validar, título curto, notícia por adversário
 src/lib/aplicar.js            aplica resultados, posição e agenda (funções puras)
 src/lib/agenda.js             gatilho da transmissão (um dia antes)
 src/lib/estado-embutido.json  cópia de public/estado.json (gerada)
 scripts/aplicar-resultados.mjs  grava resultados/posição/agenda com todas as conferências
 scripts/transmissao-do-dia.mjs  quais jogos têm a transmissão para consultar hoje
+scripts/confirmar-transmissao.mjs  confirma hora/TV/streaming pela matéria "onde assistir" do ge
 scripts/atualizar-noticias.mjs  grava `noticias` (RSS do ge e do Meu Timão; posts do X opcionais em JSON)
 scripts/validar-estado.mjs      valida public/estado.json
 scripts/sync-embutido.mjs       copia o estado para a cópia embutida
 .github/workflows/pages.yml     validação, testes, build e publicação
-.github/workflows/noticias.yml  a cada 2 h: atualiza as notícias, faz commit e chama o deploy
+.github/workflows/noticias.yml  a cada 2 h: notícias + transmissão, commit só se mudou e chama o deploy
 ```
 
 ### Testes (`npm test`, mais de 80 testes em `src/lib/`)
@@ -216,6 +238,7 @@ scripts/sync-embutido.mjs       copia o estado para a cópia embutida
 | `cenarios.test.js` | últimos 5 confrontos, janela de 5 anos, cenários otimista/pessimista |
 | `estado.test.js` | validação do estado e da liga, carga com falha de arquivo |
 | `aplicar.test.js` | aplicação de resultados, posição, agenda e conferência com a fonte |
+| `transmissao-ge.test.js` | matéria certa do jogo, horário, TV x streaming, apelidos do ge, gatilho |
 | `noticias.test.js` | mesclar/recentes/repetidas, validação, RSS do ge e do Meu Timão, posts do X, notícia por adversário |
 | `agenda.test.js` | gatilho de um dia antes, reforço, remarcação |
 | `_fixtures.js` | apoio: uma rodada completa de resultados para os testes |
@@ -231,7 +254,8 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 
 ## Limitações conhecidas
 
-- A atualização de resultados, posição e transmissão depende do app do Claude estar aberto às 8h. As notícias não: rodam no GitHub.
+- A atualização de resultados e posição depende do app do Claude estar aberto às 8h (não rodou entre 09/10 e 11/10). Notícias e
+  transmissão não: rodam no GitHub.
 - As notícias dependem dos feeds do ge e do Meu Timão; o GitHub pode atrasar execuções agendadas em horário de pico
   e desativa o agendamento após 60 dias sem atividade no repositório (os commits automáticos contam como atividade).
 - Posição só muda no fim da rodada; jogo adiado dentro de uma rodada atrasa a posição dela
@@ -259,3 +283,4 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | `b421dd8` | 10/10/2026 | README: seção "Notícias", limitações e histórico. |
 | `6a30f9b` | 10/10/2026 | Tema claro por padrão com botão para fundo escuro; letreiro não trava mais depois de tocar num link. |
 | (este) | 10/10/2026 | Tema claro garantido em aparelhos com modo escuro forçado (`color-scheme: only light`), fonte hospedada no app, `translate="no"` e ajustes para letra grande no celular. |
+| (este) | 11/10/2026 | Transmissão confirmada sozinha pelo GitHub (matéria "onde assistir" do ge, um dia antes e no dia do jogo); botão Resetar com ícone; selo da posição leva à tabela ao vivo do Google; legenda das listras removida; tracejado do ingresso volta a aparecer no tema escuro. |

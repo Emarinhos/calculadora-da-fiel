@@ -80,3 +80,14 @@ button:focus-visible {
   .letreiro { overflow-x: auto; }
   .letreiro-trilha { animation: none; }
 }
+
+/* Tracejado do canhoto do ingresso: linha dentro do canhoto, na cor do fundo da página,
+   então aparece nos dois temas (creme sobre preto no claro, escuro sobre creme no escuro). */
+.canhoto::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 3px;
+  border-right: 2px dashed var(--bg-canvas);
+}

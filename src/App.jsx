@@ -14,6 +14,9 @@ const pos = (v) => Math.min(100, Math.max(0, ((v - SCALE_MIN) / (SCALE_MAX - SCA
 // Recarrega public/estado.json a cada 30 min e ao voltar para a aba
 const INTERVALO_RECARGA_MS = 30 * 60 * 1000;
 
+// Google mostra a classificação do Brasileirão Série A atualizada em tempo real
+const URL_TABELA = 'https://www.google.com/search?q=tabela+brasileir%C3%A3o+s%C3%A9rie+a';
+
 const brData = (iso) => iso.split('-').reverse().join('/');
 
 const DIAS = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
@@ -59,6 +62,24 @@ function BotaoTema({ escuro, onClick, className = '' }) {
         ) : (
           <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" />
         )}
+      </svg>
+    </button>
+  );
+}
+
+/** Botão discreto de resetar as marcações: ícone de seta circular, no mesmo estilo do botão de tema. */
+function BotaoReset({ onClick, disabled = false }) {
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      aria-label="Resetar as marcações dos jogos"
+      title="Resetar as marcações"
+      className="flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center border-2 border-ink/40 text-ink-soft hover:text-ink hover:border-ink transition-colors disabled:opacity-35 disabled:cursor-not-allowed disabled:hover:text-ink-soft disabled:hover:border-ink/40"
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M20 12a8 8 0 1 1-2.6-5.9" />
+        <path d="M20 4v5h-5" />
       </svg>
     </button>
   );
@@ -298,13 +319,20 @@ export default function App() {
       <header>
         <div className="stripes h-[72px] md:h-[92px] relative" style={{ '--ink-w': stripeInk }}>
           <div className="max-w-6xl mx-auto px-4 md:px-8 h-full relative">
-            <div className="absolute left-4 md:left-8 bottom-0 bg-ink text-canvas px-3.5 pt-2 pb-1.5 text-[22px] tracking-wider leading-none">
+            {/* A posição leva à tabela do Brasileirão em tempo real no Google */}
+            <a
+              href={URL_TABELA}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Corinthians em ${estado.posicao}º lugar. Abrir a tabela do Brasileirão em tempo real no Google`}
+              title="Ver a tabela ao vivo no Google"
+              className="absolute left-4 md:left-8 bottom-0 bg-ink text-canvas px-3.5 pt-2 pb-1.5 text-[22px] tracking-wider leading-none flex items-center gap-2 hover:underline"
+            >
               Corinthians · {estado.posicao}º
-            </div>
-            {/* Legenda das listras: só no desktop (no celular a tela fica limpa) */}
-            <div className="hidden lg:block absolute right-8 top-2 bg-canvas text-ink border-2 border-ink px-2 py-1 text-caption leading-none">
-              Listras = risco
-            </div>
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                <path d="M4 1.5h6.5V8M10.5 1.5L1.5 10.5" />
+              </svg>
+            </a>
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-b-[3px] border-ink">
@@ -315,12 +343,7 @@ export default function App() {
           </div>
           <div className="flex items-center gap-2 flex-shrink-0 ml-auto">
             <BotaoTema escuro={escuro} onClick={alternarTema} />
-            <button
-              onClick={() => applyStressTest('reset')}
-              className="min-h-[44px] px-4 border-2 border-ink text-label hover:bg-ink/10 transition-colors"
-            >
-              Resetar
-            </button>
+            <BotaoReset onClick={() => applyStressTest('reset')} />
           </div>
         </div>
       </header>
@@ -360,7 +383,7 @@ export default function App() {
             {games.map((game) => (
               <div key={game.id} className={`ticket flex items-stretch border-2 border-ink ${game.locked ? 'bg-ink/[0.06]' : ''}`}>
                 {/* Canhoto do ingresso */}
-                <div className="w-[60px] flex-shrink-0 bg-ink text-canvas flex flex-col items-center justify-center gap-1.5 py-2 border-r-2 border-dashed border-canvas/60">
+                <div className="canhoto relative w-[60px] flex-shrink-0 bg-ink text-canvas flex flex-col items-center justify-center gap-1.5 py-2">
                   <span className="text-[26px] leading-none [writing-mode:vertical-rl] rotate-180">R{game.rodada}</span>
                   <span className="text-caption leading-none">{game.home ? 'Casa' : 'Fora'}</span>
                 </div>
@@ -670,14 +693,7 @@ export default function App() {
         {/* Tema e Resetar também no rodapé: Resetar some as marcações e volta ao risco inicial */}
         <div className="flex-shrink-0 flex items-center gap-2">
         <BotaoTema escuro={escuro} onClick={alternarTema} />
-        <button
-          onClick={() => applyStressTest('reset')}
-          disabled={marcados === 0}
-          aria-label="Resetar as marcações dos jogos"
-          className="flex-shrink-0 min-h-[44px] min-w-[44px] px-3 border-2 border-ink text-label hover:bg-ink/10 transition-colors disabled:opacity-35 disabled:cursor-not-allowed disabled:hover:bg-transparent"
-        >
-          Resetar
-        </button>
+        <BotaoReset onClick={() => applyStressTest('reset')} disabled={marcados === 0} />
         </div>
       </div>
     </div>

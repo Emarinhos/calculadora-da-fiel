@@ -1,6 +1,8 @@
-name: Atualizar notícias
+name: Atualizar notícias e transmissão
 
-# A cada 2 horas lê os feeds do ge e do Meu Timão e grava `noticias` em public/estado.json.
+# A cada 2 horas: (1) lê os feeds do ge e do Meu Timão e grava `noticias` em public/estado.json;
+# (2) confirma a transmissão (hora, TV, streaming) dos jogos do Corinthians pela regra de agenda.js:
+# um dia antes do jogo e, se não confirmou, no dia do jogo, lendo a matéria "onde assistir" do ge.
 # Só faz commit se algo mudou. Push feito com o GITHUB_TOKEN não dispara outros workflows,
 # então o deploy é chamado de propósito no final.
 on:
@@ -25,6 +27,7 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/atualizar-noticias.mjs
+      - run: node scripts/confirmar-transmissao.mjs
       - run: node scripts/validar-estado.mjs
       - name: Commit e deploy, só se mudou
         env:
@@ -38,7 +41,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/estado.json src/lib/estado-embutido.json
-          git commit -m "Noticias: atualizacao automatica"
+          git commit -m "Noticias e transmissao: atualizacao automatica"
           git pull --rebase origin main
           git push origin HEAD:main
           gh workflow run pages.yml --ref main
