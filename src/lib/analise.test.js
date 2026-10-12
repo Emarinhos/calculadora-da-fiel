@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { ESTADO_EMBUTIDO, jogosDoApp } from './estado.js';
+import { jogosDoApp } from './estado.js';
+import { ESTADO_EMBUTIDO } from './_fixtures.js';
 import { analisar, riskLevel, formatDistanciaLabel, formatarRisco, fixturesDoClube } from './analise.js';
 import { estadoAposR30, marcarTodos } from './_fixtures.js';
 

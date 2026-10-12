@@ -51,8 +51,11 @@ e a distância até o corte.
   vem sempre abaixo dele, então os dois nunca se encostam (testado em larguras de 320 a 430 px e nas três faixas).
 - **Cada jogo (ingresso)**: rodada, casa/fora, adversário, **forma recente** contra ele (últimos
   confrontos, do mais novo ao mais antigo) e **data, horário, TV e streaming** da transmissão.
-- **Jogo encerrado**: aparece travado ("Encerrado 1×0", botões desabilitados). O resultado real não pode
-  ser alterado nem entra nas marcações.
+- **Jogo encerrado**: aparece travado, com o placar na ordem do jogo ("Encerrado · Palmeiras 4×1 Corinthians") e o
+  resultado real destacado nos botões, que ficam desabilitados. O resultado real não pode ser alterado nem entra nas marcações.
+- **Jogo que já começou**: do apito inicial (data e hora de Brasília) em diante os botões de V/E/D ficam desabilitados, com o aviso
+  "Em andamento · marcações encerradas" (ou "Aguardando resultado" depois da janela ao vivo) até o resultado real chegar. Os
+  cenários não mexem nesse jogo, e uma marcação feita antes do apito continua valendo até lá.
 - **Tabela do Brasileirão com risco de todos os clubes**: os 20 times, com posição (critérios da CBF), pontos, jogos, saldo,
   **risco de rebaixamento de cada clube** (barra + %) e uma etiqueta "Jogo R32 · fora" com o jogo que o Corinthians ainda faz
   contra aquele clube. A linha vermelha marca o corte do 16º e os 4 últimos têm uma borda vermelha. No desktop abre pelo botão
@@ -317,3 +320,4 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | (este) | 11/10/2026 | **Tabela do Brasileirão** com risco de rebaixamento de todos os clubes e etiqueta do jogo restante contra o Corinthians (botão no desktop; faixa que se arrasta no celular); risco calculado fora do navegador e gravado em `liga.risco`. |
 | (este) | 11/10/2026 | Bolinha vermelha piscando no jogo ao vivo; o selo da posição deixou de ser link para o Google (a tabela do app o substitui). |
 | (este) | 12/10/2026 | Medição de uso com GoatCounter (acessos e cliques em funções, sem cookies). |
+| (este) | 12/10/2026 | Rodada 30 aplicada (Palmeiras 4x1 Corinthians travado; 8 jogos restantes); jogo iniciado não aceita mais marcação; placar do jogo encerrado na ordem real; testes passam a usar uma foto congelada do estado (não quebram mais quando os dados reais mudam). |

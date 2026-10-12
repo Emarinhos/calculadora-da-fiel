@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { ESTADO_EMBUTIDO } from './estado.js';
+import { ESTADO_EMBUTIDO } from './_fixtures.js';
 import { simular, forcas, pontosParaRisco, PARAMETROS } from './simulacao.js';
 
 const { tabela, jogos } = ESTADO_EMBUTIDO.liga;

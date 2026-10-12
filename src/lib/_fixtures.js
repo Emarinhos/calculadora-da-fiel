@@ -1,6 +1,12 @@
 // Apoio aos testes: uma rodada completa de resultados e atalhos.
-import { ESTADO_EMBUTIDO } from './estado.js';
+import estadoDeTeste from './_estado-teste.json' with { type: 'json' };
 import { aplicarResultados } from './aplicar.js';
+
+/**
+ * Foto do estado real de 11/10/2026 (antes de a rodada 30 ser aplicada), congelada para os testes.
+ * Os testes não podem depender de public/estado.json, que muda todo dia.
+ */
+export const ESTADO_EMBUTIDO = estadoDeTeste;
 
 export const clone = (o) => JSON.parse(JSON.stringify(o));
 

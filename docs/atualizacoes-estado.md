@@ -1,3 +1,4 @@
 # Atualizações do estado
 
 - 2026-10-11 13:30 (manual, a tarefa diária das 8h não rodou desde 09/10): transmissão da R30 Palmeiras x Corinthians confirmada pelo ge (17h30, TV Globo, ge tv e Premiere): `tv` = "Globo e Premiere", `tvConsultadaEm` = 2026-10-11. Streaming não gravado (a matéria não cita Globoplay).
+- 2026-10-11 22:00 (manual): rodada 30 parcial aplicada com conferência da tabela contra o ogol. Palmeiras 4x1 Corinthians (ge e Meu Timão confirmam o placar; jogo travado, derrota). Também Vasco 0x0 Remo, São Paulo 2x1 Vitória, Atlético-MG 2x1 Santos, Flamengo 1x0 Fluminense, Grêmio 1x1 Internacional, Bahia 1x0 Mirassol. Faltam Coritiba x Botafogo, Chapecoense x Athletico e Bragantino x Cruzeiro (12/10): a posição da rodada 30 só entra no fim dela. Corinthians: 32 pts em 30 jogos; 8 jogos restantes. Riscos de todos os clubes recalculados.

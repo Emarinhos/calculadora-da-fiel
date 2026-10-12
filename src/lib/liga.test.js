@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { ESTADO_EMBUTIDO, validarEstado } from './estado.js';
+import { validarEstado } from './estado.js';
+import { ESTADO_EMBUTIDO } from './_fixtures.js';
 import { classificacao, calcularRiscos, comRiscos, riscoVigente, proximoDuelo, linhasDaTabela, jogosDaTabela } from './liga.js';
 import { estadoAposR30, clone } from './_fixtures.js';
 

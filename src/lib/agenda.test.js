@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { ESTADO_EMBUTIDO, validarEstado } from './estado.js';
-import { somaDias, transmissaoConfirmada, transmissaoAConsultar, aoVivo, DURACAO_AO_VIVO_MIN } from './agenda.js';
+import { validarEstado } from './estado.js';
+import { ESTADO_EMBUTIDO } from './_fixtures.js';
+import { somaDias, transmissaoConfirmada, transmissaoAConsultar, aoVivo, jogoComecou, DURACAO_AO_VIVO_MIN } from './agenda.js';
 import { transmissaoDosAbertos } from './analise.js';
 import { atualizarAgenda } from './aplicar.js';
 import { clone, estadoSemConsulta } from './_fixtures.js';
@@ -95,4 +96,13 @@ test('ao vivo: jogo que passa da meia-noite UTC e dados faltando', () => {
   assert.strictEqual(aoVivo({ data: '2026-10-11', hora: null }, Date.UTC(2026, 9, 11, 20, 40)), false);
   assert.strictEqual(aoVivo(undefined, Date.now()), false);
   assert.strictEqual(aoVivo({ data: null, hora: '17:30' }, Date.now()), false);
+});
+
+test('jogo começou: vale do apito inicial em diante, mesmo depois da janela "ao vivo"', () => {
+  const jogo = { data: '2026-10-11', hora: '17:30' };
+  const inicio = Date.UTC(2026, 9, 11, 20, 30);
+  assert.strictEqual(jogoComecou(jogo, inicio - 1), false);
+  assert.strictEqual(jogoComecou(jogo, inicio), true);
+  assert.strictEqual(jogoComecou(jogo, inicio + 24 * 3600000), true); // no dia seguinte, ainda sem resultado aplicado
+  assert.strictEqual(jogoComecou({ data: '2026-10-11', hora: null }, inicio + 1), false); // sem horário: não bloqueia
 });

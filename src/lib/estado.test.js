@@ -1,16 +1,19 @@
 import test from 'node:test';
 import assert from 'node:assert';
 import fs from 'node:fs';
-import { ESTADO_EMBUTIDO, validarEstado, jogosDoApp, carregarEstado, nomeNaLiga } from './estado.js';
+import { validarEstado, jogosDoApp, carregarEstado, nomeNaLiga } from './estado.js';
+import { ESTADO_EMBUTIDO } from './_fixtures.js';
+import { ESTADO_EMBUTIDO as EMBUTIDO_REAL } from './estado.js';
 import { estadoAposR30, clone } from './_fixtures.js';
 
 const erros = (e) => validarEstado(e).erros.join(' | ');
 
 test('estado embutido e public/estado.json são válidos e idênticos', () => {
-  const r = validarEstado(ESTADO_EMBUTIDO);
+  // Este teste olha o estado REAL (o resto da suíte usa a foto congelada em _fixtures.js)
+  const r = validarEstado(EMBUTIDO_REAL);
   assert(r.ok, r.erros.join('; '));
   const arquivo = JSON.parse(fs.readFileSync(new URL('../../public/estado.json', import.meta.url), 'utf8'));
-  assert.deepStrictEqual(arquivo, ESTADO_EMBUTIDO);
+  assert.deepStrictEqual(arquivo, EMBUTIDO_REAL);
 });
 
 test('estado inicial: 20 times, 91 jogos restantes (90 + 1 adiado), Corinthians em 16º com 32 pts', () => {

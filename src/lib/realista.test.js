@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { ESTADO_EMBUTIDO, jogosDoApp, validarEstado } from './estado.js';
+import { jogosDoApp, validarEstado } from './estado.js';
+import { ESTADO_EMBUTIDO } from './_fixtures.js';
 import { cenarioRealista, transmissaoDosAbertos, analisar, fixturesDoClube } from './analise.js';
 import { probabilidadesDoJogo } from './simulacao.js';
 import { atualizarAgenda } from './aplicar.js';

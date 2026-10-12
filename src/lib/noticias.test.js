@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { dataDoIdDoX, tituloCurto, mesclarNoticias, noticiasDoJogo, validarNoticias } from './noticias.js';
-import { validarEstado, ESTADO_EMBUTIDO } from './estado.js';
+import { validarEstado } from './estado.js';
+import { ESTADO_EMBUTIDO } from './_fixtures.js';
 import { noticiasDoRss, noticiasDoRssMeuTimao, noticiasDoX } from '../../scripts/atualizar-noticias.mjs';
 
 const n = (titulo, data, url = `https://ge.globo.com/${titulo}`) => ({ titulo, fonte: 'ge', url, data });

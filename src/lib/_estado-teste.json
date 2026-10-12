@@ -1,0 +1,906 @@
+{
+  "versao": 2,
+  "atualizadoEm": "2026-10-11",
+  "fonte": "ogol.com.br",
+  "base": {
+    "pontos": 32,
+    "jogosDisputados": 29
+  },
+  "pontos": 32,
+  "jogosDisputados": 29,
+  "posicao": 16,
+  "posicaoRodada": 29,
+  "posicaoAtualizadaEm": "2026-10-09",
+  "corte": 45,
+  "jogos": [
+    {
+      "id": 1,
+      "rodada": 30,
+      "adversario": "Palmeiras",
+      "casa": false,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 2,
+      "rodada": 31,
+      "adversario": "Vitória",
+      "casa": true,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 3,
+      "rodada": 32,
+      "adversario": "Vasco",
+      "casa": false,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 4,
+      "rodada": 33,
+      "adversario": "Mirassol",
+      "casa": true,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 5,
+      "rodada": 34,
+      "adversario": "São Paulo",
+      "casa": false,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 6,
+      "rodada": 35,
+      "adversario": "Botafogo",
+      "casa": true,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 7,
+      "rodada": 36,
+      "adversario": "Atlético-MG",
+      "casa": false,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 8,
+      "rodada": 37,
+      "adversario": "Grêmio",
+      "casa": true,
+      "resultado": null,
+      "placar": null
+    },
+    {
+      "id": 9,
+      "rodada": 38,
+      "adversario": "Remo",
+      "casa": false,
+      "resultado": null,
+      "placar": null
+    }
+  ],
+  "historico": [],
+  "liga": {
+    "tabela": [
+      {
+        "clube": "Flamengo",
+        "pts": 61,
+        "j": 29,
+        "v": 18,
+        "e": 7,
+        "d": 4,
+        "gp": 57,
+        "gc": 25
+      },
+      {
+        "clube": "Palmeiras",
+        "pts": 60,
+        "j": 29,
+        "v": 17,
+        "e": 9,
+        "d": 3,
+        "gp": 48,
+        "gc": 21
+      },
+      {
+        "clube": "Fluminense",
+        "pts": 51,
+        "j": 29,
+        "v": 14,
+        "e": 9,
+        "d": 6,
+        "gp": 48,
+        "gc": 36
+      },
+      {
+        "clube": "Athletico Paranaense",
+        "pts": 50,
+        "j": 29,
+        "v": 14,
+        "e": 8,
+        "d": 7,
+        "gp": 45,
+        "gc": 34
+      },
+      {
+        "clube": "Cruzeiro",
+        "pts": 48,
+        "j": 29,
+        "v": 14,
+        "e": 6,
+        "d": 9,
+        "gp": 44,
+        "gc": 40
+      },
+      {
+        "clube": "Bahia",
+        "pts": 46,
+        "j": 29,
+        "v": 12,
+        "e": 10,
+        "d": 7,
+        "gp": 43,
+        "gc": 36
+      },
+      {
+        "clube": "Atlético Mineiro",
+        "pts": 44,
+        "j": 29,
+        "v": 12,
+        "e": 8,
+        "d": 9,
+        "gp": 39,
+        "gc": 34
+      },
+      {
+        "clube": "Santos",
+        "pts": 42,
+        "j": 29,
+        "v": 11,
+        "e": 9,
+        "d": 9,
+        "gp": 45,
+        "gc": 43
+      },
+      {
+        "clube": "Coritiba",
+        "pts": 38,
+        "j": 29,
+        "v": 10,
+        "e": 8,
+        "d": 11,
+        "gp": 37,
+        "gc": 47
+      },
+      {
+        "clube": "Red Bull Bragantino",
+        "pts": 37,
+        "j": 29,
+        "v": 10,
+        "e": 7,
+        "d": 12,
+        "gp": 34,
+        "gc": 33
+      },
+      {
+        "clube": "São Paulo",
+        "pts": 36,
+        "j": 29,
+        "v": 10,
+        "e": 6,
+        "d": 13,
+        "gp": 33,
+        "gc": 34
+      },
+      {
+        "clube": "Vitória",
+        "pts": 36,
+        "j": 29,
+        "v": 10,
+        "e": 6,
+        "d": 13,
+        "gp": 32,
+        "gc": 42
+      },
+      {
+        "clube": "Botafogo",
+        "pts": 35,
+        "j": 29,
+        "v": 9,
+        "e": 8,
+        "d": 12,
+        "gp": 42,
+        "gc": 47
+      },
+      {
+        "clube": "Vasco",
+        "pts": 34,
+        "j": 28,
+        "v": 9,
+        "e": 7,
+        "d": 12,
+        "gp": 36,
+        "gc": 42
+      },
+      {
+        "clube": "Mirassol",
+        "pts": 33,
+        "j": 29,
+        "v": 8,
+        "e": 9,
+        "d": 12,
+        "gp": 34,
+        "gc": 43
+      },
+      {
+        "clube": "Corinthians",
+        "pts": 32,
+        "j": 29,
+        "v": 8,
+        "e": 8,
+        "d": 13,
+        "gp": 30,
+        "gc": 34
+      },
+      {
+        "clube": "Internacional",
+        "pts": 31,
+        "j": 29,
+        "v": 7,
+        "e": 10,
+        "d": 12,
+        "gp": 32,
+        "gc": 37
+      },
+      {
+        "clube": "Grêmio",
+        "pts": 30,
+        "j": 29,
+        "v": 7,
+        "e": 9,
+        "d": 13,
+        "gp": 31,
+        "gc": 39
+      },
+      {
+        "clube": "Remo",
+        "pts": 24,
+        "j": 29,
+        "v": 5,
+        "e": 9,
+        "d": 15,
+        "gp": 33,
+        "gc": 48
+      },
+      {
+        "clube": "Chapecoense",
+        "pts": 18,
+        "j": 28,
+        "v": 3,
+        "e": 9,
+        "d": 16,
+        "gp": 29,
+        "gc": 57
+      }
+    ],
+    "jogos": [
+      {
+        "rodada": 21,
+        "mandante": "Chapecoense",
+        "visitante": "Vasco"
+      },
+      {
+        "rodada": 30,
+        "mandante": "Vasco",
+        "visitante": "Remo",
+        "data": "2026-10-10",
+        "hora": "18:00",
+        "tv": "Record"
+      },
+      {
+        "rodada": 30,
+        "mandante": "São Paulo",
+        "visitante": "Vitória",
+        "data": "2026-10-10",
+        "hora": "21:00",
+        "tv": "SporTV"
+      },
+      {
+        "rodada": 30,
+        "mandante": "Atlético Mineiro",
+        "visitante": "Santos",
+        "data": "2026-10-11",
+        "hora": "16:00",
+        "tv": "PFC"
+      },
+      {
+        "rodada": 30,
+        "mandante": "Flamengo",
+        "visitante": "Fluminense",
+        "data": "2026-10-11",
+        "hora": "17:30",
+        "tv": "Globo"
+      },
+      {
+        "rodada": 30,
+        "mandante": "Palmeiras",
+        "visitante": "Corinthians",
+        "data": "2026-10-11",
+        "hora": "17:30",
+        "tv": "Globo e Premiere",
+        "tvConsultadaEm": "2026-10-11"
+      },
+      {
+        "rodada": 30,
+        "mandante": "Grêmio",
+        "visitante": "Internacional",
+        "data": "2026-10-11",
+        "hora": "17:30",
+        "tv": "Globo"
+      },
+      {
+        "rodada": 30,
+        "mandante": "Bahia",
+        "visitante": "Mirassol",
+        "data": "2026-10-11",
+        "hora": "19:30",
+        "tv": "PFC"
+      },
+      {
+        "rodada": 30,
+        "mandante": "Coritiba",
+        "visitante": "Botafogo",
+        "data": "2026-10-12",
+        "hora": "16:00",
+        "tv": "Amazon Prime"
+      },
+      {
+        "rodada": 30,
+        "mandante": "Chapecoense",
+        "visitante": "Athletico Paranaense",
+        "data": "2026-10-12",
+        "hora": "19:30",
+        "tv": "PFC"
+      },
+      {
+        "rodada": 30,
+        "mandante": "Red Bull Bragantino",
+        "visitante": "Cruzeiro",
+        "data": "2026-10-12",
+        "hora": "21:00",
+        "tv": "SporTV"
+      },
+      {
+        "rodada": 31,
+        "mandante": "Mirassol",
+        "visitante": "Internacional"
+      },
+      {
+        "rodada": 31,
+        "mandante": "Botafogo",
+        "visitante": "Chapecoense"
+      },
+      {
+        "rodada": 31,
+        "mandante": "Atlético Mineiro",
+        "visitante": "Coritiba"
+      },
+      {
+        "rodada": 31,
+        "mandante": "Athletico Paranaense",
+        "visitante": "Palmeiras"
+      },
+      {
+        "rodada": 31,
+        "mandante": "São Paulo",
+        "visitante": "Vasco"
+      },
+      {
+        "rodada": 31,
+        "mandante": "Fluminense",
+        "visitante": "Santos"
+      },
+      {
+        "rodada": 31,
+        "mandante": "Grêmio",
+        "visitante": "Cruzeiro"
+      },
+      {
+        "rodada": 31,
+        "mandante": "Bahia",
+        "visitante": "Flamengo"
+      },
+      {
+        "rodada": 31,
+        "mandante": "Remo",
+        "visitante": "Red Bull Bragantino"
+      },
+      {
+        "rodada": 31,
+        "mandante": "Corinthians",
+        "visitante": "Vitória",
+        "data": "2026-10-19",
+        "hora": "20:00",
+        "tv": "SporTV"
+      },
+      {
+        "rodada": 32,
+        "mandante": "Cruzeiro",
+        "visitante": "Remo"
+      },
+      {
+        "rodada": 32,
+        "mandante": "Mirassol",
+        "visitante": "São Paulo"
+      },
+      {
+        "rodada": 32,
+        "mandante": "Internacional",
+        "visitante": "Botafogo"
+      },
+      {
+        "rodada": 32,
+        "mandante": "Vitória",
+        "visitante": "Athletico Paranaense"
+      },
+      {
+        "rodada": 32,
+        "mandante": "Vasco",
+        "visitante": "Corinthians",
+        "data": "2026-10-24",
+        "hora": "18:30",
+        "tv": null
+      },
+      {
+        "rodada": 32,
+        "mandante": "Palmeiras",
+        "visitante": "Red Bull Bragantino"
+      },
+      {
+        "rodada": 32,
+        "mandante": "Chapecoense",
+        "visitante": "Fluminense"
+      },
+      {
+        "rodada": 32,
+        "mandante": "Santos",
+        "visitante": "Bahia"
+      },
+      {
+        "rodada": 32,
+        "mandante": "Coritiba",
+        "visitante": "Grêmio"
+      },
+      {
+        "rodada": 32,
+        "mandante": "Flamengo",
+        "visitante": "Atlético Mineiro"
+      },
+      {
+        "rodada": 33,
+        "mandante": "Fluminense",
+        "visitante": "Internacional"
+      },
+      {
+        "rodada": 33,
+        "mandante": "Santos",
+        "visitante": "Palmeiras"
+      },
+      {
+        "rodada": 33,
+        "mandante": "Red Bull Bragantino",
+        "visitante": "Chapecoense"
+      },
+      {
+        "rodada": 33,
+        "mandante": "Bahia",
+        "visitante": "São Paulo"
+      },
+      {
+        "rodada": 33,
+        "mandante": "Remo",
+        "visitante": "Botafogo"
+      },
+      {
+        "rodada": 33,
+        "mandante": "Atlético Mineiro",
+        "visitante": "Cruzeiro"
+      },
+      {
+        "rodada": 33,
+        "mandante": "Coritiba",
+        "visitante": "Vitória"
+      },
+      {
+        "rodada": 33,
+        "mandante": "Vasco",
+        "visitante": "Flamengo"
+      },
+      {
+        "rodada": 33,
+        "mandante": "Grêmio",
+        "visitante": "Athletico Paranaense"
+      },
+      {
+        "rodada": 33,
+        "mandante": "Corinthians",
+        "visitante": "Mirassol",
+        "data": "2026-10-30",
+        "hora": "20:00",
+        "tv": null
+      },
+      {
+        "rodada": 34,
+        "mandante": "Red Bull Bragantino",
+        "visitante": "Santos"
+      },
+      {
+        "rodada": 34,
+        "mandante": "Chapecoense",
+        "visitante": "Mirassol"
+      },
+      {
+        "rodada": 34,
+        "mandante": "Internacional",
+        "visitante": "Coritiba"
+      },
+      {
+        "rodada": 34,
+        "mandante": "Flamengo",
+        "visitante": "Grêmio"
+      },
+      {
+        "rodada": 34,
+        "mandante": "Athletico Paranaense",
+        "visitante": "Vasco"
+      },
+      {
+        "rodada": 34,
+        "mandante": "Botafogo",
+        "visitante": "Atlético Mineiro"
+      },
+      {
+        "rodada": 34,
+        "mandante": "São Paulo",
+        "visitante": "Corinthians",
+        "data": "2026-11-04",
+        "hora": "21:30",
+        "tv": null
+      },
+      {
+        "rodada": 34,
+        "mandante": "Palmeiras",
+        "visitante": "Remo"
+      },
+      {
+        "rodada": 34,
+        "mandante": "Cruzeiro",
+        "visitante": "Bahia"
+      },
+      {
+        "rodada": 34,
+        "mandante": "Vitória",
+        "visitante": "Fluminense"
+      },
+      {
+        "rodada": 35,
+        "mandante": "Flamengo",
+        "visitante": "Athletico Paranaense"
+      },
+      {
+        "rodada": 35,
+        "mandante": "Vasco",
+        "visitante": "Internacional"
+      },
+      {
+        "rodada": 35,
+        "mandante": "São Paulo",
+        "visitante": "Fluminense"
+      },
+      {
+        "rodada": 35,
+        "mandante": "Corinthians",
+        "visitante": "Botafogo",
+        "data": "2026-11-18",
+        "hora": null,
+        "tv": null
+      },
+      {
+        "rodada": 35,
+        "mandante": "Mirassol",
+        "visitante": "Atlético Mineiro"
+      },
+      {
+        "rodada": 35,
+        "mandante": "Cruzeiro",
+        "visitante": "Palmeiras"
+      },
+      {
+        "rodada": 35,
+        "mandante": "Grêmio",
+        "visitante": "Bahia"
+      },
+      {
+        "rodada": 35,
+        "mandante": "Coritiba",
+        "visitante": "Santos"
+      },
+      {
+        "rodada": 35,
+        "mandante": "Vitória",
+        "visitante": "Red Bull Bragantino"
+      },
+      {
+        "rodada": 35,
+        "mandante": "Remo",
+        "visitante": "Chapecoense"
+      },
+      {
+        "rodada": 36,
+        "mandante": "Fluminense",
+        "visitante": "Mirassol"
+      },
+      {
+        "rodada": 36,
+        "mandante": "Botafogo",
+        "visitante": "São Paulo"
+      },
+      {
+        "rodada": 36,
+        "mandante": "Santos",
+        "visitante": "Grêmio"
+      },
+      {
+        "rodada": 36,
+        "mandante": "Palmeiras",
+        "visitante": "Flamengo"
+      },
+      {
+        "rodada": 36,
+        "mandante": "Red Bull Bragantino",
+        "visitante": "Vasco"
+      },
+      {
+        "rodada": 36,
+        "mandante": "Atlético Mineiro",
+        "visitante": "Corinthians",
+        "data": "2026-11-20",
+        "hora": "21:00",
+        "tv": null
+      },
+      {
+        "rodada": 36,
+        "mandante": "Internacional",
+        "visitante": "Vitória"
+      },
+      {
+        "rodada": 36,
+        "mandante": "Athletico Paranaense",
+        "visitante": "Remo"
+      },
+      {
+        "rodada": 36,
+        "mandante": "Bahia",
+        "visitante": "Coritiba"
+      },
+      {
+        "rodada": 36,
+        "mandante": "Chapecoense",
+        "visitante": "Cruzeiro"
+      },
+      {
+        "rodada": 37,
+        "mandante": "Fluminense",
+        "visitante": "Cruzeiro"
+      },
+      {
+        "rodada": 37,
+        "mandante": "Botafogo",
+        "visitante": "Bahia"
+      },
+      {
+        "rodada": 37,
+        "mandante": "São Paulo",
+        "visitante": "Remo"
+      },
+      {
+        "rodada": 37,
+        "mandante": "Corinthians",
+        "visitante": "Grêmio",
+        "data": "2026-11-27",
+        "hora": "21:00",
+        "tv": null
+      },
+      {
+        "rodada": 37,
+        "mandante": "Mirassol",
+        "visitante": "Athletico Paranaense"
+      },
+      {
+        "rodada": 37,
+        "mandante": "Atlético Mineiro",
+        "visitante": "Vasco"
+      },
+      {
+        "rodada": 37,
+        "mandante": "Internacional",
+        "visitante": "Red Bull Bragantino"
+      },
+      {
+        "rodada": 37,
+        "mandante": "Coritiba",
+        "visitante": "Flamengo"
+      },
+      {
+        "rodada": 37,
+        "mandante": "Vitória",
+        "visitante": "Santos"
+      },
+      {
+        "rodada": 37,
+        "mandante": "Chapecoense",
+        "visitante": "Palmeiras"
+      },
+      {
+        "rodada": 38,
+        "mandante": "Flamengo",
+        "visitante": "Chapecoense"
+      },
+      {
+        "rodada": 38,
+        "mandante": "Vasco",
+        "visitante": "Vitória"
+      },
+      {
+        "rodada": 38,
+        "mandante": "Santos",
+        "visitante": "Botafogo"
+      },
+      {
+        "rodada": 38,
+        "mandante": "Palmeiras",
+        "visitante": "Coritiba"
+      },
+      {
+        "rodada": 38,
+        "mandante": "Red Bull Bragantino",
+        "visitante": "Fluminense"
+      },
+      {
+        "rodada": 38,
+        "mandante": "Cruzeiro",
+        "visitante": "Internacional"
+      },
+      {
+        "rodada": 38,
+        "mandante": "Grêmio",
+        "visitante": "Mirassol"
+      },
+      {
+        "rodada": 38,
+        "mandante": "Athletico Paranaense",
+        "visitante": "São Paulo"
+      },
+      {
+        "rodada": 38,
+        "mandante": "Bahia",
+        "visitante": "Atlético Mineiro"
+      },
+      {
+        "rodada": 38,
+        "mandante": "Remo",
+        "visitante": "Corinthians",
+        "data": "2026-12-02",
+        "hora": null,
+        "tv": null
+      }
+    ],
+    "risco": {
+      "jogosDisputados": 578,
+      "sims": 20000,
+      "clubes": {
+        "Flamengo": 0,
+        "Palmeiras": 0,
+        "Fluminense": 0,
+        "Athletico Paranaense": 0,
+        "Cruzeiro": 0,
+        "Bahia": 0,
+        "Atlético Mineiro": 0,
+        "Santos": 0.1,
+        "Coritiba": 4.2,
+        "Red Bull Bragantino": 1.4,
+        "São Paulo": 3.1,
+        "Vitória": 9.7,
+        "Botafogo": 7.7,
+        "Vasco": 9.3,
+        "Mirassol": 32.7,
+        "Corinthians": 29.2,
+        "Internacional": 43,
+        "Grêmio": 61.8,
+        "Remo": 98,
+        "Chapecoense": 100
+      }
+    }
+  },
+  "noticias": [
+    {
+      "titulo": "Memphis Depay recebe terceiro cartão amarelo e desfalca o Corinthians contra o Vitória",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/memphis-depay-recebe-terceiro-cartao-amarelo-e-desfalca-o-corinthians-contra-o-vitoria.ghtml",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Marcelo Paz explica escolha por Seedorf e quer Corinthians pragmático: \"Ganhar de 1 a 0\"",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/marcelo-paz-explica-escolha-por-seedorf-e-quer-corinthians-pragmatico-ganhar-de-1-a-0.ghtml",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Seedorf pede apoio da torcida do Corinthians e promete \"fazer o melhor\"",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/seedorf-pede-apoio-da-torcida-do-corinthians-e-promete-fazer-o-melhor.ghtml",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Corinthians anuncia patrocínio máster até o fim de 2026",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/corinthians-anuncia-patrocinio-master-ate-o-fim-de-2026.ghtml",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Contrato de Seedorf com o Corinthians prevê rescisão em caso de rebaixamento à Série B",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/contrato-de-seedorf-com-o-corinthians-preve-rescisao-em-caso-de-rebaixamento-a-serie-b.ghtml",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Empresários detalham indicação de Seedorf a Marcelo Paz e explicam acerto com o Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/empresarios-detalham-indicacao-de-seedorf-a-marcelo-paz-e-explicam-acerto-com-o-corinthians.ghtml",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Corinthians contrata Seedorf como novo técnico",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/corinthians-contrata-seedorf-como-novo-tecnico.ghtml",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Corinthians chega ao Dérbi com dificuldades para avançar por técnico e sem alvo definido",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/corinthians-chega-ao-derbi-com-dificuldades-para-avancar-por-tecnico-e-sem-alvo-definido.ghtml",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Marcelo Paz explica escolha por Seedorf e destaca liderança do novo técnico do Corinthians",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541818/marcelo-paz-explica-escolha-por-seedorf-e-destaca-lideranca-do-novo-tecnico-do-corinthians",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Corinthians confirma time titular com duas mudanças para enfrentar o Palmeiras",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541774/corinthians-confirma-time-titular-com-duas-mudancas-para-enfrentar-o-palmeiras",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Corinthians busca voltar a vencer o Palmeiras para se aproximar de rival no retrospecto",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541808/corinthians-busca-voltar-a-vencer-o-palmeiras-para-se-aproximar-de-rival-no-retrospecto",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Briga pelo Brasileiro, vivo em outras copas e força máxima: veja como chega o Palmeiras para o Dérbi",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541770/briga-pelo-brasileiro-vivo-em-outras-copas-e-forca-maxima-veja-como-chega-o-palmeiras-para-o-derbi",
+      "data": "2026-10-11"
+    }
+  ]
+}

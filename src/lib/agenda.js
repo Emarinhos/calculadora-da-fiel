@@ -48,9 +48,20 @@ export const DURACAO_AO_VIVO_MIN = 130;
  * @param agoraMs instante atual em milissegundos (Date.now())
  */
 export function aoVivo(jogo, agoraMs) {
-  if (!jogo?.data || !jogo.hora) return false;
+  const inicio = inicioDoJogo(jogo);
+  return inicio !== null && agoraMs >= inicio && agoraMs < inicio + DURACAO_AO_VIVO_MIN * 60000;
+}
+
+/** Instante do apito inicial em ms (UTC), ou null se faltar data ou horário. */
+export function inicioDoJogo(jogo) {
+  if (!jogo?.data || !jogo.hora) return null;
   const [a, m, d] = jogo.data.split('-').map(Number);
   const [h, min] = jogo.hora.split(':').map(Number);
-  const inicio = Date.UTC(a, m - 1, d, h + 3, min);
-  return agoraMs >= inicio && agoraMs < inicio + DURACAO_AO_VIVO_MIN * 60000;
+  return Date.UTC(a, m - 1, d, h + 3, min);
+}
+
+/** O jogo já começou? Depois do apito inicial ninguém mais marca resultado, mesmo antes de o resultado real chegar. */
+export function jogoComecou(jogo, agoraMs) {
+  const inicio = inicioDoJogo(jogo);
+  return inicio !== null && agoraMs >= inicio;
 }

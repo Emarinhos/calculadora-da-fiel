@@ -6,7 +6,7 @@ import { resultadoDoCenario, formaRecente, N_CONFRONTOS, JANELA_ANOS } from './l
 import { FONTE_H2H, ATUALIZADO_EM } from './lib/h2h';
 import { ESTADO_EMBUTIDO, carregarEstado, jogosDoApp } from './lib/estado';
 import { linhasDaTabela, riscoVigente } from './lib/liga';
-import { aoVivo } from './lib/agenda';
+import { aoVivo, jogoComecou } from './lib/agenda';
 import { medir } from './lib/medir';
 
 
@@ -263,15 +263,18 @@ export default function App() {
       realistic: realista.resultados,
     };
   }, [estado, realista]);
-  // Um cenário só está ativo quando as marcações atuais são exatamente as dele
+  // Jogo que já começou (e ainda não tem resultado real aplicado) não aceita mais marcação
+  const iniciadoDe = (g) => !g.locked && jogoComecou(transmissao[posicaoNosAbertos.get(g.id)], agora);
+  // Um cenário só está ativo quando as marcações atuais são exatamente as dele (jogos já iniciados ficam de fora)
   const cenarioAtivo = (tipo) => {
     const alvo = alvosCenario[tipo];
-    return abertos.length > 0 && alvo.some(Boolean) && abertos.every((g, i) => (g.result ?? null) === (alvo[i] ?? null));
+    const livres = abertos.map((g, i) => [g, i]).filter(([g]) => !iniciadoDe(g));
+    return livres.length > 0 && livres.some(([, i]) => alvo[i]) && livres.every(([g, i]) => (g.result ?? null) === (alvo[i] ?? null));
   };
 
   const handleResultChange = (id, result) => {
     const jogo = games.find((g) => g.id === id);
-    if (!jogo || jogo.locked) return; // resultado real é fixo
+    if (!jogo || jogo.locked || iniciadoDe(jogo)) return; // resultado real é fixo; jogo iniciado não aceita marcação
     medir('marcar-jogo', 'Marcou V/E/D num jogo');
     setMarks((prev) => ({ ...prev, [id]: prev[id] === result ? null : result }));
   };
@@ -282,13 +285,9 @@ export default function App() {
       setMarks({});
       return;
     }
-    if (type === 'realistic') {
-      // Resultado mais provável de cada jogo, fechando nos pontos projetados (lib/analise.js)
-      setMarks(Object.fromEntries(abertos.map((g, i) => [g.id, realista.resultados[i] ?? null])));
-      return;
-    }
-    // Otimista e pessimista vêm do histórico recente de confrontos com cada adversário (lib/cenarios.js)
-    setMarks(Object.fromEntries(abertos.map((g) => [g.id, resultadoDoCenario(g.opponent, type)])));
+    // Jogo já iniciado mantém o que estava marcado; os demais recebem o cenário
+    const alvoDe = (g, i) => (type === 'realistic' ? realista.resultados[i] ?? null : resultadoDoCenario(g.opponent, type));
+    setMarks(Object.fromEntries(abertos.map((g, i) => [g.id, iniciadoDe(g) ? marks[g.id] ?? null : alvoDe(g, i)])));
   };
 
   const formaPorJogo = useMemo(
@@ -433,7 +432,9 @@ export default function App() {
           </div>
 
           <div className="flex flex-col gap-2.5">
-            {games.map((game) => (
+            {games.map((game) => {
+              const iniciado = iniciadoDe(game);
+              return (
               <div key={game.id} className={`ticket flex items-stretch border-2 border-ink ${game.locked ? 'bg-ink/[0.06]' : ''}`}>
                 {/* Canhoto do ingresso */}
                 <div className="canhoto relative w-[60px] flex-shrink-0 bg-ink text-canvas flex flex-col items-center justify-center gap-1.5 py-2">
@@ -453,13 +454,13 @@ export default function App() {
                     ].map(({ key, label }) => {
                       const on = game.result === key;
                       const base = 'w-11 h-11 border-2 text-[22px] transition-all duration-150';
-                      if (game.locked) {
+                      if (game.locked || iniciado) {
                         return (
                           <button
                             key={key}
                             disabled
                             aria-pressed={on}
-                            aria-label={`${label} contra ${game.opponent}${on ? ' (resultado real, fixo)' : ''}`}
+                            aria-label={`${label} contra ${game.opponent}${game.locked ? (on ? ' (resultado real, fixo)' : '') : ' (jogo em andamento, marcações encerradas)'}`}
                             className={`${base} cursor-not-allowed ${on ? 'bg-ink text-canvas border-ink' : 'bg-transparent text-ink/30 border-ink/25'}`}
                           >
                             {key}
@@ -484,7 +485,7 @@ export default function App() {
                   {game.locked ? (
                     <span className="flex items-center gap-1.5 text-caption text-ink-soft leading-none">
                       <Cadeado />
-                      Encerrado {game.placar.gc}×{game.placar.ga}
+                      Encerrado · {game.home ? `Corinthians ${game.placar.gc}×${game.placar.ga} ${game.opponent}` : `${game.opponent} ${game.placar.ga}×${game.placar.gc} Corinthians`}
                     </span>
                   ) : (
                     <div className="flex items-end justify-between gap-3">
@@ -522,6 +523,7 @@ export default function App() {
                             </div>
                             <div className="text-ink-soft">{t.tv}</div>
                             {t.streaming && <div className="text-ink-soft">{t.streaming}</div>}
+                            {iniciado && <div className="text-ink" data-testid="marcacoes-encerradas">{aoVivo(bruto, agora) ? 'Em andamento' : 'Aguardando resultado'} · marcações encerradas</div>}
                           </div>
                         );
                       })()}
@@ -529,7 +531,8 @@ export default function App() {
                   )}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
             </div>
           </div>

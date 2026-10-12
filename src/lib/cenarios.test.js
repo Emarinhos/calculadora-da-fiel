@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert';
 import { resultadoDe, confrontosRecentes, resultadoDoCenario, formaRecente } from './cenarios.js';
 import { H2H } from './h2h.js';
-import { ESTADO_EMBUTIDO, jogosDoApp } from './estado.js';
+import { jogosDoApp } from './estado.js';
+import { ESTADO_EMBUTIDO } from './_fixtures.js';
 import { analisar } from './analise.js';
 
 // Data fixa: os testes não dependem do relógio
