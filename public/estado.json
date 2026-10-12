@@ -858,6 +858,24 @@
   },
   "noticias": [
     {
+      "titulo": "Gabriel Paulista chora e detona diretoria do Corinthians: \"Vim pelo sonho, estou vivendo pesadelo\"",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/gabriel-paulista-chora-e-detona-diretoria-do-corinthians-vim-pelo-sonho-estou-vivendo-pesadelo.ghtml",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Técnico interino do Corinthians defende Memphis e espera que torcida \"carregue\" time",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/tecnico-interino-do-corinthians-defende-memphis-e-espera-que-torcida-carregue-time.ghtml",
+      "data": "2026-10-11"
+    },
+    {
+      "titulo": "Atuações do Corinthians: Hugo Souza se salva em vexame coletivo no Dérbi; dê suas notas",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/atuacoes-do-corinthians-hugo-souza-se-salva-em-vexame-coletivo-no-derbi-de-suas-notas.ghtml",
+      "data": "2026-10-11"
+    },
+    {
       "titulo": "Memphis Depay recebe terceiro cartão amarelo e desfalca o Corinthians contra o Vitória",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/memphis-depay-recebe-terceiro-cartao-amarelo-e-desfalca-o-corinthians-contra-o-vitoria.ghtml",
@@ -888,45 +906,27 @@
       "data": "2026-10-11"
     },
     {
-      "titulo": "Empresários detalham indicação de Seedorf a Marcelo Paz e explicam acerto com o Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/empresarios-detalham-indicacao-de-seedorf-a-marcelo-paz-e-explicam-acerto-com-o-corinthians.ghtml",
-      "data": "2026-10-11"
-    },
-    {
-      "titulo": "Corinthians contrata Seedorf como novo técnico",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/corinthians-contrata-seedorf-como-novo-tecnico.ghtml",
-      "data": "2026-10-11"
-    },
-    {
-      "titulo": "Corinthians chega ao Dérbi com dificuldades para avançar por técnico e sem alvo definido",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/11/corinthians-chega-ao-derbi-com-dificuldades-para-avancar-por-tecnico-e-sem-alvo-definido.ghtml",
-      "data": "2026-10-11"
-    },
-    {
-      "titulo": "Marcelo Paz explica escolha por Seedorf e destaca liderança do novo técnico do Corinthians",
+      "titulo": "Zagueiro do Corinthians desabafa sobre falta de proteção da diretoria: 'É uma vergonha'",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541818/marcelo-paz-explica-escolha-por-seedorf-e-destaca-lideranca-do-novo-tecnico-do-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541867/zagueiro-do-corinthians-desabafa-sobre-falta-de-protecao-da-diretoria-e-uma-vergonha",
       "data": "2026-10-11"
     },
     {
-      "titulo": "Corinthians confirma time titular com duas mudanças para enfrentar o Palmeiras",
+      "titulo": "VÍDEO: Após derrota para o Palmeiras, ônibus do Corinthians chega com policiamento no CT Dr. Joaquim Grava",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541774/corinthians-confirma-time-titular-com-duas-mudancas-para-enfrentar-o-palmeiras",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130081/apos-derrota-para-o-palmeiras-onibus-do-corinthians-chega-com-policiamento-no-ct-dr-joaquim-grava",
       "data": "2026-10-11"
     },
     {
-      "titulo": "Corinthians busca voltar a vencer o Palmeiras para se aproximar de rival no retrospecto",
+      "titulo": "VÍDEO: Análise do vexame contra o Palmeiras e futuro do Corinthians: Coletiva WIllaim Batista",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541808/corinthians-busca-voltar-a-vencer-o-palmeiras-para-se-aproximar-de-rival-no-retrospecto",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130080/analise-do-vexame-contra-o-palmeiras-e-futuro-do-corinthians-coletiva-willaim-batista",
       "data": "2026-10-11"
     },
     {
-      "titulo": "Briga pelo Brasileiro, vivo em outras copas e força máxima: veja como chega o Palmeiras para o Dérbi",
+      "titulo": "William Batista aponta falhas táticas do Corinthians em goleada sofrida para o Palmeiras",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541770/briga-pelo-brasileiro-vivo-em-outras-copas-e-forca-maxima-veja-como-chega-o-palmeiras-para-o-derbi",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541856/william-batista-aponta-falhas-taticas-do-corinthians-em-goleada-sofrida-para-o-palmeiras",
       "data": "2026-10-11"
     }
   ]
