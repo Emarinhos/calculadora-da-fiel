@@ -15,7 +15,7 @@ permissions:
   actions: write
 
 concurrency:
-  group: noticias
+  group: estado
   cancel-in-progress: false
 
 jobs:

@@ -11,7 +11,7 @@ const APELIDOS = {
   'Athletico Paranaense': ['athletico-pr', 'athletico paranaense'],
   'Red Bull Bragantino': ['bragantino'],
 };
-const nomesDoClube = (clube) => [semAcento(clube), ...(APELIDOS[clube] ?? [])];
+export const nomesDoClube = (clube) => [semAcento(clube), ...(APELIDOS[clube] ?? [])];
 const cita = (texto, clube) => nomesDoClube(clube).some((n) => semAcento(texto).includes(n));
 
 /**

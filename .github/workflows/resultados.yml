@@ -1,0 +1,46 @@
+name: Atualizar resultados
+
+# Logo depois dos jogos: de 20 em 20 minutos, das 12h à 01h59 (Brasília), procura jogos que terminaram há pelo menos
+# 115 minutos, lê o placar no ogol (o do Corinthians exige uma segunda fonte), confere a tabela inteira contra a do ogol
+# e grava resultado, tabela, posição (no fim da rodada) e riscos em public/estado.json. Sem jogo novo, termina na hora.
+# O deploy é chamado no final porque push feito com o GITHUB_TOKEN não dispara outros workflows.
+on:
+  schedule:
+    - cron: '7,27,47 15-23,0-4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+# Mesmo grupo do workflow de notícias: os dois mexem em estado.json e não podem rodar ao mesmo tempo
+concurrency:
+  group: estado
+  cancel-in-progress: false
+
+jobs:
+  resultados:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/atualizar-resultados.mjs
+      - run: node scripts/validar-estado.mjs
+      - name: Commit e deploy, só se mudou
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/sync-embutido.mjs
+          if git diff --quiet -- public/estado.json src/lib/estado-embutido.json docs/atualizacoes-estado.md; then
+            echo "Sem resultado novo."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/estado.json src/lib/estado-embutido.json docs/atualizacoes-estado.md
+          git commit -m "Resultados: atualizacao automatica apos os jogos"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          gh workflow run pages.yml --ref main
