@@ -8,6 +8,19 @@ e a distância até o corte.
 
 ## O que o app faz
 
+- **Três objetivos: rebaixamento, Sul-Americana e Libertadores.** Chips no topo do painel mostram a chance de cada um (o número
+  cresce com a chance). **Arrastar o painel para a esquerda avança e para a direita volta** (celular); no desktop há botões ‹ ›
+  e os próprios chips. O número grande, o texto da distância, o cartão de meta, a **régua** e a coluna da tabela seguem o objetivo:
+  - **Régua:** escala única para todos os objetivos visíveis (do placar de hoje ao maior entre o máximo possível e os cortes),
+    então ao trocar de objetivo só o corte se desloca. No rebaixamento: "Rebaixamento ↔ Segurança", zona hachurada à esquerda do
+    corte. Nas vagas: "Fora da zona ↔ Sul-Americana/Libertadores", zona hachurada à direita do corte ("Vaga 49"). A parte acima do
+    máximo possível aparece esmaecida. As marcações de V/E/D movem a projeção na régua e mudam a chance.
+  - **Quando as vagas aparecem:** só com chance real (>= 0,1%). Hoje a Libertadores é inalcançável (corte ~62 pts, máximo possível
+    do Corinthians 56) e some; reaparece se as marcações a tornarem possível. O rebaixamento sempre aparece.
+  - **Regra de vagas usada (2026, CBF; confira no regulamento):** Libertadores = 1º–5º (4 em fase de grupos e 1 na preliminar);
+    Sul-Americana = os 6 melhores seguintes, contada como "11º ou melhor". O campeão da Copa do Brasil, da Libertadores e da
+    Sul-Americana pode deslocar essas faixas (efeito cascata); os limites estão em `PARAMETROS` (`vagaLibertadores`, `vagaSulamericana`).
+  - **Meta de pontos:** rebaixamento = pontos para risco abaixo de 10%; vagas = pontos para 50% de chance da vaga.
 - **Risco de rebaixamento em %**: probabilidade de o Corinthians terminar entre os 4 últimos,
   calculada por uma simulação do campeonato inteiro (ver [Como o percentual funciona](#como-o-percentual-funciona)).
   Faixas: abaixo de 10% *situação confortável*; de 10% a 40% *risco moderado*; 40% ou mais *zona de perigo*
@@ -136,7 +149,7 @@ Tudo vem de `public/estado.json` (versão 2). Jogo com resultado preenchido fica
 | `liga.tabela` | classificação dos 20 times (pts, j, v, e, d, gp, gc) |
 | `liga.jogos` | todos os jogos que ainda faltam na liga, com `data`, `hora`, `tv`, `streaming` e `tvConsultadaEm` |
 | `historico` | posição e pontos a cada rodada registrada |
-| `liga.risco` | (opcional) risco de rebaixamento de cada clube e a soma de jogos da tabela a que pertence |
+| `liga.risco` | (opcional, formato 2) chances de cada clube (`rebaixamento`, `sulamericana`, `libertadores`) e a soma de jogos da tabela a que pertencem |
 | `noticias` | (opcional) até 12 itens `{ titulo, fonte, url, data }`, só recentes (até 7 dias); guarda título e link, nunca o texto |
 
 `src/lib/estado.js` valida tudo (contas da tabela, 38 jogos por time, coerência com os jogos do Corinthians,
@@ -212,11 +225,12 @@ O mesmo workflow `noticias.yml` (a cada 2 horas) roda `scripts/confirmar-transmi
 
 A tarefa diária do Claude (8h) continua existindo para resultados e posição, e pode confirmar transmissão como reforço.
 
-### Risco de todos os clubes (recalculado a cada atualização da tabela)
+### Chances de todos os clubes (recalculadas a cada atualização da tabela)
 
 O risco de cada clube sai da **mesma simulação** do risco do Corinthians (`src/lib/simulacao.js`, 20 mil sorteios do campeonato
 inteiro), rodada uma vez por clube **fora do navegador** e gravada em `liga.risco` do `estado.json`
-(`{ jogosDisputados, sims, clubes: { clube: % } }`). O app só lê e desenha: não simula nada extra, então a tela não fica mais lenta.
+(`{ formato: 2, jogosDisputados, sims, clubes: { clube: { rebaixamento, sulamericana, libertadores } } }`). A mesma execução da
+simulação devolve a chance e o corte (mediana dos pontos do 16º, 11º e 5º colocados) de cada objetivo. O app só lê e desenha: não simula nada extra, então a tela não fica mais lenta.
 
 - `scripts/calcular-riscos.mjs` recalcula quando a tabela mudou (compara a soma de jogos disputados com a gravada) e não grava
   nada se já está em dia. A simulação é determinística, então tabela igual dá números iguais e nenhum commit à toa.
@@ -263,7 +277,8 @@ src/lib/analise.js            risco, faixas, corte, cenário realista, soma das 
 src/lib/cenarios.js, h2h.js   cenários otimista/pessimista e histórico de confrontos
 src/lib/estado.js             validação e carga do estado
 src/lib/liga.js                classificação, risco de cada clube e duelo restante com o Corinthians
-src/TabelaLiga.jsx            tabela da liga na tela
+src/TabelaLiga.jsx            tabela da liga na tela (coluna segue o objetivo)
+src/Regua.jsx                 régua de pontos do objetivo
 src/lib/ogol.js                leitura do calendário e da tabela do ogol
 src/lib/resultados-auto.js    regras do gatilho de resultados (115 min, segunda fonte, rodada fechada)
 src/lib/transmissao-ge.js      achar a matéria do jogo e extrair hora/TV/streaming
@@ -296,6 +311,7 @@ scripts/sync-embutido.mjs       copia o estado para a cópia embutida
 | `estado.test.js` | validação do estado e da liga, carga com falha de arquivo |
 | `aplicar.test.js` | aplicação de resultados, posição, agenda e conferência com a fonte |
 | `ogol.test.js`, `resultados-auto.test.js` | leitura do ogol, 115 min, segunda fonte, rodada fechada |
+| `objetivos.test.js` | três objetivos pela mesma simulação, cortes, pontos para a vaga, visibilidade das vagas, textos |
 | `liga.test.js` | classificação e desempates, riscos (determinísticos, soma ~400%), risco vigente x velho, duelos, validação |
 | `transmissao-ge.test.js` | matéria certa do jogo, horário, TV x streaming, apelidos do ge, gatilho |
 | `noticias.test.js` | mesclar/recentes/repetidas, validação, RSS do ge e do Meu Timão, posts do X, notícia por adversário |
@@ -349,3 +365,4 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | (este) | 12/10/2026 | Medição de uso com GoatCounter (acessos e cliques em funções, sem cookies). |
 | (este) | 12/10/2026 | Rodada 30 aplicada (Palmeiras 4x1 Corinthians travado; 8 jogos restantes); jogo iniciado não aceita mais marcação; placar do jogo encerrado na ordem real; testes passam a usar uma foto congelada do estado (não quebram mais quando os dados reais mudam). |
 | (este) | 12/10/2026 | **Resultados automáticos logo após os jogos** (`resultados.yml`, a cada 20 min nos horários de jogo): placar no ogol, segunda fonte para o Corinthians, conferência da tabela, posição no fim da rodada e riscos, sem depender do Claude. |
+| (este) | 12/10/2026 | **Objetivos**: chances de rebaixamento, Sul-Americana e Libertadores (chips, arrastar o painel, régua e tabela por objetivo; vagas só aparecem com chance real); simulação passa a devolver chance e corte de cada objetivo e `liga.risco` ganha o formato 2. |

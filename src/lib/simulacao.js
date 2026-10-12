@@ -24,6 +24,11 @@ export const PARAMETROS = {
   encolhimento: 10, // "jogos de confiança" puxando cada time para a média
   maxGols: 8,
   zonaDeRebaixamento: 4,
+  // Objetivos de vaga (posição final máxima, contagem acumulada). Regra-base de 2026 (CBF): Libertadores = 1º–5º
+  // (4 em fase de grupos e 1 na preliminar); Sul-Americana = os 6 melhores seguintes (6º–11º), ou seja, "11º ou melhor".
+  // O campeão da Copa do Brasil, da Libertadores e da Sul-Americana pode deslocar essas faixas (efeito cascata).
+  vagaLibertadores: 5,
+  vagaSulamericana: 11,
   semente: 20261009,
 };
 
@@ -149,6 +154,11 @@ export function simular({ tabela, jogos, clube = 'Corinthians', marcas = {}, sim
   const histPtsFinais = new Int32Array(200);
   const histPtsRebaixado = new Int32Array(200);
   const histPosicao = new Int32Array(n + 1);
+  // Pontos do último classificado de cada vaga em cada simulação (para o corte) e pontos finais do alvo quando conseguiu a vaga
+  const histCorteLib = new Int32Array(200), histCorteSul = new Int32Array(200);
+  const histPtsLib = new Int32Array(200), histPtsSul = new Int32Array(200);
+  const vagaLib = parametros.vagaLibertadores, vagaSul = parametros.vagaSulamericana;
+  let cLib = 0, cSul = 0;
 
   for (let s = 0; s < sims; s++) {
     for (let t = 0; t < n; t++) { pts[t] = ptsIni[t]; vit[t] = vitIni[t]; sg[t] = sgIni[t]; gp[t] = gpIni[t]; }
@@ -183,6 +193,8 @@ export function simular({ tabela, jogos, clube = 'Corinthians', marcas = {}, sim
     histPtsFinais[pts[alvo]] += 1;
     somaPontos += pts[alvo];
     if (posicao > n - zona) { rebaixados++; histPtsRebaixado[pts[alvo]] += 1; }
+    if (posicao <= vagaLib) { cLib++; histPtsLib[pts[alvo]] += 1; }
+    if (posicao <= vagaSul) { cSul++; histPtsSul[pts[alvo]] += 1; }
 
     // Pontos do 16º colocado (o "corte" real daquela simulação)
     for (let t = 0; t < n; t++) ordem[t] = chave[t];
@@ -190,6 +202,8 @@ export function simular({ tabela, jogos, clube = 'Corinthians', marcas = {}, sim
     const chave16 = ordem[n - 1 - corteIdx]; // ordem crescente: 16º colocado = (n-16)-ésimo
     // recupera os pontos pela chave: pts = floor(chave / 1e8)
     histCorte[Math.floor(chave16 / 1e8)] += 1;
+    histCorteLib[Math.floor(ordem[n - vagaLib] / 1e8)] += 1;
+    histCorteSul[Math.floor(ordem[n - vagaSul] / 1e8)] += 1;
   }
 
   const mediana = (hist) => {
@@ -202,10 +216,16 @@ export function simular({ tabela, jogos, clube = 'Corinthians', marcas = {}, sim
   // P(rebaixamento | pontos finais = k)
   const riscoPorPontos = (k) => (histPtsFinais[k] > 0 ? histPtsRebaixado[k] / histPtsFinais[k] : null);
 
+  const risco = (rebaixados / sims) * 100;
+  const corte = mediana(histCorte);
   return {
-    risco: (rebaixados / sims) * 100,
+    risco,
     projecao: somaPontos / sims,
-    corte: mediana(histCorte),
+    corte,
+    // Os três objetivos pela mesma simulação: chance (%) e corte (pontos do último classificado, mediana)
+    chances: { rebaixamento: risco, sulamericana: (cSul / sims) * 100, libertadores: (cLib / sims) * 100 },
+    cortes: { rebaixamento: corte, sulamericana: mediana(histCorteSul), libertadores: mediana(histCorteLib) },
+    histPtsVaga: { sulamericana: histPtsSul, libertadores: histPtsLib },
     sims,
     histPtsFinais,
     histPtsRebaixado,
@@ -256,4 +276,19 @@ export function pontosParaRisco(resultado, alvo, { minimo = 100 } = {}) {
     if (histPtsRebaixado[k] / n >= alvo) limite = k;
   }
   return limite === null ? primeiro : limite + 1;
+}
+
+/**
+ * Total final de pontos a partir do qual a chance de uma VAGA (`'sulamericana'` ou `'libertadores'`) chega a `alvo`
+ * (fração, ex.: 0.5): o menor total com chance condicional >= alvo. Devolve null se nenhum total observado chega lá
+ * (ex.: a vaga está fora de alcance). Ignora totais com poucas simulações.
+ */
+export function pontosParaVaga(resultado, objetivo, alvo = 0.5, { minimo = 100 } = {}) {
+  const histVaga = resultado.histPtsVaga[objetivo];
+  const { histPtsFinais } = resultado;
+  for (let k = 0; k < histPtsFinais.length; k++) {
+    const n = histPtsFinais[k];
+    if (n >= minimo && histVaga[k] / n >= alvo) return k;
+  }
+  return null;
 }

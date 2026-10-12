@@ -1,10 +1,25 @@
 import { CLUBE } from './estado.js';
-import { simular, pontosParaRisco, probabilidadesDoJogo } from './simulacao.js';
+import { simular, pontosParaRisco, pontosParaVaga, probabilidadesDoJogo } from './simulacao.js';
 import { transmissaoConfirmada } from './agenda.js';
 
 /** Risco abaixo do qual a situação é "confortável" e a partir do qual é "zona de perigo". */
 export const LIMITE_CONFORTAVEL = 0.1;
 export const LIMITE_PERIGO = 0.4;
+
+/** Objetivos do clube, na ordem em que a tela os mostra (arrastar para a esquerda avança, para a direita volta). */
+export const OBJETIVOS = ['rebaixamento', 'sulamericana', 'libertadores'];
+/** Chance mínima (%) para um objetivo de vaga aparecer: abaixo disso ele é, na prática, impossível. */
+export const LIMITE_VISIVEL = 0.1;
+/** Chance de vaga usada como meta de pontos ("para N% de chance"). */
+export const ALVO_DA_VAGA = 0.5;
+
+/** Faixa de uma vaga (Sul-Americana, Libertadores) a partir da chance real (0 a 100). */
+export function faixaDeVaga(pct) {
+  if (pct >= 75) return { level: 'high', label: 'Muito provável' };
+  if (pct >= 40) return { level: 'mid', label: 'Possível' };
+  if (pct >= 10) return { level: 'low', label: 'Remota' };
+  return { level: 'faint', label: 'Muito remota' };
+}
 
 /** Faixa de risco a partir do percentual real de rebaixamento (0 a 100). */
 export function riskLevel(pct) {
@@ -48,17 +63,33 @@ export function analisar(estado, games, { sims } = {}) {
   const marcados = abertos.filter((g) => g.result);
   const pontosMarcados = marcados.reduce((s, g) => s + { V: 3, E: 1, D: 0 }[g.result], 0);
 
+  const emDisputa = abertos.length * 3;
+  const maxPossivel = estado.pontos + emDisputa;
+  const pontosConfortavel = pontosParaRisco(sim, LIMITE_CONFORTAVEL);
+  const distanciaDe = (corteDoObjetivo) => {
+    const d = projecao - corteDoObjetivo;
+    const n = Math.round(Math.abs(d));
+    return { pontos: n, situacao: n === 0 ? 'exato' : d < 0 ? 'abaixo' : 'acima', corte: corteDoObjetivo };
+  };
+  const objetivos = {
+    rebaixamento: { chance: sim.chances.rebaixamento, corte: sim.cortes.rebaixamento, pontosMeta: pontosConfortavel, distancia: distanciaDe(sim.cortes.rebaixamento) },
+    sulamericana: { chance: sim.chances.sulamericana, corte: sim.cortes.sulamericana, pontosMeta: pontosParaVaga(sim, 'sulamericana', ALVO_DA_VAGA), distancia: distanciaDe(sim.cortes.sulamericana) },
+    libertadores: { chance: sim.chances.libertadores, corte: sim.cortes.libertadores, pontosMeta: pontosParaVaga(sim, 'libertadores', ALVO_DA_VAGA), distancia: distanciaDe(sim.cortes.libertadores) },
+  };
+
   return {
     risco: sim.risco,
+    objetivos,
+    maxPossivel,
     projecao,
     corte,
-    emDisputa: abertos.length * 3,
+    emDisputa,
     jogosMarcados: marcados.length,
     pontosMarcados,
     // pontos reais + pontos dos jogos marcados: é o "placar" do cenário que o usuário monta
     pontosComMarcas: estado.pontos + pontosMarcados,
     // total final de pontos a partir do qual o risco fica abaixo do limite "confortável"
-    pontosConfortavel: pontosParaRisco(sim, LIMITE_CONFORTAVEL),
+    pontosConfortavel,
     distancia: {
       pontos: arredondado,
       situacao: arredondado === 0 ? 'exato' : diff < 0 ? 'abaixo' : 'acima',
@@ -66,6 +97,22 @@ export function analisar(estado, games, { sims } = {}) {
     },
     sim,
   };
+}
+
+/** Objetivos que aparecem na tela: o rebaixamento sempre; as vagas só quando há chance real (>= LIMITE_VISIVEL). */
+export function objetivosVisiveis(analise) {
+  return OBJETIVOS.filter((o) => o === 'rebaixamento' || analise.objetivos[o].chance >= LIMITE_VISIVEL);
+}
+
+/** Texto da distância até a vaga: "3 pts acima da vaga" / "faltam 6 pts para a vaga" / "faltam N pts mesmo ganhando tudo". */
+export function formatDistanciaVaga(pontos, situacao, { corte, maxPossivel }) {
+  if (corte > maxPossivel) {
+    const falta = corte - maxPossivel;
+    return falta === 1 ? 'falta 1 pt mesmo ganhando tudo' : `faltam ${falta} pts mesmo ganhando tudo`;
+  }
+  if (situacao === 'exato' || pontos === 0) return 'exatamente no corte da vaga';
+  if (situacao === 'abaixo') return pontos === 1 ? 'falta 1 pt para a vaga' : `faltam ${pontos} pts para a vaga`;
+  return pontos === 1 ? '1 pt acima da vaga' : `${pontos} pts acima da vaga`;
 }
 
 /**

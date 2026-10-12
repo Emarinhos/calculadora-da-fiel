@@ -23,5 +23,5 @@ if (!forcar && riscoVigente(estado)) {
   }
   fs.writeFileSync(arquivo, JSON.stringify(novo, null, 2) + '\n');
   const c = novo.liga.risco.clubes;
-  console.log(`riscos: ${Object.keys(c).length} clubes gravados (Corinthians ${c.Corinthians}%).`);
+  console.log(`riscos: ${Object.keys(c).length} clubes gravados (Corinthians: risco ${c.Corinthians.rebaixamento}%, Sul-Americana ${c.Corinthians.sulamericana}%, Libertadores ${c.Corinthians.libertadores}%).`);
 }

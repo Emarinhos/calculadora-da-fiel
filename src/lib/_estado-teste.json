@@ -803,29 +803,110 @@
       }
     ],
     "risco": {
+      "formato": 2,
       "jogosDisputados": 578,
       "sims": 20000,
       "clubes": {
-        "Flamengo": 0,
-        "Palmeiras": 0,
-        "Fluminense": 0,
-        "Athletico Paranaense": 0,
-        "Cruzeiro": 0,
-        "Bahia": 0,
-        "Atlético Mineiro": 0,
-        "Santos": 0.1,
-        "Coritiba": 4.2,
-        "Red Bull Bragantino": 1.4,
-        "São Paulo": 3.1,
-        "Vitória": 9.7,
-        "Botafogo": 7.7,
-        "Vasco": 9.3,
-        "Mirassol": 32.7,
-        "Corinthians": 29.2,
-        "Internacional": 43,
-        "Grêmio": 61.8,
-        "Remo": 98,
-        "Chapecoense": 100
+        "Flamengo": {
+          "rebaixamento": 0,
+          "sulamericana": 100,
+          "libertadores": 100
+        },
+        "Palmeiras": {
+          "rebaixamento": 0,
+          "sulamericana": 100,
+          "libertadores": 100
+        },
+        "Fluminense": {
+          "rebaixamento": 0,
+          "sulamericana": 100,
+          "libertadores": 90.18
+        },
+        "Athletico Paranaense": {
+          "rebaixamento": 0,
+          "sulamericana": 100,
+          "libertadores": 85.81
+        },
+        "Cruzeiro": {
+          "rebaixamento": 0,
+          "sulamericana": 99.97,
+          "libertadores": 57.25
+        },
+        "Bahia": {
+          "rebaixamento": 0,
+          "sulamericana": 99.6,
+          "libertadores": 37.94
+        },
+        "Atlético Mineiro": {
+          "rebaixamento": 0.01,
+          "sulamericana": 98.71,
+          "libertadores": 21.7
+        },
+        "Santos": {
+          "rebaixamento": 0.06,
+          "sulamericana": 91.29,
+          "libertadores": 5.66
+        },
+        "Coritiba": {
+          "rebaixamento": 4.15,
+          "sulamericana": 46.38,
+          "libertadores": 0.23
+        },
+        "Red Bull Bragantino": {
+          "rebaixamento": 1.36,
+          "sulamericana": 68.95,
+          "libertadores": 0.65
+        },
+        "São Paulo": {
+          "rebaixamento": 3.14,
+          "sulamericana": 56.02,
+          "libertadores": 0.35
+        },
+        "Vitória": {
+          "rebaixamento": 9.66,
+          "sulamericana": 31.71,
+          "libertadores": 0.05
+        },
+        "Botafogo": {
+          "rebaixamento": 7.72,
+          "sulamericana": 38.45,
+          "libertadores": 0.1
+        },
+        "Vasco": {
+          "rebaixamento": 9.25,
+          "sulamericana": 36.1,
+          "libertadores": 0.1
+        },
+        "Mirassol": {
+          "rebaixamento": 32.74,
+          "sulamericana": 10.57,
+          "libertadores": 0.02
+        },
+        "Corinthians": {
+          "rebaixamento": 29.18,
+          "sulamericana": 12.35,
+          "libertadores": 0.01
+        },
+        "Internacional": {
+          "rebaixamento": 42.96,
+          "sulamericana": 7.07,
+          "libertadores": 0
+        },
+        "Grêmio": {
+          "rebaixamento": 61.83,
+          "sulamericana": 2.85,
+          "libertadores": 0
+        },
+        "Remo": {
+          "rebaixamento": 97.98,
+          "sulamericana": 0.01,
+          "libertadores": 0
+        },
+        "Chapecoense": {
+          "rebaixamento": 99.99,
+          "sulamericana": 0,
+          "libertadores": 0
+        }
       }
     }
   },

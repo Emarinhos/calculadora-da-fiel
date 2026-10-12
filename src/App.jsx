@@ -1,7 +1,8 @@
 import React, { useState, useMemo, useEffect, useLayoutEffect, useRef } from 'react';
 import TabelaLiga from './TabelaLiga';
+import Regua from './Regua';
 import escudo from './assets/escudo.png';
-import { analisar, riskLevel, formatarRisco, cenarioRealista, transmissaoDosAbertos, LIMITE_CONFORTAVEL } from './lib/analise';
+import { analisar, riskLevel, formatarRisco, cenarioRealista, transmissaoDosAbertos, objetivosVisiveis, faixaDeVaga, formatDistanciaLabel, formatDistanciaVaga, LIMITE_CONFORTAVEL, ALVO_DA_VAGA } from './lib/analise';
 import { resultadoDoCenario, formaRecente, N_CONFRONTOS, JANELA_ANOS } from './lib/cenarios';
 import { FONTE_H2H, ATUALIZADO_EM } from './lib/h2h';
 import { ESTADO_EMBUTIDO, carregarEstado, jogosDoApp } from './lib/estado';
@@ -10,10 +11,14 @@ import { aoVivo, jogoComecou } from './lib/agenda';
 import { medir } from './lib/medir';
 
 
-// Escala da "linha do corte": do pior (todas derrotas) ao melhor (todas vitórias) cenário
-const SCALE_MIN = 30;
-const SCALE_MAX = 60;
-const pos = (v) => Math.min(100, Math.max(0, ((v - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)) * 100));
+// Nomes dos objetivos (chips, rótulo do número grande e rodapé do celular)
+const NOME_CURTO = { rebaixamento: 'Rebaixamento', sulamericana: 'Sul-Americana', libertadores: 'Libertadores' };
+const TITULO = { rebaixamento: 'Risco de rebaixamento', sulamericana: 'Chance de Sul-Americana', libertadores: 'Chance de Libertadores' };
+const RODAPE = { rebaixamento: 'risco', sulamericana: 'Sul-Am.', libertadores: 'Libert.' };
+// Posição final máxima que cada vaga exige (regra-base de 2026; ver PARAMETROS em lib/simulacao.js)
+const POSICAO_DA_VAGA = { sulamericana: 11, libertadores: 5 };
+// O número do chip cresce com a chance: quanto mais perto o objetivo, maior ele aparece
+const tamanhoDoNumero = (pct) => Math.round(22 + 18 * Math.sqrt(Math.max(0, pct) / 100));
 
 // Recarrega public/estado.json a cada 30 min e ao voltar para a aba
 const INTERVALO_RECARGA_MS = 30 * 60 * 1000;
@@ -141,6 +146,8 @@ export default function App() {
     return () => clearInterval(t);
   }, []);
   const [tabelaAberta, setTabelaAberta] = useState(false);
+  const [objetivoEscolhido, setObjetivoEscolhido] = useState('rebaixamento');
+  const arrasto = useRef(null);
   const [aba, setAba] = useState('jogos');
   const trilhaRef = useRef(null);
   const reduzMovimento = () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -199,10 +206,34 @@ export default function App() {
   // Referência sem nenhuma marcação (muda só quando o estado muda)
   const analiseBase = useMemo(() => analisar(estado, jogosDoApp(estado)), [estado]);
 
-  const calculatedRisk = analise.risco;
-  const currentDistancia = analise.distancia;
+  // Objetivo escolhido (arrastar o painel ou usar os botões). Rebaixamento sempre; as vagas só aparecem com chance real.
+  const visiveis = useMemo(() => objetivosVisiveis(analise), [analise]);
+  const objetivo = visiveis.includes(objetivoEscolhido) ? objetivoEscolhido : 'rebaixamento';
+  const ehRebaixamento = objetivo === 'rebaixamento';
+  const obj = analise.objetivos[objetivo];
+  const calculatedRisk = obj.chance; // chance (%) do objetivo escolhido
+  const currentDistancia = obj.distancia;
   const projPoints = Math.round(analise.projecao);
-  const baseline = analiseBase.risco;
+  const baseline = analiseBase.objetivos[objetivo].chance;
+
+  const escolherObjetivo = (o) => {
+    if (o !== objetivo) medir(`objetivo-${o}`, `Objetivo ${NOME_CURTO[o]}`);
+    setObjetivoEscolhido(o);
+  };
+  // Arrastar para a esquerda avança para o próximo objetivo; para a direita volta ao anterior
+  const trocarObjetivo = (passo) => {
+    const i = visiveis.indexOf(objetivo);
+    escolherObjetivo(visiveis[(i + passo + visiveis.length) % visiveis.length]);
+  };
+  const aoApertar = (e) => { arrasto.current = { x: e.clientX, y: e.clientY }; };
+  const aoSoltar = (e) => {
+    const inicio = arrasto.current;
+    arrasto.current = null;
+    if (!inicio || visiveis.length < 2) return;
+    const dx = e.clientX - inicio.x;
+    const dy = e.clientY - inicio.y;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) trocarObjetivo(dx < 0 ? 1 : -1);
+  };
   const marcados = abertos.filter((g) => g.result !== null).length;
 
   // Estado e animação de 400ms do percentual com suporte a prefers-reduced-motion
@@ -296,48 +327,49 @@ export default function App() {
   );
   const dataFonte = brData(ATUALIZADO_EM);
 
-  // Delta em relação ao baseline
+  // Delta em relação ao baseline (para vagas, subir é bom; para o rebaixamento, descer é bom)
   const delta = useMemo(() => {
     const diff = calculatedRisk - baseline;
     if (Math.abs(diff) < 0.5) return null;
     const formatted = String(Math.round(Math.abs(diff)));
-    if (diff < 0) {
-      return {
-        text: `▼ ${formatted} pp`,
-        type: 'safe',
-        className: 'text-ink border-ink',
-      };
-    }
+    const bom = ehRebaixamento ? diff < 0 : diff > 0;
     return {
-      text: `▲ ${formatted} pp`,
-      type: 'danger',
-      className: 'bg-risk-danger text-canvas border-risk-danger',
+      text: `${diff < 0 ? '▼' : '▲'} ${formatted} pp`,
+      type: bom ? 'safe' : 'danger',
+      className: bom ? 'text-ink border-ink' : 'bg-risk-danger text-canvas border-risk-danger',
     };
-  }, [calculatedRisk, baseline]);
+  }, [calculatedRisk, baseline, ehRebaixamento]);
 
   // Faixa de risco atual
-  const currentLevel = useMemo(() => riskLevel(displayedRisk), [displayedRisk]);
+  const currentLevel = useMemo(() => (ehRebaixamento ? riskLevel(displayedRisk) : faixaDeVaga(displayedRisk)), [displayedRisk, ehRebaixamento]);
 
   // Rebaixamento praticamente descartado nas simulações
-  const isSaved = calculatedRisk < 1;
+  const isSaved = ehRebaixamento && calculatedRisk < 1;
 
   // Identidade preto e creme: vermelho do brasão só na zona de perigo (risco >= 40%)
-  const isDanger = currentLevel.level === 'danger';
+  const isDanger = ehRebaixamento && currentLevel.level === 'danger';
   const riskText = isDanger ? 'text-risk-danger' : 'text-ink';
 
-  const cutBelow = currentDistancia.situacao === 'abaixo';
+  // Só o rebaixamento fica vermelho quando a projeção está abaixo do corte; nas vagas "abaixo" é só distância
+  const cutBelow = ehRebaixamento && currentDistancia.situacao === 'abaixo';
 
   // Assinatura: as listras da camisa engrossam com o risco (mais preto = mais perigo)
-  const clampedRisk = Math.min(100, Math.max(0, displayedRisk));
+  const clampedRisk = Math.min(100, Math.max(0, ehRebaixamento ? displayedRisk : analise.risco));
   const stripeInk = `${(1 + (12 * clampedRisk) / 100).toFixed(2)}px`;
 
-  const projPos = pos(displayedProjPoints);
-  const corte = analise.corte;
-  const cutPos = pos(corte);
+  const corte = obj.corte;
+  // Escala da régua: a mesma para todos os objetivos visíveis (só o corte se desloca ao trocar de objetivo),
+  // do placar de hoje até o maior entre o máximo possível e os cortes visíveis
+  const escalaMin = Math.floor((estado.pontos - 2) / 2) * 2;
+  const escalaMax = Math.ceil((Math.max(analise.maxPossivel, ...visiveis.map((o) => analise.objetivos[o].corte)) + 2) / 2) * 2;
   // Quanto falta, a partir do placar do cenário (tabela + marcações), e quanto ainda está sem marcação
-  const faltamParaTranquilo = analise.pontosConfortavel === null ? null : analise.pontosConfortavel - analise.pontosComMarcas;
+  const faltamParaMeta = obj.pontosMeta === null ? null : obj.pontosMeta - analise.pontosComMarcas;
   const restanteSemMarca = (abertos.length - marcados) * 3;
-  const gapParts = currentDistancia.label.split(/(\d+)/);
+  const gapLabel = ehRebaixamento
+    ? formatDistanciaLabel(currentDistancia.pontos, currentDistancia.situacao)
+    : formatDistanciaVaga(currentDistancia.pontos, currentDistancia.situacao, { corte, maxPossivel: analise.maxPossivel });
+  const gapParts = gapLabel.split(/(\d+)/);
+  const sims = Math.round(analise.sim.sims / 1000);
 
   return (
     <div className="min-h-screen text-ink font-sans selection:bg-ink/20">
@@ -414,7 +446,7 @@ export default function App() {
             className="relative flex gap-4 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:block lg:gap-0 lg:overflow-visible"
           >
             <div className={`flex-[0_0_100%] min-w-0 snap-start lg:mb-8 ${tabelaAberta ? '' : 'lg:hidden'}`}>
-              <TabelaLiga linhas={linhasLiga} rodada={estado.posicaoRodada} vigente={riscoVigente(estado)} />
+              <TabelaLiga linhas={linhasLiga} rodada={estado.posicaoRodada} vigente={riscoVigente(estado)} objetivo={objetivo} />
             </div>
 
             <div className="flex-[0_0_100%] min-w-0 snap-start">
@@ -539,12 +571,57 @@ export default function App() {
         </section>
 
         {/* Dashboard Section (Right column on Desktop, top on mobile) */}
-        <section className="order-1 lg:order-2 lg:sticky lg:top-6 flex flex-col gap-4">
+        <section
+          className="order-1 lg:order-2 lg:sticky lg:top-6 flex flex-col gap-4 touch-pan-y"
+          onPointerDown={aoApertar}
+          onPointerUp={aoSoltar}
+          onPointerCancel={() => { arrasto.current = null; }}
+          data-testid="painel"
+        >
+
+          {/* Objetivos: arraste o painel para a esquerda/direita (celular) ou use os botões e as abas. O número grande, a régua
+              e a tabela seguem o objetivo escolhido; vagas só aparecem quando há chance real. */}
+          {visiveis.length > 1 && (
+            <div className="flex items-stretch gap-1.5" role="tablist" aria-label="Objetivo do clube" data-testid="objetivos">
+              <button
+                onClick={() => trocarObjetivo(-1)}
+                aria-label="Objetivo anterior"
+                className="hidden lg:flex w-9 items-center justify-center border-2 border-ink/40 text-ink-soft hover:text-ink hover:border-ink transition-colors text-[22px] leading-none"
+              >
+                ‹
+              </button>
+              {visiveis.map((o) => {
+                const v = analise.objetivos[o].chance;
+                const on = o === objetivo;
+                return (
+                  <button
+                    key={o}
+                    role="tab"
+                    aria-selected={on}
+                    onClick={() => escolherObjetivo(o)}
+                    className={`flex-1 min-w-0 overflow-hidden border-2 border-ink px-2 py-1.5 text-left leading-none transition-colors ${on ? 'bg-ink text-canvas' : 'bg-transparent text-ink hover:bg-ink/10'}`}
+                  >
+                    <span className="block tabular-nums transition-[font-size] duration-300" style={{ fontSize: `${tamanhoDoNumero(v)}px` }}>
+                      {formatarRisco(v)}%
+                    </span>
+                    <span className="block mt-1 text-[11px] tracking-[0.08em] truncate">{NOME_CURTO[o]}</span>
+                  </button>
+                );
+              })}
+              <button
+                onClick={() => trocarObjetivo(1)}
+                aria-label="Próximo objetivo"
+                className="hidden lg:flex w-9 items-center justify-center border-2 border-ink/40 text-ink-soft hover:text-ink hover:border-ink transition-colors text-[22px] leading-none"
+              >
+                ›
+              </button>
+            </div>
+          )}
 
           {/* Main Risk Display */}
           <div className="flex flex-col">
             <div className="flex items-center justify-between gap-2">
-              <span className="text-label tracking-[0.2em]">Risco de rebaixamento</span>
+              <span className="text-label tracking-[0.2em]">{TITULO[objetivo]}</span>
               <div className="flex items-center gap-2">
                 {delta && (
                   <span className={`text-label px-2 py-1 border-2 transition-colors duration-300 ${delta.className}`}>
@@ -573,9 +650,16 @@ export default function App() {
 
             {/* Legenda completa no desktop; no celular só o essencial (jogos marcados) */}
             <p className="hidden lg:block text-caption text-ink-soft max-w-[300px]" data-testid="legenda-risco">
-              {marcados > 0
-                ? `Risco dado os ${marcados} ${marcados === 1 ? 'jogo marcado' : 'jogos marcados'}; o resto segue simulado (${Math.round(analise.sim.sims / 1000)} mil simulações).`
-                : `Chance de terminar entre os 4 últimos, em ${Math.round(analise.sim.sims / 1000)} mil simulações do campeonato.`}
+              {ehRebaixamento
+                ? (marcados > 0
+                  ? `Risco dado os ${marcados} ${marcados === 1 ? 'jogo marcado' : 'jogos marcados'}; o resto segue simulado (${sims} mil simulações).`
+                  : `Chance de terminar entre os 4 últimos, em ${sims} mil simulações do campeonato.`)
+                : (marcados > 0
+                  ? `Chance dado os ${marcados} ${marcados === 1 ? 'jogo marcado' : 'jogos marcados'}; o resto segue simulado (${sims} mil simulações). `
+                  : `Chance de terminar entre os ${POSICAO_DA_VAGA[objetivo]} primeiros, em ${sims} mil simulações do campeonato. `)
+                + (ehRebaixamento ? '' : objetivo === 'libertadores'
+                  ? 'Regra de 2026: 5 vagas pelo Brasileirão; campeões da Copa do Brasil e das copas podem deslocá-las.'
+                  : 'Sul-Americana: do 6º ao 11º ou melhor; os campeões das copas podem deslocar a faixa.')}
             </p>
             {marcados > 0 && (
               <p className="lg:hidden text-caption text-ink-soft" data-testid="legenda-risco-curta">
@@ -611,23 +695,25 @@ export default function App() {
               <div className="text-ink-soft mt-1">{abertos.length} {abertos.length === 1 ? 'jogo' : 'jogos'} · {marcados} marcado{marcados === 1 ? '' : 's'}{marcados > 0 ? ` (${analise.pontosMarcados} pts)` : ''}</div>
             </div>
             <div className="border-2 border-ink px-3 py-2">
-              <div className="text-ink-soft">Para risco abaixo de {Math.round(LIMITE_CONFORTAVEL * 100)}%</div>
+              <div className="text-ink-soft">
+                {ehRebaixamento ? `Para risco abaixo de ${Math.round(LIMITE_CONFORTAVEL * 100)}%` : `Para ${Math.round(ALVO_DA_VAGA * 100)}% de chance de vaga`}
+              </div>
               <div className="text-[30px] leading-none mt-1 tabular-nums">
-                {analise.pontosConfortavel === null ? '—' : `${analise.pontosConfortavel} pts`}
+                {obj.pontosMeta === null ? '—' : `${obj.pontosMeta} pts`}
               </div>
               <div className="text-ink-soft mt-1">
-                {faltamParaTranquilo === null
-                  ? ''
-                  : faltamParaTranquilo <= 0
-                    ? 'já garantido'
-                    : faltamParaTranquilo > restanteSemMarca
+                {faltamParaMeta === null
+                  ? (ehRebaixamento ? '' : 'fora de alcance')
+                  : faltamParaMeta <= 0
+                    ? (ehRebaixamento ? 'já garantido' : 'já alcançado')
+                    : faltamParaMeta > restanteSemMarca
                       ? 'fora de alcance'
-                      : `faltam ${faltamParaTranquilo} de ${restanteSemMarca}`}
+                      : `faltam ${faltamParaMeta} de ${restanteSemMarca}`}
               </div>
             </div>
           </div>
 
-          {/* A lacuna até o corte, desenhada */}
+          {/* A lacuna até o corte, desenhada (a régua muda com o objetivo) */}
           <div>
             <p className="text-[34px] leading-[1.05]">
               {gapParts.map((part, i) =>
@@ -636,50 +722,24 @@ export default function App() {
                   : part
               )}
             </p>
-
-            <div
-              className="relative h-[100px] mt-3"
-              role="img"
-              aria-label={`Escala de pontos: projeção de ${displayedProjPoints}, corte em ${corte}`}
-            >
-              <span className="absolute left-0 top-0 text-caption text-ink-soft">Rebaixamento</span>
-              <span className="absolute right-0 top-0 text-caption text-ink-soft">Segurança</span>
-              <span className="absolute top-0 -translate-x-1/2 text-label text-risk-danger whitespace-nowrap" style={{ left: `${cutPos}%` }}>
-                Corte {corte}
-              </span>
-
-              {/* Zona de rebaixamento (hachurada) e zona segura */}
-              <div
-                className="absolute left-0 top-[26px] h-[24px] border-2 border-ink"
-                style={{ width: `${cutPos}%`, background: 'repeating-linear-gradient(135deg, var(--ink) 0 1.5px, transparent 1.5px 6px)' }}
-              />
-              <div className="absolute top-[26px] h-[24px] border-2 border-l-0 border-ink" style={{ left: `${cutPos}%`, right: 0 }} />
-
-              {/* Lacuna entre a projeção e o corte */}
-              <div
-                className={`absolute top-[36px] h-[4px] shadow-[0_0_0_3px_var(--bg-canvas)] transition-all duration-500 ${cutBelow ? 'bg-risk-danger' : 'bg-ink'}`}
-                style={{ left: `${Math.min(projPos, cutPos)}%`, width: `${Math.abs(cutPos - projPos)}%` }}
-              />
-
-              {/* Linha do corte */}
-              <div className="absolute top-[18px] h-[46px] w-1 -translate-x-1/2 bg-risk-danger" style={{ left: `${cutPos}%` }} />
-
-              {/* Marcador da projeção */}
-              <div className="absolute top-[50px] h-[8px] w-[3px] -translate-x-1/2 bg-ink transition-all duration-500" style={{ left: `${projPos}%` }} />
-              <div
-                className="absolute top-[58px] -translate-x-1/2 bg-ink text-canvas px-2 py-1 text-[22px] leading-none tabular-nums transition-all duration-500"
-                style={{ left: `${projPos}%` }}
-              >
-                {displayedProjPoints}
-              </div>
-            </div>
+            <Regua
+              objetivo={objetivo}
+              corte={corte}
+              projecao={displayedProjPoints}
+              maxPossivel={analise.maxPossivel}
+              lo={escalaMin}
+              hi={escalaMax}
+              abaixoDoCorte={currentDistancia.situacao === 'abaixo'}
+            />
           </div>
 
           <div className="hidden lg:block text-caption text-ink-soft">
-            {estado.posicao}º lugar após a rodada {estado.posicaoRodada} · corte estimado em {corte} pts (mediana do 16º nas simulações)
+            {estado.posicao}º lugar após a rodada {estado.posicaoRodada} · {ehRebaixamento
+              ? `corte estimado em ${corte} pts (mediana do 16º nas simulações)`
+              : `corte da vaga estimado em ${corte} pts (mediana do ${POSICAO_DA_VAGA[objetivo]}º nas simulações); máximo possível: ${analise.maxPossivel} pts`}
           </div>
           <div className="lg:hidden text-caption text-ink-soft" data-testid="posicao-curta">
-            {estado.posicao}º após a rodada {estado.posicaoRodada} · corte {corte} pts
+            {estado.posicao}º após a rodada {estado.posicaoRodada} · {ehRebaixamento ? `corte ${corte} pts` : `vaga ${corte} pts · máx. ${analise.maxPossivel}`}
           </div>
 
           {/* Controls (Stress Test) */}
@@ -739,12 +799,13 @@ export default function App() {
           <div className="text-label leading-tight truncate">
             <span data-testid="rodape-pontos">{analise.pontosComMarcas}</span> pts → <span className="tabular-nums">{displayedProjPoints} proj</span>
             <span className="text-ink-soft"> · </span>
-            <span className={cutBelow ? 'text-risk-danger' : 'text-ink'}>{currentDistancia.label}</span>
+            <span className={cutBelow ? 'text-risk-danger' : 'text-ink'}>{gapLabel}</span>
           </div>
           <div className="flex items-center gap-2 mt-0.5">
             <div aria-live="polite" aria-atomic="true" className="flex items-baseline gap-0.5">
               <span className={`text-[32px] tabular-nums leading-none ${riskText}`}>{formatarRisco(displayedRisk)}</span>
               <span className={`text-[18px] leading-none ${riskText}`}>%</span>
+              <span className="text-label text-ink-soft ml-1 self-center">{RODAPE[objetivo]}</span>
             </div>
             {delta && (
               <span className={`text-label px-1.5 py-0.5 border-2 text-center whitespace-nowrap ${delta.className}`}>

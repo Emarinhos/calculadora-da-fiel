@@ -30,15 +30,19 @@ test('desempate pela regra da CBF: pontos iguais, mais vitórias na frente', () 
   assert.ok(c.findIndex((t) => t.clube === y.clube) < c.findIndex((t) => t.clube === x.clube));
 });
 
-test('riscos: determinísticos, entre 0 e 100 e somam ~400% (4 rebaixados por temporada)', () => {
+test('chances: determinísticas, entre 0 e 100; rebaixamento soma ~400%, Libertadores ~500% e Sul-Americana ~1100% (vagas acumuladas)', () => {
   const a = calcularRiscos(ESTADO_EMBUTIDO, { sims: SIMS });
   const b = calcularRiscos(ESTADO_EMBUTIDO, { sims: SIMS });
   assert.deepStrictEqual(a, b);
+  assert.strictEqual(a.formato, 2);
   const v = Object.values(a.clubes);
   assert.strictEqual(v.length, 20);
-  assert.ok(v.every((x) => x >= 0 && x <= 100));
-  const soma = v.reduce((s, x) => s + x, 0);
-  assert.ok(Math.abs(soma - 400) < 1.5, `soma dos riscos = ${soma}`);
+  const soma = (k) => v.reduce((s, c) => s + c[k], 0);
+  for (const c of v) for (const k of ['rebaixamento', 'sulamericana', 'libertadores']) assert.ok(c[k] >= 0 && c[k] <= 100);
+  for (const c of v) assert.ok(c.libertadores <= c.sulamericana + 1e-9, 'quem chega à Libertadores também chega à faixa "Sul-Americana ou melhor"');
+  assert.ok(Math.abs(soma('rebaixamento') - 400) < 2, `rebaixamento: ${soma('rebaixamento')}`);
+  assert.ok(Math.abs(soma('libertadores') - 500) < 2, `libertadores: ${soma('libertadores')}`);
+  assert.ok(Math.abs(soma('sulamericana') - 1100) < 3, `sulamericana: ${soma('sulamericana')}`);
 });
 
 test('risco gravado vale só para a tabela em que foi calculado', () => {
@@ -50,16 +54,18 @@ test('risco gravado vale só para a tabela em que foi calculado', () => {
   assert.strictEqual(riscoVigente(depois), false);
   assert.ok(jogosDaTabela(depois) > jogosDaTabela(e));
   const linhas = linhasDaTabela(depois);
-  assert.ok(linhas.every((l) => l.risco === null)); // sem risco vigente, a tela não mostra número velho
+  assert.ok(linhas.every((l) => l.chances === null)); // sem risco vigente, a tela não mostra número velho
 });
 
 test('validação recusa risco com clube faltando ou fora de 0 a 100', () => {
   const e = comRiscos(ESTADO_EMBUTIDO, { sims: SIMS });
   const a = clone(e); delete a.liga.risco.clubes.Flamengo;
   assert.strictEqual(validarEstado(a).ok, false);
-  const b = clone(e); b.liga.risco.clubes.Flamengo = 120;
+  const b = clone(e); b.liga.risco.clubes.Flamengo.libertadores = 120;
   assert.strictEqual(validarEstado(b).ok, false);
-  const c = clone(e); c.liga.risco.clubes.Fantasma = 5;
+  const c = clone(e); c.liga.risco.clubes.Fantasma = { rebaixamento: 5, sulamericana: 5, libertadores: 5 };
+  const velho = clone(e); velho.liga.risco = { jogosDisputados: 580, sims: 20000, clubes: { Flamengo: 0 } }; // formato antigo
+  assert.strictEqual(validarEstado(velho).ok, false);
   assert.strictEqual(validarEstado(c).ok, false);
 });
 
@@ -78,5 +84,5 @@ test('linhas da tabela: Corinthians marcado, zona de rebaixamento nos 4 últimos
   const linhas = linhasDaTabela(comRiscos(ESTADO_EMBUTIDO, { sims: SIMS }));
   assert.strictEqual(linhas.filter((l) => l.eu).length, 1);
   assert.deepStrictEqual(linhas.filter((l) => l.zona).map((l) => l.pos), [17, 18, 19, 20]);
-  assert.ok(linhas.every((l) => typeof l.risco === 'number'));
+  assert.ok(linhas.every((l) => typeof l.chances.rebaixamento === 'number' && typeof l.chances.libertadores === 'number'));
 });

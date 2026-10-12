@@ -83,15 +83,18 @@ function validarLiga(e, erro) {
     }
   });
 
-  // Risco de rebaixamento de cada clube (opcional; calculado por scripts/calcular-riscos.mjs)
+  // Chances de cada clube (opcional; calculadas por scripts/calcular-riscos.mjs): rebaixamento, Sul-Americana, Libertadores
   const risco = liga.risco;
   if (risco !== undefined) {
-    if (!risco || !ehInt(risco.jogosDisputados) || !ehInt(risco.sims) || typeof risco.clubes !== 'object' || !risco.clubes) {
-      erro('liga.risco inválido (precisa de jogosDisputados, sims e clubes)');
+    if (!risco || risco.formato !== 2 || !ehInt(risco.jogosDisputados) || !ehInt(risco.sims) || typeof risco.clubes !== 'object' || !risco.clubes) {
+      erro('liga.risco inválido (formato 2: precisa de jogosDisputados, sims e clubes)');
     } else {
       for (const nome of nomes) {
-        const v = risco.clubes[nome];
-        if (typeof v !== 'number' || !(v >= 0 && v <= 100)) erro(`liga.risco.clubes: ${nome} ausente ou fora de 0 a 100`);
+        const c = risco.clubes[nome];
+        for (const objetivo of ['rebaixamento', 'sulamericana', 'libertadores']) {
+          const v = c?.[objetivo];
+          if (typeof v !== 'number' || !(v >= 0 && v <= 100)) erro(`liga.risco.clubes: ${nome} / ${objetivo} ausente ou fora de 0 a 100`);
+        }
       }
       if (Object.keys(risco.clubes).some((k) => !nomes.has(k))) erro('liga.risco.clubes tem clube que não está na tabela');
     }
