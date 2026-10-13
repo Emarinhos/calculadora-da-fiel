@@ -858,6 +858,24 @@
   },
   "noticias": [
     {
+      "titulo": "São Paulo x Corinthians: CBF confirma clássico na Vila Belmiro",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/sao-paulo/noticia/2026/10/13/sao-paulo-x-corinthians-cbf-confirma-classico-na-vila-belmiro.ghtml",
+      "data": "2026-10-13"
+    },
+    {
+      "titulo": "Treino do Corinthians: Hugo Souza, Gabriel Paulista e Raniele ficam fora de atividade",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/13/treino-do-corinthians-hugo-souza-gabriel-paulista-e-raniele-ficam-fora-de-atividade.ghtml",
+      "data": "2026-10-13"
+    },
+    {
+      "titulo": "Ex-jogador, técnico na 3ª divisão e licença Uefa: quem é Pablo López, novo assistente do Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/13/ex-jogador-tecnico-na-3a-divisao-e-licenca-uefa-quem-e-pablo-lopez-novo-assistente-do-corinthians.ghtml",
+      "data": "2026-10-13"
+    },
+    {
       "titulo": "Vai ser assim no Corinthians? No Botafogo, Seedorf quis proibir feijão e alterar hino do clube",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/13/vai-ser-assim-no-corinthians-no-botafogo-seedorf-quis-proibir-feijao-e-alterar-hino-do-clube.ghtml",
@@ -882,51 +900,33 @@
       "data": "2026-10-13"
     },
     {
-      "titulo": "Pentacampeão com a Seleção Brasileira elogia perfil de Seedorf e projeta mudanças no Corinthians",
+      "titulo": "Dupla ex-Corinthians aponta riscos na contratação de Seedorf e liga alerta para situação do clube",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541949/pentacampeao-com-a-selecao-brasileira-elogia-perfil-de-seedorf-e-projeta-mudancas-no-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541969/dupla-ex-corinthians-aponta-riscos-na-contratacao-de-seedorf-e-liga-alerta-para-situacao-do-clube",
       "data": "2026-10-13"
     },
     {
-      "titulo": "Corinthians divulga venda de ingressos para duelo contra o Vitória pelo Brasileirão",
+      "titulo": "Corinthians vence o Flamengo com gol no último minuto e classifica à semifinal do Brasileiro Sub-17",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541950/corinthians-divulga-venda-de-ingressos-para-duelo-contra-o-vitoria-pelo-brasileirao",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541963/corinthians-vence-o-flamengo-com-gol-no-ultimo-minuto-e-classifica-a-semifinal-do-brasileiro-sub-17",
       "data": "2026-10-13"
     },
     {
-      "titulo": "Zagueiro do Corinthians reforça esperança de permanecer na Série A",
+      "titulo": "Corinthians chega à Libertadores Feminina com segundo maior número de jogos na década; compare",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541892/zagueiro-do-corinthians-reforca-esperanca-de-permanecer-na-serie-a",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541938/corinthians-chega-a-libertadores-feminina-com-segundo-maior-numero-de-jogos-na-decada-compare",
       "data": "2026-10-13"
     },
     {
-      "titulo": "Volante revelado pelo Corinthians relembra saída do clube e busca retomar espaço na Europa",
+      "titulo": "CBF confirma mudança de estádio para clássico entre Corinthians e São Paulo pelo Brasileirão",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541934/volante-revelado-pelo-corinthians-relembra-saida-do-clube-e-busca-retomar-espaco-na-europa",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541970/cbf-confirma-mudanca-de-estadio-para-classico-entre-corinthians-e-sao-paulo-pelo-brasileirao",
       "data": "2026-10-13"
     },
     {
-      "titulo": "Representação ao MP-SP reforça pedido de intervenção no Corinthians e questiona dívida da Arena",
+      "titulo": "Seedorf inicia trajetória no Corinthians com reencontros no elenco alvinegro; saiba nomes",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541920/representacao-ao-mp-sp-reforca-pedido-de-intervencao-no-corinthians-e-questiona-divida-da-arena",
-      "data": "2026-10-13"
-    },
-    {
-      "titulo": "Saiba como assistir ao trio do Corinthians na Seleção Brasileira contra a Argentina",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541923/saiba-como-assistir-ao-trio-do-corinthians-na-selecao-brasileira-contra-a-argentina",
-      "data": "2026-10-13"
-    },
-    {
-      "titulo": "Silêncio e indiferença de Memphis Depay no vestiário causam incômodo nos bastidores do Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541935/silencio-e-indiferenca-de-memphis-depay-no-vestiario-causam-incomodo-nos-bastidores-do-corinthians",
-      "data": "2026-10-13"
-    },
-    {
-      "titulo": "Corinthians recebe o Flamengo em busca de classificação à semifinal do Brasileiro Sub-17; saiba tudo",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541913/corinthians-recebe-o-flamengo-em-busca-de-classificacao-a-semifinal-do-brasileiro-sub-17-saiba-tudo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541887/seedorf-inicia-trajetoria-no-corinthians-com-reencontros-no-elenco-alvinegro-saiba-nomes",
       "data": "2026-10-13"
     }
   ]
