@@ -858,6 +858,12 @@
   },
   "noticias": [
     {
+      "titulo": "Seedorf chega ao Brasil nesta quarta e terá cinco dias de treino antes de estrear pelo Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/seedorf-chega-ao-brasil-nesta-quarta-e-tera-cinco-dias-de-treino-antes-de-estrear-pelo-corinthians.ghtml",
+      "data": "2026-10-14"
+    },
+    {
       "titulo": "São Paulo x Corinthians: CBF confirma clássico na Vila Belmiro",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/sao-paulo/noticia/2026/10/13/sao-paulo-x-corinthians-cbf-confirma-classico-na-vila-belmiro.ghtml",
@@ -900,33 +906,27 @@
       "data": "2026-10-13"
     },
     {
-      "titulo": "Dupla ex-Corinthians aponta riscos na contratação de Seedorf e liga alerta para situação do clube",
+      "titulo": "VÍDEO: Intervenção judicial: Rozallah Santoro opina sobre o assunto",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541969/dupla-ex-corinthians-aponta-riscos-na-contratacao-de-seedorf-e-liga-alerta-para-situacao-do-clube",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130110/intervencao-judicial-rozallah-santoro-opina-sobre-o-assunto",
       "data": "2026-10-13"
     },
     {
-      "titulo": "Corinthians vence o Flamengo com gol no último minuto e classifica à semifinal do Brasileiro Sub-17",
+      "titulo": "Corinthians encerra jejum de vitórias na última rodada da Sul-Americana de Basquete",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541963/corinthians-vence-o-flamengo-com-gol-no-ultimo-minuto-e-classifica-a-semifinal-do-brasileiro-sub-17",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541884/corinthians-encerra-jejum-de-vitorias-na-ultima-rodada-da-sul-americana-de-basquete",
       "data": "2026-10-13"
     },
     {
-      "titulo": "Corinthians chega à Libertadores Feminina com segundo maior número de jogos na década; compare",
+      "titulo": "VÍDEO: Rozallah explica caso Rojas e problemas com Augusto Melo",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541938/corinthians-chega-a-libertadores-feminina-com-segundo-maior-numero-de-jogos-na-decada-compare",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130109/rozallah-explica-caso-rojas-e-problemas-com-augusto-melo",
       "data": "2026-10-13"
     },
     {
-      "titulo": "CBF confirma mudança de estádio para clássico entre Corinthians e São Paulo pelo Brasileirão",
+      "titulo": "VÍDEO: Rozallah Santoro cita redução de custo e afirma que 'Corinthians tem jeito'",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541970/cbf-confirma-mudanca-de-estadio-para-classico-entre-corinthians-e-sao-paulo-pelo-brasileirao",
-      "data": "2026-10-13"
-    },
-    {
-      "titulo": "Seedorf inicia trajetória no Corinthians com reencontros no elenco alvinegro; saiba nomes",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541887/seedorf-inicia-trajetoria-no-corinthians-com-reencontros-no-elenco-alvinegro-saiba-nomes",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130108/rozallah-santoro-cita-reducao-de-custo-e-afirma-que-corinthians-tem-jeito",
       "data": "2026-10-13"
     }
   ]
