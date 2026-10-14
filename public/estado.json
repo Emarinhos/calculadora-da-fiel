@@ -858,9 +858,39 @@
   },
   "noticias": [
     {
+      "titulo": "Novo técnico do Corinthians, Seedorf chega a São Paulo e evita a imprensa no aeroporto",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/novo-tecnico-do-corinthians-seedorf-chega-a-sao-paulo-e-evita-a-imprensa-no-aeroporto.ghtml",
+      "data": "2026-10-14"
+    },
+    {
       "titulo": "Seedorf chega ao Brasil nesta quarta e terá cinco dias de treino antes de estrear pelo Corinthians",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/seedorf-chega-ao-brasil-nesta-quarta-e-tera-cinco-dias-de-treino-antes-de-estrear-pelo-corinthians.ghtml",
+      "data": "2026-10-14"
+    },
+    {
+      "titulo": "Corinthians se manifesta após MP-SP cobrar informações sobre pagamentos do Fiel da Sorte",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541992/corinthians-se-manifesta-apos-mp-sp-cobrar-informacoes-sobre-pagamentos-do-fiel-da-sorte",
+      "data": "2026-10-14"
+    },
+    {
+      "titulo": "VÍDEO: Chegou! Seedorf chega no Brasil para treinar o Corinthians",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130115/chegou-seedorf-chega-no-brasil-para-treinar-o-corinthians",
+      "data": "2026-10-14"
+    },
+    {
+      "titulo": "Clarence Seedorf desembarca no Brasil para iniciar trabalho no Corinthians",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541989/seedorf-chega-ao-brasil-e-sera-apresentado-no-ct-do-corinthians-nesta-quarta-feira",
+      "data": "2026-10-14"
+    },
+    {
+      "titulo": "Últimas do Corinthians: classificação no Sub-17, atritos por novo técnico e incômodo com Memphis",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541978/ultimas-do-corinthians-classificacao-no-sub-17-atritos-por-novo-tecnico-e-incomodo-com-memphis",
       "data": "2026-10-14"
     },
     {
@@ -897,36 +927,6 @@
       "titulo": "Bastidores: desabafo de Gabriel Paulista expõe atrito entre elenco e presidente do Corinthians",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/13/bastidores-desabafo-de-gabriel-paulista-expoe-atrito-entre-elenco-e-presidente-do-corinthians.ghtml",
-      "data": "2026-10-13"
-    },
-    {
-      "titulo": "Du Queiroz, ex-Corinthians, vê Champions pelo Sabah como chance de dar novo passo na carreira",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/futebol-internacional/noticia/2026/10/13/du-queiroz-ex-corinthians-ve-champions-pelo-sabah-como-chance-de-dar-novo-passo-na-carreira.ghtml",
-      "data": "2026-10-13"
-    },
-    {
-      "titulo": "VÍDEO: Intervenção judicial: Rozallah Santoro opina sobre o assunto",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130110/intervencao-judicial-rozallah-santoro-opina-sobre-o-assunto",
-      "data": "2026-10-13"
-    },
-    {
-      "titulo": "Corinthians encerra jejum de vitórias na última rodada da Sul-Americana de Basquete",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541884/corinthians-encerra-jejum-de-vitorias-na-ultima-rodada-da-sul-americana-de-basquete",
-      "data": "2026-10-13"
-    },
-    {
-      "titulo": "VÍDEO: Rozallah explica caso Rojas e problemas com Augusto Melo",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130109/rozallah-explica-caso-rojas-e-problemas-com-augusto-melo",
-      "data": "2026-10-13"
-    },
-    {
-      "titulo": "VÍDEO: Rozallah Santoro cita redução de custo e afirma que 'Corinthians tem jeito'",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130108/rozallah-santoro-cita-reducao-de-custo-e-afirma-que-corinthians-tem-jeito",
       "data": "2026-10-13"
     }
   ]
