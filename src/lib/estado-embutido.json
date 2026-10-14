@@ -858,6 +858,36 @@
   },
   "noticias": [
     {
+      "titulo": "Intervenções e conversas com o grupo: como foi o primeiro treino de Seedorf no Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/intervencoes-e-conversas-com-o-grupo-como-foi-o-primeiro-treino-de-seedorf-no-corinthians.ghtml",
+      "data": "2026-10-14"
+    },
+    {
+      "titulo": "Ex-atacante Hasselbaink diz que foi convidado por Seedorf para ser auxiliar no Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/ex-atacante-hasselbaink-diz-que-foi-convidado-por-seedorf-para-ser-auxiliar-no-corinthians.ghtml",
+      "data": "2026-10-14"
+    },
+    {
+      "titulo": "Eleições do Corinthians: Zé Mendes registra candidatura à presidência",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/eleicoes-do-corinthians-ze-mendes-registra-candidatura-a-presidencia.ghtml",
+      "data": "2026-10-14"
+    },
+    {
+      "titulo": "Sob pressão, Osmar Stabile avisa aliados que não será candidato na eleição do Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/sob-pressao-osmar-stabile-avisa-aliados-que-nao-sera-candidato-na-eleicao-do-corinthians.ghtml",
+      "data": "2026-10-14"
+    },
+    {
+      "titulo": "Seedorf diz que acerto não teve relação com Memphis: \"Conhecia o Corinthians antes dele\"",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/seedorf-diz-que-acerto-nao-teve-relacao-com-memphis-conhecia-o-corinthians-antes-dele.ghtml",
+      "data": "2026-10-14"
+    },
+    {
       "titulo": "Seedorf elogia elenco e confia em recuperação do Corinthians: \"Um leão ferido é perigoso\"",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/seedorf-e-apresentado-como-tecnico-do-corinthians-um-dos-maiores-clubes-do-mundo.ghtml",
@@ -876,57 +906,27 @@
       "data": "2026-10-14"
     },
     {
-      "titulo": "Raniele sofre lesão no joelho e vira desfalque no Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/raniele-sofre-lesao-no-joelho-e-vira-desfalque-no-corinthians.ghtml",
-      "data": "2026-10-14"
-    },
-    {
-      "titulo": "Novo técnico do Corinthians, Seedorf chega a São Paulo e evita a imprensa no aeroporto",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/novo-tecnico-do-corinthians-seedorf-chega-a-sao-paulo-e-evita-a-imprensa-no-aeroporto.ghtml",
-      "data": "2026-10-14"
-    },
-    {
-      "titulo": "Seedorf chega ao Brasil nesta quarta e terá cinco dias de treino antes de estrear pelo Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/seedorf-chega-ao-brasil-nesta-quarta-e-tera-cinco-dias-de-treino-antes-de-estrear-pelo-corinthians.ghtml",
-      "data": "2026-10-14"
-    },
-    {
-      "titulo": "Clarence Seedorf é apresentado pelo Corinthians no CT e explica motivo para aceitar convite",
+      "titulo": "Corinthians conhece dias e horários das oitavas de final do Paulista Sub-17; saiba tudo",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542009/clarence-seedorf-e-apresentado-pelo-corinthians-no-ct-e-explica-motivo-para-aceitar-convite",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541748/corinthians-conhece-dias-e-horarios-das-oitavas-de-final-do-paulista-sub-17-saiba-tudo",
       "data": "2026-10-14"
     },
     {
-      "titulo": "Corinthians vence o duelo de ida contra o Blumenau pela semifinal da Talentos LNF 2026",
+      "titulo": "Corinthians busca voltar a vencer uma estreia de Libertadores Feminina após duas edições",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542006/corinthians-vence-o-duelo-de-ida-contra-o-blumenau-pela-semifinal-da-talentos-lnf-2026",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541951/corinthians-busca-voltar-a-vencer-uma-estreia-de-libertadores-feminina-apos-duas-edicoes",
       "data": "2026-10-14"
     },
     {
-      "titulo": "Eleições Meu Timão: Zé Mendes formaliza candidatura à presidência do Corinthians",
+      "titulo": "Corinthians faz treino aberto à imprensa em primeira atividade de Seedorf",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542010/eleicoes-meu-timao-ze-mendes-formaliza-candidatura-a-presidencia-do-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542039/corinthians-faz-treino-aberto-a-imprensa-em-primeira-atividade-de-seedorf",
       "data": "2026-10-14"
     },
     {
-      "titulo": "Quem deve substituir Memphis Depay no ataque do Corinthians contra o Vitória? Vote na enquete!",
+      "titulo": "Miguel Moscardo classifica o Corinthians e se isola ainda mais na artilharia do Sub-17 em 2026",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541946/quem-deve-substituir-memphis-depay-no-ataque-do-corinthians-contra-o-vitoria-vote-na-enquete",
-      "data": "2026-10-14"
-    },
-    {
-      "titulo": "Corinthians informa lesão de Raniele após clássico contra o Palmeiras",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542003/corinthians-informa-lesao-de-raniele-apos-classico-contra-o-palmeiras",
-      "data": "2026-10-14"
-    },
-    {
-      "titulo": "Além de Seedorf: veja como foram os outros técnicos estrangeiros do Corinthians no século",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541937/alem-de-seedorf-veja-como-foram-os-outros-tecnicos-estrangeiros-do-corinthians-no-seculo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541983/miguel-moscardo-classifica-o-corinthians-e-se-isola-ainda-mais-na-artilharia-do-sub-17-em-2026",
       "data": "2026-10-14"
     }
   ]
