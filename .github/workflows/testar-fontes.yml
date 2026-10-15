@@ -1,0 +1,25 @@
+name: Testar fontes de dados
+
+# Só manual (aba Actions → Testar fontes de dados → Run workflow). Mostra se os servidores do GitHub conseguem ler cada fonte
+# usada pelas atualizações automáticas. Serve para diagnosticar bloqueios (ex.: o ogol responde 403 ao GitHub).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fontes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conferir cada fonte
+        run: |
+          testar() {
+            codigo=$(curl -s -o /dev/null -m 25 -A "Mozilla/5.0" -w "%{http_code}" "$2")
+            echo "$1: HTTP $codigo"
+          }
+          testar "ESPN placar" "https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1/scoreboard?dates=20261011"
+          testar "ESPN tabela" "https://site.api.espn.com/apis/v2/sports/soccer/bra.1/standings?season=2026"
+          testar "ogol tabela" "https://www.ogol.com.br/edicao/brasileirao-serie-a-2026/210277"
+          testar "ge feed" "https://ge.globo.com/rss/ge/futebol/times/corinthians/"
+          testar "Meu Timão feed" "https://www.meutimao.com.br/feed"
