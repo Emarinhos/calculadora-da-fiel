@@ -159,71 +159,32 @@ ordem das rodadas). Se o arquivo falhar ou for inválido, o app usa a cópia emb
 
 ### Resultados logo depois do jogo (automático, sem depender do Claude)
 
-O workflow `.github/workflows/resultados.yml` roda **de 20 em 20 minutos, das 12h à 01h59 (Brasília)** e executa
-`scripts/atualizar-resultados.mjs`. A regra do gatilho (`src/lib/resultados-auto.js`):
+O workflow `.github/workflows/resultados.yml` executa `scripts/atualizar-resultados.mjs`. A regra do gatilho
+(`src/lib/resultados-auto.js`):
 
-1. **Só age depois do jogo:** procura jogos cujo apito inicial foi há **115 minutos ou mais** (2 tempos, intervalo e acréscimos).
-   Se não há nenhum, termina na hora, sem gravar nada. Jogo adiado há mais de 14 dias sem resultado deixa de ser procurado.
-2. **Placar no ogol** (`src/lib/ogol.js`, páginas do calendário). Sem placar final no ogol: espera a próxima execução.
+1. **Só age depois do jogo:** procura jogos cujo apito inicial foi há **105 minutos ou mais**. Se não há nenhum, termina na hora,
+   sem gravar nada. Jogo adiado há mais de 14 dias sem resultado deixa de ser procurado.
+2. **Placares pela ESPN** (`src/lib/espn.js`, API pública), que informa se o jogo **terminou** (`STATUS_FULL_TIME`); jogo em
+   andamento, adiado ou cancelado é ignorado. **Reserva: ogol** (`src/lib/ogol.js`), que só entra se a ESPN falhar e espera 115 min,
+   porque não avisa se o jogo acabou. **O ogol bloqueia os servidores do GitHub (HTTP 403)**; funciona rodando o script local.
 3. **Jogo do Corinthians exige uma segunda fonte:** o mesmo placar numa notícia do ge ou do Meu Timão sobre o jogo. Sem isso, ele
    (e os jogos seguintes dele) esperam.
 4. **Conferência total:** aplica os resultados (`aplicarResultados`) e compara a tabela calculada, conta a conta (pontos, jogos e
-   gols dos 20 clubes), com a tabela do ogol. Se divergir (por exemplo, há jogo em andamento), não grava e tenta de novo.
-5. **Posição só no fim da rodada:** quando todos os jogos da rodada terminaram e a posição calculada bate com a do ogol, registra
+   gols dos 20 clubes), com a tabela da fonte (ESPN, ou ogol na reserva). Se divergir, não grava e tenta de novo.
+5. **Posição só no fim da rodada:** quando todos os jogos da rodada terminaram e a posição calculada bate com a da fonte, registra
    `posicao` e `posicaoRodada`.
-6. Recalcula o **risco de todos os clubes**, valida o estado, grava, anota uma linha em `docs/atualizacoes-estado.md`, faz commit e
-   chama o deploy. Na prática o site fica atualizado de 20 a 40 minutos depois de o jogo ficar elegível (115 min após o apito).
+6. Recalcula as **chances de todos os clubes**, valida o estado, grava, anota uma linha em `docs/atualizacoes-estado.md`, faz commit e
+   chama o deploy.
+7. **Alerta:** se nenhuma fonte responde e há jogo encerrado há mais de 8 horas sem resultado, a execução falha de propósito (o
+   GitHub manda e-mail). Fonte fora do ar por pouco tempo é só aviso, sem e-mail.
 
-Testado: partindo do estado de antes da rodada 30, o script reproduziu exatamente o que foi aplicado à mão (tabela, jogos e riscos
-iguais). Compartilha o grupo `estado` com o workflow de notícias, para os dois nunca gravarem ao mesmo tempo.
+**Por que acompanha o jogo em vez de só agendar:** o GitHub dispara as execuções agendadas (`cron`) com muito atraso, na prática a
+cada algumas horas e não a cada 20 minutos. Então, quando uma execução cai dentro da janela de um jogo (de 15 min antes do apito até
+170 min depois), ela fica conferindo de 5 em 5 minutos até o resultado entrar, e ao fim de ~85 min chama a próxima execução se
+ainda houver jogo na janela (`scripts/janela-de-jogo.mjs`). Se nenhuma execução começar durante a janela do jogo, o resultado espera
+o próximo disparo do GitHub (algumas horas). O jeito de garantir o horário é um disparador externo (ver limitações).
 
-### A tarefa diária (agora só reforço)
-
-Os resultados, a posição e a tabela passaram a ser atualizados pelo workflow acima. A tarefa diária do Claude continua existindo
-como reforço e pode ser desligada sem perda. Ela é uma tarefa agendada do Claude Code (id `atualizar-estado-corinthians`, **todos os dias às 8h**, roda enquanto
-o app do Claude estiver aberto; se estiver fechado, roda na próxima abertura) faz três coisas:
-
-1. **Resultados**: coleta os placares dos jogos encerrados e trava o resultado do Corinthians
-   (o do Corinthians exige duas fontes). No dia seguinte ao jogo.
-2. **Posição**: só registrada **no fim de cada rodada**, quando todos os jogos dela terminaram
-   (na prática, na manhã seguinte ao último jogo).
-3. **Transmissão**: horário, TV e streaming são consultados **exatamente um dia antes de cada jogo do
-   Corinthians**. Quem decide o que consultar hoje é o código (`node scripts/transmissao-do-dia.mjs`,
-   regra em `src/lib/agenda.js`), não o agente. Se a consulta do dia anterior não confirmar, há um reforço
-   no dia do jogo. Até lá a TV aparece na tela como "a confirmar". Remarcações de data entram sem marcar a
-   transmissão como confirmada.
-
-O agente só **coleta** dados. Quem faz as contas é `scripts/aplicar-resultados.mjs`, que atualiza tabela,
-jogos restantes e o jogo travado, e **só grava se tudo fechar**: o jogo precisa estar entre os restantes,
-a tabela calculada precisa bater com a da fonte (pontos, jogos e gols), a rodada precisa ter terminado
-(para a posição), a posição informada precisa bater com a calculada pela tabela e o estado final precisa
-ser válido. Depois a tarefa valida (`npm run validar:estado`), roda os testes, gera o build e faz commit
-e push só de `public/estado.json`, `src/lib/estado-embutido.json` e `docs/atualizacoes-estado.md`.
-O push dispara a publicação.
-
-Cada execução que muda algo deixa uma linha em `docs/atualizacoes-estado.md` (o arquivo é criado na
-primeira atualização) e guarda cópia de segurança em `.backup-estado/` (não versionada).
-
-Calendário previsto da posição (jogos pelo calendário do ogol, sujeito a remarcação): R30 em 13/10,
-R31 em 20/10, R32 em 27/10, R33 em 31/10, R34 em 07/11, R35 em 19/11, R36 em 21/11, R37 em 28/11 e
-R38 em 03/12.
-
-### Transmissão confirmada sozinha (sem depender do Claude)
-
-O mesmo workflow `noticias.yml` (a cada 2 horas) roda `scripts/confirmar-transmissao.mjs`, que aplica a regra de
-`src/lib/agenda.js`: o jogo do Corinthians é consultado **um dia antes** e, se não confirmou, **no dia do jogo**.
-
-1. Procura no RSS do ge a matéria "onde assistir" daquele jogo (título com os dois clubes e "onde assistir", URL com data
-   até 2 dias do jogo; apelidos como Atlético-MG e Athletico-PR são tratados em `src/lib/transmissao-ge.js`).
-2. Lê na matéria o horário ("às 17h30") e a frase "... transmitem ao vivo", separando TV (Globo, SporTV, Premiere, Band,
-   SBT, Record, ESPN) de streaming (ge tv, Globoplay, Prime Video, CazéTV, Disney+). Sem essa frase não grava TV nenhuma
-   (nunca deduz).
-3. Grava `hora`, `tv`, `streaming` e `tvConsultadaEm` pelo `atualizarAgenda`; o estado inteiro é validado antes. O app deixa de
-   dizer "a confirmar" quando `tvConsultadaEm` é de um dia antes do jogo em diante.
-4. Matéria ainda não publicada: não grava e tenta de novo 2 horas depois. O ge costuma publicar a matéria de um jogo de
-   domingo na madrugada do próprio dia (por volta das 4h), então a confirmação tende a chegar nas primeiras horas do dia do jogo.
-
-A tarefa diária do Claude (8h) continua existindo para resultados e posição, e pode confirmar transmissão como reforço.
+Compartilha o grupo `estado` com o workflow de notícias, para os dois nunca gravarem ao mesmo tempo.
 
 ### Chances de todos os clubes (recalculadas a cada atualização da tabela)
 
@@ -279,7 +240,8 @@ src/lib/estado.js             validação e carga do estado
 src/lib/liga.js                classificação, risco de cada clube e duelo restante com o Corinthians
 src/TabelaLiga.jsx            tabela da liga na tela (coluna segue o objetivo)
 src/Regua.jsx                 régua de pontos do objetivo
-src/lib/ogol.js                leitura do calendário e da tabela do ogol
+src/lib/espn.js                placares e tabela pela API da ESPN (fonte principal dos resultados)
+src/lib/ogol.js                leitura do calendário e da tabela do ogol (reserva)
 src/lib/resultados-auto.js    regras do gatilho de resultados (115 min, segunda fonte, rodada fechada)
 src/lib/transmissao-ge.js      achar a matéria do jogo e extrair hora/TV/streaming
 src/lib/noticias.js           notícias: mesclar, validar, título curto, notícia por adversário
@@ -288,14 +250,15 @@ src/lib/agenda.js             gatilho da transmissão (um dia antes)
 src/lib/estado-embutido.json  cópia de public/estado.json (gerada)
 scripts/aplicar-resultados.mjs  grava resultados/posição/agenda com todas as conferências
 scripts/transmissao-do-dia.mjs  quais jogos têm a transmissão para consultar hoje
-scripts/atualizar-resultados.mjs resultados, tabela, posição e riscos logo após os jogos
+scripts/atualizar-resultados.mjs resultados, tabela, posição e chances logo após os jogos (ESPN, reserva ogol)
+scripts/janela-de-jogo.mjs     diz se há jogo na janela de acompanhamento (resultados.yml)
 scripts/calcular-riscos.mjs      grava o risco de todos os clubes em liga.risco
 scripts/confirmar-transmissao.mjs  confirma hora/TV/streaming pela matéria "onde assistir" do ge
 scripts/atualizar-noticias.mjs  grava `noticias` (RSS do ge e do Meu Timão; posts do X opcionais em JSON)
 scripts/validar-estado.mjs      valida public/estado.json
 scripts/sync-embutido.mjs       copia o estado para a cópia embutida
 .github/workflows/pages.yml     validação, testes, build e publicação
-.github/workflows/resultados.yml a cada 20 min nos horários de jogo: resultados, tabela, posição e riscos
+.github/workflows/resultados.yml resultados, tabela, posição e chances; acompanha o jogo de 5 em 5 min dentro da janela
 .github/workflows/noticias.yml  a cada 2 h: notícias + transmissão + riscos, commit só se mudou e chama o deploy
 ```
 
@@ -310,7 +273,7 @@ scripts/sync-embutido.mjs       copia o estado para a cópia embutida
 | `cenarios.test.js` | últimos 5 confrontos, janela de 5 anos, cenários otimista/pessimista |
 | `estado.test.js` | validação do estado e da liga, carga com falha de arquivo |
 | `aplicar.test.js` | aplicação de resultados, posição, agenda e conferência com a fonte |
-| `ogol.test.js`, `resultados-auto.test.js` | leitura do ogol, 115 min, segunda fonte, rodada fechada |
+| `espn.test.js`, `ogol.test.js`, `resultados-auto.test.js` | leitura da ESPN e do ogol, janela do jogo, segunda fonte, rodada fechada |
 | `objetivos.test.js` | três objetivos pela mesma simulação, cortes, pontos para a vaga, visibilidade das vagas, textos |
 | `liga.test.js` | classificação e desempates, riscos (determinísticos, soma ~400%), risco vigente x velho, duelos, validação |
 | `transmissao-ge.test.js` | matéria certa do jogo, horário, TV x streaming, apelidos do ge, gatilho |
@@ -329,8 +292,11 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 
 ## Limitações conhecidas
 
-- Resultados dependem de o ogol ter o placar e de uma notícia do ge ou do Meu Timão repetir o placar do Corinthians; se uma das
-  fontes mudar o formato, o script não grava e o jogo espera (a linha de log da execução mostra o motivo). Notícias, transmissão,
+- Resultados dependem da ESPN ter o placar e de uma notícia do ge ou do Meu Timão repetir o placar do Corinthians; se uma das
+  fontes mudar o formato, o script não grava e o jogo espera (a linha de log da execução mostra o motivo).
+- **O `cron` do GitHub não é pontual:** as execuções agendadas chegam a cada algumas horas. O acompanhamento dentro da janela do jogo
+  compensa quando uma execução cai nela; para garantir o horário seria preciso um disparador externo (por exemplo, um agendador
+  gratuito chamando a API do GitHub com um token só de Actions). Em repositório privado, o acompanhamento consome minutos de Actions. Notícias, transmissão,
   resultados e posição rodam no GitHub, sem o app do Claude.
 - As notícias dependem dos feeds do ge e do Meu Timão; o GitHub pode atrasar execuções agendadas em horário de pico
   e desativa o agendamento após 60 dias sem atividade no repositório (os commits automáticos contam como atividade).
@@ -366,3 +332,4 @@ caminhos relativos (`base: './'`), então funciona em subpasta.
 | (este) | 12/10/2026 | Rodada 30 aplicada (Palmeiras 4x1 Corinthians travado; 8 jogos restantes); jogo iniciado não aceita mais marcação; placar do jogo encerrado na ordem real; testes passam a usar uma foto congelada do estado (não quebram mais quando os dados reais mudam). |
 | (este) | 12/10/2026 | **Resultados automáticos logo após os jogos** (`resultados.yml`, a cada 20 min nos horários de jogo): placar no ogol, segunda fonte para o Corinthians, conferência da tabela, posição no fim da rodada e riscos, sem depender do Claude. |
 | (este) | 12/10/2026 | **Objetivos**: chances de rebaixamento, Sul-Americana e Libertadores (chips, arrastar o painel, régua e tabela por objetivo; vagas só aparecem com chance real); simulação passa a devolver chance e corte de cada objetivo e `liga.risco` ganha o formato 2. |
+| (este) | 15/10/2026 | **Correção:** o ogol bloqueava os servidores do GitHub (HTTP 403) e a rotina de resultados falhava; agora a fonte principal é a ESPN (diz se o jogo terminou), com ogol de reserva, alerta só quando fica travada, e a execução acompanha o jogo de 5 em 5 minutos dentro da janela. Rodada 30 fechada (Corinthians em 16º). |

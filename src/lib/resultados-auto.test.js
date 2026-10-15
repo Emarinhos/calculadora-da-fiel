@@ -1,13 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert';
-import { jogosPendentes, resultadosDosPendentes, placarConfirmado, rodadaParaRegistrarPosicao, MINUTOS_ATE_FIM } from './resultados-auto.js';
+import { jogosPendentes, resultadosDosPendentes, placarConfirmado, rodadaParaRegistrarPosicao, emJanelaDeJogo, MINUTOS_ATE_FIM, ANTES_DO_JOGO_MIN, DEPOIS_DO_JOGO_MIN } from './resultados-auto.js';
 import { ESTADO_EMBUTIDO, estadoAposR30, clone } from './_fixtures.js';
 
 const inicio = Date.UTC(2026, 9, 11, 20, 30); // Palmeiras x Corinthians, 17h30 em Brasília
 const fim = (min) => inicio + min * 60000;
 const palmeiras = { rodada: 30, mandante: 'Palmeiras', visitante: 'Corinthians', gm: 4, gv: 1 };
 
-test('pendentes: só depois de apito inicial + 115 min; antes disso nem se olha', () => {
+test('pendentes: só depois de apito inicial + MINUTOS_ATE_FIM; antes disso nem se olha', () => {
   const nomes = (ms) => jogosPendentes(ESTADO_EMBUTIDO, ms).map((g) => `${g.mandante}x${g.visitante}`);
   assert.ok(!nomes(fim(MINUTOS_ATE_FIM - 1)).includes('PalmeirasxCorinthians'));
   assert.ok(nomes(fim(MINUTOS_ATE_FIM)).includes('PalmeirasxCorinthians'));
@@ -47,4 +47,18 @@ test('posição: só quando a rodada acabou na liga e ainda não foi registrada'
   const faltando = clone(completo);
   faltando.liga.jogos.push({ rodada: 30, mandante: 'Vasco', visitante: 'Remo', data: '2026-10-12', hora: '16:00', tv: null });
   assert.strictEqual(rodadaParaRegistrarPosicao(faltando), null); // ainda falta jogo da rodada
+});
+
+test('janela de acompanhamento: de 15 min antes do apito até 170 min depois, só para jogo ainda sem resultado', () => {
+  const um = clone(ESTADO_EMBUTIDO);
+  um.liga.jogos = um.liga.jogos.filter((g) => g.mandante === 'Palmeiras' && g.visitante === 'Corinthians'); // só o jogo das 17h30
+  const dentro = (ms) => emJanelaDeJogo(um, ms);
+  assert.strictEqual(dentro(inicio - (ANTES_DO_JOGO_MIN + 1) * 60000), false);
+  assert.strictEqual(dentro(inicio - ANTES_DO_JOGO_MIN * 60000), true);
+  assert.strictEqual(dentro(inicio + 60 * 60000), true);
+  assert.strictEqual(dentro(inicio + DEPOIS_DO_JOGO_MIN * 60000), true);
+  assert.strictEqual(dentro(inicio + (DEPOIS_DO_JOGO_MIN + 1) * 60000), false);
+  // sem jogo pendente na liga (resultado já aplicado), nunca há janela
+  um.liga.jogos = [];
+  assert.strictEqual(emJanelaDeJogo(um, inicio), false);
 });

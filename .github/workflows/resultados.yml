@@ -1,9 +1,12 @@
 name: Atualizar resultados
 
-# Logo depois dos jogos: de 20 em 20 minutos, das 12h à 01h59 (Brasília), procura jogos que terminaram há pelo menos
-# 115 minutos, lê o placar no ogol (o do Corinthians exige uma segunda fonte), confere a tabela inteira contra a do ogol
-# e grava resultado, tabela, posição (no fim da rodada) e riscos em public/estado.json. Sem jogo novo, termina na hora.
-# O deploy é chamado no final porque push feito com o GITHUB_TOKEN não dispara outros workflows.
+# O GitHub dispara as execuções agendadas com muito atraso (na prática, a cada algumas horas, não a cada 20 minutos).
+# Por isso, quando uma execução cai dentro da janela de um jogo (15 min antes do apito até 170 min depois), ela FICA
+# conferindo de 5 em 5 minutos até o resultado entrar ou a janela fechar, e ao fim de ~85 min se chama de novo se ainda
+# houver jogo na janela. Assim o resultado entra poucos minutos depois do apito final, desde que uma execução tenha começado
+# durante o jogo. Fora de jogo, a execução termina em segundos.
+# Fontes: ESPN (principal) e ogol (reserva; bloqueia os servidores do GitHub). Ver scripts/atualizar-resultados.mjs.
+# O deploy é chamado de propósito porque push feito com o GITHUB_TOKEN não dispara outros workflows.
 on:
   schedule:
     - cron: '7,27,47 15-23,0-4 * * *'
@@ -21,26 +24,38 @@ concurrency:
 jobs:
   resultados:
     runs-on: ubuntu-latest
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node scripts/atualizar-resultados.mjs
-      - run: node scripts/validar-estado.mjs
-      - name: Commit e deploy, só se mudou
+      - name: Atualizar e acompanhar o jogo
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          node scripts/sync-embutido.mjs
-          if git diff --quiet -- public/estado.json src/lib/estado-embutido.json docs/atualizacoes-estado.md; then
-            echo "Sem resultado novo."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/estado.json src/lib/estado-embutido.json docs/atualizacoes-estado.md
-          git commit -m "Resultados: atualizacao automatica apos os jogos"
-          git pull --rebase origin main
-          git push origin HEAD:main
-          gh workflow run pages.yml --ref main
+          publicar() {
+            node scripts/validar-estado.mjs
+            node scripts/sync-embutido.mjs
+            if git diff --quiet -- public/estado.json src/lib/estado-embutido.json docs/atualizacoes-estado.md; then
+              echo "Sem resultado novo."
+              return 0
+            fi
+            git add public/estado.json src/lib/estado-embutido.json docs/atualizacoes-estado.md
+            git commit -m "Resultados: atualizacao automatica apos os jogos"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            gh workflow run pages.yml --ref main
+          }
+          for i in $(seq 1 17); do
+            node scripts/atualizar-resultados.mjs
+            publicar
+            node scripts/janela-de-jogo.mjs || break
+            sleep 300
+          done
+          if node scripts/janela-de-jogo.mjs; then
+            echo "Ainda há jogo na janela: chamando a próxima execução."
+            gh workflow run resultados.yml --ref main
+          fi
