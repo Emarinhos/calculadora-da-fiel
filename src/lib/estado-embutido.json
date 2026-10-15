@@ -858,6 +858,24 @@
   },
   "noticias": [
     {
+      "titulo": "Dias intensos: o que Seedorf pode mudar no Corinthians até estreia",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/15/dias-intensos-o-que-seedorf-pode-mudar-no-corinthians-ate-estreia.ghtml",
+      "data": "2026-10-15"
+    },
+    {
+      "titulo": "Libertadores Feminina começa nesta quinta com três clubes brasileiros; onde assistir e mais detalhes",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/10/15/libertadores-feminina-comeca-nesta-quinta-com-tres-clubes-brasileiros-onde-assistir-e-mais-detalhes.ghtml",
+      "data": "2026-10-15"
+    },
+    {
+      "titulo": "Corinthians enfrenta o Colo-Colo pela estreia da Libertadores Feminina; saiba tudo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542061/corinthians-enfrenta-o-colo-colo-pela-estreia-da-libertadores-feminina-saiba-tudo",
+      "data": "2026-10-15"
+    },
+    {
       "titulo": "Torcedores protestam e atiram rojões contra o CT do Corinthians; um deles estava armado",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/torcedores-protestam-e-atiram-rojoes-contra-o-ct-do-corinthians-um-deles-estava-armado.ghtml",
@@ -894,39 +912,21 @@
       "data": "2026-10-14"
     },
     {
-      "titulo": "Eleições do Corinthians: Zé Mendes registra candidatura à presidência",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/eleicoes-do-corinthians-ze-mendes-registra-candidatura-a-presidencia.ghtml",
-      "data": "2026-10-14"
-    },
-    {
-      "titulo": "Sob pressão, Osmar Stabile avisa aliados que não será candidato na eleição do Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/14/sob-pressao-osmar-stabile-avisa-aliados-que-nao-sera-candidato-na-eleicao-do-corinthians.ghtml",
-      "data": "2026-10-14"
-    },
-    {
-      "titulo": "Eleições MT: pré-candidato explica voto a favor das contas de 2025 e relembra dívidas no Corinthians",
+      "titulo": "Corinthians registra quebra de tabu de 11 anos após classificação no Sub-17",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541997/eleicoes-mt-pre-candidato-explica-voto-a-favor-das-contas-de-2025-e-relembra-dividas-no-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541982/corinthians-registra-quebra-de-tabu-de-11-anos-apos-classificacao-no-sub-17",
       "data": "2026-10-14"
     },
     {
-      "titulo": "Adversário do Corinthians coloca em dúvida participação na Libertadores Feminina; entenda",
+      "titulo": "Corinthians se solidariza com emissora e repudia ação após protesto de torcedores com rojões no CT",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542059/adversario-do-corinthians-coloca-em-duvida-participacao-na-libertadores-feminina-entenda",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542064/corinthians-se-solidariza-com-emissora-e-repudia-acao-apos-protesto-de-torcedores-com-rojoes-no-ct",
       "data": "2026-10-14"
     },
     {
-      "titulo": "Guia do Meu Timão: tudo sobre a luta do Corinthians pelo heptacampeonato da Libertadores Feminina",
+      "titulo": "Conheça o estádio que vai receber jogos do Corinthians na Libertadores Feminina",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/541965/guia-do-meu-timao-tudo-sobre-a-luta-do-corinthians-pelo-heptacampeonato-da-libertadores-feminina",
-      "data": "2026-10-14"
-    },
-    {
-      "titulo": "Seedorf detalha confiança em auxiliar e desconversa sobre modelo de jogo no Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542028/seedorf-detalha-confianca-em-auxiliar-e-desconversa-sobre-modelo-de-jogo-no-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542002/conheca-o-estadio-que-vai-receber-jogos-do-corinthians-na-libertadores-feminina",
       "data": "2026-10-14"
     }
   ]
