@@ -841,6 +841,24 @@
   },
   "noticias": [
     {
+      "titulo": "Ministério Público pede prisão preventiva de vice-presidente do Corinthians em \"caso Nike\"",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/16/ministerio-publico-pede-prisao-preventiva-de-vice-presidente-do-corinthians-em-caso-nike.ghtml",
+      "data": "2026-10-16"
+    },
+    {
+      "titulo": "Caixa admite negociação com o Corinthians e cita avanço nas conversas sobre dívida da Arena",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/16/caixa-admite-negociacao-com-o-corinthians-e-cita-avanco-nas-conversas-sobre-divida-da-arena.ghtml",
+      "data": "2026-10-16"
+    },
+    {
+      "titulo": "Ramón Díaz diz que recusou o Corinthians para esperar proposta do River Plate",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/16/ramon-diaz-diz-que-recusou-o-corinthians-para-esperar-proposta-do-river-plate.ghtml",
+      "data": "2026-10-16"
+    },
+    {
       "titulo": "Seedorf tem desafio de recuperar solidez defensiva do Corinthians em casa; entenda",
       "fonte": "ge",
       "url": "https://ge.globo.com/gato-mestre/noticia/2026/10/16/seedorf-tem-desafio-de-recuperar-solidez-defensiva-do-corinthians-em-casa-entenda.ghtml",
@@ -871,45 +889,27 @@
       "data": "2026-10-16"
     },
     {
-      "titulo": "Memphis Depay vive pior ano da carreira nas participações em gol e preocupa o Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/16/memphis-depay-vive-pior-ano-da-carreira-nas-participacoes-em-gol-e-preocupa-o-corinthians.ghtml",
+      "titulo": "Associados pedem impugnação da candidatura de Sergio Janikian à presidência do Corinthians",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542196/associados-pedem-impugnacao-da-candidatura-de-sergio-janikian-a-presidencia-do-corinthians",
       "data": "2026-10-16"
     },
     {
-      "titulo": "Conselho Deliberativo do Corinthians suspende reunião com Osmar Stabile no Parque São Jorge",
+      "titulo": "Ministério Público pede prisão preventiva de vice-presidente do Corinthians",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542170/conselho-deliberativo-do-corinthians-suspende-reuniao-com-osmar-stabile-no-parque-sao-jorge",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542197/ministerio-publico-pede-prisao-preventiva-de-vice-presidente-do-corinthians",
       "data": "2026-10-16"
     },
     {
-      "titulo": "Tamires avalia vitória do Corinthians e atualiza condição física após lesão",
+      "titulo": "Corinthians usará patch em homenagem a Oscar Schmidt durante toda a temporada do NBB",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542137/tamires-avalia-vitoria-do-corinthians-e-atualiza-condicao-fisica-apos-lesao",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542157/corinthians-usara-patch-em-homenagem-a-oscar-schmidt-durante-toda-a-temporada-do-nbb",
       "data": "2026-10-16"
     },
     {
-      "titulo": "Corinthians corre contra o tempo para regularizar Seedorf no BID antes de jogo contra o Vitória",
+      "titulo": "Corinthians atropela a Portuguesa Santista e se classifica às quartas de final do Paulista Sub-20",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542167/corinthians-corre-contra-o-tempo-para-regularizar-seedorf-no-bid-tecnico-pode-ficar-fora-do-banco",
-      "data": "2026-10-16"
-    },
-    {
-      "titulo": "Movimento busca assinaturas para convocar assembleia e extinguir cargos vitalícios no Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542164/movimento-busca-assinaturas-para-convocar-assembleia-e-extinguir-cargos-vitalicios-no-corinthians",
-      "data": "2026-10-16"
-    },
-    {
-      "titulo": "Corinthians e Gaviões da Fiel se reúnem com presidente da Caixa por dívida da Neo Química Arena",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542159/corinthians-e-gavioes-da-fiel-se-reunem-com-presidente-da-caixa-por-divida-da-neo-quimica-arena",
-      "data": "2026-10-16"
-    },
-    {
-      "titulo": "Corinthians adota cautela com Gabi Zanotti na Libertadores Feminina; entenda o motivo",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542131/corinthians-adota-cautela-com-gabi-zanotti-na-libertadores-feminina-entenda-o-motivo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542173/corinthians-atropela-a-portuguesa-santista-e-se-classifica-as-quartas-de-final-do-paulista-sub-20",
       "data": "2026-10-16"
     }
   ]
