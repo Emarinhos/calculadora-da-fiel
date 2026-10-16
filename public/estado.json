@@ -841,6 +841,18 @@
   },
   "noticias": [
     {
+      "titulo": "Corinthians demite diretor de tecnologia",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/15/corinthians-demite-diretor-de-tecnologia.ghtml",
+      "data": "2026-10-15"
+    },
+    {
+      "titulo": "Organizadas do Corinthians se reúnem com Stabile e pedem saída de Paz e afastamento de Memphis",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/15/organizadas-do-corinthians-se-reunem-com-stabile-e-pedem-saida-de-paz-e-afastamento-de-memphis.ghtml",
+      "data": "2026-10-15"
+    },
+    {
       "titulo": "Treino do Corinthians: Emerson Sheik visita elenco em segundo dia de trabalho de Seedorf",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/15/treino-do-corinthians-emerson-sheik-visita-elenco-em-segundo-dia-de-trabalho-de-seedorf.ghtml",
@@ -877,39 +889,27 @@
       "data": "2026-10-15"
     },
     {
-      "titulo": "Eleições do Corinthians: Sergio Janikian lança candidatura à presidência",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/15/eleicoes-do-corinthians-sergio-janikian-lanca-candidatura-a-presidencia.ghtml",
-      "data": "2026-10-15"
-    },
-    {
-      "titulo": "Corinthians teve 15 treinadores desde último jogo de Seedorf como técnico; veja lista",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/15/corinthians-teve-15-treinadores-desde-ultimo-jogo-de-seedorf-como-tecnico-veja-lista.ghtml",
-      "data": "2026-10-15"
-    },
-    {
-      "titulo": "VÍDEO: Adversário complicado e dificuldades da altitude: Zona mista Jaqueline | Corinthians 2x0 Colo-Colo",
+      "titulo": "Adversário do Corinthians confirma participação na Libertadores Feminina após impasse com vistos",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130164/adversario-complicado-e-dificuldades-da-altitude-zona-mista-jaqueline-corinthians-2x0-colo-colo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542145/adversario-do-corinthians-confirma-participacao-na-libertadores-feminina-apos-impasse-com-vistos",
       "data": "2026-10-15"
     },
     {
-      "titulo": "VÍDEO: Melhores Momentos: Corinthians 2x0 Colo-Colo | 1ª rodada | Conmebol Libertadores Feminina 2026",
+      "titulo": "Atacante do Corinthians celebra vitória na estreia da Libertadores e destaca preparação das Brabas",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130163/melhores-momentos-corinthians-2x0-colo-colo-1-rodada-conmebol-libertadores-feminina-2026",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542138/atacante-do-corinthians-celebra-vitoria-na-estreia-da-libertadores-e-destaca-preparacao-das-brabas",
       "data": "2026-10-15"
     },
     {
-      "titulo": "VÍDEO: Vitória na estreia e volta por cima das Brabas: Zona Mista Lelê | Corinthians 2x0 Colo-Colo",
+      "titulo": "Corinthians divulga imagens de tour especial com Basílio no Memorial do clube",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130162/vitoria-na-estreia-e-volta-por-cima-das-brabas-zona-mista-lele-corinthians-2x0-colo-colo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542082/corinthians-divulga-imagens-de-tour-especial-com-basilio-no-memorial-do-clube",
       "data": "2026-10-15"
     },
     {
-      "titulo": "Ídolo do Corinthians visita CT e tira foto com novo treinador; confira",
+      "titulo": "Corinthians desliga diretor de tecnologia",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542124/idolo-do-corinthians-visita-ct-e-tira-foto-com-novo-treinador-confira",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542140/corinthians-desliga-diretor-de-tecnologia",
       "data": "2026-10-15"
     }
   ]
