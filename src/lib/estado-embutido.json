@@ -1,6 +1,6 @@
 {
   "versao": 2,
-  "atualizadoEm": "2026-10-15",
+  "atualizadoEm": "2026-10-19",
   "fonte": "ogol.com.br",
   "base": {
     "pontos": 32,
@@ -357,7 +357,8 @@
         "visitante": "Vitória",
         "data": "2026-10-19",
         "hora": "20:00",
-        "tv": "SporTV"
+        "tv": "SporTV e Premiere",
+        "tvConsultadaEm": "2026-10-19"
       },
       {
         "rodada": 32,
@@ -841,6 +842,54 @@
   },
   "noticias": [
     {
+      "titulo": "Pressionado, Corinthians aposta em inteligência emocional para resgatar força em casa",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/19/pressionado-corinthians-aposta-em-inteligencia-emocional-para-resgatar-forca-em-casa.ghtml",
+      "data": "2026-10-19"
+    },
+    {
+      "titulo": "Corinthians x Vitória: Hugo Souza e Lucas Arcanjo estão entre goleiros com mais jogos sem sofrer gols",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/10/19/corinthians-x-vitoria-hugo-souza-e-lucas-arcanjo-estao-entre-goleiros-com-mais-jogos-sem-sofrer-gols.ghtml",
+      "data": "2026-10-19"
+    },
+    {
+      "titulo": "Corinthians x Vitória: onde assistir ao vivo, horário e escalações",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/sp/futebol/brasileirao-serie-a/noticia/2026/10/19/corinthians-x-vitoria-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "data": "2026-10-19"
+    },
+    {
+      "titulo": "Ex-zagueiro do Corinthians elogia joia revelada pela base e cobra mudanças na estrutura do clube",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542272/ex-zagueiro-do-corinthians-elogia-joia-revelada-pela-base-e-cobra-mudancas-na-estrutura-do-clube",
+      "data": "2026-10-19"
+    },
+    {
+      "titulo": "Semana do Corinthians reserva quatro compromissos no profissional e decisões na base e no futsal",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542335/semana-do-corinthians-reserva-quatro-compromissos-no-profissional-e-decisoes-na-base-e-no-futsal",
+      "data": "2026-10-19"
+    },
+    {
+      "titulo": "Duda celebra fim de jejum de gols e destaca classificação antecipada do Corinthians na Libertadores",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542313/duda-celebra-fim-de-jejum-de-gols-e-destaca-classificacao-antecipada-do-corinthians-na-libertadores",
+      "data": "2026-10-19"
+    },
+    {
+      "titulo": "Saiba onde assistir ao duelo entre Corinthians e Vitória no Brasileirão",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542295/saiba-onde-assistir-ao-duelo-entre-corinthians-e-vitoria-no-brasileirao",
+      "data": "2026-10-19"
+    },
+    {
+      "titulo": "Últimas do Corinthians: classificação na Libertadores, provável escalação e substituto para Raniele",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542317/ultimas-do-corinthians-classificacao-na-libertadores-provavel-escalacao-e-substituto-para-raniele",
+      "data": "2026-10-19"
+    },
+    {
       "titulo": "VÍDEO: Melhores momentos: Corinthians 7x0 Caracas FC | 2ª Rodada | Conmebol Libertadores Feminina 2026",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/videos-do-corinthians/130210/melhores-momentos-corinthians-7x0-caracas-fc-2-rodada-conmebol-libertadores-feminina-2026",
@@ -863,54 +912,6 @@
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/videos-do-corinthians/130207/tarefa-sendo-feita-e-historico-de-forca-na-competicao-zona-mista-paola-garcia",
       "data": "2026-10-19"
-    },
-    {
-      "titulo": "Corinthians recebe o Vitória para tentar se afastar da zona do rebaixamento; saiba tudo",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542293/corinthians-recebe-o-vitoria-para-tentar-se-afastar-da-zona-do-rebaixamento-saiba-tudo",
-      "data": "2026-10-19"
-    },
-    {
-      "titulo": "Escalação do Corinthians: Seedorf finaliza preparação para a partida contra o Vitória",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/18/escalacao-do-corinthians-seedorf-finaliza-preparacao-para-a-partida-contra-o-vitoria.ghtml",
-      "data": "2026-10-18"
-    },
-    {
-      "titulo": "Corinthians x Caracas pela Libertadores Feminina: onde assistir ao vivo e horário",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/10/18/corinthians-x-caracas-pela-libertadores-feminina-onde-assistir-ao-vivo-e-horario.ghtml",
-      "data": "2026-10-18"
-    },
-    {
-      "titulo": "Corinthians e Hypera Pharma debatem valores de rescisão de naming rights da Arena",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/18/corinthians-e-hypera-pharma-debatem-valores-de-rescisao-de-naming-rights-da-arena.ghtml",
-      "data": "2026-10-18"
-    },
-    {
-      "titulo": "VÍDEO: Gabi Zanotti fala sobre recuperação física e comenta sobre cobrança entre jogadoras do Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130205/gabi-zanotti-fala-sobre-recuperacao-fisica-e-comenta-sobre-cobranca-entre-jogadoras-do-corinthians",
-      "data": "2026-10-18"
-    },
-    {
-      "titulo": "Corinthians atropela o Caracas e garante vaga antecipada nas quartas da Libertadores Feminina",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542179/corinthians-atropela-o-caracas-e-garante-vaga-antecipada-nas-quartas-da-libertadores-feminina",
-      "data": "2026-10-18"
-    },
-    {
-      "titulo": "Atacante do Corinthians pode ser titular apenas pela segunda vez no segundo semestre em Itaquera",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542283/atacante-do-corinthians-pode-ser-titular-apenas-pela-segunda-vez-no-segundo-semestre-em-itaquera",
-      "data": "2026-10-18"
-    },
-    {
-      "titulo": "Ex-zagueiro do Corinthians relembra impacto de dividir vestiário com Ronaldo: 'Foi surreal'",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542271/ex-zagueiro-do-corinthians-relembra-impacto-de-dividir-vestiario-com-ronaldo-foi-surreal",
-      "data": "2026-10-18"
     }
   ]
 }
