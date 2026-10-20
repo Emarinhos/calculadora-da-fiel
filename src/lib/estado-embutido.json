@@ -842,6 +842,24 @@
   },
   "noticias": [
     {
+      "titulo": "Classificação do segundo turno: Flamengo lidera; Botafogo deixa o Z-4, que agora tem o Grêmio",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/noticia/2026/10/20/classificacao-do-segundo-turno-flamengo-lidera-botafogo-deixa-o-z-4-que-agora-tem-o-gremio.ghtml",
+      "data": "2026-10-20"
+    },
+    {
+      "titulo": "Seedorf escolhe música-tema do Chicago Bulls para a entrada do Corinthians em campo; entenda",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/20/seedorf-escolhe-tema-do-chicago-bulls-para-a-entrada-do-corinthians-em-campo-entenda.ghtml",
+      "data": "2026-10-20"
+    },
+    {
+      "titulo": "Serenidade, incentivo e poucos sorrisos: como Seedorf comandou o Corinthians da arquibancada",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/20/serenidade-incentivo-e-poucos-sorrisos-como-seedorf-comandou-o-corinthians-da-arquibancada.ghtml",
+      "data": "2026-10-20"
+    },
+    {
       "titulo": "Corinthians atrasa nova parcela da CNRD, e Cuiabá pede extensão do transfer ban por seis meses",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/20/corinthians-atrasa-nova-parcela-da-cnrd-e-cuiaba-pede-extensao-do-transfer-ban-por-seis-meses.ghtml",
@@ -854,64 +872,46 @@
       "data": "2026-10-20"
     },
     {
-      "titulo": "Corinthians publica vídeo de possível pênalti não marcado contra o Vitória e promete cobrar CBF",
+      "titulo": "Corinthians sedia show de Roberto Carlos no Parque São Jorge; saiba detalhes",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542424/corinthians-publica-video-de-possivel-penalti-nao-marcado-contra-o-vitoria-e-promete-cobrar-cbf",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542459/corinthians-sedia-show-de-roberto-carlos-no-parque-sao-jorge-saiba-detalhes",
       "data": "2026-10-20"
     },
     {
-      "titulo": "Últimas do Corinthians: empate no Brasileirão, gol de Filho do Terrão e nova parceria",
+      "titulo": "Yuri Alberto encerra jejum de três meses sem marcar gols pelo Corinthians",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542422/ultimas-do-corinthians-empate-no-brasileirao-gol-de-filho-do-terrao-e-nova-parceria",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542390/yuri-alberto-encerra-jejum-de-tres-meses-sem-marcar-gols-pelo-corinthians",
       "data": "2026-10-20"
     },
     {
-      "titulo": "Corinthians empata com Blumenau e garante vaga na final da Talentos LNF",
+      "titulo": "Súmula aponta confusão envolvendo torcedor do Corinthians e reclamação contra jogador do Vitória",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542423/corinthians-empata-com-blumenau-e-garante-vaga-na-final-da-talentos-lnf",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542457/sumula-aponta-confusao-envolvendo-torcedor-do-corinthians-e-reclamacao-contra-jogador-do-vitoria",
       "data": "2026-10-20"
     },
     {
-      "titulo": "VÍDEO: 'Eu acho que vocês estão indo além demais'! Hugo Souza se irrita ao ser questionado pelo gol sofrido",
+      "titulo": "Castán relembra trajetória vitoriosa e analisa mudança na busca do Corinthians por novos atletas",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130227/eu-acho-que-voces-estao-indo-alem-demais-hugo-souza-se-irrita-ao-ser-questionado-pelo-gol-sofrido",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542274/castan-relembra-trajetoria-vitoriosa-e-analisa-mudanca-na-busca-do-corinthians-por-novos-atletas",
       "data": "2026-10-20"
     },
     {
-      "titulo": "Hugo Souza admite medo de rebaixamento pelo Corinthians: \"Não podemos fugir da realidade\"",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/19/hugo-souza-admite-medo-de-ser-rebaixado-pelo-corinthians-nao-podemos-fugir-da-realidade.ghtml",
-      "data": "2026-10-19"
+      "titulo": "Seedorf escolhe música icônica do Chicago Bulls para aquecimento do Corinthians contra o Vitória",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542451/seedorf-escolhe-musica-iconica-do-chicago-bulls-para-aquecimento-do-corinthians-contra-o-vitoria",
+      "data": "2026-10-20"
     },
     {
-      "titulo": "Auxiliar explica mudanças no Corinthians e espera melhora com Seedorf: \"Evoluindo cada vez mais\"",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/19/auxiliar-explica-mudancas-no-corinthians-e-espera-melhora-com-seedorf-evoluindo-cada-vez-mais.ghtml",
-      "data": "2026-10-19"
+      "titulo": "Corinthians vê chance de rebaixamento no Brasileirão aumentar para 43% após empate com o Vitória",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542436/corinthians-ve-chance-de-rebaixamento-no-brasileirao-aumentar-para-43-por-cento-apos-empate-com-o-vitoria",
+      "data": "2026-10-20"
     },
     {
-      "titulo": "Atuações do Corinthians: André e Matheuzinho vão bem em empate com o Vitória; dê suas notas",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/19/atuacoes-do-corinthians-andre-e-matheuzinho-vao-bem-em-empate-com-o-vitoria-de-suas-notas.ghtml",
-      "data": "2026-10-19"
-    },
-    {
-      "titulo": "Corinthians tem primeiro pênalti a seu favor no Brasileirão, mas ironiza: \"31 jogos até o próximo\"",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/19/corinthians-tem-primeiro-penalti-marcado-a-seu-favor-no-brasileirao-veja-lance-e-analise-do-var.ghtml",
-      "data": "2026-10-19"
-    },
-    {
-      "titulo": "Seedorf acompanha jogo do Corinthians na arquibancada, faz \"poropopó\" e reage a gols; vídeos",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/19/seedorf-acompanha-jogo-do-corinthians-na-arquibancada-e-faz-poropopo-com-a-torcida-video.ghtml",
-      "data": "2026-10-19"
-    },
-    {
-      "titulo": "Corinthians bate recorde e supera 150 dias sob transfer ban",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/19/corinthians-bate-recorde-e-supera-150-dias-sob-transfer-ban.ghtml",
-      "data": "2026-10-19"
+      "titulo": "Corinthians alcança segunda maior goleada do ano diante do Caracas",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542310/corinthians-alcanca-segunda-maior-goleada-do-ano-diante-do-caracas",
+      "data": "2026-10-20"
     }
   ]
 }
