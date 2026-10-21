@@ -842,6 +842,12 @@
   },
   "noticias": [
     {
+      "titulo": "Dívida por direitos de imagem abre brecha para jogadores do Corinthians pedirem rescisão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/21/divida-por-direitos-de-imagem-abre-brecha-para-jogadores-do-corinthians-pedirem-rescisao.ghtml",
+      "data": "2026-10-21"
+    },
+    {
       "titulo": "Cinco lições que a eliminação do Corinthians contra o Estudiantes deixa para o Flamengo",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/flamengo/noticia/2026/10/21/cinco-licoes-que-a-eliminacao-do-corinthians-contra-o-estudiantes-deixa-para-o-flamengo.ghtml",
@@ -860,57 +866,51 @@
       "data": "2026-10-21"
     },
     {
-      "titulo": "Eleições Meu Timão: André Castro explica candidatura e relembra proposta com aporte bilionário",
+      "titulo": "Corinthians conhece adversário na final da Talentos LNF em busca de título inédito",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542505/eleicoes-meu-timao-andre-castro-explica-candidatura-e-relembra-proposta-com-aporte-bilionario",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542537/corinthians-conhece-adversario-na-final-da-talentos-lnf-em-busca-de-titulo-inedito",
       "data": "2026-10-21"
     },
     {
-      "titulo": "Corinthians defende retrospecto perfeito contra Santa Fe e busca liderança da Libertadores Feminina",
+      "titulo": "Corinthians é multado por exposição indevida na final do Brasileirão; volante tem pena mínima",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542482/corinthians-defende-retrospecto-perfeito-contra-santa-fe-e-busca-lideranca-da-libertadores-feminina",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542535/corinthians-e-multado-por-exposicao-indevida-na-final-do-brasileirao-volante-tem-pena-minima",
       "data": "2026-10-21"
     },
     {
-      "titulo": "Corinthians visita o Red Bull Bragantino pelo primeiro jogo da semifinal do Paulista Sub-17",
+      "titulo": "Auxiliar do Corinthians destaca união do elenco do Corinthians e cobra melhora nas finalizações",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542460/corinthians-visita-o-red-bull-bragantino-pelo-primeiro-jogo-da-semifinal-do-paulista-sub-17",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542416/auxiliar-do-corinthians-destaca-uniao-do-elenco-do-corinthians-e-cobra-melhora-nas-finalizacoes",
       "data": "2026-10-21"
     },
     {
-      "titulo": "Ex-goleiro do Corinthians deve ser escolhido para assumir funções de Marcelo Paz; entenda",
+      "titulo": "Corinthians tenta espantar fantasma de eliminação do Red Bull Bragantino no Sub-17",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542509/ex-goleiro-do-corinthians-deve-ser-escolhido-para-assumir-funcoes-de-marcelo-paz-entenda",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542477/corinthians-tenta-espantar-fantasma-de-eliminacao-do-red-bull-bragantino-no-sub-17",
       "data": "2026-10-21"
     },
     {
-      "titulo": "Meu Timão transmite terceira partida do Corinthians na Libertadores Feminina; saiba como assistir",
+      "titulo": "Goleira do Corinthians relembra mudança de posição e projeta campanha da Seleção no Mundial Sub-17",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542469/meu-timao-transmite-terceira-partida-do-corinthians-na-libertadores-feminina-saiba-como-assistir",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542521/goleira-do-corinthians-relembra-mudanca-de-posicao-e-projeta-campanha-da-selecao-no-mundial-sub-17",
       "data": "2026-10-21"
     },
     {
-      "titulo": "[Rodrigo Vessoni] Saída de Paz do Corinthians tem fritura política, falta de autonomia e fraqueza di",
+      "titulo": "Stabile não comparece a depoimento na Ética por contratação de empresas de segurança no Corinthians",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/coluna/rodrigo_vessoni/4256/saida-de-paz-do-corinthians-tem-fritura-politica-falta-de-autonomia-e-fraqueza-diante-dos-atrasos/",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542528/stabile-nao-comparece-a-depoimento-na-etica-por-contratacao-de-empresas-de-seguranca-no-corinthians",
       "data": "2026-10-21"
     },
     {
-      "titulo": "Entenda os motivos da demissão de Marcelo Paz no Corinthians",
+      "titulo": "Volante do Corinthians projeta confronto contra o Santa Fe e reforça confiança no elenco",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542501/entenda-os-motivos-da-demissao-de-marcelo-paz-no-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542507/volante-do-corinthians-projeta-confronto-contra-o-santa-fe-e-reforca-confianca-no-elenco",
       "data": "2026-10-21"
     },
     {
-      "titulo": "Últimas do Corinthians: demissão de Paz, goleiro rebate críticas e reclamação corinthiana",
+      "titulo": "Lelê projeta duelo difícil contra Santa Fe e mira heptacampeonato do Corinthians na Libertadores",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542502/ultimas-do-corinthians-demissao-de-paz-goleiro-rebate-criticas-e-reclamacao-corinthiana",
-      "data": "2026-10-21"
-    },
-    {
-      "titulo": "Corinthians encara Independiente Santa Fe por liderança na Libertadores Feminina; saiba tudo",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542468/corinthians-encara-independiente-santa-fe-por-lideranca-na-libertadores-feminina-saiba-tudo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542471/lele-projeta-duelo-dificil-contra-santa-fe-e-mira-heptacampeonato-do-corinthians-na-libertadores",
       "data": "2026-10-21"
     }
   ]
