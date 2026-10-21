@@ -842,6 +842,24 @@
   },
   "noticias": [
     {
+      "titulo": "Memphis sofre lesão na coxa e desfalca o Corinthians no Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/21/memphis-sofre-lesao-na-coxa-e-desfalca-o-corinthians-no-brasileirao.ghtml",
+      "data": "2026-10-21"
+    },
+    {
+      "titulo": "Julio Cesar vai acumular cargos de executivo e gerente de futebol do Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/21/julio-cesar-assume-cargo-de-executivo-de-futebol-e-vai-acumular-funcoes-no-corinthians.ghtml",
+      "data": "2026-10-21"
+    },
+    {
+      "titulo": "Corinthians paga R$ 8 milhões e quita parte das parcelas em atraso do acordo com a União",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/21/corinthians-deposita-r-8-milhoes-a-uniao-e-paga-parte-das-parcelas-em-atraso-de-acordo.ghtml",
+      "data": "2026-10-21"
+    },
+    {
       "titulo": "Dívida por direitos de imagem abre brecha para jogadores do Corinthians pedirem rescisão",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/21/divida-por-direitos-de-imagem-abre-brecha-para-jogadores-do-corinthians-pedirem-rescisao.ghtml",
@@ -866,51 +884,33 @@
       "data": "2026-10-21"
     },
     {
-      "titulo": "Corinthians conhece adversário na final da Talentos LNF em busca de título inédito",
+      "titulo": "Corinthians reforça compromisso com o RCE e garante regularidade após cobrança do MP",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542537/corinthians-conhece-adversario-na-final-da-talentos-lnf-em-busca-de-titulo-inedito",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542552/corinthians-reforca-compromisso-com-o-rce-e-garante-regularidade-apos-cobranca-do-mp",
       "data": "2026-10-21"
     },
     {
-      "titulo": "Corinthians é multado por exposição indevida na final do Brasileirão; volante tem pena mínima",
+      "titulo": "Atacante está fora da Libertadores e vai retornar ao Brasil para fazer cirurgia",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542535/corinthians-e-multado-por-exposicao-indevida-na-final-do-brasileirao-volante-tem-pena-minima",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542568/atacante-esta-fora-da-libertadores-e-vai-retornar-ao-brasil-para-fazer-cirurgia",
       "data": "2026-10-21"
     },
     {
-      "titulo": "Auxiliar do Corinthians destaca união do elenco do Corinthians e cobra melhora nas finalizações",
+      "titulo": "VÍDEO: Duda Sampaio fala da importância de fazer gols, momento atual do time e expectativa para o mata-mata",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542416/auxiliar-do-corinthians-destaca-uniao-do-elenco-do-corinthians-e-cobra-melhora-nas-finalizacoes",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130265/duda-sampaio-fala-da-importancia-de-fazer-gols-momento-atual-do-time-e-expectativa-para-o-mata-mata",
       "data": "2026-10-21"
     },
     {
-      "titulo": "Corinthians tenta espantar fantasma de eliminação do Red Bull Bragantino no Sub-17",
+      "titulo": "VÍDEO: Belén Aquino volta a fazer gols e projeta Corinthians na próxima fase da CONMEBOL Libertadores",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542477/corinthians-tenta-espantar-fantasma-de-eliminacao-do-red-bull-bragantino-no-sub-17",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130264/belen-aquino-volta-a-fazer-gols-e-projeta-corinthians-na-proxima-fase-da-conmebol-libertadores",
       "data": "2026-10-21"
     },
     {
-      "titulo": "Goleira do Corinthians relembra mudança de posição e projeta campanha da Seleção no Mundial Sub-17",
+      "titulo": "Meia-atacante do Corinthians tem maior minutagem em mais de um mês após titularidade em Itaquera",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542521/goleira-do-corinthians-relembra-mudanca-de-posicao-e-projeta-campanha-da-selecao-no-mundial-sub-17",
-      "data": "2026-10-21"
-    },
-    {
-      "titulo": "Stabile não comparece a depoimento na Ética por contratação de empresas de segurança no Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542528/stabile-nao-comparece-a-depoimento-na-etica-por-contratacao-de-empresas-de-seguranca-no-corinthians",
-      "data": "2026-10-21"
-    },
-    {
-      "titulo": "Volante do Corinthians projeta confronto contra o Santa Fe e reforça confiança no elenco",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542507/volante-do-corinthians-projeta-confronto-contra-o-santa-fe-e-reforca-confianca-no-elenco",
-      "data": "2026-10-21"
-    },
-    {
-      "titulo": "Lelê projeta duelo difícil contra Santa Fe e mira heptacampeonato do Corinthians na Libertadores",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542471/lele-projeta-duelo-dificil-contra-santa-fe-e-mira-heptacampeonato-do-corinthians-na-libertadores",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542516/meia-atacante-do-corinthians-tem-maior-minutagem-em-mais-de-um-mes-apos-titularidade-em-itaquera",
       "data": "2026-10-21"
     }
   ]
