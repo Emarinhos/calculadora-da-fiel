@@ -842,6 +842,24 @@
   },
   "noticias": [
     {
+      "titulo": "Seedorf muda rotina no Corinthians e deixa cortes na lista de relacionados para o dia do jogo",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/22/seedorf-muda-rotina-no-corinthians-e-deixa-cortes-na-lista-de-relacionados-para-o-dia-do-jogo.ghtml",
+      "data": "2026-10-22"
+    },
+    {
+      "titulo": "Corinthians enfrenta o Brasília Basquete em busca da primeira vitória no NBB; saiba tudo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542536/corinthians-enfrenta-o-brasilia-basquete-em-busca-da-primeira-vitoria-no-nbb-saiba-tudo",
+      "data": "2026-10-22"
+    },
+    {
+      "titulo": "Últimas do Corinthians: vitória no feminino, desfalques em treinamento e denúncia no STJD",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542581/ultimas-do-corinthians-vitoria-no-feminino-desfalques-em-treinamento-e-denuncia-no-stjd",
+      "data": "2026-10-22"
+    },
+    {
       "titulo": "Memphis sofre lesão na coxa e desfalca o Corinthians no Brasileirão",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/21/memphis-sofre-lesao-na-coxa-e-desfalca-o-corinthians-no-brasileirao.ghtml",
@@ -893,24 +911,6 @@
       "titulo": "Corinthians promove ação com projeto de combate ao câncer de mama na Neo Química Arena",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/542533/corinthians-promove-acao-com-projeto-de-combate-ao-cancer-de-mama-na-neo-quimica-arena",
-      "data": "2026-10-21"
-    },
-    {
-      "titulo": "Zagueira do Corinthians destaca vontade de vencer da equipe e elogia evolução do Santa Fe",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542577/zagueira-do-corinthians-destaca-vontade-de-vencer-da-equipe-e-elogia-evolucao-do-santa-fe",
-      "data": "2026-10-21"
-    },
-    {
-      "titulo": "Eleições MT: André Castro expõe planos para o futebol e outros departamentos do Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542504/eleicoes-mt-andre-castro-expoe-planos-para-o-futebol-e-outros-departamentos-do-corinthians",
-      "data": "2026-10-21"
-    },
-    {
-      "titulo": "Movimento anuncia entrega de abaixo-assinado ao MP-SP por intervenção judicial no Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542574/movimento-anuncia-entrega-de-abaixo-assinado-ao-mp-sp-por-intervencao-judicial-no-corinthians",
       "data": "2026-10-21"
     }
   ]
