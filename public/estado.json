@@ -842,7 +842,13 @@
   },
   "noticias": [
     {
-      "titulo": "Torcida organizada vai ao CT do Corinthians para nova cobrança ao elenco",
+      "titulo": "Corinthians tem cinco desfalques em treino de preparação para jogo contra o Vasco",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/22/corinthians-tem-cinco-desfalques-em-treino-de-preparacao-para-jogo-contra-o-vasco.ghtml",
+      "data": "2026-10-22"
+    },
+    {
+      "titulo": "Torcida organizada vai ao CT para cobrar elenco do Corinthians mais uma vez",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/22/torcida-organizada-vai-ao-ct-do-corinthians-para-nova-cobranca-ao-elenco.ghtml",
       "data": "2026-10-22"
@@ -884,33 +890,27 @@
       "data": "2026-10-22"
     },
     {
-      "titulo": "Vic Albuquerque celebra marca de 130 gols pelo Corinthians após goleada na Libertadores",
+      "titulo": "Zagueiro do Corinthians projeta partida contra o Guarani pelo Paulista Sub-20",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542615/vic-albuquerque-celebra-marca-de-130-gols-pelo-corinthians-apos-goleada-na-libertadores",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542637/zagueiro-do-corinthians-projeta-partida-contra-o-guarani-pelo-paulista-sub-20",
       "data": "2026-10-22"
     },
     {
-      "titulo": "Corinthians é confirmado pela Fifa na inédita Copa do Mundo de Clubes Feminina de 2028",
+      "titulo": "Zagueira do Corinthians valoriza solidez defensiva das Brabas na Libertadores Feminina",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542613/corinthians-e-confirmado-pela-fifa-na-inedita-copa-do-mundo-de-clubes-feminina-de-2028",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542578/zagueira-do-corinthians-valoriza-solidez-defensiva-das-brabas-na-libertadores-feminina",
       "data": "2026-10-22"
     },
     {
-      "titulo": "Ex-diretor do Corinthians denuncia problemas administrativos e revela bastidores de destituição",
+      "titulo": "Memphis pode voltar a desfalcar o Corinthians por lesão pela primeira vez desde maio",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542587/ex-diretor-do-corinthians-denuncia-problemas-administrativos-e-revela-bastidores-de-destituicao",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542596/memphis-pode-voltar-a-desfalcar-o-corinthians-por-lesao-pela-primeira-vez-desde-maio",
       "data": "2026-10-22"
     },
     {
-      "titulo": "Corinthians tem dois atletas convocados para a Copa do Mundo Sub-17",
+      "titulo": "Corinthians confirma lesão de volante e atualiza situação de dupla",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542611/corinthians-tem-dois-atletas-convocados-para-a-copa-do-mundo-sub-17",
-      "data": "2026-10-22"
-    },
-    {
-      "titulo": "Marcelo Paz vai ao CT Joaquim Grava e se despede de atletas após saída do Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542610/marcelo-paz-vai-ao-ct-joaquim-grava-e-se-despede-de-atletas-apos-saida-do-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542624/corinthians-confirma-lesao-de-volante-e-atualiza-situacao-de-dupla",
       "data": "2026-10-22"
     }
   ]
