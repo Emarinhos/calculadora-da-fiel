@@ -62,3 +62,17 @@ test('janela de acompanhamento: de 15 min antes do apito até 170 min depois, s�
   um.liga.jogos = [];
   assert.strictEqual(emJanelaDeJogo(um, inicio), false);
 });
+
+test('jogos a mais na fonte: aponta clubes cuja tabela da fonte tem mais jogos que a nossa', async () => {
+  const { clubesComJogosAMais } = await import('./resultados-auto.js');
+  const e = clone(ESTADO_EMBUTIDO);
+  const fonte = e.liga.tabela.map((t) => ({ clube: t.clube, j: t.j }));
+  assert.deepStrictEqual(clubesComJogosAMais(e, fonte), []);
+  fonte[0].j += 1;
+  assert.deepStrictEqual(clubesComJogosAMais(e, fonte), [fonte[0].clube]);
+});
+
+test('dias até hoje: n dias, do mais antigo ao mais recente, virando o mês', async () => {
+  const { diasAte } = await import('./resultados-auto.js');
+  assert.deepStrictEqual(diasAte('2026-11-02', 4), ['2026-10-30', '2026-10-31', '2026-11-01', '2026-11-02']);
+});

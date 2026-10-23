@@ -79,3 +79,21 @@ export function rodadaParaRegistrarPosicao(estado) {
   const prontas = jogadas.filter((r) => r > estado.posicaoRodada && !comJogos.has(r));
   return prontas.length ? Math.max(...prontas) : null;
 }
+
+/** Quantos dias para trás a ESPN é varrida quando a tabela da fonte mostra jogos que não temos (jogos sem data no estado). */
+export const DIAS_DE_VARREDURA = 14;
+
+/**
+ * Clubes que, na tabela da fonte, já têm mais jogos do que na nossa. Sinal de que houve jogo que o estado não acompanhou
+ * (em geral jogos da rodada sem data/hora gravada, que jogosPendentes não enxerga).
+ */
+export function clubesComJogosAMais(estado, tabelaFonte) {
+  const nossa = new Map(estado.liga.tabela.map((t) => [t.clube, t.j]));
+  return tabelaFonte.filter((t) => nossa.has(t.clube) && t.j > nossa.get(t.clube)).map((t) => t.clube);
+}
+
+/** Os `n` dias até `hoje` (inclusive), em 'AAAA-MM-DD', do mais antigo ao mais recente. */
+export function diasAte(hoje, n) {
+  const [a, m, d] = hoje.split('-').map(Number);
+  return Array.from({ length: n }, (_, i) => new Date(Date.UTC(a, m - 1, d - (n - 1 - i))).toISOString().slice(0, 10));
+}

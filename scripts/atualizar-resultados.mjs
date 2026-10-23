@@ -17,7 +17,7 @@ import { comRiscos } from '../src/lib/liga.js';
 import { inicioDoJogo } from '../src/lib/agenda.js';
 import { URL_EDICAO, PAGINAS_CALENDARIO, urlCalendario, lerCalendario, lerTabela } from '../src/lib/ogol.js';
 import { urlPlacar, diaDaEspn, lerPlacar, URL_TABELA_ESPN, lerTabelaEspn } from '../src/lib/espn.js';
-import { jogosPendentes, resultadosDosPendentes, placarConfirmado, rodadaParaRegistrarPosicao, MINUTOS_ATE_FIM, MINUTOS_ATE_FIM_OGOL } from '../src/lib/resultados-auto.js';
+import { jogosPendentes, resultadosDosPendentes, placarConfirmado, rodadaParaRegistrarPosicao, clubesComJogosAMais, diasAte, DIAS_DE_VARREDURA, MINUTOS_ATE_FIM, MINUTOS_ATE_FIM_OGOL } from '../src/lib/resultados-auto.js';
 
 const arquivoEstado = new URL('../public/estado.json', import.meta.url);
 const arquivoLog = new URL('../docs/atualizacoes-estado.md', import.meta.url);
@@ -53,8 +53,9 @@ async function textosDeNoticias() {
 const FONTES = [
   {
     nome: 'ESPN',
-    async placares(pendentes) {
-      const dias = new Set(pendentes.flatMap((g) => [diaDaEspn(g.data), diaDaEspn(g.data, 1)]));
+    // `diasExtras`: dias a varrer além dos dias dos pendentes (quando a tabela mostra jogos que não temos, sem data no estado)
+    async placares(pendentes, diasExtras = []) {
+      const dias = new Set([...pendentes.filter((g) => g.data), ...diasExtras.map((data) => ({ data }))].flatMap((g) => [diaDaEspn(g.data), diaDaEspn(g.data, 1)]));
       const lidos = [];
       for (const dia of dias) lidos.push(...lerPlacar(JSON.parse(await buscar(urlPlacar(dia)))));
       const porPar = new Map(pendentes.map((g) => [`${g.mandante}|${g.visitante}`, g]));
@@ -94,16 +95,35 @@ async function main() {
   const agora = process.env.AGORA_ISO ? new Date(process.env.AGORA_ISO) : new Date();
   const hoje = emBrasilia(agora);
 
-  const pendentes = jogosPendentes(estado, agora.getTime());
+  let pendentes = jogosPendentes(estado, agora.getTime());
+
+  // 0) Jogos sem data no estado (só o do Corinthians costuma ter data) não entram em `pendentes`. Se a tabela da ESPN já
+  // conta jogos que a nossa não tem, os jogos restantes da liga viram candidatos e a ESPN é varrida nos últimos dias.
+  // Seguro porque a ESPN só devolve jogo com apito final e a tabela inteira ainda é conferida no passo 3.
+  let diasExtras = [];
+  try {
+    const aMais = clubesComJogosAMais(estado, lerTabelaEspn(JSON.parse(await buscar(URL_TABELA_ESPN))));
+    if (aMais.length) {
+      console.log(`resultados: a ESPN já conta jogos que não temos (${aMais.join(', ')}); varrendo os últimos ${DIAS_DE_VARREDURA} dias.`);
+      const ja = new Set(pendentes);
+      pendentes = [...pendentes, ...estado.liga.jogos.filter((g) => !ja.has(g) && !g.data && (aMais.includes(g.mandante) || aMais.includes(g.visitante)))];
+      diasExtras = diasAte(hoje, DIAS_DE_VARREDURA);
+    }
+  } catch (e) {
+    console.error(`aviso: não consegui comparar com a tabela da ESPN (${e.message}).`);
+  }
   if (!pendentes.length) { console.log('resultados: nenhum jogo terminou desde a última atualização.'); return; }
 
   // 1) Placares
   const lido = await primeiraQueResponde('leitura dos placares', (fonte) => {
-    const aptos = fonte.minutos ? jogosPendentes(estado, agora.getTime(), fonte.minutos) : pendentes;
-    return aptos.length ? fonte.placares(aptos) : [];
+    if (fonte.minutos) { // ogol: sem aviso de "encerrado", só jogos com data e já com tempo de sobra
+      const aptos = jogosPendentes(estado, agora.getTime(), fonte.minutos);
+      return aptos.length ? fonte.placares(aptos) : [];
+    }
+    return fonte.placares(pendentes, diasExtras);
   });
   if (!lido) {
-    const maisAntigo = Math.min(...pendentes.map((g) => inicioDoJogo(g)));
+    const maisAntigo = Math.min(...pendentes.map((g) => inicioDoJogo(g) ?? Infinity));
     const horas = (agora.getTime() - maisAntigo) / 3600000;
     if (horas > HORAS_ATE_ALERTAR) {
       console.error(`ALERTA: nenhuma fonte respondeu e há jogo encerrado há ${Math.round(horas)} h sem resultado aplicado.`);
