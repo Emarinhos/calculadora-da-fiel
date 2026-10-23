@@ -797,6 +797,30 @@
   },
   "noticias": [
     {
+      "titulo": "Favoritismos #32: dicas, palpites e chances no Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/10/23/favoritismos-32-dicas-palpites-e-chances-no-brasileirao.ghtml",
+      "data": "2026-10-23"
+    },
+    {
+      "titulo": "Palpites e dicas para Vasco x Corinthians pelo Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/10/23/palpites-e-dicas-para-vasco-x-corinthians-pelo-brasileirao.ghtml",
+      "data": "2026-10-23"
+    },
+    {
+      "titulo": "Corinthians chega ao Rio e tem cinco desfalques para enfrentar o Vasco; veja os relacionados",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/23/corinthians-chega-ao-rio-e-tem-cinco-desfalques-para-enfrentar-o-vasco-veja-os-relacionados.ghtml",
+      "data": "2026-10-23"
+    },
+    {
+      "titulo": "Escalação do Corinthians: Seedorf faz últimos testes antes de enfrentar o Vasco em São Januário",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/23/escalacao-do-corinthians-seedorf-faz-ultimos-testes-antes-de-enfrentar-o-vasco-em-sao-januario.ghtml",
+      "data": "2026-10-23"
+    },
+    {
       "titulo": "Seedorf é registrado na CBF, aparece no BID e pode comandar o Corinthians do banco de reservas",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/23/seedorf-e-registrado-na-cbf-aparece-no-bid-e-pode-comandar-o-corinthians-do-banco-de-reservas.ghtml",
@@ -821,51 +845,27 @@
       "data": "2026-10-23"
     },
     {
-      "titulo": "Corinthians x Vitória: CBF divulga análise do VAR em lances de pênalti e impedimento",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/23/corinthians-x-vitoria-cbf-divulga-analise-do-var-em-lances-de-penalti-e-impedimento.ghtml",
-      "data": "2026-10-23"
-    },
-    {
-      "titulo": "Libertadores Feminina: veja jogos, datas, horários e onde assistir às quartas de final",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/10/23/libertadores-feminina-veja-jogos-datas-horarios-e-onde-assistir-as-quartas-de-final.ghtml",
-      "data": "2026-10-23"
-    },
-    {
-      "titulo": "Bastidores: crise leva elenco do Corinthians a blindar vestiário e ampliar distância de Stabile",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/23/bastidores-crise-leva-elenco-do-corinthians-a-blindar-vestiario-e-ampliar-distancia-de-stabile.ghtml",
-      "data": "2026-10-23"
-    },
-    {
-      "titulo": "Brasileirão 2026: veja onde assistir ao vivo aos jogos da 32ª rodada",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/10/23/brasileirao-2026-veja-onde-assistir-ao-vivo-aos-jogos-da-32a-rodada.ghtml",
-      "data": "2026-10-23"
-    },
-    {
-      "titulo": "Seedorf tem nome publicado no BID e está liberado para estrear pelo Corinthians",
+      "titulo": "Corinthians busca manter retrospecto positivo em quartas de Libertadores Feminina",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542631/clarence-seedorf-aparece-no-bid-e-ja-pode-fazer-sua-estreia-pelo-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542659/corinthians-busca-manter-retrospecto-positivo-em-quartas-de-libertadores-feminina",
       "data": "2026-10-23"
     },
     {
-      "titulo": "Vitinho e André Carrillo ficam fora de viagem do Corinthians para enfrentar o Vasco",
+      "titulo": "Corinthians empata com o Guarani e deixa decisão em aberto nas quartas do Paulista Sub-20",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542679/vitinho-e-andre-carrillo-ficam-fora-de-viagem-do-corinthians-para-enfrentar-o-vasco",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542693/corinthians-empata-com-o-guarani-e-deixa-decisao-em-aberto-nas-quartas-do-paulista-sub-20",
       "data": "2026-10-23"
     },
     {
-      "titulo": "Corinthians é condenado a pagar quase R$ 60 mil a ex-analista exposto em caso da auditoria da Nike",
+      "titulo": "Corinthians tenta evitar maior jejum de vitórias como visitante na temporada diante do Vasco",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542677/corinthians-e-condenado-a-pagar-quase-r-60-mil-a-ex-analista-exposto-em-caso-da-auditoria-da-nike",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542672/corinthians-tenta-evitar-maior-jejum-de-vitorias-como-visitante-na-temporada-diante-do-vasco",
       "data": "2026-10-23"
     },
     {
-      "titulo": "Zagueira formada pelo Corinthians estreia na Libertadores Feminina em goleada das Brabas",
+      "titulo": "Corinthians desembarca no Rio de Janeiro com 24 relacionados para duelo contra o Vasco",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542633/zagueira-formada-pelo-corinthians-estreia-na-libertadores-feminina-em-goleada-das-brabas",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542675/corinthians-desembarca-no-rio-de-janeiro-com-24-relacionados-para-duelo-contra-o-vasco",
       "data": "2026-10-23"
     }
   ]
