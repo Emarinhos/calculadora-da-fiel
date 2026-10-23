@@ -842,6 +842,24 @@
   },
   "noticias": [
     {
+      "titulo": "Bastidores: crise leva elenco do Corinthians a blindar vestiário e ampliar distância de Stabile",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/23/bastidores-crise-leva-elenco-do-corinthians-a-blindar-vestiario-e-ampliar-distancia-de-stabile.ghtml",
+      "data": "2026-10-23"
+    },
+    {
+      "titulo": "Brasileirão 2026: veja onde assistir ao vivo aos jogos da 32ª rodada",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/10/23/brasileirao-2026-veja-onde-assistir-ao-vivo-aos-jogos-da-32a-rodada.ghtml",
+      "data": "2026-10-23"
+    },
+    {
+      "titulo": "Justiça nega pedido de prisão preventiva de vice-presidente do Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/22/justica-nega-pedido-de-prisao-preventiva-de-vice-presidente-do-corinthians.ghtml",
+      "data": "2026-10-22"
+    },
+    {
       "titulo": "Corinthians tem cinco desfalques em treino de preparação para jogo contra o Vasco",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/22/corinthians-tem-cinco-desfalques-em-treino-de-preparacao-para-jogo-contra-o-vasco.ghtml",
@@ -872,45 +890,27 @@
       "data": "2026-10-22"
     },
     {
-      "titulo": "Sequência de derrotas, finanças em colapso e demissões: o raio-x da crise que assola o Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/22/sequencia-de-derrotas-financas-em-colapso-e-demissoes-o-raio-x-da-crise-que-assola-o-corinthians.ghtml",
+      "titulo": "Justiça de São Paulo nega prisão preventiva de vice-presidente do Corinthians no Caso Nike",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542649/justica-de-sao-paulo-nega-prisao-preventiva-de-vice-presidente-do-corinthians-no-caso-nike",
       "data": "2026-10-22"
     },
     {
-      "titulo": "Metade dos clubes das Séries A e B relataram salários atrasados até junho; veja a lista",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/sp/futebol/noticia/2026/10/22/metade-dos-clubes-das-series-a-e-b-relataram-salarios-atrasados-ate-junho-veja-a-lista.ghtml",
+      "titulo": "Corinthians registra segunda melhor marca ofensiva na primeira fase da Libertadores Feminina",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542597/corinthians-registra-segunda-melhor-marca-ofensiva-na-primeira-fase-da-libertadores-feminina",
       "data": "2026-10-22"
     },
     {
-      "titulo": "Seedorf muda rotina no Corinthians e deixa cortes na lista de relacionados para o dia do jogo",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/22/seedorf-muda-rotina-no-corinthians-e-deixa-cortes-na-lista-de-relacionados-para-o-dia-do-jogo.ghtml",
+      "titulo": "Corinthians sofre com bolas de três do Brasília e conhece segunda derrota no NBB",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542636/corinthians-sofre-com-bolas-de-tres-do-brasilia-e-conhece-segunda-derrota-no-nbb",
       "data": "2026-10-22"
     },
     {
       "titulo": "Atacante encerra jejum pessoal e movimenta a artilharia do Sub-17 do Corinthians; veja o ranking",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/542598/atacante-encerra-jejum-pessoal-e-movimenta-a-artilharia-do-sub-17-do-corinthians-veja-o-ranking",
-      "data": "2026-10-22"
-    },
-    {
-      "titulo": "Corinthians publica bastidores de goleada sobre o Independiente Santa Fe na Libertadores Feminina",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542645/corinthians-publica-bastidores-de-goleada-sobre-o-independiente-santa-fe-na-libertadores-feminina",
-      "data": "2026-10-22"
-    },
-    {
-      "titulo": "Atacante valoriza fim do jejum e destaca evolução do Corinthians na Libertadores Feminina",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542585/atacante-valoriza-fim-do-jejum-e-destaca-evolucao-do-corinthians-na-libertadores-feminina",
-      "data": "2026-10-22"
-    },
-    {
-      "titulo": "Técnica do Corinthians avalia campanha na fase de grupos e critica formato da Libertadores",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542586/tecnica-do-corinthians-avalia-campanha-na-fase-de-grupos-e-critica-formato-da-libertadores",
       "data": "2026-10-22"
     }
   ]
