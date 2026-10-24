@@ -793,6 +793,12 @@
   },
   "noticias": [
     {
+      "titulo": "Sorocaba elimina o Corinthians e vai à semifinal da Liga Futsal",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/sp/tem-esporte/futsal/noticia/2026/10/24/sorocaba-elimina-o-corinthians-e-vai-a-semifinal-da-liga-futsal.ghtml",
+      "data": "2026-10-24"
+    },
+    {
       "titulo": "Corinthians tenta encerrar jejum no Brasileirão e repetir reação do primeiro turno contra o Vasco",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/24/corinthians-tenta-encerrar-jejum-no-brasileirao-e-repetir-reacao-do-primeiro-turno-contra-o-vasco.ghtml",
@@ -829,39 +835,33 @@
       "data": "2026-10-24"
     },
     {
-      "titulo": "Corinthians se apoia em invencibilidade recente contra o Vasco para encerrar jejum no Brasileirão",
+      "titulo": "Goleiro defende dois pênaltis e coloca o Corinthians na final do Brasileiro Sub-17",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542701/corinthians-se-apoia-em-invencibilidade-recente-contra-o-vasco-para-encerrar-jejum-no-brasileirao",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542730/goleiro-defende-dois-penaltis-e-coloca-o-corinthians-na-final-do-brasileiro-sub-17",
       "data": "2026-10-24"
     },
     {
-      "titulo": "VÍDEO: Romeu Tuma Júnior dá forte opinião sobre intervenção judicial",
+      "titulo": "Corinthians é superado pelo Magnus e se despede da LNF",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130314/romeu-tuma-junior-da-forte-opiniao-sobre-intervencao-judicial",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542739/corinthians-e-superado-pelo-magnus-e-se-despede-da-lnf",
       "data": "2026-10-24"
     },
     {
-      "titulo": "Duda Sampaio elogia adversário na Libertadores e destaca primeira fase invicta do Corinthians",
+      "titulo": "Corinthians está escalado com mudanças para enfrentar o Vasco da Gama pelo Brasileirão",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542717/duda-sampaio-elogia-adversario-na-libertadores-e-destaca-primeira-fase-invicta-do-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542708/corinthians-esta-escalado-com-mudancas-para-enfrentar-o-vasco-da-gama-pelo-brasileirao",
       "data": "2026-10-24"
     },
     {
-      "titulo": "Meia do Corinthians anota golaço em classificação da Seleção na Copa do Mundo Feminina Sub-17",
+      "titulo": "Corinthians negocia saída de artilheiro do futsal testado no campo para time do Paraná",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542729/meia-do-corinthians-anota-golaco-em-classificacao-da-selecao-na-copa-do-mundo-feminina-sub-17",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542699/corinthians-negocia-saida-de-artilheiro-do-futsal-testado-no-campo-para-time-do-parana",
       "data": "2026-10-24"
     },
     {
-      "titulo": "Corinthians aposta em retrospecto positivo contra equatorianos para avançar na Libertadores Feminina",
+      "titulo": "Eliminação em casa e sequência sem vitórias: veja como chega o Vasco da Gama contra o Corinthians",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542639/corinthians-aposta-em-retrospecto-positivo-contra-equatorianos-para-avancar-na-libertadores-feminina",
-      "data": "2026-10-24"
-    },
-    {
-      "titulo": "Corinthians vence o Red Bull Bragantino e está nas semifinais do Paulistão Feminino Sub-20",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542723/corinthians-vence-o-red-bull-bragantino-e-esta-nas-semifinais-do-paulistao-feminino-sub-20",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542702/eliminacao-em-casa-e-sequencia-sem-vitorias-veja-como-chega-o-vasco-da-gama-contra-o-corinthians",
       "data": "2026-10-24"
     }
   ]
