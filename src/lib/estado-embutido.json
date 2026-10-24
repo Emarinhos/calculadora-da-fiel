@@ -1,6 +1,6 @@
 {
   "versao": 2,
-  "atualizadoEm": "2026-10-23",
+  "atualizadoEm": "2026-10-24",
   "fonte": "ogol.com.br",
   "base": {
     "pontos": 32,
@@ -336,7 +336,8 @@
         "visitante": "Corinthians",
         "data": "2026-10-24",
         "hora": "18:30",
-        "tv": null
+        "tv": "Globo e Premiere",
+        "tvConsultadaEm": "2026-10-24"
       },
       {
         "rodada": 32,
@@ -792,9 +793,39 @@
   },
   "noticias": [
     {
+      "titulo": "Julio Cesar estreia como chefe do futebol em São Januário, palco de drama como goleiro do Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/24/julio-cesar-estreia-como-chefe-do-futebol-em-sao-januario-palco-de-drama-como-goleiro-do-corinthians.ghtml",
+      "data": "2026-10-24"
+    },
+    {
+      "titulo": "Vasco x Corinthians: onde assistir ao vivo, horário e escalações",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/rs/futebol/brasileirao-serie-a/noticia/2026/10/24/vasco-x-corinthians-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "data": "2026-10-24"
+    },
+    {
+      "titulo": "Corinthians x Independiente Dragonas na Libertadores Feminina: onde assistir ao vivo e horário",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/10/24/corinthians-x-independiente-dragonas-na-libertadores-feminina-onde-assistir-ao-vivo-e-horario.ghtml",
+      "data": "2026-10-24"
+    },
+    {
       "titulo": "Sorocaba x Corinthians: onde assistir e horário do clássico decisivo da Liga Futsal",
       "fonte": "ge",
       "url": "https://ge.globo.com/sp/tem-esporte/futsal/noticia/2026/10/24/sorocaba-x-corinthians-onde-assistir-e-horario-do-classico-decisivo-da-liga-futsal.ghtml",
+      "data": "2026-10-24"
+    },
+    {
+      "titulo": "Corinthians tenta reverter desvantagem contra o Bragantino no Paulista Feminino Sub-20; saiba tudo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542692/corinthians-tenta-reverter-desvantagem-contra-o-bragantino-no-paulista-feminino-sub-20-saiba-tudo",
+      "data": "2026-10-24"
+    },
+    {
+      "titulo": "Últimas do Corinthians: mudanças na escalação, lateral em nova função e áudio do VAR",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542712/ultimas-do-corinthians-mudancas-na-escalacao-lateral-em-nova-funcao-e-audio-do-var",
       "data": "2026-10-24"
     },
     {
@@ -831,36 +862,6 @@
       "titulo": "Escalação do Corinthians: Seedorf faz últimos testes antes de enfrentar o Vasco em São Januário",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/23/escalacao-do-corinthians-seedorf-faz-ultimos-testes-antes-de-enfrentar-o-vasco-em-sao-januario.ghtml",
-      "data": "2026-10-23"
-    },
-    {
-      "titulo": "Seedorf é registrado na CBF, aparece no BID e pode comandar o Corinthians do banco de reservas",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/23/seedorf-e-registrado-na-cbf-aparece-no-bid-e-pode-comandar-o-corinthians-do-banco-de-reservas.ghtml",
-      "data": "2026-10-23"
-    },
-    {
-      "titulo": "Rescisão de Fernando Diniz com o Corinthians é publicada no BID da CBF",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/23/rescisao-de-fernando-diniz-com-o-corinthians-e-publicada-no-bid-da-cbf.ghtml",
-      "data": "2026-10-23"
-    },
-    {
-      "titulo": "Santos consulta Corinthians para jogar na Arena, mas mantém clássico contra o Palmeiras na Vila",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/sp/santos-e-regiao/futebol/times/santos/noticia/2026/10/23/santos-consulta-corinthians-para-jogar-na-arena-mas-mantem-classico-contra-o-palmeiras-na-vila.ghtml",
-      "data": "2026-10-23"
-    },
-    {
-      "titulo": "Corinthians conhece adversário das quartas de final do Paulista de Futsal",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542711/corinthians-conhece-adversario-das-quartas-de-final-do-paulista-de-futsal",
-      "data": "2026-10-23"
-    },
-    {
-      "titulo": "Eleições Meu Timão: presidente do Corinthians faz reunião com candidatos à presidência",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542709/eleicoes-meu-timao-presidente-do-corinthians-faz-reuniao-com-candidatos-a-presidencia",
       "data": "2026-10-23"
     }
   ]
