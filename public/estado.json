@@ -762,6 +762,24 @@
   },
   "noticias": [
     {
+      "titulo": "Lingard recebe terceiro cartão amarelo e vira desfalque no Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/24/lingard-recebe-terceiro-cartao-amarelo-e-vira-desfalque-no-corinthians.ghtml",
+      "data": "2026-10-24"
+    },
+    {
+      "titulo": "Seedorf diz que Corinthians está com \"raiva\" e confia em salvação: \"Não acabou aqui\"",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/24/seedorf-diz-que-corinthians-esta-com-raiva-e-confia-em-salvacao-nao-acabou-aqui.ghtml",
+      "data": "2026-10-24"
+    },
+    {
+      "titulo": "Atuações do Corinthians: Gustavo Henrique e Bidu marcam, mas não evitam derrota; dê suas notas",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/24/atuacoes-do-corinthians-gustavo-henrique-e-bidu-marcam-mas-nao-evitam-derrota-de-suas-notas.ghtml",
+      "data": "2026-10-24"
+    },
+    {
       "titulo": "Sorocaba elimina o Corinthians e vai à semifinal da Liga Futsal",
       "fonte": "ge",
       "url": "https://ge.globo.com/sp/tem-esporte/futsal/noticia/2026/10/24/sorocaba-elimina-o-corinthians-e-vai-a-semifinal-da-liga-futsal.ghtml",
@@ -792,45 +810,27 @@
       "data": "2026-10-24"
     },
     {
-      "titulo": "Corinthians x Independiente Dragonas na Libertadores Feminina: onde assistir ao vivo e horário",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/10/24/corinthians-x-independiente-dragonas-na-libertadores-feminina-onde-assistir-ao-vivo-e-horario.ghtml",
-      "data": "2026-10-24"
-    },
-    {
-      "titulo": "Sorocaba x Corinthians: onde assistir e horário do clássico decisivo da Liga Futsal",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/sp/tem-esporte/futsal/noticia/2026/10/24/sorocaba-x-corinthians-onde-assistir-e-horario-do-classico-decisivo-da-liga-futsal.ghtml",
-      "data": "2026-10-24"
-    },
-    {
-      "titulo": "Goleiro defende dois pênaltis e coloca o Corinthians na final do Brasileiro Sub-17",
+      "titulo": "VÍDEO: Vic fala sobre briga pela artilharia junto com a Duda e cita mudança de postura no segundo tempo",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542730/goleiro-defende-dois-penaltis-e-coloca-o-corinthians-na-final-do-brasileiro-sub-17",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130332/vic-fala-sobre-briga-pela-artilharia-junto-com-a-duda-e-cita-mudanca-de-postura-no-segundo-tempo",
       "data": "2026-10-24"
     },
     {
-      "titulo": "Corinthians é superado pelo Magnus e se despede da LNF",
+      "titulo": "Corinthians conhece adversário das semifinais do Paulista Feminino Sub-20",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542739/corinthians-e-superado-pelo-magnus-e-se-despede-da-lnf",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542795/corinthians-conhece-adversario-das-semifinais-do-paulista-feminino-sub-20",
       "data": "2026-10-24"
     },
     {
-      "titulo": "Corinthians está escalado com mudanças para enfrentar o Vasco da Gama pelo Brasileirão",
+      "titulo": "VÍDEO: Gabi Zanotti fala sobre conversa no intervalo e comenta Corinthians contra o Santa Fé na semi",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542708/corinthians-esta-escalado-com-mudancas-para-enfrentar-o-vasco-da-gama-pelo-brasileirao",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130330/gabi-zanotti-fala-sobre-conversa-no-intervalo-e-comenta-corinthians-contra-o-santa-fe-na-semi",
       "data": "2026-10-24"
     },
     {
-      "titulo": "Corinthians negocia saída de artilheiro do futsal testado no campo para time do Paraná",
+      "titulo": "VÍDEO: Melhores Momentos: Corinthians 5x0 Ind. Del Valle| Quartas de Final | Libertadores Feminina 2026",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542699/corinthians-negocia-saida-de-artilheiro-do-futsal-testado-no-campo-para-time-do-parana",
-      "data": "2026-10-24"
-    },
-    {
-      "titulo": "Eliminação em casa e sequência sem vitórias: veja como chega o Vasco da Gama contra o Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542702/eliminacao-em-casa-e-sequencia-sem-vitorias-veja-como-chega-o-vasco-da-gama-contra-o-corinthians",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130329/melhores-momentos-corinthians-5x0-ind-del-valle-quartas-de-final-libertadores-feminina-2026",
       "data": "2026-10-24"
     }
   ]
