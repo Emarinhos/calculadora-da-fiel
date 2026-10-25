@@ -7,3 +7,4 @@
 - 2026-10-23 22:10 (automático, ESPN): Cruzeiro 1x0 Remo. Corinthians: 33 pts em 31 jogos.
 - 2026-10-24 19:44 (automático, ESPN): Internacional 3x0 Botafogo; Mirassol 1x1 São Paulo; Vitória 1x1 Athletico Paranaense. Corinthians: 33 pts em 31 jogos.
 - 2026-10-24 20:34 (automático, ESPN): Vasco 3x2 Corinthians. Corinthians: 33 pts em 32 jogos.
+- 2026-10-24 21:35 (automático, ESPN): Palmeiras 2x0 Red Bull Bragantino; Chapecoense 2x1 Fluminense. Corinthians: 33 pts em 32 jogos.
