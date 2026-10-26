@@ -757,6 +757,12 @@
   },
   "noticias": [
     {
+      "titulo": "\"Goleiro-lateral\" ganha R$ 40 mil de indenização do Corinthians, mas tem maioria de pedidos negada",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/26/goleiro-lateral-ganha-r-40-mil-de-indenizacao-do-corinthians-mas-tem-maioria-de-pedidos-negada.ghtml",
+      "data": "2026-10-26"
+    },
+    {
       "titulo": "Corinthians sofre enxurrada de ações judiciais por irregularidades em extinta divisão de eSports",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/26/corinthians-sofre-enxurrada-de-acoes-judiciais-por-irregularidades-em-extinta-divisao-de-esports.ghtml",
@@ -775,58 +781,52 @@
       "data": "2026-10-26"
     },
     {
-      "titulo": "Técnico do Corinthians analisa duelo com Bragantino e exalta Fiel na final do Brasileiro Sub-17",
+      "titulo": "Confira os bastidores da classificação do Corinthians para a final do Brasileirão Sub-17",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542817/tecnico-do-corinthians-analisa-duelo-com-bragantino-e-exalta-fiel-na-final-do-brasileiro-sub-17",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542859/confira-os-bastidores-da-classificacao-do-corinthians-para-a-final-do-brasileirao-sub-17",
       "data": "2026-10-26"
     },
     {
-      "titulo": "Corinthians enfrenta semana com decisões na Libertadores Feminina, Brasileirão e base",
+      "titulo": "Imprensa europeia repercute início de Seedorf no Corinthians após derrota para o Vasco",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542844/corinthians-enfrenta-semana-com-decisoes-na-libertadores-feminina-brasileirao-e-base",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542858/imprensa-europeia-repercute-inicio-de-seedorf-no-corinthians-apos-derrota-para-o-vasco",
       "data": "2026-10-26"
     },
     {
-      "titulo": "Corinthians publica bastidores de goleada sobre o Independiente Del Valle na Libertadores Feminina",
+      "titulo": "Corinthians encara tabu contra o Franca para evitar pior início na história do NBB",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542846/corinthians-publica-bastidores-de-goleada-sobre-o-independiente-del-valle-na-libertadores-feminina",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542841/corinthians-encara-tabu-contra-o-franca-para-evitar-pior-inicio-na-historia-do-nbb",
       "data": "2026-10-26"
     },
     {
-      "titulo": "Corinthians recebe o Franca em busca da primeira vitória no NBB; saiba tudo",
+      "titulo": "HBO Max inicia gravações de série sobre a Democracia Corinthiana; veja elenco",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542828/corinthians-recebe-o-franca-em-busca-da-primeira-vitoria-no-nbb-saiba-tudo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542819/hbo-max-inicia-gravacoes-de-serie-sobre-a-democracia-corinthiana-veja-elenco",
       "data": "2026-10-26"
     },
     {
-      "titulo": "Últimas do Corinthians: susto durante voo, carta de André Negão e pessimismo por Memphis",
+      "titulo": "Corinthians conhece detalhes da semifinal da Libertadores Feminina",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542829/ultimas-do-corinthians-susto-durante-voo-carta-de-andre-negao-e-pessimismo-por-memphis",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542860/corinthians-conhece-detalhes-da-semifinal-da-libertadores-feminina",
       "data": "2026-10-26"
     },
     {
-      "titulo": "Stabile minimiza problemas com elenco do Corinthians e revela prazo para pagar atrasados",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/25/stabile-minimiza-problemas-com-elenco-do-corinthians-e-revela-prazo-para-pagar-atrasados.ghtml",
-      "data": "2026-10-25"
-    },
-    {
-      "titulo": "Análise: derrota traumática desmonta o Corinthians e dificulta a luta contra o rebaixamento",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/25/analise-derrota-traumatica-desmonta-o-corinthians-e-dificulta-a-luta-contra-o-rebaixamento.ghtml",
-      "data": "2026-10-25"
-    },
-    {
-      "titulo": "Zagueiro do Corinthians amplia marcas ofensivas após derrota para o Vasco da Gama no Brasileirão",
+      "titulo": "Volante do Corinthians comenta improvisação na zaga e projeta semifinal da Libertadores",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542763/zagueiro-do-corinthians-amplia-marcas-ofensivas-apos-derrota-para-o-vasco-da-gama-no-brasileirao",
-      "data": "2026-10-25"
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542814/volante-do-corinthians-comenta-improvisacao-na-zaga-e-projeta-semifinal-da-libertadores",
+      "data": "2026-10-26"
     },
     {
-      "titulo": "Corinthians parabeniza Lula por vitórias nas Eleições 2026",
+      "titulo": "Corinthians enfrenta ações trabalhistas que somam quase R$ 3 milhões por antiga equipe de eSports",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542832/corinthians-parabeniza-lula-por-vitorias-nas-eleicoes-2026",
-      "data": "2026-10-25"
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542854/corinthians-enfrenta-acoes-trabalhistas-que-somam-quase-r-3-milhoes-por-antiga-equipe-de-esports",
+      "data": "2026-10-26"
+    },
+    {
+      "titulo": "Meia do Corinthians avalia duelo com Bragantino e relata 'sacrifício' após dores no tornozelo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542816/meia-do-corinthians-avalia-duelo-com-bragantino-e-relata-sacrificio-apos-dores-no-tornozelo",
+      "data": "2026-10-26"
     }
   ]
 }
