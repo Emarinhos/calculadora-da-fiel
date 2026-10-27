@@ -9,3 +9,4 @@
 - 2026-10-24 20:34 (automático, ESPN): Vasco 3x2 Corinthians. Corinthians: 33 pts em 32 jogos.
 - 2026-10-24 21:35 (automático, ESPN): Palmeiras 2x0 Red Bull Bragantino; Chapecoense 2x1 Fluminense. Corinthians: 33 pts em 32 jogos.
 - 2026-10-25 02:22 (automático, ESPN): Santos 1x1 Bahia. Corinthians: 33 pts em 32 jogos.
+- 2026-10-27 01:55 (automático, ESPN): Coritiba 0x1 Grêmio; Flamengo 3x2 Atlético Mineiro. Rodada 32 encerrada: Corinthians em 18º. Corinthians: 33 pts em 32 jogos.
