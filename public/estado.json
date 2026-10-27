@@ -753,6 +753,12 @@
   },
   "noticias": [
     {
+      "titulo": "Pressão, abatimento e nova lesão: como Memphis reage à má fase do Corinthians no Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/27/pressao-abatimento-e-nova-lesao-como-memphis-reage-a-ma-fase-do-corinthians-no-brasileirao.ghtml",
+      "data": "2026-10-27"
+    },
+    {
       "titulo": "Corinthians impõe 30 pontos de vantagem sobre Franca e vence a primeira no NBB",
       "fonte": "ge",
       "url": "https://ge.globo.com/sp/ribeirao-preto-e-regiao/basquete/nbb/noticia/2026/10/26/corinthians-impoe-30-pontos-de-vantagem-sobre-franca-e-vence-a-primeira-no-nbb.ghtml",
@@ -795,9 +801,9 @@
       "data": "2026-10-26"
     },
     {
-      "titulo": "Corinthians sofre enxurrada de ações judiciais por irregularidades em extinta divisão de eSports",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/26/corinthians-sofre-enxurrada-de-acoes-judiciais-por-irregularidades-em-extinta-divisao-de-esports.ghtml",
+      "titulo": "Dupla do Corinthians entra no top 5 de maiores artilheiras da história da Libertadores Feminina",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542798/dupla-do-corinthians-entra-no-top-5-de-maiores-artilheiras-da-historia-da-libertadores-feminina",
       "data": "2026-10-26"
     },
     {
@@ -816,12 +822,6 @@
       "titulo": "Técnico do futsal critica a diretoria do Corinthians após eliminação na LNF e cobra transparência",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/542853/tecnico-do-futsal-critica-a-diretoria-do-corinthians-apos-eliminacao-na-lnf-e-cobra-transparencia",
-      "data": "2026-10-26"
-    },
-    {
-      "titulo": "Corinthians conhece detalhes de final do Brasileiro Sub-17; Timãozinho mandará na Arena",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542884/corinthians-conhece-detalhes-de-final-do-brasileiro-sub-17-timaozinho-mandara-na-arena",
       "data": "2026-10-26"
     }
   ]
