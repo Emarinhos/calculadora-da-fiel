@@ -753,6 +753,30 @@
   },
   "noticias": [
     {
+      "titulo": "Treino do Corinthians tem retorno de quatro jogadores, mas Memphis Depay continua fora",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/27/treino-do-corinthians-tem-retorno-de-quatro-jogadores-mas-memphis-ainda-fora.ghtml",
+      "data": "2026-10-27"
+    },
+    {
+      "titulo": "Lingard sofre fratura na costela e vira dúvida no Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/27/lingard-sofre-fratura-na-costela-e-vira-duvida-no-corinthians.ghtml",
+      "data": "2026-10-27"
+    },
+    {
+      "titulo": "Dispara o número de finalizações após regras antijogo e Brasileirão 2026 se descola de média histórica",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/noticia/2026/10/27/dispara-o-numero-de-finalizacoes-apos-regras-antijogo-e-brasileirao-2026-se-descola-de-media-historica.ghtml",
+      "data": "2026-10-27"
+    },
+    {
+      "titulo": "Classificação do segundo turno: Flamengo lidera; Cruzeiro supera Atlético-MG; Grêmio deixa o Z-4",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/noticia/2026/10/27/classificacao-do-segundo-turno-flamengo-lidera-cruzeiro-supera-atletico-mg-gremio-deixa-o-z-4.ghtml",
+      "data": "2026-10-27"
+    },
+    {
       "titulo": "Por que o Corinthians prega foco nos dois próximos jogos na luta contra o rebaixamento",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/27/por-que-o-corinthians-prega-foco-nos-dois-proximos-jogos-na-luta-contra-o-rebaixamento.ghtml",
@@ -765,64 +789,40 @@
       "data": "2026-10-27"
     },
     {
-      "titulo": "Corinthians avalia a contratação de Vanderlei Luxemburgo como coordenador de futebol",
+      "titulo": "Meia do Corinthians projeta possível confronto na Copa das Campeãs e prega atenção na Libertadores",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542912/corinthians-avalia-a-contratacao-de-vanderlei-luxemburgo-como-coordenador-de-futebol",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542866/meia-do-corinthians-projeta-possivel-confronto-na-copa-das-campeas-e-prega-atencao-na-libertadores",
       "data": "2026-10-27"
     },
     {
-      "titulo": "Goleiro do Corinthians lamenta eliminação na LNF e prega foco no Campeonato Paulista",
+      "titulo": "Vanderlei Luxemburgo se posiciona e revela 'condição' para retornar ao futebol",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542865/goleiro-do-corinthians-lamenta-eliminacao-na-lnf-e-prega-foco-no-paulista",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542937/vanderlei-luxemburgo-se-posiciona-e-revela-condicao-para-retornar-ao-futebol",
       "data": "2026-10-27"
     },
     {
-      "titulo": "Corinthians conhece detalhes dos clássicos contra o Palmeiras pela semifinal do Paulista Sub-20",
+      "titulo": "Volante do Sub-17 do Corinthians sofre lesão no joelho e pode perder resto de temporada",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542900/corinthians-conhece-detalhes-dos-classicos-contra-o-palmeiras-pela-semifinal-do-paulista-sub-20",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542931/volante-do-sub-17-do-corinthians-sofre-lesao-no-joelho-e-pode-perder-resto-de-temporada",
       "data": "2026-10-27"
     },
     {
-      "titulo": "Ex-diretor do Corinthians atribui a Stabile decisão sobre empresa de segurança investigada",
+      "titulo": "VÍDEO: Treino aberto do Corinthians antes de partida decisiva contra o Mirassol",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542903/ex-diretor-do-corinthians-atribui-a-stabile-decisao-sobre-empresa-de-seguranca-investigada",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130375/treino-aberto-do-corinthians-antes-de-partida-decisiva-contra-o-mirassol",
       "data": "2026-10-27"
     },
     {
-      "titulo": "Corinthians recebe o São José em busca de vaga nas quartas de final do Paulista Sub-17; saiba tudo",
+      "titulo": "Corinthians marca no fim e carimba classificação às quartas de final do Paulista Sub-17",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542861/corinthians-recebe-o-sao-jose-em-busca-de-vaga-nas-quartas-de-final-do-paulista-sub-17-saiba-tudo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542922/corinthians-marca-no-fim-e-carimba-classificacao-as-quartas-de-final-do-paulista-sub-17",
       "data": "2026-10-27"
     },
     {
-      "titulo": "Últimas do Corinthians: detalhes da Libertadores Feminina, ações trabalhistas e Memphis em campo",
+      "titulo": "Corinthians faz treino aberto com atividade em campo reduzido antes de duelo com Mirassol",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542890/ultimas-do-corinthians-detalhes-da-libertadores-feminina-acoes-trabalhistas-e-memphis-em-campo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/542921/corinthians-faz-treino-aberto-com-atividade-em-campo-reduzido-antes-de-duelo-com-mirassol",
       "data": "2026-10-27"
-    },
-    {
-      "titulo": "Corinthians impõe 30 pontos de vantagem sobre Franca e vence a primeira no NBB",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/sp/ribeirao-preto-e-regiao/basquete/nbb/noticia/2026/10/26/corinthians-impoe-30-pontos-de-vantagem-sobre-franca-e-vence-a-primeira-no-nbb.ghtml",
-      "data": "2026-10-26"
-    },
-    {
-      "titulo": "Vitória do Grêmio afunda Corinthians ainda mais no Z-4 do Brasileirão; simule jogos",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/26/vitoria-do-gremio-afunda-corinthians-ainda-mais-no-z-4-do-brasileirao-simule-jogos.ghtml",
-      "data": "2026-10-26"
-    },
-    {
-      "titulo": "Clube da Série D, Azuriz encaminha a contratação de Maicon, joia do futsal do Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/pr/futebol/times/azuriz/noticia/2026/10/26/clube-da-serie-d-azuriz-encaminha-a-contratacao-de-maicon-joia-do-futsal-do-corinthians.ghtml",
-      "data": "2026-10-26"
-    },
-    {
-      "titulo": "Corinthians paga com atraso direitos de imagem de time feminino no meio da Libertadores",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/26/corinthians-paga-com-atraso-direitos-de-imagem-de-time-feminino-em-meio-a-disputa-da-libertadores.ghtml",
-      "data": "2026-10-26"
     }
   ]
 }
