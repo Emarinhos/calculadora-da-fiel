@@ -728,6 +728,24 @@
   },
   "noticias": [
     {
+      "titulo": "Escalação do Corinthians: Seedorf fecha preparação na Arena e deve repetir time contra o Mirassol",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/escalacao-do-corinthians-seedorf-fecha-preparacao-na-arena-e-deve-repetir-time-contra-o-mirassol.ghtml",
+      "data": "2026-10-29"
+    },
+    {
+      "titulo": "Patrocinadora máster pede rescisão de contrato; Corinthians discorda e inicia negociação",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/patrocinadora-master-pede-rescisao-de-contrato-corinthians-discorda-e-inicia-negociacao.ghtml",
+      "data": "2026-10-29"
+    },
+    {
+      "titulo": "Convocação para a Seleção deve tirar André de confronto direto do Corinthians no Brasileiro",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/convocacao-para-a-selecao-deve-tirar-andre-de-confronto-direto-do-corinthians-no-brasileiro.ghtml",
+      "data": "2026-10-29"
+    },
+    {
       "titulo": "Memphis no clássico? Seedorf dá uma estimativa para o retorno do atacante aos jogos do Corinthians",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/memphis-no-classico-seeford-da-uma-estimativa-para-o-retorno-do-atacante-aos-jogos-do-corinthians.ghtml",
@@ -758,45 +776,27 @@
       "data": "2026-10-29"
     },
     {
-      "titulo": "Seedorf diz não pensar em queda do Corinthians e minimiza risco de demissão: \"Cabeça em vencer\"",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/seedorf-diz-nao-pensar-em-queda-do-corinthians-e-minimiza-risco-de-demissao-cabeca-em-vencer.ghtml",
+      "titulo": "VÍDEO: Ilmar explica pilares para resolver crise financeira no Corinthians",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130436/ilmar-explica-pilares-para-resolver-crise-financeira-no-corinthians",
       "data": "2026-10-29"
     },
     {
-      "titulo": "Hugo Souza sai em defesa de Memphis após questionamento sobre situação no Corinthians",
+      "titulo": "Volante é apontado pela Fiel como principal desfalque do Corinthians",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543031/hugo-souza-sai-em-defesa-de-memphis-apos-questionamento-sobre-situacao-no-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543046/volante-e-apontado-pela-fiel-como-principal-desfalque-do-corinthians",
       "data": "2026-10-29"
     },
     {
-      "titulo": "Garro rebate possíveis atritos no Corinthians e minimiza problemas de relacionamento",
+      "titulo": "Garro admite problema com cartões e elogia apoio de Seedorf em poucos dias de Corinthians",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543075/garro-rebate-possiveis-atritos-no-corinthians-e-minimiza-problemas-de-relacionamento",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543076/garro-admite-problema-com-cartoes-e-elogia-apoio-de-seedorf-em-poucos-dias-de-corinthians",
       "data": "2026-10-29"
     },
     {
-      "titulo": "VÍDEO: Gustavo Henrique fala de reunião com elenco e Seedorf sinaliza retorno de Memphis Depay",
+      "titulo": "Volante do Corinthians celebra convocação para Seleção Brasileira e agradece pela oportunidade",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130427/gustavo-henrique-fala-de-reuniao-com-elenco-e-seedorf-sinaliza-retorno-de-memphis-depay",
-      "data": "2026-10-29"
-    },
-    {
-      "titulo": "Seedorf minimiza vazamentos no Corinthians e defende união entre elenco e torcida",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543073/seedorf-minimiza-vazamentos-no-corinthians-e-defende-uniao-entre-elenco-e-torcida",
-      "data": "2026-10-29"
-    },
-    {
-      "titulo": "VÍDEO: Seedorf defende elenco e afirma que elenco está pronto para sair da crise",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130424/seedorf-defende-elenco-e-afirma-que-elenco-esta-pronto-para-sair-da-crise",
-      "data": "2026-10-29"
-    },
-    {
-      "titulo": "Lelê aponta dificuldades com gramado seco e analisa classificação do Corinthians na Libertadores",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543016/lele-aponta-dificuldades-com-gramado-seco-e-analisa-classificacao-do-corinthians-na-libertadores",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543102/volante-do-corinthians-celebra-convocacao-para-selecao-brasileira-e-agradece-pela-oportunidade",
       "data": "2026-10-29"
     }
   ]
