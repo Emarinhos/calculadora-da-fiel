@@ -335,7 +335,8 @@
         "visitante": "Mirassol",
         "data": "2026-10-30",
         "hora": "20:00",
-        "tv": null
+        "tv": "SporTV e Premiere",
+        "tvConsultadaEm": "2026-10-30"
       },
       {
         "rodada": 34,
@@ -713,6 +714,54 @@
   },
   "noticias": [
     {
+      "titulo": "Das dores à solidez defensiva: entenda por que Seedorf mudou Bidu de posição no Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/30/das-dores-a-solidez-defensiva-entenda-por-que-seedorf-mudou-bidu-de-posicao-no-corinthians.ghtml",
+      "data": "2026-10-30"
+    },
+    {
+      "titulo": "Corinthians x Mirassol: onde assistir ao vivo, horário e escalações",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/sp/futebol/brasileirao-serie-a/noticia/2026/10/30/corinthians-x-mirassol-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "data": "2026-10-30"
+    },
+    {
+      "titulo": "Corinthians conhece detalhes de mais dois jogos do Brasileirão; veja datas e transmissões",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543127/corinthians-conhece-detalhes-de-mais-dois-jogos-do-brasileirao-veja-datas-e-transmissoes",
+      "data": "2026-10-30"
+    },
+    {
+      "titulo": "Corinthians avança em negociação com ticketeira e prevê dinheiro para quitar dívidas com elenco",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543122/corinthians-avanca-em-negociacao-com-ticketeira-e-preve-dinheiro-para-quitar-dividas-com-elenco",
+      "data": "2026-10-30"
+    },
+    {
+      "titulo": "Corinthians visita o Santo André pelo primeiro jogo das quartas de final do Paulista de Futsal",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543110/corinthians-visita-o-santo-andre-pelo-primeiro-jogo-das-quartas-de-final-do-paulista-de-futsal",
+      "data": "2026-10-30"
+    },
+    {
+      "titulo": "Corinthians publica bastidores de classificação à final da Libertadores Feminina; assista",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543116/corinthians-publica-bastidores-de-classificacao-a-final-da-libertadores-feminina",
+      "data": "2026-10-30"
+    },
+    {
+      "titulo": "Saiba onde assistir à partida entre Corinthians e Mirassol pelo Brasileirão",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543095/saiba-onde-assistir-a-partida-entre-corinthians-e-mirassol-pelo-brasileirao",
+      "data": "2026-10-30"
+    },
+    {
+      "titulo": "Últimas do Corinthians: volante convocado, notificação de patrocinadora e ações com organizadas",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543112/ultimas-do-corinthians-volante-convocado-notificacao-de-patrocinadora-e-acoes-com-organizadas",
+      "data": "2026-10-30"
+    },
+    {
       "titulo": "Corinthians recebe o Mirassol em jogo decisivo contra o rebaixamento no Brasileirão; saiba tudo",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/543094/corinthians-recebe-o-mirassol-em-jogo-decisivo-contra-o-rebaixamento-no-brasileirao-saiba-tudo",
@@ -734,54 +783,6 @@
       "titulo": "Patrocinadora máster pede rescisão de contrato; Corinthians discorda e inicia negociação",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/patrocinadora-master-pede-rescisao-de-contrato-corinthians-discorda-e-inicia-negociacao.ghtml",
-      "data": "2026-10-29"
-    },
-    {
-      "titulo": "Convocação para a Seleção deve tirar André de confronto direto do Corinthians no Brasileiro",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/convocacao-para-a-selecao-deve-tirar-andre-de-confronto-direto-do-corinthians-no-brasileiro.ghtml",
-      "data": "2026-10-29"
-    },
-    {
-      "titulo": "Memphis no clássico? Seedorf dá uma estimativa para o retorno do atacante aos jogos do Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/memphis-no-classico-seeford-da-uma-estimativa-para-o-retorno-do-atacante-aos-jogos-do-corinthians.ghtml",
-      "data": "2026-10-29"
-    },
-    {
-      "titulo": "Garro se manifesta sobre atritos no Corinthians: \"Alguém dentro está querendo o mal para mim\"",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/garro-se-manifesta-sobre-atritos-no-corinthians-tem-alguem-dentro-que-talvez-queira-o-meu-mal.ghtml",
-      "data": "2026-10-29"
-    },
-    {
-      "titulo": "Justiça rejeita denúncia contra presidente do Corinthians no caso de empresa de segurança",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/justica-rejeita-denuncia-contra-presidente-do-corinthians-no-caso-de-empresa-de-seguranca.ghtml",
-      "data": "2026-10-29"
-    },
-    {
-      "titulo": "Final entre Corinthians e Cruzeiro vai dar o 15º título ao Brasil na Libertadores Feminina",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/10/29/final-entre-corinthians-e-cruzeiro-vai-dar-o-15o-titulo-ao-brasil-na-libertadores-feminina.ghtml",
-      "data": "2026-10-29"
-    },
-    {
-      "titulo": "Seedorf reforça esperança para situação do Corinthians e desconversa sobre desempenho na Arena",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543072/seedorf-reforca-esperanca-para-situacao-do-corinthians-e-desconversa-sobre-desempenho-na-arena",
-      "data": "2026-10-29"
-    },
-    {
-      "titulo": "CBF protocola pedido ao MP-SP para reforçar segurança da arbitragem em jogos do Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543107/cbf-protocola-pedido-ao-mp-sp-para-reforcar-seguranca-da-arbitragem-em-jogos-do-corinthians",
-      "data": "2026-10-29"
-    },
-    {
-      "titulo": "Organizada é proibida de frequentar jogos do Corinthians até o fim do ano",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543109/organizada-e-proibida-de-frequentar-jogos-do-corinthians-ate-o-fim-do-ano",
       "data": "2026-10-29"
     }
   ]
