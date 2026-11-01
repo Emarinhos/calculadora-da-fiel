@@ -709,6 +709,54 @@
   },
   "noticias": [
     {
+      "titulo": "Classificação do segundo turno: Flamengo lidera, Grêmio passa o Inter, e Corinthians é lanterna",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/noticia/2026/11/01/classificacao-do-segundo-turno-flamengo-lidera-gremio-passa-o-inter-e-corinthians-e-lanterna.ghtml",
+      "data": "2026-11-01"
+    },
+    {
+      "titulo": "Gabi Zanotti critica mudança de postura do Corinthians na final da Libertadores Feminina",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/11/01/gabi-zanotti-critica-mudanca-de-postura-do-corinthians-na-final-da-libertadores-feminina.ghtml",
+      "data": "2026-11-01"
+    },
+    {
+      "titulo": "Matheus Bidu supera marca de 2025 e vira artilheiro do Corinthians no Brasileirão: \"Trabalhar dobrado\"",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/01/matheus-bidu-supera-marca-de-2025-e-vira-artilheiro-do-corinthians-no-brasileirao-trabalhar-dobrado.ghtml",
+      "data": "2026-11-01"
+    },
+    {
+      "titulo": "Corinthians ultrapassa Internacional e reduz as chances de rebaixamento no Brasileirão em 35,3%",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543264/corinthians-ultrapassa-internacional-e-reduz-as-chances-de-rebaixamento-no-brasileirao-em-353-por-cento",
+      "data": "2026-11-01"
+    },
+    {
+      "titulo": "Diretora evita cravar futuro de Emily Lima no Corinthians após vice da Libertadores Feminina",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543302/diretora-evita-cravar-futuro-de-emily-lima-no-corinthians-apos-vice-da-libertadores-feminina",
+      "data": "2026-11-01"
+    },
+    {
+      "titulo": "União do elenco e seriedade: Veja os bastidores da vitória do Corinthians sobre o Mirassol",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543289/uniao-do-elenco-e-seriedade-veja-os-bastidores-da-vitoria-do-corinthians-sobre-o-mirassol",
+      "data": "2026-11-01"
+    },
+    {
+      "titulo": "Matheus Bidu acredita em virada de chave do Corinthians após vitória sobre o Mirassol no Brasileirão",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543221/matheus-bidu-acredita-em-virada-de-chave-do-corinthians-apos-vitoria-sobre-o-mirassol-no-brasileirao",
+      "data": "2026-11-01"
+    },
+    {
+      "titulo": "Últimas do Corinthians: vantagem no Sub-17, vice da Libertadores Feminina e candidato impugnado",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543278/ultimas-do-corinthians-vantagem-no-sub-17-vice-da-libertadores-feminina-e-candidato-impugnado",
+      "data": "2026-11-01"
+    },
+    {
       "titulo": "Clima de despedida marca noite de Emily Lima após vice do Corinthians na Libertadores Feminina",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/543288/clima-de-despedida-marca-noite-de-emily-lima-apos-vice-do-corinthians-na-libertadores-feminina",
@@ -731,54 +779,6 @@
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/videos-do-corinthians/130490/disputa-de-penaltis-corinthians-4x5-cruzeiro-final-conmebol-libertadores-2026",
       "data": "2026-11-01"
-    },
-    {
-      "titulo": "VÍDEO: Melhores momentos: Corinthians 4x4 Cruzeiro | Final | CONMEBOL Libertadores 2026",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130489/melhores-momentos-corinthians-4x4-cruzeiro-final-conmebol-libertadores-2026",
-      "data": "2026-11-01"
-    },
-    {
-      "titulo": "Corinthians mantém veto a candidatura de Janikian após anulação de condenação na Justiça",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/31/corinthians-mantem-veto-a-candidatura-de-janikian-apos-anulacao-de-condenacao-na-justica.ghtml",
-      "data": "2026-10-31"
-    },
-    {
-      "titulo": "Filho do lateral Fagner joga final do Brasileirão Sub-17 e chama atenção por semelhança com o pai; veja",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/mg/triangulo-mineiro/futebol/brasileirao-sub-17/noticia/2026/10/31/filho-do-lateral-fagner-joga-final-do-brasileirao-sub-17-e-chama-atencao-por-semelhanca-com-o-pai-veja.ghtml",
-      "data": "2026-10-31"
-    },
-    {
-      "titulo": "Site do Corinthians é hackeado e \"anuncia\" a contratação de Messi",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/31/site-do-corinthians-e-hackeado-e-anuncia-a-contratacao-de-messi.ghtml",
-      "data": "2026-10-31"
-    },
-    {
-      "titulo": "Corinthians registra maior número de finalizações em mais de dois anos na vitória sobre o Mirassol",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/31/corinthians-registra-maior-numero-de-finalizacoes-em-mais-de-dois-anos-na-vitoria-sobre-o-mirassol.ghtml",
-      "data": "2026-10-31"
-    },
-    {
-      "titulo": "\"Sangue no olho\" e formação de caráter: como o Corinthians construiu identidade do time sub-17",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/31/sangue-no-olho-e-formacao-de-carater-como-o-corinthians-construiu-identidade-do-time-sub-17.ghtml",
-      "data": "2026-10-31"
-    },
-    {
-      "titulo": "Corinthians x Cruzeiro na Libertadores Feminina: onde assistir ao vivo e horário",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/sp/campinas-e-regiao/futebol/futebol-feminino/libertadores-feminina/noticia/2026/10/31/corinthians-x-cruzeiro-na-libertadores-feminina-onde-assistir-ao-vivo-e-horario.ghtml",
-      "data": "2026-10-31"
-    },
-    {
-      "titulo": "Análise: domínio sobre o Mirassol dá ao Corinthians motivos para acreditar na recuperação",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/31/analise-dominio-sobre-o-mirassol-da-ao-corinthians-motivos-para-acreditar-na-recuperacao.ghtml",
-      "data": "2026-10-31"
     }
   ]
 }
