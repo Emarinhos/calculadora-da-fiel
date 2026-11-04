@@ -354,7 +354,9 @@
         "visitante": "Corinthians",
         "data": "2026-11-04",
         "hora": "21:30",
-        "tv": null
+        "tv": "Globo e Premiere",
+        "streaming": "ge tv",
+        "tvConsultadaEm": "2026-11-04"
       },
       {
         "rodada": 34,
@@ -694,76 +696,76 @@
   },
   "noticias": [
     {
-      "titulo": "Corinthians visita o São Paulo em busca de deixar a zona de rebaixamento do Brasileirão; saiba tudo",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543433/corinthians-visita-o-sao-paulo-em-busca-de-deixar-a-zona-de-rebaixamento-do-brasileirao-saiba-tudo",
+      "titulo": "Supercopa do Brasil Sub-17 terá Corinthians x Athletico; veja os detalhes",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/pr/futebol/noticia/2026/11/04/supercopa-do-brasil-sub-17-tera-corinthians-x-athletico-veja-os-detalhes.ghtml",
       "data": "2026-11-04"
     },
     {
-      "titulo": "Escalação do Corinthians: Seedorf muda defesa e faz mistério sobre Memphis contra o São Paulo",
+      "titulo": "Memphis volta ao palco de único gol pelo Corinthians no ano e tenta encerrar jejum de sete meses",
       "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/03/escalacao-do-corinthians-seedorf-muda-defesa-e-faz-misterio-sobre-memphis-contra-o-sao-paulo.ghtml",
-      "data": "2026-11-03"
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/04/memphis-volta-ao-palco-de-unico-gol-pelo-corinthians-no-ano-e-tenta-encerrar-jejum-de-sete-meses.ghtml",
+      "data": "2026-11-04"
     },
     {
-      "titulo": "CNRD aplica multa e dá prazo para Corinthians quitar dívidas sob pena de transfer ban de um ano",
+      "titulo": "Corinthians tem desempenho de rebaixado e apenas uma vitória nos clássicos em 2026",
       "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/03/cnrd-aplica-multa-e-da-prazo-para-corinthians-quitar-dividas-sob-pena-de-transfer-ban-de-um-ano.ghtml",
-      "data": "2026-11-03"
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/04/corinthians-tem-desempenho-de-rebaixado-e-apenas-uma-vitoria-nos-classicos-em-2026.ghtml",
+      "data": "2026-11-04"
     },
     {
-      "titulo": "Seedorf volta a vetar pergunta no Corinthians e repreende jornalistas: \"Vocês são hóspedes\"",
+      "titulo": "São Paulo x Corinthians: onde assistir ao vivo, horário e escalações",
       "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/03/seedorf-volta-a-vetar-pergunta-no-corinthians-e-repreende-jornalistas-voces-sao-hospedes-aqui.ghtml",
-      "data": "2026-11-03"
+      "url": "https://ge.globo.com/sp/futebol/brasileirao-serie-a/noticia/2026/11/04/sao-paulo-x-corinthians-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "data": "2026-11-04"
     },
     {
-      "titulo": "Memphis titular? Seedorf faz mistério sobre escalação do Corinthians para o clássico",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/03/memphis-titular-seedorf-faz-misterio-sobre-escalacao-do-corinthians-para-o-classico.ghtml",
-      "data": "2026-11-03"
-    },
-    {
-      "titulo": "Memphis vê mudança de atitude no Corinthians com Seedorf e elogia: \"Ele é peça importante\"",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/03/memphis-ve-mudanca-de-atitude-no-corinthians-com-seedorf-e-elogia-ele-e-peca-importante.ghtml",
-      "data": "2026-11-03"
-    },
-    {
-      "titulo": "Memphis prevê melhora do Corinthians e se diz pronto para jogar: \"Tenho um plano bom\"",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/03/memphis-preve-melhora-do-corinthians-e-se-diz-pronto-para-jogar-tenho-um-plano-bom.ghtml",
-      "data": "2026-11-03"
-    },
-    {
-      "titulo": "Corinthians anuncia saída da técnica Emily Lima do time feminino",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/03/corinthians-anuncia-saida-da-tecnica-emily-lima-do-time-feminino.ghtml",
-      "data": "2026-11-03"
-    },
-    {
-      "titulo": "CBF diz que Seedorf está apto a seguir como técnico do Corinthians enquanto recurso é analisado",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/03/cbf-diz-que-seedorf-esta-apto-a-seguir-como-tecnico-do-corinthians-enquanto-recurso-e-analisado.ghtml",
-      "data": "2026-11-03"
-    },
-    {
-      "titulo": "VÍDEO: Gol e apito final: Corinthians é campeão Brasileiro sub-17",
+      "titulo": "Corinthians anuncia retorno de joia do futsal anunciada por clube paranaense",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130556/gol-e-apito-final-corinthians-e-campeao-brasileiro-sub-17",
-      "data": "2026-11-03"
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543506/corinthians-anuncia-retorno-de-joia-do-futsal-anunciada-por-clube-paranaense",
+      "data": "2026-11-04"
     },
     {
-      "titulo": "Corinthians aproveita vantagem e conquista título do Campeonato Brasileiro Sub-17",
+      "titulo": "Eleições MT: Sérgio Janikian recorre de decisão que barrou candidatura à presidência do Corinthians",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543459/corinthians-aproveita-vantagem-e-conquista-titulo-do-campeonato-brasileiro-sub-17",
-      "data": "2026-11-03"
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543505/eleicoes-mt-sergio-janikian-recorre-de-decisao-que-barrou-candidatura-a-presidencia-do-corinthians",
+      "data": "2026-11-04"
     },
     {
-      "titulo": "VÍDEO: A fiel é f#d@! Desembarque do Corinthians em Santos com elenco no meio da torcida",
+      "titulo": "Coordenador da base do Corinthians deixa o clube após conquista do Brasileirão Sub-17",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130554/a-fiel-e-fd-desembarque-do-corinthians-em-santos-com-elenco-no-meio-da-torcida",
-      "data": "2026-11-03"
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543504/coordenador-da-base-do-corinthians-deixa-o-clube-apos-conquista-do-brasileirao-sub-17",
+      "data": "2026-11-04"
+    },
+    {
+      "titulo": "Corinthians se apoia em invencibilidade de Seedorf em clássicos na carreira para vencer o Majestoso",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543398/corinthians-se-apoia-em-invencibilidade-de-seedorf-em-classicos-na-carreira-para-vencer-o-majestoso",
+      "data": "2026-11-04"
+    },
+    {
+      "titulo": "Corinthians reencontra arbitragem de Raphael Claus em clássico pelo Brasileirão",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543490/corinthians-reencontra-arbitragem-de-raphael-claus-em-classico-pelo-brasileirao",
+      "data": "2026-11-04"
+    },
+    {
+      "titulo": "Corinthians não vence o São Paulo atuando como visitante no Brasileirão há 16 anos; relembre",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543397/corinthians-nao-vence-o-sao-paulo-atuando-como-visitante-no-brasileirao-ha-16-anos-relembre",
+      "data": "2026-11-04"
+    },
+    {
+      "titulo": "Corinthians conquista vaga na decisão da Supercopa Sub-17 contra o Athletico-PR",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543474/corinthians-conquista-vaga-na-decisao-da-supercopa-sub-17-contra-o-athletico-pr",
+      "data": "2026-11-04"
+    },
+    {
+      "titulo": "VÍDEO: É campeão! Jogadores do Corinthians erguem a taça do Brasileirão Sub-17",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130562/e-campeao-jogadores-do-corinthians-erguem-a-taca-do-brasileirao-sub-17",
+      "data": "2026-11-04"
     }
   ]
 }
