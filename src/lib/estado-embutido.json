@@ -699,6 +699,12 @@
   },
   "noticias": [
     {
+      "titulo": "Corinthians visita o São Paulo em busca de deixar a zona de rebaixamento do Brasileirão; saiba tudo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543433/corinthians-visita-o-sao-paulo-em-busca-de-deixar-a-zona-de-rebaixamento-do-brasileirao-saiba-tudo",
+      "data": "2026-11-04"
+    },
+    {
       "titulo": "Escalação do Corinthians: Seedorf muda defesa e faz mistério sobre Memphis contra o São Paulo",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/03/escalacao-do-corinthians-seedorf-muda-defesa-e-faz-misterio-sobre-memphis-contra-o-sao-paulo.ghtml",
@@ -747,27 +753,21 @@
       "data": "2026-11-03"
     },
     {
-      "titulo": "MP-SP investiga possíveis irregularidades em acordos firmados pelo Corinthians na gestão Duílio",
+      "titulo": "VÍDEO: Gol e apito final: Corinthians é campeão Brasileiro sub-17",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543463/mp-sp-investiga-possiveis-irregularidades-em-acordos-firmados-pelo-corinthians-na-gestao-duilio",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130556/gol-e-apito-final-corinthians-e-campeao-brasileiro-sub-17",
       "data": "2026-11-03"
     },
     {
-      "titulo": "Corinthians tenta melhorar retrospecto contra rivais no ano em clássico decisivo diante do São Paulo",
+      "titulo": "Corinthians aproveita vantagem e conquista título do Campeonato Brasileiro Sub-17",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543369/corinthians-tenta-melhorar-retrospecto-contra-rivais-no-ano-em-classico-decisivo-diante-do-sao-paulo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543459/corinthians-aproveita-vantagem-e-conquista-titulo-do-campeonato-brasileiro-sub-17",
       "data": "2026-11-03"
     },
     {
-      "titulo": "Memphis faz autocrítica sobre a temporada e fala sobre problemas físicas",
+      "titulo": "VÍDEO: A fiel é f#d@! Desembarque do Corinthians em Santos com elenco no meio da torcida",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543438/memphis-faz-autocritica-sobre-a-temporada-e-fala-sobre-problemas-fisicas",
-      "data": "2026-11-03"
-    },
-    {
-      "titulo": "Corinthians enfrentará o São Paulo na Vila Belmiro pela primeira vez na história",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543371/corinthians-enfrentara-o-sao-paulo-na-vila-belmiro-pela-primeira-vez-na-historia",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130554/a-fiel-e-fd-desembarque-do-corinthians-em-santos-com-elenco-no-meio-da-torcida",
       "data": "2026-11-03"
     }
   ]
