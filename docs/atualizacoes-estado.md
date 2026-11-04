@@ -15,3 +15,4 @@
 - 2026-10-30 22:06 (automático, ESPN): Corinthians 2x0 Mirassol. Corinthians: 36 pts em 33 jogos.
 - 2026-10-31 19:40 (automático, ESPN): Coritiba 2x0 Vitória. Rodada 33 encerrada: Corinthians em 17º. Corinthians: 36 pts em 33 jogos.
 - 2026-11-03 00:54 (automático, ESPN): Red Bull Bragantino 2x1 Santos. Corinthians: 36 pts em 33 jogos.
+- 2026-11-03 22:16 (automático, ESPN): Chapecoense 1x2 Mirassol. Corinthians: 36 pts em 33 jogos.
