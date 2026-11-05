@@ -674,6 +674,30 @@
   },
   "noticias": [
     {
+      "titulo": "Maicon de volta ao futsal do Corinthians: veja bastidores da reviravolta com o Azuriz",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/pr/futebol/times/azuriz/noticia/2026/11/05/maicon-de-volta-ao-futsal-do-corinthians-veja-bastidores-da-reviravolta-com-o-azuriz.ghtml",
+      "data": "2026-11-05"
+    },
+    {
+      "titulo": "Deboche e risco à integridade física: árbitro explica expulsões de atletas do Corinthians no clássico",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/05/deboche-e-risco-a-integridade-fisica-arbitro-explica-expulsoes-de-atletas-do-corinthians-no-classico.ghtml",
+      "data": "2026-11-05"
+    },
+    {
+      "titulo": "Memphis joga mal na volta ao Corinthians, e Seedorf pede cautela: \"Ninguém perde talento\"",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/05/memphis-joga-mal-na-volta-ao-corinthians-e-seedorf-pede-cautela-ninguem-perde-talento.ghtml",
+      "data": "2026-11-05"
+    },
+    {
+      "titulo": "Análise: falhas de Yuri custam caro, e Corinthians é obrigado a se contentar com empate no clássico",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/05/analise-falhas-de-yuri-custam-caro-e-corinthians-e-obrigado-a-se-contentar-com-empate-no-classico.ghtml",
+      "data": "2026-11-05"
+    },
+    {
       "titulo": "Seedorf valoriza \"espírito\" do Corinthians e mostra confiança na recuperação: \"Nas nossas mãos\"",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/05/seedorf-valoriza-espirito-do-corinthians-e-mostra-confianca-na-recuperacao-nas-nossas-maos.ghtml",
@@ -686,64 +710,40 @@
       "data": "2026-11-05"
     },
     {
-      "titulo": "Seedorf aponta evolução no Corinthians e demonstra confiança na luta contra o rebaixamento",
+      "titulo": "CD do Corinthians emite note de repúdio às provocações de membros do clube à torcida do São Paulo",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543571/seedorf-aponta-evolucao-no-corinthians-e-demonstra-confianca-na-luta-contra-o-rebaixamento",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543604/cd-do-corinthians-emite-note-de-repudio-as-provocacoes-de-membros-do-clube-a-torcida-do-sao-paulo",
       "data": "2026-11-05"
     },
     {
-      "titulo": "VÍDEO: Coletiva do técnico Seedorf após empate do Corinthians contra o São Paulo na Vila Belmiro",
+      "titulo": "Técnico do Corinthians explica substituições no Majestoso e atualiza o quadro de saúde de Garro",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130574/coletiva-do-tecnico-seedorf-apos-empate-do-corinthians-contra-o-sao-paulo-na-vila-belmiro",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543577/tecnico-do-corinthians-explica-substituicoes-no-majestoso-e-atualiza-o-quadro-de-saude-de-garro",
       "data": "2026-11-05"
     },
     {
-      "titulo": "Lateral se destaca e atacantes vão mal nas avaliações após empate do Corinthians no Majestoso",
+      "titulo": "Árbitro cita 'deboche' de meio-campista do Corinthians ao justificar expulsão contra o São Paulo",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543567/lateral-se-destaca-e-atacantes-vao-mal-nas-avaliacoes-apos-empate-do-corinthians-no-majestoso",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543602/arbitro-cita-deboche-de-meio-campista-do-corinthians-ao-justificar-expulsao-contra-o-sao-paulo",
       "data": "2026-11-05"
     },
     {
-      "titulo": "VÍDEO: Angileri comenta lance que evitou derrota do Corinthians contra o São Paulo",
+      "titulo": "Lateral do Corinthians destaca raça no Majestoso e aponta piora no gramado da Vila Belmiro",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130573/angileri-comenta-lance-que-evitou-derrota-do-corinthians-contra-o-sao-paulo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543590/lateral-do-corinthians-destaca-raca-no-majestoso-e-aponta-piora-no-gramado-da-vila-belmiro",
       "data": "2026-11-05"
     },
     {
-      "titulo": "Lateral do Corinthians volta a ser titular após mais de um mês em empate no Majestoso",
+      "titulo": "Corinthians quebra hiato de dez anos e volta a vencer um torneio de base organizado pela CBF",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543546/lateral-do-corinthians-volta-a-ser-titular-apos-mais-de-um-mes-em-empate-no-majestoso",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543518/corinthians-quebra-hiato-de-dez-anos-e-volta-a-vencer-um-torneio-de-base-organizado-pela-cbf",
       "data": "2026-11-05"
     },
     {
-      "titulo": "Memphis Depay volta a entrar em campo pelo Corinthians após quase um mês afastado",
+      "titulo": "Zagueiro volta a jogar após mais de um mês em empate do Corinthians no Majestoso",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543558/memphis-depay-volta-a-entrar-em-campo-pelo-corinthians-apos-quase-um-mes-afastado",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543542/zagueiro-volta-a-jogar-apos-mais-de-um-mes-em-empate-do-corinthians-no-majestoso",
       "data": "2026-11-05"
-    },
-    {
-      "titulo": "VÍDEO: Vessoni desabafa após o empate do Corinthians contra o São Paulo",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130571/vessoni-desabafa-apos-o-empate-do-corinthians-contra-o-sao-paulo",
-      "data": "2026-11-05"
-    },
-    {
-      "titulo": "Corinthians perde chance de deixar a zona de rebaixamento do Brasileirão; veja a tabela",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543564/corinthians-perde-chance-de-deixar-a-zona-de-rebaixamento-do-brasileirao-veja-a-tabela",
-      "data": "2026-11-05"
-    },
-    {
-      "titulo": "Yuri Alberto é expulso em clássico, e Corinthians tem mais dois suspensos contra o Botafogo",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/04/yuri-alberto-e-expulso-em-classico-e-corinthians-tem-mais-dois-suspensos-contra-o-botafogo.ghtml",
-      "data": "2026-11-04"
-    },
-    {
-      "titulo": "Atuações do Corinthians: Angileri salva, e Yuri Alberto é o pior em empate no clássico; dê suas notas",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/04/atuacoes-do-corinthians-angileri-salva-e-yuri-alberto-e-o-pior-em-empate-no-classico-de-suas-notas.ghtml",
-      "data": "2026-11-04"
     }
   ]
 }
