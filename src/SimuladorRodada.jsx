@@ -3,7 +3,7 @@ import { CLUBE } from './lib/estado';
 import { medir } from './lib/medir';
 import {
   chaveDoJogo, placarCompleto, rodadasRestantes, previsaoDoJogo, simularComPalpites,
-  lerPalpites, salvarPalpites, clubesNaBriga, jogosQueImportam, INICIO_DA_BRIGA, SIMS_DO_SIMULADOR,
+  lerPalpites, salvarPalpites, clubesNaBriga, jogosQueImportam, INICIO_DA_BRIGA,
 } from './lib/palpites';
 
 const SIGLA = {
@@ -37,7 +37,7 @@ function Seta({ direita = false }) {
  */
 export default function SimuladorRodada({ estado }) {
   const { tabela, jogos } = estado.liga;
-  const briga = useMemo(() => clubesNaBriga(tabela), [tabela]);
+  const briga = useMemo(() => clubesNaBriga(tabela, jogos), [tabela, jogos]);
   const visiveis = useMemo(() => jogosQueImportam(jogos, briga), [jogos, briga]);
   const rodadas = useMemo(() => rodadasRestantes(visiveis), [visiveis]);
   const [palpites, setPalpites] = useState(() => lerPalpites());
@@ -228,10 +228,6 @@ export default function SimuladorRodada({ estado }) {
             <button onClick={limparRodada} className="flex-[1_1_120px] min-h-[48px] border-2 border-ink text-body tracking-[0.08em] hover:bg-ink/10">Limpar rodada</button>
             <button onClick={limparTudo} disabled={Object.keys(palpites).length === 0} className="flex-[1_1_120px] min-h-[48px] border-2 border-risk-danger text-risk-danger text-body tracking-[0.08em] hover:bg-risk-danger/10 disabled:opacity-35 disabled:cursor-not-allowed">Limpar tudo</button>
           </div>
-          <p className="text-caption text-ink-soft">
-            Só aparecem os jogos com pelo menos um time do {INICIO_DA_BRIGA}º para baixo na tabela de hoje: os que mexem na briga
-            contra o Z4. Os outros jogos entram no cálculo, sorteados pelo modelo. Os palpites ficam salvos neste navegador.
-          </p>
         </section>
 
         {/* Parte de baixo da tabela, com os palpites */}
@@ -290,10 +286,6 @@ export default function SimuladorRodada({ estado }) {
               </tbody>
             </table>
           </div>
-          <p className="text-caption text-ink-soft">
-            Seta: posições ganhas ou perdidas em relação à tabela real. A linha vermelha é o corte do {CORTE_Z4}º. Risco com{' '}
-            {SIMS_DO_SIMULADOR.toLocaleString('pt-BR')} simulações dos jogos sem palpite, pelo mesmo modelo do painel.
-          </p>
         </section>
       </div>
     </main>

@@ -60,12 +60,14 @@ test('ordenar devolve 20 posições pela regra da CBF', () => {
   assert.deepStrictEqual(o.map((c) => c.pos), Array.from({ length: 20 }, (_, i) => i + 1));
 });
 
-test('briga contra o Z4: os 10 clubes do 11º para baixo e só os jogos com pelo menos um deles', () => {
-  const briga = clubesNaBriga(tabela);
-  const ordem = ordenar(tabela);
-  assert.strictEqual(briga.size, 10);
-  assert.ok(ordem.filter((c) => c.pos >= 11).every((c) => briga.has(c.clube)));
-  assert.ok(ordem.filter((c) => c.pos <= 10).every((c) => !briga.has(c.clube)));
+test('briga contra o Z4: do 11º para baixo, sem quem já está decidido, e só os jogos com pelo menos um deles', () => {
+  const briga = clubesNaBriga(tabela, jogos, { sims: SIMS });
+  const { linhas } = simularComPalpites({ tabela, jogos, palpites: {}, sims: SIMS });
+  for (const c of linhas) {
+    const aberto = c.chances.rebaixamento > 1 && c.chances.rebaixamento < 99;
+    assert.strictEqual(briga.has(c.clube), c.clube === 'Corinthians' || (c.pos >= 11 && aberto), c.clube);
+  }
+  assert.ok(briga.has('Corinthians'));
   const importam = jogosQueImportam(jogos, briga);
   assert.ok(importam.length > 0 && importam.length < jogos.length);
   assert.ok(importam.every((g) => briga.has(g.mandante) || briga.has(g.visitante)));

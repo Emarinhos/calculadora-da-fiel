@@ -49,10 +49,21 @@ export const ordenar = (tabela) => classificacao({ liga: { tabela } });
 
 /** Primeira posição da briga contra o Z4: do 11º para baixo. */
 export const INICIO_DA_BRIGA = 11;
+/** Risco (%) a partir do qual o clube já é dado como rebaixado, e abaixo do qual já é dado como salvo. */
+export const JA_DECIDIDO = { rebaixado: 99, salvo: 1 };
 
-/** Clubes que estão na briga contra o Z4 na tabela real de agora (do 11º para baixo). */
-export const clubesNaBriga = (tabela, aPartirDe = INICIO_DA_BRIGA) =>
-  new Set(ordenar(tabela).filter((c) => c.pos >= aPartirDe).map((c) => c.clube));
+/**
+ * Clubes na briga contra o Z4 na tabela real de agora: do 11º para baixo e com o rebaixamento ainda em aberto
+ * (risco entre 1% e 99%, pela simulação sem palpites). Quem já está praticamente rebaixado ou salvo fica de fora:
+ * um Remo x Chapecoense não muda nada para o Corinthians. O Corinthians está sempre na lista.
+ */
+export function clubesNaBriga(tabela, jogos, { aPartirDe = INICIO_DA_BRIGA, sims = SIMS_DO_SIMULADOR, clube = 'Corinthians' } = {}) {
+  const { linhas } = simularComPalpites({ tabela, jogos, palpites: {}, sims });
+  return new Set(linhas
+    .filter((c) => c.clube === clube || (c.pos >= aPartirDe
+      && c.chances.rebaixamento < JA_DECIDIDO.rebaixado && c.chances.rebaixamento > JA_DECIDIDO.salvo))
+    .map((c) => c.clube));
+}
 
 /** Jogos que importam para o Corinthians: pelo menos um dos times está na briga contra o Z4. */
 export const jogosQueImportam = (jogos, briga) => jogos.filter((g) => briga.has(g.mandante) || briga.has(g.visitante));
