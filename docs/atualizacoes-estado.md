@@ -19,3 +19,4 @@
 - 2026-11-04 04:45 (automático, ESPN): Internacional 1x0 Coritiba. Corinthians: 36 pts em 33 jogos.
 - 2026-11-04 22:36 (automático, ESPN): Athletico Paranaense 1x3 Vasco; Flamengo 3x1 Grêmio. Corinthians: 36 pts em 33 jogos.
 - 2026-11-04 23:26 (automático, ESPN): Botafogo 1x0 Atlético Mineiro. Corinthians: 36 pts em 33 jogos.
+- 2026-11-04 23:31 (automático, ESPN): São Paulo 0x0 Corinthians. Corinthians: 37 pts em 34 jogos.
