@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect, useLayoutEffect, useRef } from 'react';
 import TabelaLiga from './TabelaLiga';
+import SimuladorRodada from './SimuladorRodada';
 import Regua from './Regua';
 import escudo from './assets/escudo.png';
 import { analisar, riskLevel, formatarRisco, cenarioRealista, transmissaoDosAbertos, objetivosVisiveis, faixaDeVaga, formatDistanciaLabel, formatDistanciaVaga, LIMITE_CONFORTAVEL, ALVO_DA_VAGA } from './lib/analise';
@@ -149,6 +150,9 @@ export default function App() {
   const [objetivoEscolhido, setObjetivoEscolhido] = useState('rebaixamento');
   const arrasto = useRef(null);
   const [aba, setAba] = useState('jogos');
+  // Tela principal: o painel do Corinthians ou o simulador rodada a rodada da liga inteira
+  const [vista, setVista] = useState('painel');
+  const irParaVista = (v) => { if (v !== vista) medir(`vista-${v}`, v === 'simulador' ? 'Abrir simulador' : 'Voltar ao painel'); setVista(v); };
   const trilhaRef = useRef(null);
   const reduzMovimento = () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const irParaAba = (destino) => {
@@ -390,12 +394,26 @@ export default function App() {
             <h1 className="text-[clamp(15px,5.3vw,20px)] md:text-h2 leading-tight tracking-wider break-words min-w-0">Calculadora da Fiel</h1>
           </div>
           <div className="flex items-center gap-2 flex-shrink-0 ml-auto">
+            <div role="tablist" aria-label="Seções do app" className="flex border-2 border-ink">
+              {[['painel', 'Painel'], ['simulador', 'Simulador']].map(([id, nome]) => (
+                <button
+                  key={id}
+                  role="tab"
+                  aria-selected={vista === id}
+                  onClick={() => irParaVista(id)}
+                  className={`min-h-[40px] px-3 text-label tracking-[0.1em] transition-colors ${vista === id ? 'bg-ink text-canvas' : 'hover:bg-ink/10'}`}
+                >
+                  {nome}
+                </button>
+              ))}
+            </div>
             <BotaoTema escuro={escuro} onClick={alternarTema} />
-            <BotaoReset onClick={() => applyStressTest('reset')} />
+            {vista === 'painel' && <BotaoReset onClick={() => applyStressTest('reset')} />}
           </div>
         </div>
       </header>
 
+      {vista === 'simulador' ? <SimuladorRodada estado={estado} /> : (<>
       <main className="max-w-6xl mx-auto px-4 md:px-8 mt-6 lg:mt-8 flex flex-col lg:grid lg:grid-cols-[1fr_380px] lg:gap-8 lg:items-start pb-40 lg:pb-8">
 
         {/* Matches Section (Left column on Desktop) */}
@@ -821,6 +839,7 @@ export default function App() {
         <BotaoReset onClick={() => applyStressTest('reset')} disabled={marcados === 0} />
         </div>
       </div>
+      </>)}
     </div>
   );
 }

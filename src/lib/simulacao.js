@@ -110,16 +110,19 @@ function placaresCondicionados(pmfCasa, pmfFora, resultado, clubeEhMandante) {
  * @param {Array}  p.jogos   jogos restantes [{rodada, mandante, visitante}]
  * @param {string} p.clube   clube analisado (padrão Corinthians)
  * @param {Object} p.marcas  {indiceDoJogoEmJogos: 'V'|'E'|'D'} resultados fixados do `clube`
+ * @param {Array}  p.tabelaForcas tabela de onde saem as forças dos times (padrão: a própria `tabela`). O simulador de
+ *                 palpites passa a tabela real aqui, para que placares inventados não mudem a força de ninguém.
+ * @param {boolean} p.porClube também conta as chances de TODOS os clubes na mesma passada (`chancesPorClube`)
  */
-export function simular({ tabela, jogos, clube = 'Corinthians', marcas = {}, sims = PARAMETROS.sims, parametros = PARAMETROS }) {
+export function simular({ tabela, jogos, clube = 'Corinthians', marcas = {}, sims = PARAMETROS.sims, parametros = PARAMETROS, tabelaForcas = tabela, porClube = false }) {
   const n = tabela.length;
   const idx = new Map(tabela.map((t, i) => [t.clube, i]));
   const alvo = idx.get(clube);
   if (alvo === undefined) throw new Error(`clube ${clube} não está na tabela`);
 
-  const { mapa } = forcas(tabela, { encolhimento: parametros.encolhimento });
+  const { mapa } = forcas(tabelaForcas, { encolhimento: parametros.encolhimento });
   const razao = parametros.mandoRazao;
-  const media = tabela.reduce((s, t) => s + t.gp, 0) / tabela.reduce((s, t) => s + t.j, 0);
+  const media = tabelaForcas.reduce((s, t) => s + t.gp, 0) / tabelaForcas.reduce((s, t) => s + t.j, 0);
   const mediaCasa = (media * 2 * razao) / (1 + razao);
   const mediaFora = (media * 2) / (1 + razao);
 
@@ -159,6 +162,9 @@ export function simular({ tabela, jogos, clube = 'Corinthians', marcas = {}, sim
   const histPtsLib = new Int32Array(200), histPtsSul = new Int32Array(200);
   const vagaLib = parametros.vagaLibertadores, vagaSul = parametros.vagaSulamericana;
   let cLib = 0, cSul = 0;
+  // Contagem de todos os clubes (só com porClube): posição de cada um em cada simulação
+  const porPos = porClube ? Array.from({ length: n }, (_, i) => i) : null;
+  const clubeReb = new Int32Array(n), clubeSul = new Int32Array(n), clubeLib = new Int32Array(n);
 
   for (let s = 0; s < sims; s++) {
     for (let t = 0; t < n; t++) { pts[t] = ptsIni[t]; vit[t] = vitIni[t]; sg[t] = sgIni[t]; gp[t] = gpIni[t]; }
@@ -196,6 +202,16 @@ export function simular({ tabela, jogos, clube = 'Corinthians', marcas = {}, sim
     if (posicao <= vagaLib) { cLib++; histPtsLib[pts[alvo]] += 1; }
     if (posicao <= vagaSul) { cSul++; histPtsSul[pts[alvo]] += 1; }
 
+    if (porPos) {
+      porPos.sort((a, b) => chave[b] - chave[a]);
+      for (let p = 0; p < n; p++) {
+        const t = porPos[p];
+        if (p >= n - zona) clubeReb[t]++;
+        if (p < vagaSul) clubeSul[t]++;
+        if (p < vagaLib) clubeLib[t]++;
+      }
+    }
+
     // Pontos do 16º colocado (o "corte" real daquela simulação)
     for (let t = 0; t < n; t++) ordem[t] = chave[t];
     ordem.sort();
@@ -226,6 +242,13 @@ export function simular({ tabela, jogos, clube = 'Corinthians', marcas = {}, sim
     chances: { rebaixamento: risco, sulamericana: (cSul / sims) * 100, libertadores: (cLib / sims) * 100 },
     cortes: { rebaixamento: corte, sulamericana: mediana(histCorteSul), libertadores: mediana(histCorteLib) },
     histPtsVaga: { sulamericana: histPtsSul, libertadores: histPtsLib },
+    chancesPorClube: porPos
+      ? Object.fromEntries(tabela.map((t, i) => [t.clube, {
+        rebaixamento: (clubeReb[i] / sims) * 100,
+        sulamericana: (clubeSul[i] / sims) * 100,
+        libertadores: (clubeLib[i] / sims) * 100,
+      }]))
+      : null,
     sims,
     histPtsFinais,
     histPtsRebaixado,
@@ -234,18 +257,25 @@ export function simular({ tabela, jogos, clube = 'Corinthians', marcas = {}, sim
   };
 }
 
-/**
- * Probabilidade de V/E/D do `clube` em um jogo, pelo mesmo modelo Poisson da simulação.
- * @returns {{V:number, E:number, D:number}}
- */
-export function probabilidadesDoJogo({ tabela, jogo, clube = 'Corinthians', parametros = PARAMETROS }) {
+/** Distribuição de gols do mandante e do visitante em um jogo (Poisson), pelo mesmo modelo da simulação. */
+export function distribuicaoDoJogo({ tabela, jogo, parametros = PARAMETROS }) {
   const { mapa } = forcas(tabela, { encolhimento: parametros.encolhimento });
   const razao = parametros.mandoRazao;
   const media = tabela.reduce((s, t) => s + t.gp, 0) / tabela.reduce((s, t) => s + t.j, 0);
   const m = mapa.get(jogo.mandante);
   const v = mapa.get(jogo.visitante);
-  const pmfCasa = pmfPoisson(((media * 2 * razao) / (1 + razao)) * m.ataque * v.defesa, parametros.maxGols);
-  const pmfFora = pmfPoisson(((media * 2) / (1 + razao)) * v.ataque * m.defesa, parametros.maxGols);
+  return {
+    pmfCasa: pmfPoisson(((media * 2 * razao) / (1 + razao)) * m.ataque * v.defesa, parametros.maxGols),
+    pmfFora: pmfPoisson(((media * 2) / (1 + razao)) * v.ataque * m.defesa, parametros.maxGols),
+  };
+}
+
+/**
+ * Probabilidade de V/E/D do `clube` em um jogo, pelo mesmo modelo Poisson da simulação.
+ * @returns {{V:number, E:number, D:number}}
+ */
+export function probabilidadesDoJogo({ tabela, jogo, clube = 'Corinthians', parametros = PARAMETROS }) {
+  const { pmfCasa, pmfFora } = distribuicaoDoJogo({ tabela, jogo, parametros });
   let casa = 0;
   let empate = 0;
   let fora = 0;
