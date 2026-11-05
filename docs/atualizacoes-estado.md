@@ -17,3 +17,4 @@
 - 2026-11-03 00:54 (automático, ESPN): Red Bull Bragantino 2x1 Santos. Corinthians: 36 pts em 33 jogos.
 - 2026-11-03 22:16 (automático, ESPN): Chapecoense 1x2 Mirassol. Corinthians: 36 pts em 33 jogos.
 - 2026-11-04 04:45 (automático, ESPN): Internacional 1x0 Coritiba. Corinthians: 36 pts em 33 jogos.
+- 2026-11-04 22:36 (automático, ESPN): Athletico Paranaense 1x3 Vasco; Flamengo 3x1 Grêmio. Corinthians: 36 pts em 33 jogos.
