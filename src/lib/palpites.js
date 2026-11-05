@@ -47,6 +47,16 @@ export function aplicarPalpites(tabela, jogos, palpites) {
 /** Classificação (critérios da CBF) de uma tabela solta, com `pos` e `saldo`. */
 export const ordenar = (tabela) => classificacao({ liga: { tabela } });
 
+/** Primeira posição da briga contra o Z4: do 11º para baixo. */
+export const INICIO_DA_BRIGA = 11;
+
+/** Clubes que estão na briga contra o Z4 na tabela real de agora (do 11º para baixo). */
+export const clubesNaBriga = (tabela, aPartirDe = INICIO_DA_BRIGA) =>
+  new Set(ordenar(tabela).filter((c) => c.pos >= aPartirDe).map((c) => c.clube));
+
+/** Jogos que importam para o Corinthians: pelo menos um dos times está na briga contra o Z4. */
+export const jogosQueImportam = (jogos, briga) => jogos.filter((g) => briga.has(g.mandante) || briga.has(g.visitante));
+
 /** V/E/D do mandante e o placar mais provável de um jogo, pelo modelo (forças da tabela real). */
 export function previsaoDoJogo(tabela, jogo) {
   const { pmfCasa, pmfFora } = distribuicaoDoJogo({ tabela, jogo });

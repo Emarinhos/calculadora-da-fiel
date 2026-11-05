@@ -4,7 +4,7 @@ import { ESTADO_EMBUTIDO } from './_fixtures.js';
 import { calcularRiscos } from './liga.js';
 import {
   chaveDoJogo, placarCompleto, rodadasRestantes, aplicarPalpites, ordenar, previsaoDoJogo,
-  simularComPalpites, lerPalpites, salvarPalpites, CHAVE_LOCAL,
+  simularComPalpites, lerPalpites, salvarPalpites, CHAVE_LOCAL, clubesNaBriga, jogosQueImportam,
 } from './palpites.js';
 
 const { tabela, jogos } = ESTADO_EMBUTIDO.liga;
@@ -58,6 +58,20 @@ test('empate dá 1 ponto a cada; palpite incompleto não conta', () => {
 test('ordenar devolve 20 posições pela regra da CBF', () => {
   const o = ordenar(tabela);
   assert.deepStrictEqual(o.map((c) => c.pos), Array.from({ length: 20 }, (_, i) => i + 1));
+});
+
+test('briga contra o Z4: os 10 clubes do 11º para baixo e só os jogos com pelo menos um deles', () => {
+  const briga = clubesNaBriga(tabela);
+  const ordem = ordenar(tabela);
+  assert.strictEqual(briga.size, 10);
+  assert.ok(ordem.filter((c) => c.pos >= 11).every((c) => briga.has(c.clube)));
+  assert.ok(ordem.filter((c) => c.pos <= 10).every((c) => !briga.has(c.clube)));
+  const importam = jogosQueImportam(jogos, briga);
+  assert.ok(importam.length > 0 && importam.length < jogos.length);
+  assert.ok(importam.every((g) => briga.has(g.mandante) || briga.has(g.visitante)));
+  const fora = jogos.filter((g) => !importam.includes(g));
+  assert.ok(fora.every((g) => !briga.has(g.mandante) && !briga.has(g.visitante)));
+  assert.ok(importam.some((g) => g.mandante === 'Corinthians' || g.visitante === 'Corinthians'));
 });
 
 test('previsão: probabilidades somam 1 e o placar mais provável é plausível', () => {

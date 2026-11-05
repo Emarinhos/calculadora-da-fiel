@@ -3,7 +3,7 @@ import { CLUBE } from './lib/estado';
 import { medir } from './lib/medir';
 import {
   chaveDoJogo, placarCompleto, rodadasRestantes, previsaoDoJogo, simularComPalpites,
-  lerPalpites, salvarPalpites, SIMS_DO_SIMULADOR,
+  lerPalpites, salvarPalpites, clubesNaBriga, jogosQueImportam, INICIO_DA_BRIGA, SIMS_DO_SIMULADOR,
 } from './lib/palpites';
 
 const SIGLA = {
@@ -16,11 +16,7 @@ const CURTO = { 'Athletico Paranaense': 'Athletico-PR', 'Atlético Mineiro': 'At
 const sigla = (c) => SIGLA[c] || c.slice(0, 3).toUpperCase();
 const curto = (c) => CURTO[c] || c;
 
-const OBJETIVOS = {
-  rebaixamento: { botao: 'Z4', coluna: 'Risco Z4', corte: 16, zona: (p) => p > 16, vermelho: true, resumo: 'Risco de rebaixamento', legenda: 'Terminar entre os 4 últimos' },
-  sulamericana: { botao: 'Sul-Am.', coluna: 'Sul-Am.', corte: 11, zona: (p) => p <= 11, vermelho: false, resumo: 'Chance de Sul-Americana', legenda: 'Terminar até o 11º' },
-  libertadores: { botao: 'Liberta', coluna: 'Libert.', corte: 5, zona: (p) => p <= 5, vermelho: false, resumo: 'Chance de Libertadores', legenda: 'Terminar até o 5º' },
-};
+const CORTE_Z4 = 16; // último fora da zona de rebaixamento
 
 const fmtChance = (r) => (r < 0.1 ? '<1%' : r >= 99.95 ? '100%' : `${r < 10 ? r.toFixed(1).replace('.', ',') : Math.round(r)}%`);
 const pct = (x) => Math.round(x * 100);
@@ -35,31 +31,38 @@ function Seta({ direita = false }) {
 }
 
 /**
- * Simulador rodada a rodada: placar de qualquer jogo restante da liga, tabela recalculada na hora e chances de cada
- * clube pela mesma simulação do painel (só os jogos sem palpite são sorteados). Palpites ficam no navegador.
+ * Simulador da briga contra o Z4: mostra só os jogos com pelo menos um time do 11º para baixo na tabela real de agora.
+ * O usuário dá os placares, a parte de baixo da tabela é recalculada na hora e o risco de rebaixamento de cada clube sai
+ * da mesma simulação do painel. Os outros jogos da liga continuam no cálculo, sorteados pelo modelo.
  */
 export default function SimuladorRodada({ estado }) {
   const { tabela, jogos } = estado.liga;
-  const rodadas = useMemo(() => rodadasRestantes(jogos), [jogos]);
+  const briga = useMemo(() => clubesNaBriga(tabela), [tabela]);
+  const visiveis = useMemo(() => jogosQueImportam(jogos, briga), [jogos, briga]);
+  const rodadas = useMemo(() => rodadasRestantes(visiveis), [visiveis]);
   const [palpites, setPalpites] = useState(() => lerPalpites());
   const [rodada, setRodada] = useState(() => rodadas.find((r) => r > (estado.posicaoRodada ?? 0)) ?? rodadas[0]);
-  const [objetivo, setObjetivo] = useState('rebaixamento');
-  const obj = OBJETIVOS[objetivo];
 
   useEffect(() => { salvarPalpites(palpites); }, [palpites]);
   // Se a rodada escolhida acabou (resultados aplicados), cai para a primeira que ainda tem jogos
   const rodadaAtual = rodadas.includes(rodada) ? rodada : rodadas[0];
   const iRodada = rodadas.indexOf(rodadaAtual);
 
+  // Só os palpites dos jogos mostrados contam: um palpite antigo de um jogo que saiu da lista não mexe na tabela
+  const palpitesValidos = useMemo(() => {
+    const v = {};
+    for (const g of visiveis) { const k = chaveDoJogo(g); if (palpites[k]) v[k] = palpites[k]; }
+    return v;
+  }, [visiveis, palpites]);
   // A simulação roda com o valor "adiado": digitar continua fluido enquanto as chances se atualizam
-  const palpitesAdiados = useDeferredValue(palpites);
+  const palpitesAdiados = useDeferredValue(palpitesValidos);
   const sim = useMemo(() => simularComPalpites({ tabela, jogos, palpites: palpitesAdiados }), [tabela, jogos, palpitesAdiados]);
-  const atualizando = palpitesAdiados !== palpites;
+  const atualizando = palpitesAdiados !== palpitesValidos;
 
-  const previsoes = useMemo(() => new Map(jogos.map((g) => [chaveDoJogo(g), previsaoDoJogo(tabela, g)])), [tabela, jogos]);
-  const jogosDaRodada = jogos.filter((g) => g.rodada === rodadaAtual);
-  const feitosNa = (r) => jogos.filter((g) => g.rodada === r && placarCompleto(palpites[chaveDoJogo(g)])).length;
-  const totalFeitos = jogos.filter((g) => placarCompleto(palpites[chaveDoJogo(g)])).length;
+  const previsoes = useMemo(() => new Map(visiveis.map((g) => [chaveDoJogo(g), previsaoDoJogo(tabela, g)])), [tabela, visiveis]);
+  const jogosDaRodada = visiveis.filter((g) => g.rodada === rodadaAtual);
+  const feitosNa = (r) => visiveis.filter((g) => g.rodada === r && placarCompleto(palpites[chaveDoJogo(g)])).length;
+  const totalFeitos = visiveis.filter((g) => placarCompleto(palpites[chaveDoJogo(g)])).length;
 
   const mudar = (g, lado, valor) => setPalpites((atual) => {
     const k = chaveDoJogo(g);
@@ -90,8 +93,9 @@ export default function SimuladorRodada({ estado }) {
   const limparTudo = () => { medir('simulador-limpar-tudo', 'Simulador: limpar tudo'); setPalpites({}); };
 
   const cor = sim.linhas.find((l) => l.clube === CLUBE);
-  const chanceCor = cor ? cor.chances[objetivo] : 0;
-  const incompleta = jogosDaRodada.length < 10;
+  const riscoCor = cor ? cor.chances.rebaixamento : 0;
+  const adiada = rodadaAtual <= (estado.posicaoRodada ?? 0);
+  const linhasDaBriga = sim.linhas.filter((l) => l.pos >= INICIO_DA_BRIGA);
 
   return (
     <main className="max-w-6xl mx-auto px-4 md:px-8 mt-6 lg:mt-8 pb-12 flex flex-col gap-6" data-testid="simulador">
@@ -110,14 +114,14 @@ export default function SimuladorRodada({ estado }) {
             <span className="text-label">{cor.pts} pontos · {cor.j} jogos</span>
           </div>
           <div className="flex-[1_1_200px] px-5 py-4 flex flex-col gap-1.5 border-l border-ink/30">
-            <span className="text-caption text-ink-soft">{obj.resumo}</span>
-            <span className={`text-[56px] leading-[0.9] tabular-nums ${obj.vermelho && chanceCor >= 20 ? 'text-risk-danger' : ''} ${atualizando ? 'opacity-50' : ''}`}>{fmtChance(chanceCor)}</span>
-            <span className="text-label text-ink-soft">{obj.legenda}</span>
+            <span className="text-caption text-ink-soft">Risco de rebaixamento</span>
+            <span className={`text-[56px] leading-[0.9] tabular-nums ${riscoCor >= 20 ? 'text-risk-danger' : ''} ${atualizando ? 'opacity-50' : ''}`}>{fmtChance(riscoCor)}</span>
+            <span className="text-label text-ink-soft">Terminar entre os 4 últimos</span>
           </div>
           <div className="flex-[1_1_200px] px-5 py-4 flex flex-col gap-1.5 border-l border-ink/30">
             <span className="text-caption text-ink-soft">Palpites feitos</span>
-            <span className="text-[56px] leading-[0.9] tabular-nums">{totalFeitos}<span className="text-[22px] text-ink-soft"> / {jogos.length}</span></span>
-            <span className="text-label text-ink-soft">O resto é sorteado pelo modelo</span>
+            <span className="text-[56px] leading-[0.9] tabular-nums">{totalFeitos}<span className="text-[22px] text-ink-soft"> / {visiveis.length}</span></span>
+            <span className="text-label text-ink-soft">Jogos da briga contra o Z4</span>
           </div>
         </div>
       )}
@@ -137,7 +141,9 @@ export default function SimuladorRodada({ estado }) {
             </button>
             <div className="text-center">
               <h2 className="text-[26px] leading-none">{rodadaAtual}ª rodada</h2>
-              <p className="text-caption text-ink-soft">{incompleta ? `${jogosDaRodada.length === 1 ? 'Jogo adiado' : 'Jogos adiados'} desta rodada` : `${iRodada + 1} de ${rodadas.length} restantes`}</p>
+              <p className="text-caption text-ink-soft">
+                {adiada ? (jogosDaRodada.length === 1 ? 'Jogo adiado' : 'Jogos adiados') : `${jogosDaRodada.length} ${jogosDaRodada.length === 1 ? 'jogo que importa' : 'jogos que importam'}`}
+              </p>
             </div>
             <button
               onClick={() => setRodada(rodadas[iRodada + 1])}
@@ -152,7 +158,7 @@ export default function SimuladorRodada({ estado }) {
           <div className="flex flex-wrap gap-1.5" role="group" aria-label="Escolher rodada">
             {rodadas.map((r) => {
               const ativa = r === rodadaAtual;
-              const total = jogos.filter((g) => g.rodada === r).length;
+              const total = visiveis.filter((g) => g.rodada === r).length;
               return (
                 <button
                   key={r}
@@ -220,30 +226,17 @@ export default function SimuladorRodada({ estado }) {
           <div className="flex flex-wrap gap-2">
             <button onClick={preencher} className="flex-[1_1_200px] min-h-[48px] border-2 border-ink bg-ink text-canvas text-body tracking-[0.08em]">Preencher o mais provável</button>
             <button onClick={limparRodada} className="flex-[1_1_120px] min-h-[48px] border-2 border-ink text-body tracking-[0.08em] hover:bg-ink/10">Limpar rodada</button>
-            <button onClick={limparTudo} disabled={totalFeitos === 0 && Object.keys(palpites).length === 0} className="flex-[1_1_120px] min-h-[48px] border-2 border-risk-danger text-risk-danger text-body tracking-[0.08em] hover:bg-risk-danger/10 disabled:opacity-35 disabled:cursor-not-allowed">Limpar tudo</button>
+            <button onClick={limparTudo} disabled={Object.keys(palpites).length === 0} className="flex-[1_1_120px] min-h-[48px] border-2 border-risk-danger text-risk-danger text-body tracking-[0.08em] hover:bg-risk-danger/10 disabled:opacity-35 disabled:cursor-not-allowed">Limpar tudo</button>
           </div>
           <p className="text-caption text-ink-soft">
-            Digite os placares: a tabela muda na hora. Os palpites ficam salvos neste navegador. Mais provável = o placar exato com maior chance pelo modelo.
+            Só aparecem os jogos com pelo menos um time do {INICIO_DA_BRIGA}º para baixo na tabela de hoje: os que mexem na briga
+            contra o Z4. Os outros jogos entram no cálculo, sorteados pelo modelo. Os palpites ficam salvos neste navegador.
           </p>
         </section>
 
-        {/* Tabela com os palpites */}
-        <section aria-label="Tabela com seus palpites" className="flex-[1_1_460px] min-w-0 flex flex-col gap-2.5">
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b-[3px] border-ink pb-2">
-            <h2 className="text-h2 tracking-[0.12em]">Tabela com seus palpites</h2>
-            <div className="flex border-2 border-ink" role="group" aria-label="Chance mostrada na tabela">
-              {Object.entries(OBJETIVOS).map(([id, o]) => (
-                <button
-                  key={id}
-                  onClick={() => setObjetivo(id)}
-                  aria-pressed={objetivo === id}
-                  className={`min-h-[40px] px-2.5 text-label ${objetivo === id ? 'bg-ink text-canvas' : 'hover:bg-ink/10'}`}
-                >
-                  {o.botao}
-                </button>
-              ))}
-            </div>
-          </div>
+        {/* Parte de baixo da tabela, com os palpites */}
+        <section aria-label="Briga contra o Z4" className="flex-[1_1_460px] min-w-0 flex flex-col gap-2.5">
+          <h2 className="text-h2 tracking-[0.12em] border-b-[3px] border-ink pb-2">Briga contra o Z4 · {INICIO_DA_BRIGA}º ao 20º</h2>
           <div className="overflow-x-auto">
             <table className="w-full tabular-nums">
               <thead>
@@ -256,20 +249,20 @@ export default function SimuladorRodada({ estado }) {
                   <th scope="col" className="hidden sm:table-cell w-8 py-1.5 font-normal">V</th>
                   <th scope="col" className="w-10 py-1.5 font-normal">SG</th>
                   <th scope="col" className="hidden sm:table-cell w-9 py-1.5 font-normal">GP</th>
-                  <th scope="col" className="w-[92px] py-1.5 pr-2 font-normal">{obj.coluna}</th>
+                  <th scope="col" className="w-[92px] py-1.5 pr-2 font-normal">Risco Z4</th>
                 </tr>
               </thead>
               <tbody className={atualizando ? 'opacity-70 transition-opacity' : 'transition-opacity'}>
-                {sim.linhas.map((l) => {
+                {linhasDaBriga.map((l) => {
                   const eu = l.clube === CLUBE;
-                  const chance = l.chances[objetivo];
+                  const risco = l.chances.rebaixamento;
                   return (
                     <tr
                       key={l.clube}
                       aria-current={eu ? 'true' : undefined}
-                      className={`${eu ? 'bg-ink text-canvas' : ''} ${l.pos === obj.corte ? 'border-b-[3px] border-risk-danger' : 'border-b border-ink/30'}`}
+                      className={`${eu ? 'bg-ink text-canvas' : ''} ${l.pos === CORTE_Z4 ? 'border-b-[3px] border-risk-danger' : 'border-b border-ink/30'}`}
                     >
-                      <td className={`py-1.5 pl-2 pr-1 text-[17px] text-left ${obj.zona(l.pos) ? `border-l-4 ${obj.vermelho ? 'border-risk-danger' : 'border-ink'}` : ''}`}>{l.pos}º</td>
+                      <td className={`py-1.5 pl-2 pr-1 text-[17px] text-left ${l.pos > CORTE_Z4 ? 'border-l-4 border-risk-danger' : ''}`}>{l.pos}º</td>
                       <td className={`py-1.5 text-[12px] text-left ${!eu && l.variacao < 0 ? 'text-risk-danger' : !eu ? 'text-ink-soft' : ''}`}>
                         {l.variacao !== 0 && <span aria-label={`${l.variacao > 0 ? 'subiu' : 'caiu'} ${Math.abs(l.variacao)}`}>{l.variacao > 0 ? '▲' : '▼'}{Math.abs(l.variacao)}</span>}
                       </td>
@@ -281,14 +274,14 @@ export default function SimuladorRodada({ estado }) {
                       <td className="hidden sm:table-cell py-1.5 text-right text-[15px]">{l.gp}</td>
                       <td className="py-1.5 pr-2 text-right">
                         <span className="inline-flex items-center justify-end gap-1.5">
-                          {chance >= 1 && (
+                          {risco >= 1 && (
                             <span
                               aria-hidden="true"
-                              className={`inline-block h-[7px] ${eu ? 'bg-canvas' : obj.vermelho ? 'bg-risk-danger' : 'bg-ink'}`}
-                              style={{ width: `${Math.max(1, Math.round(chance * 0.28))}px` }}
+                              className={`inline-block h-[7px] ${eu ? 'bg-canvas' : 'bg-risk-danger'}`}
+                              style={{ width: `${Math.max(1, Math.round(risco * 0.28))}px` }}
                             />
                           )}
-                          <span className="text-[16px] leading-none w-[44px] text-right">{fmtChance(chance)}</span>
+                          <span className="text-[16px] leading-none w-[44px] text-right">{fmtChance(risco)}</span>
                         </span>
                       </td>
                     </tr>
@@ -298,7 +291,7 @@ export default function SimuladorRodada({ estado }) {
             </table>
           </div>
           <p className="text-caption text-ink-soft">
-            Seta: posições ganhas ou perdidas em relação à tabela real. A linha vermelha é o corte do {obj.corte}º. Chances com{' '}
+            Seta: posições ganhas ou perdidas em relação à tabela real. A linha vermelha é o corte do {CORTE_Z4}º. Risco com{' '}
             {SIMS_DO_SIMULADOR.toLocaleString('pt-BR')} simulações dos jogos sem palpite, pelo mesmo modelo do painel.
           </p>
         </section>
