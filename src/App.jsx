@@ -393,20 +393,21 @@ export default function App() {
             <img src={escudo} alt="Escudo do Corinthians" className="h-12 w-auto flex-shrink-0" />
             <h1 className="text-[clamp(15px,5.3vw,20px)] md:text-h2 leading-tight tracking-wider break-words min-w-0">Calculadora da Fiel</h1>
           </div>
-          <div className="flex items-center gap-2 flex-shrink-0 ml-auto">
-            <div role="tablist" aria-label="Seções do app" className="flex border-2 border-ink">
-              {[['painel', 'Painel'], ['simulador', 'Simulador']].map(([id, nome]) => (
-                <button
-                  key={id}
-                  role="tab"
-                  aria-selected={vista === id}
-                  onClick={() => irParaVista(id)}
-                  className={`min-h-[40px] px-3 text-label tracking-[0.1em] transition-colors ${vista === id ? 'bg-ink text-canvas' : 'hover:bg-ink/10'}`}
-                >
-                  {nome}
-                </button>
-              ))}
-            </div>
+          {/* Abas: no celular, faixa própria de largura total abaixo do título (metade cada); no desktop, na mesma linha */}
+          <div role="tablist" aria-label="Seções do app" className="order-last w-full grid grid-cols-2 border-2 border-ink sm:order-none sm:w-auto sm:flex sm:ml-auto">
+            {[['painel', 'Painel'], ['simulador', 'Simulador']].map(([id, nome]) => (
+              <button
+                key={id}
+                role="tab"
+                aria-selected={vista === id}
+                onClick={() => irParaVista(id)}
+                className={`min-h-[44px] sm:min-h-[40px] px-3 text-label tracking-[0.1em] transition-colors ${vista === id ? 'bg-ink text-canvas' : 'hover:bg-ink/10'}`}
+              >
+                {nome}
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0 ml-auto sm:ml-0">
             <BotaoTema escuro={escuro} onClick={alternarTema} />
             {vista === 'painel' && <BotaoReset onClick={() => applyStressTest('reset')} />}
           </div>

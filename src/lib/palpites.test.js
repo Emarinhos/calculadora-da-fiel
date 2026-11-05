@@ -82,6 +82,18 @@ test('previsão: probabilidades somam 1 e o placar mais provável é plausível'
   assert.ok(p.placar.gm <= 3 && p.placar.gv <= 3);
 });
 
+test('placar mais provável segue o resultado mais provável (não vira 1x1 em todo jogo)', () => {
+  const sinal = ({ gm, gv }) => (gm > gv ? 'casa' : gm < gv ? 'fora' : 'empate');
+  const previsoes = jogos.map((g) => previsaoDoJogo(tabela, g));
+  for (const p of previsoes) {
+    const maior = Math.max(p.casa, p.empate, p.fora);
+    assert.strictEqual(p[p.resultado], maior);
+    assert.strictEqual(sinal(p.placar), p.resultado);
+  }
+  const empates = previsoes.filter((p) => p.placar.gm === p.placar.gv).length;
+  assert.ok(empates < previsoes.length / 2, `empates: ${empates} de ${previsoes.length}`);
+});
+
 test('sem palpites, as chances batem com as gravadas pelo painel (mesma simulação)', () => {
   const r = simularComPalpites({ tabela, jogos, palpites: {}, sims: SIMS });
   const painel = calcularRiscos(ESTADO_EMBUTIDO, { sims: SIMS }).clubes;

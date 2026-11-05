@@ -68,19 +68,32 @@ export function clubesNaBriga(tabela, jogos, { aPartirDe = INICIO_DA_BRIGA, sims
 /** Jogos que importam para o Corinthians: pelo menos um dos times está na briga contra o Z4. */
 export const jogosQueImportam = (jogos, briga) => jogos.filter((g) => briga.has(g.mandante) || briga.has(g.visitante));
 
-/** V/E/D do mandante e o placar mais provável de um jogo, pelo modelo (forças da tabela real). */
+/**
+ * V/E/D do mandante e o placar mais provável de um jogo, pelo modelo (forças da tabela real).
+ *
+ * O placar sai em duas etapas: primeiro o resultado mais provável (vitória do mandante, empate ou vitória do visitante),
+ * depois o placar mais provável DENTRO desse resultado. Pegar direto o placar exato de maior chance daria quase sempre
+ * 1x1: com ~1 gol esperado por time, 1 é a moda de cada lado, mesmo quando um time tem 70% de chance de vencer.
+ */
 export function previsaoDoJogo(tabela, jogo) {
   const { pmfCasa, pmfFora } = distribuicaoDoJogo({ tabela, jogo });
-  let casa = 0, empate = 0, fora = 0, melhor = { gm: 1, gv: 1 }, pMelhor = -1;
+  const soma = { casa: 0, empate: 0, fora: 0 };
+  const melhor = { casa: { p: -1 }, empate: { p: -1 }, fora: { p: -1 } };
   for (let h = 0; h < pmfCasa.length; h++) {
     for (let a = 0; a < pmfFora.length; a++) {
       const p = pmfCasa[h] * pmfFora[a];
-      if (h > a) casa += p; else if (h < a) fora += p; else empate += p;
-      if (p > pMelhor) { pMelhor = p; melhor = { gm: h, gv: a }; }
+      const r = h > a ? 'casa' : h < a ? 'fora' : 'empate';
+      soma[r] += p;
+      if (p > melhor[r].p) melhor[r] = { p, gm: h, gv: a };
     }
   }
-  const total = casa + empate + fora;
-  return { casa: casa / total, empate: empate / total, fora: fora / total, placar: melhor };
+  const total = soma.casa + soma.empate + soma.fora;
+  const resultado = ['casa', 'empate', 'fora'].reduce((x, y) => (soma[y] > soma[x] ? y : x));
+  return {
+    casa: soma.casa / total, empate: soma.empate / total, fora: soma.fora / total,
+    resultado,
+    placar: { gm: melhor[resultado].gm, gv: melhor[resultado].gv },
+  };
 }
 
 /**
