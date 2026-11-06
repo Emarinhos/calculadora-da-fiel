@@ -21,3 +21,4 @@
 - 2026-11-04 23:26 (automático, ESPN): Botafogo 1x0 Atlético Mineiro. Corinthians: 36 pts em 33 jogos.
 - 2026-11-04 23:31 (automático, ESPN): São Paulo 0x0 Corinthians. Corinthians: 37 pts em 34 jogos.
 - 2026-11-05 22:45 (automático, ESPN): Palmeiras 6x1 Remo. Corinthians: 37 pts em 34 jogos.
+- 2026-11-06 05:34 (automático, ESPN): Cruzeiro 3x2 Bahia. Corinthians: 37 pts em 34 jogos.
