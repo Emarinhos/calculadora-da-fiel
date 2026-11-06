@@ -64,13 +64,31 @@ export default function SimuladorRodada({ estado }) {
   const feitosNa = (r) => visiveis.filter((g) => g.rodada === r && placarCompleto(palpites[chaveDoJogo(g)])).length;
   const totalFeitos = visiveis.filter((g) => placarCompleto(palpites[chaveDoJogo(g)])).length;
 
-  const mudar = (g, lado, valor) => setPalpites((atual) => {
+  // Quem volta e encontra palpites guardados de outra visita (uma vez ao abrir)
+  useEffect(() => {
+    if (Object.keys(lerPalpites()).length > 0) medir('simulador-palpites-salvos', 'Simulador: voltou com palpites salvos');
+  }, []);
+  // Quem preenche todos os jogos da briga (uma vez a cada vez que completa)
+  const tudoFeito = visiveis.length > 0 && totalFeitos === visiveis.length;
+  useEffect(() => {
+    if (tudoFeito) medir('simulador-completo', 'Simulador: preencheu todos os jogos');
+  }, [tudoFeito]);
+
+  const mudar = (g, lado, valor) => {
     const k = chaveDoJogo(g);
-    const p = { gm: null, gv: null, ...atual[k], [lado]: soDigitos(valor) };
-    const novo = { ...atual };
-    if (p.gm === null && p.gv === null) delete novo[k]; else novo[k] = p;
-    return novo;
-  });
+    const p = { gm: null, gv: null, ...palpites[k], [lado]: soDigitos(valor) };
+    // Conta quando o placar fica completo (não a cada dígito)
+    if (!placarCompleto(palpites[k]) && placarCompleto(p)) {
+      const eu = g.mandante === CLUBE || g.visitante === CLUBE;
+      medir(eu ? 'simulador-palpite-corinthians' : 'simulador-palpite', eu ? 'Simulador: palpite em jogo do Corinthians' : 'Simulador: palpite em outro jogo');
+    }
+    setPalpites((atual) => {
+      const novo = { ...atual };
+      if (p.gm === null && p.gv === null) delete novo[k]; else novo[k] = p;
+      return novo;
+    });
+  };
+  const irPara = (r) => { if (r !== rodadaAtual) medir('simulador-rodada', 'Simulador: trocou de rodada'); setRodada(r); };
   const preencher = () => {
     medir('simulador-preencher', 'Simulador: preencher o mais provável');
     setPalpites((atual) => {
@@ -132,7 +150,7 @@ export default function SimuladorRodada({ estado }) {
         <section aria-label="Jogos da rodada" className="flex-[1_1_440px] min-w-0 flex flex-col gap-3">
           <div className="flex items-center justify-between gap-2 border-b-[3px] border-ink pb-2">
             <button
-              onClick={() => setRodada(rodadas[iRodada - 1])}
+              onClick={() => irPara(rodadas[iRodada - 1])}
               disabled={iRodada <= 0}
               aria-label="Rodada anterior"
               className="w-11 h-11 border-2 border-ink flex items-center justify-center disabled:opacity-30 hover:bg-ink/10"
@@ -146,7 +164,7 @@ export default function SimuladorRodada({ estado }) {
               </p>
             </div>
             <button
-              onClick={() => setRodada(rodadas[iRodada + 1])}
+              onClick={() => irPara(rodadas[iRodada + 1])}
               disabled={iRodada >= rodadas.length - 1}
               aria-label="Próxima rodada"
               className="w-11 h-11 border-2 border-ink flex items-center justify-center disabled:opacity-30 hover:bg-ink/10"
@@ -162,7 +180,7 @@ export default function SimuladorRodada({ estado }) {
               return (
                 <button
                   key={r}
-                  onClick={() => setRodada(r)}
+                  onClick={() => irPara(r)}
                   aria-pressed={ativa}
                   aria-label={`${r}ª rodada, ${feitosNa(r)} de ${total} palpites`}
                   className={`min-h-[44px] min-w-[52px] px-2 py-1 border-2 border-ink flex flex-col items-center justify-center leading-tight ${ativa ? 'bg-ink text-canvas' : 'hover:bg-ink/10'}`}
