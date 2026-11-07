@@ -665,9 +665,57 @@
   },
   "noticias": [
     {
+      "titulo": "Classificação do segundo turno: Flamengo segue líder, Inter passa o Grêmio, e Corinthians fica em 20º",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/noticia/2026/11/07/classificacao-do-segundo-turno-flamengo-segue-lider-inter-passa-o-gremio-e-corinthians-fica-em-20o.ghtml",
+      "data": "2026-11-07"
+    },
+    {
       "titulo": "Reabilitação de Memphis, opções para os desfalques: os desafios do Corinthians na Data Fifa",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/07/reabilitacao-de-memphis-opcoes-para-os-desfalques-os-desafios-do-corinthians-na-data-fifa.ghtml",
+      "data": "2026-11-07"
+    },
+    {
+      "titulo": "Goleiro do Corinthians integra nova comissão da LNF ao lado de outros atletas",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543717/goleiro-do-corinthians-integra-nova-comissao-da-lnf-ao-lado-de-outros-atletas",
+      "data": "2026-11-07"
+    },
+    {
+      "titulo": "Corinthians sofre com falhas defensivas e larga atrás nas quartas de final do Paulistão Sub-17",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543713/corinthians-sofre-com-falhas-defensivas-e-larga-atras-nas-quartas-de-final-do-paulistao-sub-17",
+      "data": "2026-11-07"
+    },
+    {
+      "titulo": "Apreensão e festa marcam bastidores do Corinthians na conquista do Campeonato Brasileiro Sub-17",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543699/apreensao-e-festa-marcam-bastidores-do-corinthians-na-conquista-do-campeonato-brasileiro-sub-17",
+      "data": "2026-11-07"
+    },
+    {
+      "titulo": "Corinthians vê chance de rebaixamento no Brasileirão ultrapassar os 50% após a 34ª rodada",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543711/corinthians-ve-chance-de-rebaixamento-no-brasileirao-ultrapassar-os-50-por-cento-apos-a-34-rodada",
+      "data": "2026-11-07"
+    },
+    {
+      "titulo": "Corinthians visita a Ferroviária pelas semifinais do Paulistão Feminino Sub-17; saiba tudo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543681/corinthians-visita-a-ferroviaria-pelas-semifinais-do-paulistao-feminino-sub-17-saiba-tudo",
+      "data": "2026-11-07"
+    },
+    {
+      "titulo": "Corinthians recebe São Paulo em busca de vantagem nas quartas do Paulista Sub-17; saiba tudo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543688/corinthians-recebe-sao-paulo-em-busca-de-vantagem-nas-quartas-do-paulista-sub-17-saiba-tudo",
+      "data": "2026-11-07"
+    },
+    {
+      "titulo": "Últimas do Corinthians: jogo-treino, rejeição da Conmebol e cobrança do MP-SP",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543698/ultimas-do-corinthians-jogo-treino-rejeicao-da-conmebol-e-cobranca-do-mp-sp",
       "data": "2026-11-07"
     },
     {
@@ -686,54 +734,6 @@
       "titulo": "MP cobra esclarecimentos do Corinthians por troca de empresa que faz gestão de ingressos",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/06/mp-cobra-esclarecimentos-do-corinthians-por-troca-de-empresa-que-faz-gestao-de-ingressos.ghtml",
-      "data": "2026-11-06"
-    },
-    {
-      "titulo": "Corinthians empata jogo-treino com a Portuguesa no CT; reservas marcam",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/06/corinthians-empata-jogo-treino-com-a-portuguesa-no-ct-reservas-marcam.ghtml",
-      "data": "2026-11-06"
-    },
-    {
-      "titulo": "\"Jogo brusco grave\": vídeo mostra análise do VAR em expulsão de Yuri Alberto em São Paulo x Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/06/jogo-brusco-grave-video-mostra-analise-do-var-em-expulsao-de-yuri-alberto-em-sao-paulo-x-corinthians.ghtml",
-      "data": "2026-11-06"
-    },
-    {
-      "titulo": "Destaque do futsal não joga na volta ao Corinthians, e técnico explica: \"Imbróglio jurídico\"",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/06/destaque-do-futsal-nao-joga-na-volta-ao-corinthians-e-tecnico-explica-imbroglio-juridico.ghtml",
-      "data": "2026-11-06"
-    },
-    {
-      "titulo": "Vitinho ganha espaço com Seedorf no Corinthians e supera minutos dos cinco meses anteriores",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/06/vitinho-ganha-espaco-com-seedorf-no-corinthians-e-supera-minutos-dos-cinco-meses-anteriores.ghtml",
-      "data": "2026-11-06"
-    },
-    {
-      "titulo": "Campeão mundial pelo Corinthians irá disputar Copa do Mundo de Futebol Amador",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543671/campeao-mundial-pelo-corinthians-ira-disputar-copa-do-mundo-de-futebol-amador",
-      "data": "2026-11-06"
-    },
-    {
-      "titulo": "Corinthians é superado pela Unifacisa e sofre terceira derrota em quatro jogos no NBB",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543697/corinthians-e-superado-pela-unifacisa-e-sofre-terceira-derrota-em-quatro-jogos-no-nbb",
-      "data": "2026-11-06"
-    },
-    {
-      "titulo": "Corinthians tenta melhorar retrospecto contra São Paulo em mata-matas do Sub-17",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543668/corinthians-tenta-melhorar-retrospecto-contra-sao-paulo-em-mata-matas-do-sub-17",
-      "data": "2026-11-06"
-    },
-    {
-      "titulo": "Corinthians conhece detalhes e programação da primeira fase da Copinha Feminina",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543696/corinthians-conhece-detalhes-e-programacao-da-primeira-fase-da-copinha-feminina",
       "data": "2026-11-06"
     }
   ]
