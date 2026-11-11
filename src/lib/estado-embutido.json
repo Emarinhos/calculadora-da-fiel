@@ -665,6 +665,12 @@
   },
   "noticias": [
     {
+      "titulo": "Entenda o plano de Seedorf para recuperar o protagonismo de Memphis no Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/11/entenda-o-plano-de-seedorf-para-recuperar-o-protagonismo-de-memphis-no-corinthians.ghtml",
+      "data": "2026-11-11"
+    },
+    {
       "titulo": "Vídeo gera polêmica com Matheus Pereira e Carrillo no Corinthians; diretor diz que caso está resolvido",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/10/video-gera-polemica-com-matheus-pereira-e-carrillo-no-corinthians-diretor-diz-que-caso-esta-resolvido.ghtml",
@@ -701,6 +707,12 @@
       "data": "2026-11-10"
     },
     {
+      "titulo": "Gerente do Corinthians reclama da arbitragem e nega movimento para 'livrar' clube do rebaixamento",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543886/gerente-do-corinthians-reclama-da-arbitragem-e-nega-movimento-para-livrar-clube-do-rebaixamento",
+      "data": "2026-11-10"
+    },
+    {
       "titulo": "Gerente de futebol do Corinthians admite preocupação com atrasos salariais e risco de rescisões",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/543885/gerente-de-futebol-do-corinthians-admite-preocupacao-com-atrasos-salariais-e-risco-de-rescisoes",
@@ -722,18 +734,6 @@
       "titulo": "Memphis acumula dez partidas com o Corinthians desde renovação; veja números",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/543846/memphis-acumula-dez-partidas-com-o-corinthians-desde-renovacao-veja-numeros",
-      "data": "2026-11-10"
-    },
-    {
-      "titulo": "Corinthians mantém retrospecto negativo contra o São Paulo em mata-matas do Sub-17",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543835/corinthians-mantem-retrospecto-negativo-contra-o-sao-paulo-em-mata-matas-do-sub-17",
-      "data": "2026-11-10"
-    },
-    {
-      "titulo": "Meu Timão e veículos parceiros promovem último debate presidencial antes da eleição do Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543852/meu-timao-e-veiculos-parceiros-promovem-ultimo-debate-presidencial-antes-da-eleicao-do-corinthians",
       "data": "2026-11-10"
     }
   ]
