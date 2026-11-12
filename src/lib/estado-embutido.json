@@ -665,6 +665,12 @@
   },
   "noticias": [
     {
+      "titulo": "Bastidores: Seedorf veta a palavra \"erro\" no dia a dia do Corinthians e implanta agenda positiva",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/12/bastidores-seedorf-veta-a-palavra-erro-no-dia-a-dia-do-corinthians-e-implanta-agenda-positiva.ghtml",
+      "data": "2026-11-12"
+    },
+    {
       "titulo": "Elenco do Corinthians faz treinos setorizados em dois períodos, com dupla ainda em transição",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/11/elenco-do-corinthians-faz-treinos-setorizados-em-dois-periodos-com-dupla-ainda-em-transicao.ghtml",
@@ -707,9 +713,9 @@
       "data": "2026-11-11"
     },
     {
-      "titulo": "Entenda o plano de Seedorf para recuperar o protagonismo de Memphis no Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/11/entenda-o-plano-de-seedorf-para-recuperar-o-protagonismo-de-memphis-no-corinthians.ghtml",
+      "titulo": "Corinthians prioriza luta contra rebaixamento e adia planejamento para o Paulistão de 2027",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543892/corinthians-prioriza-luta-contra-rebaixamento-e-adia-planejamento-para-o-paulistao-de-2027",
       "data": "2026-11-11"
     },
     {
@@ -728,12 +734,6 @@
       "titulo": "Gerente de futebol do Corinthians vê exagero em punição de Yuri Alberto e garante recurso no STJD",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/543888/gerente-de-futebol-do-corinthians-ve-exagero-em-punicao-de-yuri-alberto-e-garante-recurso-no-stjd",
-      "data": "2026-11-11"
-    },
-    {
-      "titulo": "Corinthians precisa de feito inédito nesta década para chegar à final do Paulistão Sub-20",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543877/corinthians-precisa-de-feito-inedito-nesta-decada-para-chegar-a-final-do-paulistao-sub-20",
       "data": "2026-11-11"
     }
   ]
