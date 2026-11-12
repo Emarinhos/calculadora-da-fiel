@@ -665,6 +665,24 @@
   },
   "noticias": [
     {
+      "titulo": "Elenco do Corinthians faz treinos setorizados em dois períodos, com dupla ainda em transição",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/11/elenco-do-corinthians-faz-treinos-setorizados-em-dois-periodos-com-dupla-ainda-em-transicao.ghtml",
+      "data": "2026-11-11"
+    },
+    {
+      "titulo": "Corinthians paga salários de outubro aos funcionários; dívida com jogadores segue ativa",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/11/corinthians-paga-salarios-de-outubro-aos-funcionarios-divida-com-jogadores-segue-ativa.ghtml",
+      "data": "2026-11-11"
+    },
+    {
+      "titulo": "Presidente da Fifa parabeniza Corinthians por vaga no primeiro Mundial de Clubes Feminino",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/11/presidente-da-fifa-parabeniza-corinthians-por-vaga-no-primeiro-mundial-de-clubes-feminino.ghtml",
+      "data": "2026-11-11"
+    },
+    {
       "titulo": "Vítor Pereira se arrepende de assumir o Flamengo após saída do Corinthians: \"Erro tremendo\"",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/flamengo/noticia/2026/11/11/vitor-pereira-se-arrepende-de-assumir-o-flamengo-apos-saida-do-corinthians-erro-tremendo.ghtml",
@@ -695,45 +713,27 @@
       "data": "2026-11-11"
     },
     {
-      "titulo": "Recuperação de peças-chave e bastidores agitados: diretor detalha momento decisivo do Corinthians",
+      "titulo": "Julia Passero destaca evolução do Corinthians Sub-20 e clima na vitória sobre o Palmeiras",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543893/recuperacao-de-pecas-chave-e-bastidores-agitados-diretor-detalha-momento-decisivo-do-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543935/julia-passero-destaca-evolucao-do-corinthians-sub-20-e-clima-na-vitoria-sobre-o-palmeiras",
       "data": "2026-11-11"
     },
     {
-      "titulo": "Corinthians divulga bastidores de classificação inédita à final do Paulista Sub-20",
+      "titulo": "Presidente da Caixa demonstra otimismo por acordo com Corinthians para quitar dívida da Arena",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543913/corinthians-tv-divulga-bastidores-de-classificacao-inedita-a-final-do-paulista-sub-20",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543943/presidente-da-caixa-demonstra-otimismo-por-acordo-com-corinthians-para-quitar-divida-da-arena",
       "data": "2026-11-11"
     },
     {
-      "titulo": "MP das Bets é prorrogada por mais 60 dias; saiba como isso afeta o Corinthians",
+      "titulo": "Gerente de futebol do Corinthians vê exagero em punição de Yuri Alberto e garante recurso no STJD",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543914/mp-das-bets-e-prorrogada-por-mais-60-dias-saiba-como-isso-afeta-o-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543888/gerente-de-futebol-do-corinthians-ve-exagero-em-punicao-de-yuri-alberto-e-garante-recurso-no-stjd",
       "data": "2026-11-11"
     },
     {
-      "titulo": "Goleira do Corinthians celebra retorno à Seleção Brasileira e destaca boa fase",
+      "titulo": "Corinthians precisa de feito inédito nesta década para chegar à final do Paulistão Sub-20",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543879/goleira-do-corinthians-celebra-retorno-a-selecao-brasileira-e-destaca-boa-fase",
-      "data": "2026-11-11"
-    },
-    {
-      "titulo": "Corinthians inicia venda de ingressos para decisão contra a Liga São Caetano pelo Paulista de Futsal",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543911/corinthians-inicia-venda-de-ingressos-para-decisao-contra-a-liga-sao-caetano-pelo-paulista-de-futsal",
-      "data": "2026-11-11"
-    },
-    {
-      "titulo": "Comissão de Ética do Corinthians declina denúncia de superintendente contra ex-diretor",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543909/comissao-de-etica-do-corinthians-declina-denuncia-de-superintendente-contra-ex-diretor",
-      "data": "2026-11-11"
-    },
-    {
-      "titulo": "Corinthians inicia venda de ingressos para duelo contra Osasco Basquete pelo NBB",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543904/corinthians-inicia-venda-de-ingressos-para-duelo-contra-osasco-basquete-pelo-nbb",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543877/corinthians-precisa-de-feito-inedito-nesta-decada-para-chegar-a-final-do-paulistao-sub-20",
       "data": "2026-11-11"
     }
   ]
