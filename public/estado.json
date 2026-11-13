@@ -665,6 +665,12 @@
   },
   "noticias": [
     {
+      "titulo": "Funcionários do Corinthians são dispensados mais cedo para churrasco de jogadores no CT",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/12/funcionarios-do-corinthians-sao-dispensados-mais-cedo-para-churrasco-de-jogadores-no-ct.ghtml",
+      "data": "2026-11-12"
+    },
+    {
       "titulo": "Corinthians paga salários atrasados do elenco feminino e mantém dívida com masculino",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/12/corinthians-paga-salarios-atrasados-do-elenco-feminino-e-mantem-divida-com-time-masculino.ghtml",
@@ -683,58 +689,52 @@
       "data": "2026-11-12"
     },
     {
-      "titulo": "Volante do Corinthians é convocada pela Venezuela para últimos amistosos de 2026",
+      "titulo": "Corinthians apaga no terceiro quarto, sofre virada do Pinheiros e conhece quarta derrota no NBB",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543966/volante-do-corinthians-e-convocada-pela-venezuela-para-ultimos-amistosos-de-2026",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543983/corinthians-apaga-no-terceiro-quarto-sofre-virada-do-pinheiros-e-conhece-quarta-derrota-no-nbb",
       "data": "2026-11-12"
     },
     {
-      "titulo": "Gerente do Corinthians comenta retorno de Maicon ao futsal e fala sobre futuro do ala",
+      "titulo": "Corinthians celebra Dia Mundial do Hip-Hop e destaca ligação com a cultura periférica",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543889/gerente-do-corinthians-comenta-retorno-de-maicon-ao-futsal-e-fala-sobre-futuro-do-ala",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543969/corinthians-celebra-dia-mundial-do-hip-hop-e-destaca-ligacao-com-a-cultura-periferica",
       "data": "2026-11-12"
     },
     {
-      "titulo": "Goleiro do Corinthians se destaca entre os principais do Brasil em estatísticas de pênaltis",
+      "titulo": "Corinthians encerra tabus contra o Red Bull Bragantino ao se classificar à final do Paulista Sub-20",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543916/goleiro-do-corinthians-se-destaca-entre-os-principais-do-brasil-em-estatisticas-de-penaltis",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543979/corinthians-encerra-tabus-contra-o-red-bull-bragantino-ao-se-classificar-a-final-do-paulista-sub-20",
       "data": "2026-11-12"
     },
     {
-      "titulo": "Corinthians inaugura nova loja oficial em shopping de Santo André",
+      "titulo": "Corinthians e Unifesp se unem em iniciativa para conceder título de medicina a Sócrates",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543957/corinthians-inaugura-nova-loja-oficial-em-shopping-de-santo-andre",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543984/corinthians-e-unifesp-se-unem-em-iniciativa-para-conceder-titulo-de-medicina-a-socrates",
       "data": "2026-11-12"
     },
     {
-      "titulo": "Corinthians acerta os salários atrasados do elenco feminino",
+      "titulo": "Elenco do Corinthians promove churrasco no CT para unir grupo durante pausa no calendário",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543959/corinthians-acerta-os-salarios-atrasados-do-elenco-feminino",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543982/elenco-do-corinthians-promove-churrasco-no-ct-para-unir-grupo-durante-pausa-no-calendario",
       "data": "2026-11-12"
     },
     {
-      "titulo": "Julio Cesar aponta prioridade para novo presidente do Corinthians em 2027",
+      "titulo": "Vítor Pereira exalta passagem pelo Corinthians e avalia ciclo no clube de forma positiva",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543891/julio-cesar-aponta-prioridade-para-novo-presidente-do-corinthians-em-2027",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543898/vitor-pereira-exalta-passagem-pelo-corinthians-e-avalia-ciclo-no-clube-de-forma-positiva",
       "data": "2026-11-12"
     },
     {
-      "titulo": "Zagueiro do Corinthians Sub-17 é punido com advertência pelo STJD e não será desfalque na Supercopa",
+      "titulo": "Eleições MT: Corinthians confirma liberação de contatos de associados às chapas inscritas no pleito",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543956/zagueiro-do-corinthians-sub-17-e-punido-com-advertencia-pelo-stjd-e-nao-sera-desfalque-na-supercopa",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543980/eleicoes-mt-corinthians-confirma-liberacao-de-contatos-de-associados-as-chapas-inscritas-no-pleito",
       "data": "2026-11-12"
     },
     {
-      "titulo": "Corinthians anuncia nova coleção em parceria com Sabotage",
+      "titulo": "Gerente da Neo Química Arena comenta sobre Copa do Mundo Feminina e estrutura da casa do Corinthians",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543954/corinthians-anuncia-nova-colecao-em-parceria-com-sabotage",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543929/gerente-da-neo-quimica-arena-comenta-sobre-copa-do-mundo-feminina-e-estrutura-da-casa-do-corinthians",
       "data": "2026-11-12"
-    },
-    {
-      "titulo": "Elenco do Corinthians faz treinos setorizados em dois períodos, com dupla ainda em transição",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/11/elenco-do-corinthians-faz-treinos-setorizados-em-dois-periodos-com-dupla-ainda-em-transicao.ghtml",
-      "data": "2026-11-11"
     }
   ]
 }
