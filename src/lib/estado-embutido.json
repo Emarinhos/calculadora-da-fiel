@@ -665,6 +665,12 @@
   },
   "noticias": [
     {
+      "titulo": "Crise financeira do Corinthians cresce com ultimatos de R$ 56,3 milhões em dívidas atrasadas",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/13/crise-financeira-do-corinthians-cresce-com-ultimatos-de-r-563-milhoes-em-dividas-atrasadas.ghtml",
+      "data": "2026-11-13"
+    },
+    {
       "titulo": "Funcionários do Corinthians são dispensados mais cedo para churrasco de jogadores no CT",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/12/funcionarios-do-corinthians-sao-dispensados-mais-cedo-para-churrasco-de-jogadores-no-ct.ghtml",
@@ -686,6 +692,12 @@
       "titulo": "Bastidores: Seedorf veta a palavra \"erro\" no dia a dia do Corinthians e implanta agenda positiva",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/12/bastidores-seedorf-veta-a-palavra-erro-no-dia-a-dia-do-corinthians-e-implanta-agenda-positiva.ghtml",
+      "data": "2026-11-12"
+    },
+    {
+      "titulo": "Corinthians confirma delegação de 48 atletas para o Campeonato Brasileiro de Remo Master",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543971/corinthians-confirma-delegacao-de-48-atletas-para-o-campeonato-brasileiro-de-remo-master",
       "data": "2026-11-12"
     },
     {
@@ -722,18 +734,6 @@
       "titulo": "Vítor Pereira exalta passagem pelo Corinthians e avalia ciclo no clube de forma positiva",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/543898/vitor-pereira-exalta-passagem-pelo-corinthians-e-avalia-ciclo-no-clube-de-forma-positiva",
-      "data": "2026-11-12"
-    },
-    {
-      "titulo": "Eleições MT: Corinthians confirma liberação de contatos de associados às chapas inscritas no pleito",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543980/eleicoes-mt-corinthians-confirma-liberacao-de-contatos-de-associados-as-chapas-inscritas-no-pleito",
-      "data": "2026-11-12"
-    },
-    {
-      "titulo": "Gerente da Neo Química Arena comenta sobre Copa do Mundo Feminina e estrutura da casa do Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543929/gerente-da-neo-quimica-arena-comenta-sobre-copa-do-mundo-feminina-e-estrutura-da-casa-do-corinthians",
       "data": "2026-11-12"
     }
   ]
