@@ -665,6 +665,18 @@
   },
   "noticias": [
     {
+      "titulo": "Corinthians busca Ministério Público às vésperas de pedido de intervenção para tentar acordo",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/13/corinthians-busca-ministerio-publico-as-vesperas-de-pedido-de-intervencao-para-tentar-acordo.ghtml",
+      "data": "2026-11-13"
+    },
+    {
+      "titulo": "Treino do Corinthians: em tratamento de lesão, Garro faz corrida em campo",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/13/treino-do-corinthians-em-tratamento-de-lesao-garro-faz-corrida-em-campo.ghtml",
+      "data": "2026-11-13"
+    },
+    {
       "titulo": "Seedorf, do Corinthians, cita Berlusconi e detalha mudança de carreira: \"Estava pronto\"",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/13/seedorf-do-corinthians-cita-berlusconi-e-detalha-virada-de-carreira-para-tecnico-estava-pronto.ghtml",
@@ -695,45 +707,33 @@
       "data": "2026-11-13"
     },
     {
-      "titulo": "Corinthians volta à final do Paulista Sub-20 após quatro anos; relembre campanhas recentes",
+      "titulo": "Eleições MT: Rozallah Santoro não descarta unir forças com Zé Mendes pela presidência do Corinthians",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543997/corinthians-volta-a-final-do-paulista-sub-20-apos-quatro-anos-relembre-campanhas-recentes",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544042/eleicoes-mt-rozallah-santoro-nao-descarta-unir-forcas-com-ze-mendes-pela-presidencia-do-corinthians",
       "data": "2026-11-13"
     },
     {
-      "titulo": "Corinthians busca primeira vitória sobre a Ferroviária para conquistar o Paulistão Feminino Sub-20",
+      "titulo": "Ala/pivô do Corinthians aponta erros defensivos contra o Pinheiros e destaca lições para o NBB",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543999/corinthians-busca-primeira-vitoria-sobre-a-ferroviaria-para-conquistar-o-paulistao-feminino-sub-20",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544005/alapivo-do-corinthians-aponta-erros-defensivos-contra-o-pinheiros-e-destaca-licoes-para-o-nbb",
       "data": "2026-11-13"
     },
     {
-      "titulo": "Nike oferece camisas do Corinthians da atual temporada com desconto em promoção de Black Friday",
+      "titulo": "Seedorf explica 'virada de chave' e revela por que aceitou o Corinthians em momento delicado",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544009/nike-oferece-camisas-do-corinthians-da-atual-temporada-com-desconto-em-promocao-de-black-friday",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544039/seedorf-explica-virada-de-chave-e-revela-por-que-aceitou-o-corinthians-em-momento-delicado",
       "data": "2026-11-13"
     },
     {
-      "titulo": "Grupo técnico aponta alternativa para Corinthians evitar bloqueios após eventual fim do RCE",
+      "titulo": "Corinthians espanta fantasmas contra o Bragantino na base em 2026; entenda",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544008/grupo-tecnico-aponta-alternativa-para-corinthians-evitar-bloqueios-apos-eventual-fim-do-rce",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543978/corinthians-espanta-fantasmas-contra-o-bragantino-na-base-em-2026-entenda",
       "data": "2026-11-13"
     },
     {
-      "titulo": "Corinthians se reúne com o Ministério Público e tenta evitar Intervenção Judicial no clube",
+      "titulo": "Estádio do Corinthians terá pacote especial de ingressos para a Copa do Mundo Feminina de 2027",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544004/corinthians-se-reune-com-o-ministerio-publico-e-tenta-evitar-intervencao-judicial-no-clube",
-      "data": "2026-11-13"
-    },
-    {
-      "titulo": "Corinthians divulga programação de homenagens a Deives neste sábado; veja detalhes",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544007/corinthians-divulga-programacao-de-homenagens-a-deives-neste-sabado-veja-detalhes",
-      "data": "2026-11-13"
-    },
-    {
-      "titulo": "Goleiro do Corinthians vive 'déjà-vu' em temporada de destaque no último ano de base",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543981/goleiro-do-corinthians-vive-deja-vu-em-temporada-de-destaque-no-ultimo-ano-de-base",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544034/estadio-do-corinthians-tera-pacote-especial-de-ingressos-para-a-copa-do-mundo-feminina-de-2027",
       "data": "2026-11-13"
     }
   ]
