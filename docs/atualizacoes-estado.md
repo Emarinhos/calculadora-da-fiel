@@ -23,3 +23,4 @@
 - 2026-11-05 22:45 (automático, ESPN): Palmeiras 6x1 Remo. Corinthians: 37 pts em 34 jogos.
 - 2026-11-06 05:34 (automático, ESPN): Cruzeiro 3x2 Bahia. Corinthians: 37 pts em 34 jogos.
 - 2026-11-07 04:02 (automático, ESPN): Vitória 0x3 Fluminense. Rodada 34 encerrada: Corinthians em 17º. Corinthians: 37 pts em 34 jogos.
+- 2026-11-14 20:51 (automático, ESPN): Mirassol 0x0 Atlético Mineiro. Corinthians: 37 pts em 34 jogos.
