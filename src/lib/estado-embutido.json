@@ -655,6 +655,12 @@
   },
   "noticias": [
     {
+      "titulo": "Corinthians pode ter apenas dois zagueiros à disposição de Seedorf contra o Botafogo",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/15/corinthians-pode-ter-apenas-dois-zagueiros-a-disposicao-de-seedorf-contra-o-botafogo.ghtml",
+      "data": "2026-11-15"
+    },
+    {
       "titulo": "Matheuzinho recebe placa em homenagem aos 150 jogos pelo Corinthians",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/14/matheuzinho-recebe-placa-em-homenagem-aos-150-jogos-pelo-corinthians.ghtml",
@@ -679,9 +685,9 @@
       "data": "2026-11-14"
     },
     {
-      "titulo": "Corinthians supera Liga São Caetano e abre vantagem na semifinal do Campeonato Paulista de Futsal",
+      "titulo": "Corinthians supera Liga São Caetano e abre vantagem na semifinal do Paulista de Futsal",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543986/corinthians-supera-liga-sao-caetano-e-abre-vantagem-na-semifinal-do-campeonato-paulista-de-futsal",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/543986/corinthians-supera-liga-sao-caetano-e-abre-vantagem-na-semifinal-do-paulista-de-futsal",
       "data": "2026-11-14"
     },
     {
@@ -718,12 +724,6 @@
       "titulo": "Corinthians finaliza semana de treinos para enfrentar o Bragantino com vídeo e foco defensivo",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/544067/corinthians-finaliza-semana-de-treinos-para-enfrentar-o-bragantino-com-video-e-foco-defensivo",
-      "data": "2026-11-14"
-    },
-    {
-      "titulo": "Quem você escolheria para ser o novo presidente do Corinthians? Vote na enquete do Meu Timão!",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544060/quem-voce-escolheria-para-ser-o-novo-presidente-do-corinthians-vote-na-enquete-do-meu-timao",
       "data": "2026-11-14"
     }
   ]
