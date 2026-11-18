@@ -1,6 +1,6 @@
 {
   "versao": 2,
-  "atualizadoEm": "2026-11-15",
+  "atualizadoEm": "2026-11-18",
   "fonte": "ogol.com.br",
   "base": {
     "pontos": 32,
@@ -357,8 +357,9 @@
         "mandante": "Corinthians",
         "visitante": "Botafogo",
         "data": "2026-11-18",
-        "hora": null,
-        "tv": null
+        "hora": "21:30",
+        "tv": "Premiere",
+        "tvConsultadaEm": "2026-11-18"
       },
       {
         "rodada": 35,
@@ -655,6 +656,36 @@
   },
   "noticias": [
     {
+      "titulo": "Corinthians x Botafogo: onde assistir ao vivo, horário e escalações",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/sp/futebol/brasileirao-serie-a/noticia/2026/11/18/corinthians-x-botafogo-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "data": "2026-11-18"
+    },
+    {
+      "titulo": "Brasileirão 2026: veja onde assistir ao vivo aos jogos da 35ª rodada",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/11/18/brasileirao-2026-veja-onde-assistir-ao-vivo-aos-jogos-da-35a-rodada.ghtml",
+      "data": "2026-11-18"
+    },
+    {
+      "titulo": "Corinthians recebe o Botafogo para tentar sair do Z4 do Brasileirão; saiba tudo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544248/corinthians-recebe-o-botafogo-para-tentar-sair-do-z4-do-brasileirao-saiba-tudo",
+      "data": "2026-11-18"
+    },
+    {
+      "titulo": "Favoritismos #35: dicas, palpites e chances no Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/11/17/favoritismos-35-dicas-palpites-e-chances-no-brasileirao.ghtml",
+      "data": "2026-11-17"
+    },
+    {
+      "titulo": "Palpites e dicas para Corinthians x Botafogo pelo Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/11/17/palpites-e-dicas-para-corinthians-x-botafogo-pelo-brasileirao.ghtml",
+      "data": "2026-11-17"
+    },
+    {
       "titulo": "Grupo de clubes das Séries A e B pede ajuda do Governo após fim das bets; Leila critica",
       "fonte": "ge",
       "url": "https://ge.globo.com/rj/futebol/noticia/2026/11/17/grupo-de-clubes-das-series-a-e-b-pede-ajuda-do-governo-apos-fim-das-bets-leila-critica.ghtml",
@@ -679,51 +710,21 @@
       "data": "2026-11-17"
     },
     {
-      "titulo": "Seedorf confirma desfalque de Garro no jogo do Corinthians contra o Botafogo: \"Não vai estar\"",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/17/seedorf-confirma-desfalque-de-garro-no-jogo-do-corinthians-contra-o-botafogo-nao-vai-estar.ghtml",
-      "data": "2026-11-17"
-    },
-    {
-      "titulo": "União-MT anuncia Carlos Leiria, técnico com passagens por Inter, Corinthians e Botafogo",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/mt/futebol/noticia/2026/11/17/uniao-mt-anuncia-carlos-leiria-tecnico-com-passagens-por-inter-corinthians-e-botafogo.ghtml",
-      "data": "2026-11-17"
-    },
-    {
-      "titulo": "Corinthians pede renegociação com credores em ação que antecede recuperação judicial",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/17/corinthians-pede-renegociacao-com-credores-em-acao-que-antecede-recuperacao-judicial.ghtml",
-      "data": "2026-11-17"
-    },
-    {
-      "titulo": "Corinthians tenta engatar sequência de jogos sem ser vazado enquanto lida com baixas na zaga",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/17/corinthians-tenta-engatar-sequencia-de-jogos-sem-ser-vazado-enquanto-lida-com-baixas-na-zaga.ghtml",
-      "data": "2026-11-17"
-    },
-    {
-      "titulo": "Corinthians encerra preparação para decisão contra o Botafogo pelo Brasileirão; veja o provável time",
+      "titulo": "Corinthians desperdiça chances, perde para o Bragantino e sai em desvantagem no play-in do Paulistão",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544227/corinthians-encerra-preparacao-para-decisao-contra-o-botafogo-pelo-brasileirao-veja-o-provavel-time",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544189/corinthians-desperdica-chances-perde-para-o-bragantino-e-sai-em-desvantagem-no-play-in-do-paulistao",
       "data": "2026-11-17"
     },
     {
-      "titulo": "Eleições MT: Rozallah Santoro nega acusações no Caso Rojas e comenta possível união entre chapas",
+      "titulo": "André Castro defende mudanças no Corinthians e promete retomar conversas por aporte bilionário",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544220/eleicoes-mt-rozallah-santoro-nega-acusacoes-no-caso-rojas-e-comenta-possivel-uniao-entre-chapas",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544221/andre-castro-defende-mudancas-no-corinthians-e-promete-retomar-conversas-por-aporte-bilionario",
       "data": "2026-11-17"
     },
     {
-      "titulo": "Seedorf destaca evolução tática do Corinthians e prega flexibilidade contra o Botafogo",
+      "titulo": "Corinthians é melhor e vence clássico contra o Paulistano no NBB",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544231/seedorf-destaca-evolucao-tatica-do-corinthians-e-prega-flexibilidade-contra-o-botafogo",
-      "data": "2026-11-17"
-    },
-    {
-      "titulo": "VÍDEO: Corinthians x Botafogo: Provável escalação da 35ª rodada do Brasileirão 2026",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130766/corinthians-x-botafogo-provavel-escalacao-da-35-rodada-do-brasileirao-2026",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544266/corinthians-e-melhor-e-vence-classico-contra-o-paulistano-no-nbb",
       "data": "2026-11-17"
     }
   ]
