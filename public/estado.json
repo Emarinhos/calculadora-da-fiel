@@ -616,6 +616,30 @@
   },
   "noticias": [
     {
+      "titulo": "Vasco tem interesse em Kaio César, do Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/vasco/noticia/2026/11/20/vasco-tem-interesse-em-kaio-cesar-do-corinthians-para-2027.ghtml",
+      "data": "2026-11-20"
+    },
+    {
+      "titulo": "Cuiabá pede manutenção de transfer ban ao Corinthians e exige antecipação de parcela do acordo",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/20/cuiaba-pede-manutencao-de-transfer-ban-ao-corinthians-e-exige-antecipacao-de-parcela-do-acordo.ghtml",
+      "data": "2026-11-20"
+    },
+    {
+      "titulo": "Relembre 10 finais continentais marcantes entre brasileiros e argentinos",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/mg/futebol/noticia/2026/11/20/relembre-10-finais-continentais-marcantes-da-historia-entre-brasileiros-e-argentinos.ghtml",
+      "data": "2026-11-20"
+    },
+    {
+      "titulo": "Cartola 2026: Kaio César, do Corinthians, faz maior pontuação do ano e é o Craque da Rodada 35",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/cartola/craque-da-rodada/noticia/2026/11/20/cartola-2026-kaio-cesar-do-corinthians-faz-maior-pontuacao-do-ano-e-e-o-craque-da-rodada-35.ghtml",
+      "data": "2026-11-20"
+    },
+    {
       "titulo": "Vitinho volta a jogar 90 minutos após dez meses, mas tem futuro indefinido no Corinthians",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/20/vitinho-volta-a-jogar-90-minutos-apos-dez-meses-mas-tem-futuro-indefinido-no-corinthians.ghtml",
@@ -661,30 +685,6 @@
       "titulo": "Corinthians quer manter Kaio César e faz reuniões por renovação, mas aguarda novo presidente",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/19/corinthians-quer-manter-kaio-cesar-e-faz-reunioes-por-renovacao-mas-aguarda-novo-presidente.ghtml",
-      "data": "2026-11-19"
-    },
-    {
-      "titulo": "Memphis se diz à vontade em novo sistema do Corinthians e cutuca críticos: \"Não assistem aos jogos\"",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/19/memphis-se-diz-a-vontade-em-novo-sistema-do-corinthians-e-cutuca-criticos-nao-assistem-aos-jogos.ghtml",
-      "data": "2026-11-19"
-    },
-    {
-      "titulo": "Análise: Corinthians transforma urgência em coragem, vence de goleada e respira no Brasileirão",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/19/analise-corinthians-transforma-urgencia-em-coragem-vence-de-goleada-e-respira-no-brasileirao.ghtml",
-      "data": "2026-11-19"
-    },
-    {
-      "titulo": "Viralizou: gol do ano no Maracanã, festa do Flamengo, reação de Abel e xingamentos de Neymar",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/pe/futebol/noticia/2026/11/19/viralizou-gol-do-ano-no-maracana-festa-do-flamengo-reacao-de-abel-e-xingamentos-de-neymar.ghtml",
-      "data": "2026-11-19"
-    },
-    {
-      "titulo": "Corinthians encerra 35ª rodada do Campeonato Brasileiro fora da zona do rebaixamento; veja a tabela",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544440/corinthians-encerra-35-rodada-do-campeonato-brasileiro-fora-da-zona-do-rebaixamento-veja-a-tabela",
       "data": "2026-11-19"
     }
   ]
