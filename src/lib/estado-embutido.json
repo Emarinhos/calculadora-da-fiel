@@ -625,6 +625,12 @@
   },
   "noticias": [
     {
+      "titulo": "Treino do Corinthians: André volta ao CT, e elenco inicia preparação para enfrentar o Atlético-MG",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/19/treino-do-corinthians-andre-volta-ao-ct-e-elenco-inicia-preparacao-para-enfrentar-o-atletico-mg.ghtml",
+      "data": "2026-11-19"
+    },
+    {
       "titulo": "Corinthians reabre negociação com Ticketmaster em meio a busca por nova gestora de ingressos",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/19/corinthians-reabre-negociacao-com-ticketmaster-em-meio-a-busca-por-nova-gestora-de-ingressos.ghtml",
@@ -667,33 +673,27 @@
       "data": "2026-11-19"
     },
     {
-      "titulo": "Corinthians se reapresenta no CT de olho na segunda partida do Campeonato Paulista Feminino",
+      "titulo": "Corinthians encerra 35ª rodada do Campeonato Brasileiro fora da zona do rebaixamento; veja a tabela",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544426/corinthians-se-reapresenta-no-ct-de-olho-na-segunda-partida-do-campeonato-paulista-feminino",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544440/corinthians-encerra-35-rodada-do-campeonato-brasileiro-fora-da-zona-do-rebaixamento-veja-a-tabela",
       "data": "2026-11-19"
     },
     {
-      "titulo": "Memphis destaca impacto de Seedorf na confiança do elenco e explica mudança tática no Corinthians",
+      "titulo": "Volante volta a ganhar minutos pelo Corinthians após seis meses sem atuar em jogos oficiais",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544400/memphis-destaca-impacto-de-seedorf-na-confianca-do-elenco-e-explica-mudanca-tatica-no-corinthians",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544364/volante-volta-a-ganhar-minutos-pelo-corinthians-apos-seis-meses-sem-atuar-em-jogos-oficiais",
       "data": "2026-11-19"
     },
     {
-      "titulo": "Corinthians registra melhor sequência sem sofrer gols na temporada desde abril",
+      "titulo": "Corinthians alerta para possíveis golpes envolvendo falsas 'peneiras' nas categorias de base",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544361/corinthians-registra-melhor-sequencia-sem-sofrer-gols-na-temporada-desde-abril",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544437/corinthians-alerta-para-possiveis-golpes-envolvendo-falsas-peneiras-nas-categorias-de-base",
       "data": "2026-11-19"
     },
     {
-      "titulo": "Corinthians bate recorde de visualizações em canal oficial após goleada sobre o Botafogo",
+      "titulo": "União do grupo e hat-trick de atacante marcam bastidores da vitória do Corinthians sobre o Botafogo",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544421/corinthians-bate-recorde-de-visualizacoes-em-canal-oficial-apos-goleada-sobre-o-botafogo",
-      "data": "2026-11-19"
-    },
-    {
-      "titulo": "Seedorf fala sobre evolução do trabalho no Corinthians e vê goleada como incentivo para a reta final",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544393/seedorf-fala-sobre-evolucao-do-trabalho-no-corinthians-e-ve-goleada-como-incentivo-para-a-reta-final",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544438/uniao-do-grupo-e-hat-trick-de-atacante-marcam-bastidores-da-vitoria-do-corinthians-sobre-o-botafogo",
       "data": "2026-11-19"
     }
   ]
