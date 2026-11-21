@@ -197,12 +197,12 @@
       {
         "clube": "Bahia",
         "pts": 54,
-        "j": 35,
+        "j": 36,
         "v": 14,
         "e": 12,
-        "d": 9,
+        "d": 10,
         "gp": 50,
-        "gc": 45
+        "gc": 46
       },
       {
         "clube": "Atlético Mineiro",
@@ -226,12 +226,12 @@
       },
       {
         "clube": "Coritiba",
-        "pts": 42,
-        "j": 35,
-        "v": 11,
+        "pts": 45,
+        "j": 36,
+        "v": 12,
         "e": 9,
         "d": 15,
-        "gp": 40,
+        "gp": 41,
         "gc": 52
       },
       {
@@ -416,16 +416,6 @@
       },
       {
         "rodada": 36,
-        "mandante": "Bahia",
-        "visitante": "Coritiba",
-        "data": "2026-11-21",
-        "hora": "17:30",
-        "tv": "Premiere",
-        "streaming": null,
-        "tvConsultadaEm": "2026-11-21"
-      },
-      {
-        "rodada": 36,
         "mandante": "Chapecoense",
         "visitante": "Cruzeiro",
         "data": "2026-11-21",
@@ -579,7 +569,7 @@
     ],
     "risco": {
       "formato": 2,
-      "jogosDisputados": 702,
+      "jogosDisputados": 704,
       "sims": 20000,
       "clubes": {
         "Flamengo": {
@@ -595,12 +585,12 @@
         "Fluminense": {
           "rebaixamento": 0,
           "sulamericana": 100,
-          "libertadores": 99.72
+          "libertadores": 99.99
         },
         "Athletico Paranaense": {
           "rebaixamento": 0,
           "sulamericana": 100,
-          "libertadores": 54.23
+          "libertadores": 71.19
         },
         "Cruzeiro": {
           "rebaixamento": 0,
@@ -610,66 +600,66 @@
         "Bahia": {
           "rebaixamento": 0,
           "sulamericana": 100,
-          "libertadores": 35.59
+          "libertadores": 14.33
         },
         "Atlético Mineiro": {
           "rebaixamento": 0,
           "sulamericana": 100,
-          "libertadores": 7.54
+          "libertadores": 9.75
         },
         "Santos": {
           "rebaixamento": 0,
-          "sulamericana": 99.96,
-          "libertadores": 2.86
+          "sulamericana": 99.92,
+          "libertadores": 4.56
         },
         "Coritiba": {
-          "rebaixamento": 9.56,
-          "sulamericana": 3.66,
+          "rebaixamento": 0.01,
+          "sulamericana": 12.56,
           "libertadores": 0
         },
         "Red Bull Bragantino": {
           "rebaixamento": 0,
-          "sulamericana": 98.18,
-          "libertadores": 0.03
+          "sulamericana": 97.54,
+          "libertadores": 0.11
         },
         "São Paulo": {
           "rebaixamento": 0.02,
-          "sulamericana": 66.89,
+          "sulamericana": 63.02,
           "libertadores": 0
         },
         "Vitória": {
-          "rebaixamento": 15.56,
-          "sulamericana": 5.6,
+          "rebaixamento": 16.97,
+          "sulamericana": 4.84,
           "libertadores": 0
         },
         "Botafogo": {
-          "rebaixamento": 3,
-          "sulamericana": 20.5,
+          "rebaixamento": 4.35,
+          "sulamericana": 19.5,
           "libertadores": 0
         },
         "Vasco": {
           "rebaixamento": 0,
-          "sulamericana": 94.98,
-          "libertadores": 0.04
+          "sulamericana": 93.95,
+          "libertadores": 0.08
         },
         "Mirassol": {
-          "rebaixamento": 25.54,
-          "sulamericana": 4.09,
+          "rebaixamento": 27.91,
+          "sulamericana": 3.4,
           "libertadores": 0
         },
         "Corinthians": {
-          "rebaixamento": 20.29,
-          "sulamericana": 5.41,
+          "rebaixamento": 21.36,
+          "sulamericana": 4.74,
           "libertadores": 0
         },
         "Internacional": {
-          "rebaixamento": 58.22,
-          "sulamericana": 0.46,
+          "rebaixamento": 59.7,
+          "sulamericana": 0.39,
           "libertadores": 0
         },
         "Grêmio": {
-          "rebaixamento": 67.84,
-          "sulamericana": 0.29,
+          "rebaixamento": 69.69,
+          "sulamericana": 0.18,
           "libertadores": 0
         },
         "Remo": {
