@@ -616,6 +616,24 @@
   },
   "noticias": [
     {
+      "titulo": "Classificação do segundo turno: Santos empata com Palmeiras; Corinthians deixa lanterna",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/noticia/2026/11/20/classificacao-do-segundo-turno-santos-empata-com-palmeiras-corinthians-deixa-lanterna.ghtml",
+      "data": "2026-11-20"
+    },
+    {
+      "titulo": "Favoritismos #36: dicas, palpites e chances no Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/11/20/favoritismos-36-dicas-palpites-e-chances-no-brasileirao.ghtml",
+      "data": "2026-11-20"
+    },
+    {
+      "titulo": "Palpites e dicas para Atlético-MG x Corinthians pelo Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/11/20/palpites-e-dicas-para-atletico-mg-x-corinthians-pelo-brasileirao.ghtml",
+      "data": "2026-11-20"
+    },
+    {
       "titulo": "Vasco tem interesse em Kaio César, do Corinthians",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/vasco/noticia/2026/11/20/vasco-tem-interesse-em-kaio-cesar-do-corinthians-para-2027.ghtml",
@@ -646,46 +664,28 @@
       "data": "2026-11-20"
     },
     {
-      "titulo": "Corinthians vê chance de rebaixamento no Brasileirão diminuir para menos de 30% após a 35ª rodada",
+      "titulo": "Corinthians registra maior placar com goleada em mais de dois anos na Neo Química Arena",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544433/corinthians-ve-chance-de-rebaixamento-no-brasileirao-diminuir-para-menos-de-30-por-cento-apos-a-35-rodada",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544457/corinthians-registra-maior-placar-com-goleada-em-mais-de-dois-anos-na-neo-quimica-arena",
       "data": "2026-11-20"
     },
     {
-      "titulo": "Técnico do Corinthians comemora retorno de Raniele e valoriza união do grupo",
+      "titulo": "Técnico do Corinthians projeta final do Paulista Sub-20 e destaca importância da formação de atletas",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544396/tecnico-do-corinthians-comemora-retorno-de-raniele-e-valoriza-uniao-do-grupo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544447/tecnico-do-corinthians-projeta-final-do-paulista-sub-20-e-destaca-importancia-da-formacao-de-atletas",
       "data": "2026-11-20"
     },
     {
-      "titulo": "Últimas do Corinthians: reunião com candidatos, retorno de volante e suspensão de transfer bans",
+      "titulo": "Corinthians pode ficar fora das semifinais do Paulistão Feminino pela primeira vez desde 2022",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544441/ultimas-do-corinthians-reuniao-com-candidatos-retorno-de-volante-e-suspensao-de-transfer-bans",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544429/corinthians-pode-ficar-fora-das-semifinais-do-paulistao-feminino-pela-primeira-vez-desde-2022",
       "data": "2026-11-20"
     },
     {
-      "titulo": "Treino do Corinthians: André volta ao CT, e elenco inicia preparação para enfrentar o Atlético-MG",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/19/treino-do-corinthians-andre-volta-ao-ct-e-elenco-inicia-preparacao-para-enfrentar-o-atletico-mg.ghtml",
-      "data": "2026-11-19"
-    },
-    {
-      "titulo": "Corinthians reabre negociação com Ticketmaster em meio a busca por nova gestora de ingressos",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/19/corinthians-reabre-negociacao-com-ticketmaster-em-meio-a-busca-por-nova-gestora-de-ingressos.ghtml",
-      "data": "2026-11-19"
-    },
-    {
-      "titulo": "TJD-SP denuncia jogadoras e técnica após briga em Ferroviária x Corinthians no sub-20",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/sp/ribeirao-preto-e-regiao/futebol/futebol-feminino/noticia/2026/11/19/tjd-sp-denuncia-jogadoras-e-tecnica-apos-briga-em-ferroviaria-x-corinthians-no-sub-20-feminino.ghtml",
-      "data": "2026-11-19"
-    },
-    {
-      "titulo": "Corinthians quer manter Kaio César e faz reuniões por renovação, mas aguarda novo presidente",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/19/corinthians-quer-manter-kaio-cesar-e-faz-reunioes-por-renovacao-mas-aguarda-novo-presidente.ghtml",
-      "data": "2026-11-19"
+      "titulo": "Atacante do Corinthians supera lesões volta a jogar uma partida inteira dez meses depois",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544449/atacante-do-corinthians-supera-lesoes-volta-a-jogar-uma-partida-inteira-dez-meses-depois",
+      "data": "2026-11-20"
     }
   ]
 }
