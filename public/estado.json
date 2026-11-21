@@ -697,6 +697,12 @@
   },
   "noticias": [
     {
+      "titulo": "Gabriel Paulista sofre lesão no joelho e deve voltar ao Corinthians apenas em 2027",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/21/gabriel-paulista-sofre-lesao-no-joelho-e-deve-voltar-ao-corinthians-apenas-em-2027.ghtml",
+      "data": "2026-11-21"
+    },
+    {
       "titulo": "Brasileirão 2026: veja onde assistir ao vivo aos jogos da 36ª rodada",
       "fonte": "ge",
       "url": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/11/21/brasileirao-2026-veja-onde-assistir-ao-vivo-aos-jogos-da-36a-rodada.ghtml",
@@ -709,63 +715,57 @@
       "data": "2026-11-21"
     },
     {
+      "titulo": "Zagueiro do Corinthians Sub-20 projeta final do Campeonato Paulista diante do Palmeiras",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544487/zagueiro-do-corinthians-sub-20-projeta-final-do-campeonato-paulista-diante-do-palmeiras",
+      "data": "2026-11-21"
+    },
+    {
+      "titulo": "Corinthians emenda terceira vitória consecutiva no NBB e busca ampliar sequência positiva",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544453/corinthians-emenda-terceira-vitoria-consecutiva-no-nbb-e-busca-ampliar-sequencia-positiva",
+      "data": "2026-11-21"
+    },
+    {
+      "titulo": "Perfil divulga imagens de supostas camisas do Corinthians para a temporada 2027/28; veja",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544492/perfil-divulga-imagens-de-supostas-camisas-do-corinthians-para-a-temporada-202728-veja",
+      "data": "2026-11-21"
+    },
+    {
+      "titulo": "Corinthians retoma treinos de olho no duelo contra o Atlético Mineiro pela reta final do Brasileirão",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544490/corinthians-retoma-treinos-de-olho-no-duelo-contra-o-atletico-mineiro-pela-reta-final-do-brasileirao",
+      "data": "2026-11-21"
+    },
+    {
+      "titulo": "Meia do Corinthians é titular em vitória da Seleção Brasileira na estreia do Mundial Sub-17",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544488/meia-do-corinthians-e-titular-em-vitoria-da-selecao-brasileira-na-estreia-do-mundial-sub-17",
+      "data": "2026-11-21"
+    },
+    {
+      "titulo": "Zagueiro do Corinthians sofre lesão durante treino e deve perder reta final do Brasileirão",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544489/zagueiro-do-corinthians-sofre-lesao-durante-treino-e-deve-perder-reta-final-do-brasileirao",
+      "data": "2026-11-21"
+    },
+    {
+      "titulo": "Corinthians divulga lista de jogadoras relacionadas para a Copinha Feminina",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544482/corinthians-divulga-lista-de-jogadoras-relacionadas-para-a-copinha-feminina",
+      "data": "2026-11-21"
+    },
+    {
+      "titulo": "Ex-meia do Corinthians comenta temporada com Vítor Pereira e relembra bastidores conturbados",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544476/ex-meia-do-corinthians-comenta-temporada-com-vitor-pereira-e-relembra-bastidores-conturbados",
+      "data": "2026-11-21"
+    },
+    {
       "titulo": "Classificação do segundo turno: Santos empata com Palmeiras; Corinthians deixa lanterna",
       "fonte": "ge",
       "url": "https://ge.globo.com/gato-mestre/noticia/2026/11/20/classificacao-do-segundo-turno-santos-empata-com-palmeiras-corinthians-deixa-lanterna.ghtml",
-      "data": "2026-11-20"
-    },
-    {
-      "titulo": "Favoritismos #36: dicas, palpites e chances no Brasileirão",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/11/20/favoritismos-36-dicas-palpites-e-chances-no-brasileirao.ghtml",
-      "data": "2026-11-20"
-    },
-    {
-      "titulo": "Palpites e dicas para Atlético-MG x Corinthians pelo Brasileirão",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/11/20/palpites-e-dicas-para-atletico-mg-x-corinthians-pelo-brasileirao.ghtml",
-      "data": "2026-11-20"
-    },
-    {
-      "titulo": "Vasco tem interesse em Kaio César, do Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/vasco/noticia/2026/11/20/vasco-tem-interesse-em-kaio-cesar-do-corinthians-para-2027.ghtml",
-      "data": "2026-11-20"
-    },
-    {
-      "titulo": "Cuiabá pede manutenção de transfer ban ao Corinthians e exige antecipação de parcela do acordo",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/20/cuiaba-pede-manutencao-de-transfer-ban-ao-corinthians-e-exige-antecipacao-de-parcela-do-acordo.ghtml",
-      "data": "2026-11-20"
-    },
-    {
-      "titulo": "Relembre 10 finais continentais marcantes entre brasileiros e argentinos",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/mg/futebol/noticia/2026/11/20/relembre-10-finais-continentais-marcantes-da-historia-entre-brasileiros-e-argentinos.ghtml",
-      "data": "2026-11-20"
-    },
-    {
-      "titulo": "Cartola 2026: Kaio César, do Corinthians, faz maior pontuação do ano e é o Craque da Rodada 35",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/cartola/craque-da-rodada/noticia/2026/11/20/cartola-2026-kaio-cesar-do-corinthians-faz-maior-pontuacao-do-ano-e-e-o-craque-da-rodada-35.ghtml",
-      "data": "2026-11-20"
-    },
-    {
-      "titulo": "Vitinho volta a jogar 90 minutos após dez meses, mas tem futuro indefinido no Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/20/vitinho-volta-a-jogar-90-minutos-apos-dez-meses-mas-tem-futuro-indefinido-no-corinthians.ghtml",
-      "data": "2026-11-20"
-    },
-    {
-      "titulo": "Corinthians registra maior placar com goleada em mais de dois anos na Neo Química Arena",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544457/corinthians-registra-maior-placar-com-goleada-em-mais-de-dois-anos-na-neo-quimica-arena",
-      "data": "2026-11-20"
-    },
-    {
-      "titulo": "Técnico do Corinthians projeta final do Paulista Sub-20 e destaca importância da formação de atletas",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544447/tecnico-do-corinthians-projeta-final-do-paulista-sub-20-e-destaca-importancia-da-formacao-de-atletas",
       "data": "2026-11-20"
     }
   ]
