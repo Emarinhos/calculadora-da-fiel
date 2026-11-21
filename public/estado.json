@@ -616,6 +616,18 @@
   },
   "noticias": [
     {
+      "titulo": "Brasileirão 2026: veja onde assistir ao vivo aos jogos da 36ª rodada",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/11/21/brasileirao-2026-veja-onde-assistir-ao-vivo-aos-jogos-da-36a-rodada.ghtml",
+      "data": "2026-11-21"
+    },
+    {
+      "titulo": "Corinthians é o time que mais finaliza no Brasileirão desde a chegada de Seedorf; veja ranking",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/21/corinthians-e-o-time-que-mais-finaliza-no-brasileirao-desde-a-chegada-de-seedorf-veja-ranking.ghtml",
+      "data": "2026-11-21"
+    },
+    {
       "titulo": "Classificação do segundo turno: Santos empata com Palmeiras; Corinthians deixa lanterna",
       "fonte": "ge",
       "url": "https://ge.globo.com/gato-mestre/noticia/2026/11/20/classificacao-do-segundo-turno-santos-empata-com-palmeiras-corinthians-deixa-lanterna.ghtml",
@@ -673,18 +685,6 @@
       "titulo": "Técnico do Corinthians projeta final do Paulista Sub-20 e destaca importância da formação de atletas",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/544447/tecnico-do-corinthians-projeta-final-do-paulista-sub-20-e-destaca-importancia-da-formacao-de-atletas",
-      "data": "2026-11-20"
-    },
-    {
-      "titulo": "Corinthians pode ficar fora das semifinais do Paulistão Feminino pela primeira vez desde 2022",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544429/corinthians-pode-ficar-fora-das-semifinais-do-paulistao-feminino-pela-primeira-vez-desde-2022",
-      "data": "2026-11-20"
-    },
-    {
-      "titulo": "Atacante do Corinthians supera lesões volta a jogar uma partida inteira dez meses depois",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544449/atacante-do-corinthians-supera-lesoes-volta-a-jogar-uma-partida-inteira-dez-meses-depois",
       "data": "2026-11-20"
     }
   ]
