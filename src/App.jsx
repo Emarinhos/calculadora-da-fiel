@@ -8,7 +8,7 @@ import { resultadoDoCenario, formaRecente, N_CONFRONTOS, JANELA_ANOS } from './l
 import { FONTE_H2H, ATUALIZADO_EM } from './lib/h2h';
 import { ESTADO_EMBUTIDO, carregarEstado, jogosDoApp } from './lib/estado';
 import { linhasDaTabela, riscoVigente } from './lib/liga';
-import { aoVivo, jogoComecou } from './lib/agenda';
+import { aoVivo, jogoComecou, formatarTransmissao } from './lib/agenda';
 import { medir } from './lib/medir';
 
 
@@ -26,21 +26,6 @@ const INTERVALO_RECARGA_MS = 30 * 60 * 1000;
 
 const brData = (iso) => iso.split('-').reverse().join('/');
 
-const DIAS = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
-
-/**
- * Data/horário, TV e streaming de um jogo, em até 3 linhas curtas. Falta de dado vira "a definir";
- * o que ainda não foi consultado no dia anterior ao jogo aparece como "a confirmar".
- */
-function formatarTransmissao(t) {
-  if (!t || !t.data) return { quando: 'data a definir', tv: 'TV a definir', streaming: null };
-  const [a, m, d] = t.data.split('-');
-  const dia = DIAS[new Date(Number(a), Number(m) - 1, Number(d)).getDay()];
-  const quando = `${dia} ${d}/${m} · ${t.hora ? t.hora.replace(':', 'h') : 'horário a definir'}`;
-  const tv = t.tv ? `TV ${t.tv}${t.confirmada ? '' : ' · a confirmar'}` : 'TV a definir';
-  const streaming = t.streaming ? `Streaming ${t.streaming}${t.confirmada ? '' : ' · a confirmar'}` : null;
-  return { quando, tv, streaming };
-}
 
 function Arrow({ className = '' }) {
   return (
@@ -150,9 +135,9 @@ export default function App() {
   const [objetivoEscolhido, setObjetivoEscolhido] = useState('rebaixamento');
   const arrasto = useRef(null);
   const [aba, setAba] = useState('jogos');
-  // Tela principal: o painel do Corinthians ou o simulador rodada a rodada da liga inteira
-  const [vista, setVista] = useState('painel');
-  const irParaVista = (v) => { if (v !== vista) medir(`vista-${v}`, v === 'simulador' ? 'Abrir simulador' : 'Voltar ao painel'); setVista(v); };
+  // Tela principal: o simulador da briga contra o Z4 (abre nele) ou o painel do Corinthians
+  const [vista, setVista] = useState('simulador');
+  const irParaVista = (v) => { if (v !== vista) medir(`vista-${v}`, v === 'simulador' ? 'Voltar ao simulador' : 'Abrir painel'); setVista(v); };
   const trilhaRef = useRef(null);
   const reduzMovimento = () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const irParaAba = (destino) => {
@@ -161,11 +146,12 @@ export default function App() {
     if (!el) return;
     el.scrollTo({ left: destino === 'tabela' ? 0 : el.children[1].offsetLeft, behavior: reduzMovimento() ? 'auto' : 'smooth' });
   };
-  // No celular a trilha abre nos jogos (faixa da direita); a tabela fica à esquerda
+  // No celular a trilha abre nos jogos (faixa da direita); a tabela fica à esquerda. Roda ao entrar no painel,
+  // que não é a tela inicial (a trilha só existe quando o painel está na tela)
   useLayoutEffect(() => {
     const el = trilhaRef.current;
     if (el && window.matchMedia('(max-width: 1023px)').matches) el.scrollLeft = el.children[1].offsetLeft;
-  }, []);
+  }, [vista]);
   // Tema: claro por padrão; a escolha da pessoa fica salva neste aparelho
   const [escuro, setEscuro] = useState(() => document.documentElement.dataset.theme === 'dark');
   const alternarTema = () => {
@@ -395,7 +381,7 @@ export default function App() {
           </div>
           {/* Abas: no celular, faixa própria de largura total abaixo do título (metade cada); no desktop, na mesma linha */}
           <div role="tablist" aria-label="Seções do app" className="order-last w-full grid grid-cols-2 border-2 border-ink sm:order-none sm:w-auto sm:flex sm:ml-auto">
-            {[['painel', 'Painel'], ['simulador', 'Simulador']].map(([id, nome]) => (
+            {[['simulador', 'Simulador'], ['painel', 'Painel']].map(([id, nome]) => (
               <button
                 key={id}
                 role="tab"

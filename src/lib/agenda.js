@@ -39,6 +39,24 @@ export function transmissaoAConsultar(estado, hoje) {
     .sort((a, b) => a.rodada - b.rodada);
 }
 
+const DIAS = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
+
+/**
+ * Data/horário, TV e streaming de um jogo, em até 3 linhas curtas. Falta de dado vira "a definir";
+ * o que ainda não foi consultado no dia anterior ao jogo aparece como "a confirmar".
+ * @param t { data, hora, tv, streaming, confirmada } (item de transmissaoDosAbertos ou jogo da liga + confirmada)
+ */
+export function formatarTransmissao(t) {
+  if (!t || !t.data) return { quando: 'data a definir', tv: 'TV a definir', streaming: null };
+  const [a, m, d] = t.data.split('-');
+  const dia = DIAS[new Date(Number(a), Number(m) - 1, Number(d)).getDay()];
+  const quando = `${dia} ${d}/${m} · ${t.hora ? t.hora.replace(':', 'h') : 'horário a definir'}`;
+  // Jogo só no streaming (ex.: Prime Video) não tem TV: aí não é "a definir"
+  const tv = t.tv ? `TV ${t.tv}${t.confirmada ? '' : ' · a confirmar'}` : t.streaming ? null : 'TV a definir';
+  const streaming = t.streaming ? `Streaming ${t.streaming}${t.confirmada ? '' : ' · a confirmar'}` : null;
+  return { quando, tv, streaming };
+}
+
 /** Duração considerada "ao vivo" a partir do apito inicial: 2 tempos, intervalo e acréscimos. */
 export const DURACAO_AO_VIVO_MIN = 130;
 

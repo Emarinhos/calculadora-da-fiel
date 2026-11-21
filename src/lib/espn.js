@@ -40,6 +40,28 @@ export function lerPlacar(json) {
   });
 }
 
+/**
+ * Agenda de um dia: [{ mandante, visitante, data: 'AAAA-MM-DD', hora: 'HH:MM' | null }] no horário de Brasília (UTC-3,
+ * sem horário de verão). A ESPN guarda o apito em UTC: o jogo das 21h de sábado vem como 00:00Z de domingo.
+ * Sem horário definido (timeValid falso), a data vale e a hora vem null.
+ */
+export function lerAgendaEspn(json) {
+  return (json?.events ?? []).flatMap((e) => {
+    const c = e.competitions?.[0];
+    const casa = c?.competitors?.find((x) => x.homeAway === 'home');
+    const fora = c?.competitors?.find((x) => x.homeAway === 'away');
+    const t = Date.parse(e.date ?? c?.date);
+    if (!casa || !fora || Number.isNaN(t)) return [];
+    const br = new Date(t - 3 * 3600000).toISOString();
+    return [{
+      mandante: nomeDaLiga(casa.team.displayName),
+      visitante: nomeDaLiga(fora.team.displayName),
+      data: br.slice(0, 10),
+      hora: c.timeValid === false ? null : br.slice(11, 16),
+    }];
+  });
+}
+
 /** Tabela da ESPN: [{ pos, clube, pts, j, gp, gc }] (mesmo formato de lerTabela do ogol). */
 export function lerTabelaEspn(json) {
   const entradas = json?.children?.[0]?.standings?.entries ?? [];

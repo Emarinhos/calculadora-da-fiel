@@ -3,6 +3,8 @@ name: Atualizar notícias e transmissão
 # A cada 2 horas: (1) lê os feeds do ge e do Meu Timão e grava `noticias` em public/estado.json;
 # (2) confirma a transmissão (hora, TV, streaming) dos jogos do Corinthians pela regra de agenda.js:
 # um dia antes do jogo e, se não confirmou, no dia do jogo, lendo a matéria "onde assistir" do ge.
+# Antes disso, scripts/agenda-da-liga.mjs grava data, horário (ESPN) e transmissão (matéria da rodada no ge)
+# de todos os jogos restantes da liga, que o simulador mostra.
 # Só faz commit se algo mudou. Push feito com o GITHUB_TOKEN não dispara outros workflows,
 # então o deploy é chamado de propósito no final.
 on:
@@ -27,6 +29,7 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/atualizar-noticias.mjs
+      - run: node scripts/agenda-da-liga.mjs
       - run: node scripts/confirmar-transmissao.mjs
       - run: node scripts/calcular-riscos.mjs
       - run: node scripts/validar-estado.mjs

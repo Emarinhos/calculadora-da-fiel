@@ -42,3 +42,21 @@ test('dia da ESPN: formato AAAAMMDD e soma de dias (virada de mês)', () => {
   assert.ok(urlPlacar('20261011').includes('dates=20261011'));
   assert.strictEqual(nomeDaLiga('Grêmio'), 'Grêmio');
 });
+
+test('agenda da ESPN: UTC vira horário de Brasília (jogo das 21h de sábado vem como 00:00Z de domingo)', async () => {
+  const { lerAgendaEspn } = await import('./espn.js');
+  const ev = (casa, fora, date, timeValid = true) => ({
+    date,
+    competitions: [{ timeValid, competitors: [{ homeAway: 'home', team: { displayName: casa } }, { homeAway: 'away', team: { displayName: fora } }] }],
+  });
+  assert.deepStrictEqual(lerAgendaEspn({ events: [
+    ev('Chapecoense', 'Cruzeiro', '2026-11-22T00:00Z'),
+    ev('Atlético-MG', 'Vasco da Gama', '2026-11-29T22:30Z'),
+    ev('Remo', 'Corinthians', '2026-12-03T00:30Z', false),
+  ] }), [
+    { mandante: 'Chapecoense', visitante: 'Cruzeiro', data: '2026-11-21', hora: '21:00' },
+    { mandante: 'Atlético Mineiro', visitante: 'Vasco', data: '2026-11-29', hora: '19:30' },
+    { mandante: 'Remo', visitante: 'Corinthians', data: '2026-12-02', hora: null },
+  ]);
+  assert.deepStrictEqual(lerAgendaEspn({}), []);
+});

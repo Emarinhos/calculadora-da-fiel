@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect, useDeferredValue } from 'react';
 import { CLUBE } from './lib/estado';
 import { medir } from './lib/medir';
+import { formatarTransmissao, transmissaoConfirmada } from './lib/agenda';
 import {
   chaveDoJogo, placarCompleto, rodadasRestantes, previsaoDoJogo, simularComPalpites,
   lerPalpites, salvarPalpites, clubesNaBriga, jogosQueImportam, INICIO_DA_BRIGA,
@@ -21,6 +22,16 @@ const CORTE_Z4 = 16; // último fora da zona de rebaixamento
 const fmtChance = (r) => (r < 0.1 ? '<1%' : r >= 99.95 ? '100%' : `${r < 10 ? r.toFixed(1).replace('.', ',') : Math.round(r)}%`);
 const pct = (x) => Math.round(x * 100);
 const soDigitos = (s) => { const d = String(s).replace(/\D/g, '').slice(0, 2); return d === '' ? null : Number(d); };
+// Ordem do calendário dentro da rodada; jogo sem data vai para o fim
+const quandoOrdena = (g) => `${g.data ?? '9999-99-99'} ${g.hora ?? '99:99'}`;
+
+/** "sáb 21/11 · 16h30 · TV Globo e Premiere · Streaming ge tv" (o "a confirmar" aparece uma vez só, no fim). */
+function linhaDoJogo(g) {
+  const t = formatarTransmissao({ ...g, confirmada: true });
+  const partes = [t.quando, t.tv, t.streaming].filter(Boolean);
+  if ((g.tv || g.streaming) && !transmissaoConfirmada(g)) partes.push('a confirmar');
+  return partes.join(' · ');
+}
 
 function Seta({ direita = false }) {
   return (
@@ -60,7 +71,7 @@ export default function SimuladorRodada({ estado }) {
   const atualizando = palpitesAdiados !== palpitesValidos;
 
   const previsoes = useMemo(() => new Map(visiveis.map((g) => [chaveDoJogo(g), previsaoDoJogo(tabela, g)])), [tabela, visiveis]);
-  const jogosDaRodada = visiveis.filter((g) => g.rodada === rodadaAtual);
+  const jogosDaRodada = visiveis.filter((g) => g.rodada === rodadaAtual).sort((a, b) => quandoOrdena(a).localeCompare(quandoOrdena(b)));
   const feitosNa = (r) => visiveis.filter((g) => g.rodada === r && placarCompleto(palpites[chaveDoJogo(g)])).length;
   const totalFeitos = visiveis.filter((g) => placarCompleto(palpites[chaveDoJogo(g)])).length;
 
@@ -208,6 +219,10 @@ export default function SimuladorRodada({ estado }) {
               const campo = `w-12 h-12 text-center text-[24px] tabular-nums bg-canvas text-ink border-2 ${meio ? 'border-risk-danger' : 'border-ink'} placeholder:text-ink/30 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-risk-danger focus-visible:outline-offset-2`;
               return (
                 <li key={k} className={`px-2 pt-2.5 pb-2 border-b border-ink/30 flex flex-col gap-1.5 ${eu ? 'bg-ink text-canvas' : ''}`}>
+                  {/* Data, horário e transmissão */}
+                  <p className={`text-center text-[12px] tracking-[0.06em] leading-snug ${eu ? 'opacity-80' : 'text-ink-soft'}`} data-testid="quando-simulador">
+                    {linhaDoJogo(g)}
+                  </p>
                   <div className="flex items-center justify-center gap-2">
                     <span className="hidden sm:block flex-1 min-w-0 text-right text-[17px] truncate">{curto(g.mandante)}</span>
                     <span className="w-11 text-center text-label" aria-hidden="true">{sigla(g.mandante)}</span>

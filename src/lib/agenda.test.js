@@ -106,3 +106,12 @@ test('jogo começou: vale do apito inicial em diante, mesmo depois da janela "ao
   assert.strictEqual(jogoComecou(jogo, inicio + 24 * 3600000), true); // no dia seguinte, ainda sem resultado aplicado
   assert.strictEqual(jogoComecou({ data: '2026-10-11', hora: null }, inicio + 1), false); // sem horário: não bloqueia
 });
+
+test('texto da transmissão: jogo só no streaming não aparece como "TV a definir"', async () => {
+  const { formatarTransmissao } = await import('./agenda.js');
+  assert.deepStrictEqual(formatarTransmissao({ data: '2026-11-23', hora: '20:00', tv: null, streaming: 'Prime Video', confirmada: true }),
+    { quando: 'seg 23/11 · 20h00', tv: null, streaming: 'Streaming Prime Video' });
+  assert.deepStrictEqual(formatarTransmissao({ data: '2026-12-02', hora: null, tv: null, streaming: null }),
+    { quando: 'qua 02/12 · horário a definir', tv: 'TV a definir', streaming: null });
+  assert.deepStrictEqual(formatarTransmissao(null), { quando: 'data a definir', tv: 'TV a definir', streaming: null });
+});

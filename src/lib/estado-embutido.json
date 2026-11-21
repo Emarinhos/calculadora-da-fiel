@@ -1,6 +1,6 @@
 {
   "versao": 2,
-  "atualizadoEm": "2026-11-20",
+  "atualizadoEm": "2026-11-21",
   "fonte": "ogol.com.br",
   "base": {
     "pontos": 32,
@@ -349,160 +349,241 @@
       {
         "rodada": 36,
         "mandante": "Fluminense",
-        "visitante": "Mirassol"
+        "visitante": "Mirassol",
+        "data": "2026-11-22",
+        "hora": "18:30",
+        "tv": "Premiere e Record",
+        "streaming": "CazéTV",
+        "tvConsultadaEm": "2026-11-21"
       },
       {
         "rodada": 36,
         "mandante": "Botafogo",
-        "visitante": "São Paulo"
+        "visitante": "São Paulo",
+        "data": "2026-11-23",
+        "hora": "20:00",
+        "tv": null,
+        "streaming": "Prime Video",
+        "tvConsultadaEm": "2026-11-21"
       },
       {
         "rodada": 36,
         "mandante": "Santos",
-        "visitante": "Grêmio"
+        "visitante": "Grêmio",
+        "data": "2026-11-23",
+        "hora": "21:00",
+        "tv": "SporTV e Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-21"
       },
       {
         "rodada": 36,
         "mandante": "Palmeiras",
-        "visitante": "Flamengo"
+        "visitante": "Flamengo",
+        "data": "2026-11-21",
+        "hora": "16:30",
+        "tv": "Globo e Premiere",
+        "streaming": "ge tv",
+        "tvConsultadaEm": "2026-11-21"
       },
       {
         "rodada": 36,
         "mandante": "Red Bull Bragantino",
-        "visitante": "Vasco"
+        "visitante": "Vasco",
+        "data": "2026-11-22",
+        "hora": "19:30",
+        "tv": "SporTV e Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-21"
       },
       {
         "rodada": 36,
         "mandante": "Atlético Mineiro",
         "visitante": "Corinthians",
-        "data": "2026-11-20",
-        "hora": "21:00",
+        "data": "2026-11-25",
+        "hora": "20:00",
         "tv": null
       },
       {
         "rodada": 36,
         "mandante": "Internacional",
-        "visitante": "Vitória"
+        "visitante": "Vitória",
+        "data": "2026-11-23",
+        "hora": "19:30",
+        "tv": "Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-21"
       },
       {
         "rodada": 36,
         "mandante": "Athletico Paranaense",
-        "visitante": "Remo"
+        "visitante": "Remo",
+        "data": "2026-11-22",
+        "hora": "16:00",
+        "tv": "Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-21"
       },
       {
         "rodada": 36,
         "mandante": "Bahia",
-        "visitante": "Coritiba"
+        "visitante": "Coritiba",
+        "data": "2026-11-21",
+        "hora": "17:30",
+        "tv": "Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-21"
       },
       {
         "rodada": 36,
         "mandante": "Chapecoense",
-        "visitante": "Cruzeiro"
+        "visitante": "Cruzeiro",
+        "data": "2026-11-21",
+        "hora": "21:00",
+        "tv": "Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-21"
       },
       {
         "rodada": 37,
         "mandante": "Fluminense",
-        "visitante": "Cruzeiro"
+        "visitante": "Cruzeiro",
+        "data": "2026-11-27",
+        "hora": "20:00"
       },
       {
         "rodada": 37,
         "mandante": "Botafogo",
-        "visitante": "Bahia"
+        "visitante": "Bahia",
+        "data": "2026-11-28",
+        "hora": "21:00"
       },
       {
         "rodada": 37,
         "mandante": "São Paulo",
-        "visitante": "Remo"
+        "visitante": "Remo",
+        "data": "2026-11-26",
+        "hora": "20:00"
       },
       {
         "rodada": 37,
         "mandante": "Corinthians",
         "visitante": "Grêmio",
-        "data": "2026-11-27",
-        "hora": "21:00",
+        "data": "2026-11-29",
+        "hora": "18:30",
         "tv": null
       },
       {
         "rodada": 37,
         "mandante": "Mirassol",
-        "visitante": "Athletico Paranaense"
+        "visitante": "Athletico Paranaense",
+        "data": "2026-11-29",
+        "hora": "18:30"
       },
       {
         "rodada": 37,
         "mandante": "Atlético Mineiro",
-        "visitante": "Vasco"
+        "visitante": "Vasco",
+        "data": "2026-11-29",
+        "hora": "19:30"
       },
       {
         "rodada": 37,
         "mandante": "Internacional",
-        "visitante": "Red Bull Bragantino"
+        "visitante": "Red Bull Bragantino",
+        "data": "2026-11-29",
+        "hora": "18:30"
       },
       {
         "rodada": 37,
         "mandante": "Coritiba",
-        "visitante": "Flamengo"
+        "visitante": "Flamengo",
+        "data": "2026-11-29",
+        "hora": "16:00"
       },
       {
         "rodada": 37,
         "mandante": "Vitória",
-        "visitante": "Santos"
+        "visitante": "Santos",
+        "data": "2026-11-29",
+        "hora": "16:00"
       },
       {
         "rodada": 37,
         "mandante": "Chapecoense",
-        "visitante": "Palmeiras"
+        "visitante": "Palmeiras",
+        "data": "2026-11-24",
+        "hora": "18:00"
       },
       {
         "rodada": 38,
         "mandante": "Flamengo",
-        "visitante": "Chapecoense"
+        "visitante": "Chapecoense",
+        "data": "2026-12-02",
+        "hora": "21:30"
       },
       {
         "rodada": 38,
         "mandante": "Vasco",
-        "visitante": "Vitória"
+        "visitante": "Vitória",
+        "data": "2026-12-02",
+        "hora": "21:30"
       },
       {
         "rodada": 38,
         "mandante": "Santos",
-        "visitante": "Botafogo"
+        "visitante": "Botafogo",
+        "data": "2026-12-02",
+        "hora": "21:30"
       },
       {
         "rodada": 38,
         "mandante": "Palmeiras",
-        "visitante": "Coritiba"
+        "visitante": "Coritiba",
+        "data": "2026-12-02",
+        "hora": "21:30"
       },
       {
         "rodada": 38,
         "mandante": "Red Bull Bragantino",
-        "visitante": "Fluminense"
+        "visitante": "Fluminense",
+        "data": "2026-12-02",
+        "hora": "21:30"
       },
       {
         "rodada": 38,
         "mandante": "Cruzeiro",
-        "visitante": "Internacional"
+        "visitante": "Internacional",
+        "data": "2026-12-02",
+        "hora": "21:30"
       },
       {
         "rodada": 38,
         "mandante": "Grêmio",
-        "visitante": "Mirassol"
+        "visitante": "Mirassol",
+        "data": "2026-12-02",
+        "hora": "21:30"
       },
       {
         "rodada": 38,
         "mandante": "Athletico Paranaense",
-        "visitante": "São Paulo"
+        "visitante": "São Paulo",
+        "data": "2026-12-02",
+        "hora": "21:30"
       },
       {
         "rodada": 38,
         "mandante": "Bahia",
-        "visitante": "Atlético Mineiro"
+        "visitante": "Atlético Mineiro",
+        "data": "2026-12-02",
+        "hora": "21:30"
       },
       {
         "rodada": 38,
         "mandante": "Remo",
         "visitante": "Corinthians",
         "data": "2026-12-02",
-        "hora": null,
+        "hora": "21:30",
         "tv": null
       }
     ],
