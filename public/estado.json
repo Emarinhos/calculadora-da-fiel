@@ -657,6 +657,18 @@
   },
   "noticias": [
     {
+      "titulo": "Treino do Corinthians: Seedorf aprimora jogadas de bola parada no CT",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/22/treino-do-corinthians-seedorf-aprimora-jogadas-de-bola-parada-no-ct.ghtml",
+      "data": "2026-11-22"
+    },
+    {
+      "titulo": "Arrasador no início, Corinthians vence São José fora de casa pelo NBB",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/sp/vale-do-paraiba-regiao/basquete/nbb/noticia/2026/11/22/arrasador-no-inicio-corinthians-vence-sao-jose-fora-de-casa-pelo-nbb.ghtml",
+      "data": "2026-11-22"
+    },
+    {
       "titulo": "Fim de uma era? Corinthians feminino é eliminado no Paulista e pode terminar ano sem título",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/22/fim-de-uma-era-corinthians-feminino-e-eliminado-no-paulista-e-pode-terminar-ano-sem-titulo.ghtml",
@@ -669,64 +681,52 @@
       "data": "2026-11-22"
     },
     {
-      "titulo": "Corinthians tenta melhorar retrospecto na Neo Química Arena em final do Paulista Sub-20",
+      "titulo": "Goleiro relembra convivência com atual técnico do Corinthians e elogia postura no dia a dia",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544460/corinthians-tenta-melhorar-retrospecto-na-neo-quimica-arena-em-final-do-paulista-sub-20",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544518/goleiro-relembra-convivencia-com-atual-tecnico-do-corinthians-e-elogia-postura-no-dia-a-dia",
       "data": "2026-11-22"
     },
     {
-      "titulo": "Corinthians fica com vaga na Copa Paulista após eliminação precoce no Paulistão Feminino",
+      "titulo": "Confira detalhes do lançamento da plataforma História Preta no Corinthians no Parque São Jorge",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544532/corinthians-fica-com-vaga-na-copa-paulista-apos-eliminacao-precoce-no-paulistao-feminino",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544517/confira-detalhes-do-lancamento-da-plataforma-historia-preta-no-corinthians-no-parque-sao-jorge",
       "data": "2026-11-22"
     },
     {
-      "titulo": "Corinthians consegue reagir, mas é eliminado pelo Bragantino do Paulistão Feminino nos pênaltis",
+      "titulo": "Treinador e atacante do Corinthians acompanham Dérbi do elenco Sub-20 na Neo Química Arena",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544525/corinthians-consegue-reagir-mas-e-eliminado-pelo-bragantino-do-paulistao-feminino-nos-penaltis",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544540/treinador-e-atacante-do-corinthians-acompanham-derbi-do-elenco-sub-20-na-neo-quimica-arena",
       "data": "2026-11-22"
     },
     {
-      "titulo": "Corinthians atropela o São José e vence a quarta consecutiva no NBB",
+      "titulo": "Corinthians sofre virada do Palmeiras na Arena e sai atrás na final do Paulista Sub-20",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544521/corinthians-atropela-o-sao-jose-e-vence-a-quarta-consecutiva-no-nbb",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544481/corinthians-sofre-virada-do-palmeiras-na-arena-e-sai-atras-na-final-do-paulista-sub-20",
       "data": "2026-11-22"
     },
     {
-      "titulo": "Corinthians precisa de feito inédito nesta década para ser campeão paulista no Sub-20; saiba qual",
+      "titulo": "Corinthians marca na reta final, mas perde para o Minas no jogo de ida da final da Talentos LNF",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544499/corinthians-precisa-de-feito-inedito-nesta-decada-para-ser-campeao-paulista-no-sub-20-saiba-qual",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544542/corinthians-marca-na-reta-final-mas-perde-para-o-minas-no-jogo-de-ida-da-final-da-talentos-lnf",
       "data": "2026-11-22"
     },
     {
-      "titulo": "Corinthians é o time com melhor média de finalizações no Brasileirão desde a chegada de Seedorf",
+      "titulo": "Atacante do Corinthians é chamada para defender a Colômbia na última Data Fifa da temporada",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544512/corinthians-e-o-time-com-melhor-media-de-finalizacoes-no-brasileirao-desde-a-chegada-de-seedorf",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544541/atacante-do-corinthians-e-chamada-para-defender-a-colombia-na-ultima-data-fifa-da-temporada",
       "data": "2026-11-22"
     },
     {
-      "titulo": "Corinthians está escalado para encarar o Red Bull Bragantino em decisão pelo Paulistão Feminino",
+      "titulo": "Zagueiro do Corinthians celebra volta ao time titular e comenta sobre confiança de Seedorf",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544516/corinthians-esta-escalado-para-encarar-o-red-bull-bragantino-em-decisao-pelo-paulistao-feminino",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544435/zagueiro-do-corinthians-celebra-volta-ao-time-titular-e-comenta-sobre-confianca-de-seedorf",
       "data": "2026-11-22"
     },
     {
-      "titulo": "Corinthians recebe o Palmeiras pela final do Campeonato Paulista Sub-20; saiba tudo",
+      "titulo": "Goleira do Corinthians é desconvocada da Seleção Brasileira",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544479/corinthians-recebe-o-palmeiras-pela-final-do-campeonato-paulista-sub-20-saiba-tudo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544539/goleira-do-corinthians-e-desconvocada-da-selecao-brasileira",
       "data": "2026-11-22"
-    },
-    {
-      "titulo": "Gabriel Paulista sofre lesão no joelho e deve voltar ao Corinthians apenas em 2027",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/21/gabriel-paulista-sofre-lesao-no-joelho-e-deve-voltar-ao-corinthians-apenas-em-2027.ghtml",
-      "data": "2026-11-21"
-    },
-    {
-      "titulo": "Brasileirão 2026: veja onde assistir ao vivo aos jogos da 36ª rodada",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/11/21/brasileirao-2026-veja-onde-assistir-ao-vivo-aos-jogos-da-36a-rodada.ghtml",
-      "data": "2026-11-21"
     }
   ]
 }
