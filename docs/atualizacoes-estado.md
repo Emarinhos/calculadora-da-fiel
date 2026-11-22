@@ -30,3 +30,4 @@
 - 2026-11-21 18:32 (automático, ESPN): Palmeiras 1x1 Flamengo. Corinthians: 40 pts em 35 jogos.
 - 2026-11-21 19:32 (automático, ESPN): Bahia 0x1 Coritiba. Corinthians: 40 pts em 35 jogos.
 - 2026-11-21 23:01 (automático, ESPN): Chapecoense 1x2 Cruzeiro. Corinthians: 40 pts em 35 jogos.
+- 2026-11-22 18:06 (automático, ESPN): Athletico Paranaense 4x2 Remo. Corinthians: 40 pts em 35 jogos.
