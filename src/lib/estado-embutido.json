@@ -1,6 +1,6 @@
 {
   "versao": 2,
-  "atualizadoEm": "2026-11-21",
+  "atualizadoEm": "2026-11-22",
   "fonte": "ogol.com.br",
   "base": {
     "pontos": 32,
@@ -354,7 +354,7 @@
         "hora": "18:30",
         "tv": "Premiere e Record",
         "streaming": "CazéTV",
-        "tvConsultadaEm": "2026-11-21"
+        "tvConsultadaEm": "2026-11-22"
       },
       {
         "rodada": 36,
@@ -364,7 +364,7 @@
         "hora": "20:00",
         "tv": null,
         "streaming": "Prime Video",
-        "tvConsultadaEm": "2026-11-21"
+        "tvConsultadaEm": "2026-11-22"
       },
       {
         "rodada": 36,
@@ -374,7 +374,7 @@
         "hora": "21:00",
         "tv": "SporTV e Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-21"
+        "tvConsultadaEm": "2026-11-22"
       },
       {
         "rodada": 36,
@@ -384,7 +384,7 @@
         "hora": "19:30",
         "tv": "SporTV e Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-21"
+        "tvConsultadaEm": "2026-11-22"
       },
       {
         "rodada": 36,
@@ -402,7 +402,7 @@
         "hora": "19:30",
         "tv": "Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-21"
+        "tvConsultadaEm": "2026-11-22"
       },
       {
         "rodada": 36,
@@ -412,7 +412,7 @@
         "hora": "16:00",
         "tv": "Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-21"
+        "tvConsultadaEm": "2026-11-22"
       },
       {
         "rodada": 37,
@@ -667,6 +667,12 @@
   },
   "noticias": [
     {
+      "titulo": "Como Seedorf superou desfalques para fazer o Corinthians ter melhor sequência defensiva",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/22/como-seedorf-superou-desfalques-para-fazer-o-corinthians-ter-melhor-sequencia-defensiva.ghtml",
+      "data": "2026-11-22"
+    },
+    {
       "titulo": "Gabriel Paulista sofre lesão no joelho e deve voltar ao Corinthians apenas em 2027",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/21/gabriel-paulista-sofre-lesao-no-joelho-e-deve-voltar-ao-corinthians-apenas-em-2027.ghtml",
@@ -730,12 +736,6 @@
       "titulo": "Zagueiro do Corinthians Sub-20 projeta final do Campeonato Paulista diante do Palmeiras",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/544487/zagueiro-do-corinthians-sub-20-projeta-final-do-campeonato-paulista-diante-do-palmeiras",
-      "data": "2026-11-21"
-    },
-    {
-      "titulo": "Corinthians emenda terceira vitória consecutiva no NBB e busca ampliar sequência positiva",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544453/corinthians-emenda-terceira-vitoria-consecutiva-no-nbb-e-busca-ampliar-sequencia-positiva",
       "data": "2026-11-21"
     }
   ]
