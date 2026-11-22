@@ -186,13 +186,13 @@
       },
       {
         "clube": "Cruzeiro",
-        "pts": 63,
-        "j": 35,
-        "v": 19,
+        "pts": 66,
+        "j": 36,
+        "v": 20,
         "e": 6,
         "d": 10,
-        "gp": 57,
-        "gc": 49
+        "gp": 59,
+        "gc": 50
       },
       {
         "clube": "Bahia",
@@ -337,12 +337,12 @@
       {
         "clube": "Chapecoense",
         "pts": 21,
-        "j": 35,
+        "j": 36,
         "v": 4,
         "e": 9,
-        "d": 22,
-        "gp": 33,
-        "gc": 72
+        "d": 23,
+        "gp": 34,
+        "gc": 74
       }
     ],
     "jogos": [
@@ -410,16 +410,6 @@
         "visitante": "Remo",
         "data": "2026-11-22",
         "hora": "16:00",
-        "tv": "Premiere",
-        "streaming": null,
-        "tvConsultadaEm": "2026-11-21"
-      },
-      {
-        "rodada": 36,
-        "mandante": "Chapecoense",
-        "visitante": "Cruzeiro",
-        "data": "2026-11-21",
-        "hora": "21:00",
         "tv": "Premiere",
         "streaming": null,
         "tvConsultadaEm": "2026-11-21"
@@ -569,7 +559,7 @@
     ],
     "risco": {
       "formato": 2,
-      "jogosDisputados": 704,
+      "jogosDisputados": 706,
       "sims": 20000,
       "clubes": {
         "Flamengo": {
@@ -585,12 +575,12 @@
         "Fluminense": {
           "rebaixamento": 0,
           "sulamericana": 100,
-          "libertadores": 99.99
+          "libertadores": 99.97
         },
         "Athletico Paranaense": {
           "rebaixamento": 0,
           "sulamericana": 100,
-          "libertadores": 71.19
+          "libertadores": 71.03
         },
         "Cruzeiro": {
           "rebaixamento": 0,
@@ -600,66 +590,66 @@
         "Bahia": {
           "rebaixamento": 0,
           "sulamericana": 100,
-          "libertadores": 14.33
+          "libertadores": 14.13
         },
         "Atlético Mineiro": {
           "rebaixamento": 0,
           "sulamericana": 100,
-          "libertadores": 9.75
+          "libertadores": 9.97
         },
         "Santos": {
           "rebaixamento": 0,
           "sulamericana": 99.92,
-          "libertadores": 4.56
+          "libertadores": 4.71
         },
         "Coritiba": {
-          "rebaixamento": 0.01,
-          "sulamericana": 12.56,
+          "rebaixamento": 0.03,
+          "sulamericana": 12.9,
           "libertadores": 0
         },
         "Red Bull Bragantino": {
           "rebaixamento": 0,
-          "sulamericana": 97.54,
-          "libertadores": 0.11
+          "sulamericana": 97.66,
+          "libertadores": 0.14
         },
         "São Paulo": {
-          "rebaixamento": 0.02,
-          "sulamericana": 63.02,
+          "rebaixamento": 0.05,
+          "sulamericana": 62.66,
           "libertadores": 0
         },
         "Vitória": {
-          "rebaixamento": 16.97,
-          "sulamericana": 4.84,
+          "rebaixamento": 17,
+          "sulamericana": 4.67,
           "libertadores": 0
         },
         "Botafogo": {
-          "rebaixamento": 4.35,
-          "sulamericana": 19.5,
+          "rebaixamento": 4.5,
+          "sulamericana": 18.98,
           "libertadores": 0
         },
         "Vasco": {
           "rebaixamento": 0,
-          "sulamericana": 93.95,
-          "libertadores": 0.08
+          "sulamericana": 94.23,
+          "libertadores": 0.06
         },
         "Mirassol": {
-          "rebaixamento": 27.91,
-          "sulamericana": 3.4,
+          "rebaixamento": 26.8,
+          "sulamericana": 3.59,
           "libertadores": 0
         },
         "Corinthians": {
-          "rebaixamento": 21.36,
-          "sulamericana": 4.74,
+          "rebaixamento": 22.03,
+          "sulamericana": 4.8,
           "libertadores": 0
         },
         "Internacional": {
-          "rebaixamento": 59.7,
-          "sulamericana": 0.39,
+          "rebaixamento": 59.83,
+          "sulamericana": 0.38,
           "libertadores": 0
         },
         "Grêmio": {
-          "rebaixamento": 69.69,
-          "sulamericana": 0.18,
+          "rebaixamento": 69.78,
+          "sulamericana": 0.23,
           "libertadores": 0
         },
         "Remo": {
