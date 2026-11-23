@@ -1,6 +1,6 @@
 {
   "versao": 2,
-  "atualizadoEm": "2026-11-22",
+  "atualizadoEm": "2026-11-23",
   "fonte": "ogol.com.br",
   "base": {
     "pontos": 32,
@@ -354,7 +354,7 @@
         "hora": "20:00",
         "tv": null,
         "streaming": "Prime Video",
-        "tvConsultadaEm": "2026-11-22"
+        "tvConsultadaEm": "2026-11-23"
       },
       {
         "rodada": 36,
@@ -364,7 +364,7 @@
         "hora": "21:00",
         "tv": "SporTV e Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-22"
+        "tvConsultadaEm": "2026-11-23"
       },
       {
         "rodada": 36,
@@ -382,7 +382,7 @@
         "hora": "19:30",
         "tv": "Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-22"
+        "tvConsultadaEm": "2026-11-23"
       },
       {
         "rodada": 37,
@@ -637,6 +637,12 @@
   },
   "noticias": [
     {
+      "titulo": "Eleições do Corinthians: André Castro explica proposta bilionária e diz ter inspiração no Barcelona",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/23/eleicoes-do-corinthians-andre-castro-explica-proposta-bilionaria-e-diz-ter-inspiracao-no-barcelona.ghtml",
+      "data": "2026-11-23"
+    },
+    {
       "titulo": "Treino do Corinthians: Seedorf aprimora jogadas de bola parada no CT",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/22/treino-do-corinthians-seedorf-aprimora-jogadas-de-bola-parada-no-ct.ghtml",
@@ -661,6 +667,36 @@
       "data": "2026-11-22"
     },
     {
+      "titulo": "Corinthians estende jejum em disputas de pênaltis após eliminação no Paulista Feminino",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544537/corinthians-estende-jejum-em-disputas-de-penaltis-apos-eliminacao-no-paulista-feminino",
+      "data": "2026-11-22"
+    },
+    {
+      "titulo": "Iris Sesso analisa temporada do Corinthians Feminino e exalta apoio da Fiel",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544549/iris-sesso-analisa-temporada-do-corinthians-feminino-e-exalta-apoio-da-fiel",
+      "data": "2026-11-22"
+    },
+    {
+      "titulo": "Técnico do Corinthians avalia derrota para o Palmeiras na final do Paulista Sub-20",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544550/tecnico-do-corinthians-avalia-derrota-para-o-palmeiras-na-final-do-paulista-sub-20",
+      "data": "2026-11-22"
+    },
+    {
+      "titulo": "Executivo do Corinthians detalha estratégias de formação dos atletas e fala sobre desafios na base",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544513/executivo-do-corinthians-detalha-estrategias-de-formacao-dos-atletas-e-fala-sobre-desafios-na-base",
+      "data": "2026-11-22"
+    },
+    {
+      "titulo": "Corinthians conquista a Liga das Américas de Futebol 7 pela segunda vez em sua história",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544530/corinthians-conquista-a-liga-das-americas-de-futebol-7-pela-segunda-vez-em-sua-historia",
+      "data": "2026-11-22"
+    },
+    {
       "titulo": "Goleiro relembra convivência com atual técnico do Corinthians e elogia postura no dia a dia",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/544518/goleiro-relembra-convivencia-com-atual-tecnico-do-corinthians-e-elogia-postura-no-dia-a-dia",
@@ -670,42 +706,6 @@
       "titulo": "Confira detalhes do lançamento da plataforma História Preta no Corinthians no Parque São Jorge",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/noticias-do-corinthians/544517/confira-detalhes-do-lancamento-da-plataforma-historia-preta-no-corinthians-no-parque-sao-jorge",
-      "data": "2026-11-22"
-    },
-    {
-      "titulo": "Treinador e atacante do Corinthians acompanham Dérbi do elenco Sub-20 na Neo Química Arena",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544540/treinador-e-atacante-do-corinthians-acompanham-derbi-do-elenco-sub-20-na-neo-quimica-arena",
-      "data": "2026-11-22"
-    },
-    {
-      "titulo": "Corinthians sofre virada do Palmeiras na Arena e sai atrás na final do Paulista Sub-20",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544481/corinthians-sofre-virada-do-palmeiras-na-arena-e-sai-atras-na-final-do-paulista-sub-20",
-      "data": "2026-11-22"
-    },
-    {
-      "titulo": "Corinthians marca na reta final, mas perde para o Minas no jogo de ida da final da Talentos LNF",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544542/corinthians-marca-na-reta-final-mas-perde-para-o-minas-no-jogo-de-ida-da-final-da-talentos-lnf",
-      "data": "2026-11-22"
-    },
-    {
-      "titulo": "Atacante do Corinthians é chamada para defender a Colômbia na última Data Fifa da temporada",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544541/atacante-do-corinthians-e-chamada-para-defender-a-colombia-na-ultima-data-fifa-da-temporada",
-      "data": "2026-11-22"
-    },
-    {
-      "titulo": "Zagueiro do Corinthians celebra volta ao time titular e comenta sobre confiança de Seedorf",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544435/zagueiro-do-corinthians-celebra-volta-ao-time-titular-e-comenta-sobre-confianca-de-seedorf",
-      "data": "2026-11-22"
-    },
-    {
-      "titulo": "Goleira do Corinthians é desconvocada da Seleção Brasileira",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544539/goleira-do-corinthians-e-desconvocada-da-selecao-brasileira",
       "data": "2026-11-22"
     }
   ]
