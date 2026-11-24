@@ -217,12 +217,12 @@
       {
         "clube": "Santos",
         "pts": 50,
-        "j": 35,
+        "j": 36,
         "v": 13,
         "e": 11,
-        "d": 11,
+        "d": 12,
         "gp": 51,
-        "gc": 49
+        "gc": 51
       },
       {
         "clube": "Coritiba",
@@ -246,33 +246,33 @@
       },
       {
         "clube": "São Paulo",
-        "pts": 44,
-        "j": 35,
+        "pts": 45,
+        "j": 36,
         "v": 12,
-        "e": 8,
+        "e": 9,
         "d": 15,
-        "gp": 39,
-        "gc": 40
+        "gp": 40,
+        "gc": 41
       },
       {
         "clube": "Vitória",
-        "pts": 41,
-        "j": 35,
-        "v": 11,
+        "pts": 44,
+        "j": 36,
+        "v": 12,
         "e": 8,
         "d": 16,
-        "gp": 37,
-        "gc": 52
+        "gp": 42,
+        "gc": 54
       },
       {
         "clube": "Botafogo",
-        "pts": 42,
-        "j": 35,
+        "pts": 43,
+        "j": 36,
         "v": 11,
-        "e": 9,
+        "e": 10,
         "d": 15,
-        "gp": 46,
-        "gc": 57
+        "gp": 47,
+        "gc": 58
       },
       {
         "clube": "Vasco",
@@ -307,21 +307,21 @@
       {
         "clube": "Internacional",
         "pts": 38,
-        "j": 35,
+        "j": 36,
         "v": 9,
         "e": 11,
-        "d": 15,
-        "gp": 39,
-        "gc": 44
+        "d": 16,
+        "gp": 41,
+        "gc": 49
       },
       {
         "clube": "Grêmio",
-        "pts": 38,
-        "j": 35,
-        "v": 9,
+        "pts": 41,
+        "j": 36,
+        "v": 10,
         "e": 11,
         "d": 15,
-        "gp": 38,
+        "gp": 40,
         "gc": 47
       },
       {
@@ -348,41 +348,11 @@
     "jogos": [
       {
         "rodada": 36,
-        "mandante": "Botafogo",
-        "visitante": "São Paulo",
-        "data": "2026-11-23",
-        "hora": "20:00",
-        "tv": null,
-        "streaming": "Prime Video",
-        "tvConsultadaEm": "2026-11-23"
-      },
-      {
-        "rodada": 36,
-        "mandante": "Santos",
-        "visitante": "Grêmio",
-        "data": "2026-11-23",
-        "hora": "21:00",
-        "tv": "SporTV e Premiere",
-        "streaming": null,
-        "tvConsultadaEm": "2026-11-23"
-      },
-      {
-        "rodada": 36,
         "mandante": "Atlético Mineiro",
         "visitante": "Corinthians",
         "data": "2026-11-25",
         "hora": "20:00",
         "tv": null
-      },
-      {
-        "rodada": 36,
-        "mandante": "Internacional",
-        "visitante": "Vitória",
-        "data": "2026-11-23",
-        "hora": "19:30",
-        "tv": "Premiere",
-        "streaming": null,
-        "tvConsultadaEm": "2026-11-23"
       },
       {
         "rodada": 37,
@@ -529,7 +499,7 @@
     ],
     "risco": {
       "formato": 2,
-      "jogosDisputados": 712,
+      "jogosDisputados": 718,
       "sims": 20000,
       "clubes": {
         "Flamengo": {
@@ -550,7 +520,7 @@
         "Athletico Paranaense": {
           "rebaixamento": 0,
           "sulamericana": 100,
-          "libertadores": 87.22
+          "libertadores": 88.37
         },
         "Cruzeiro": {
           "rebaixamento": 0,
@@ -560,66 +530,66 @@
         "Bahia": {
           "rebaixamento": 0,
           "sulamericana": 100,
-          "libertadores": 6.1
+          "libertadores": 6.61
         },
         "Atlético Mineiro": {
           "rebaixamento": 0,
           "sulamericana": 100,
-          "libertadores": 4.59
+          "libertadores": 5.02
         },
         "Santos": {
           "rebaixamento": 0,
-          "sulamericana": 99.92,
-          "libertadores": 2.1
+          "sulamericana": 99.87,
+          "libertadores": 0
         },
         "Coritiba": {
           "rebaixamento": 0,
-          "sulamericana": 13.26,
+          "sulamericana": 12.91,
           "libertadores": 0
         },
         "Red Bull Bragantino": {
           "rebaixamento": 0,
-          "sulamericana": 99.95,
+          "sulamericana": 99.99,
           "libertadores": 0
         },
         "São Paulo": {
-          "rebaixamento": 0.01,
-          "sulamericana": 65.33,
+          "rebaixamento": 0,
+          "sulamericana": 61.64,
           "libertadores": 0
         },
         "Vitória": {
-          "rebaixamento": 14.87,
-          "sulamericana": 5.21,
+          "rebaixamento": 0.03,
+          "sulamericana": 22.64,
           "libertadores": 0
         },
         "Botafogo": {
-          "rebaixamento": 3.73,
-          "sulamericana": 19.78,
+          "rebaixamento": 8.08,
+          "sulamericana": 8.21,
           "libertadores": 0
         },
         "Vasco": {
           "rebaixamento": 0,
-          "sulamericana": 90.09,
+          "sulamericana": 87.65,
           "libertadores": 0
         },
         "Mirassol": {
-          "rebaixamento": 38.6,
-          "sulamericana": 0.64,
+          "rebaixamento": 46.64,
+          "sulamericana": 0.65,
           "libertadores": 0
         },
         "Corinthians": {
-          "rebaixamento": 19.08,
-          "sulamericana": 5.2,
+          "rebaixamento": 22.27,
+          "sulamericana": 5.5,
           "libertadores": 0
         },
         "Internacional": {
-          "rebaixamento": 57.21,
-          "sulamericana": 0.38,
+          "rebaixamento": 91.37,
+          "sulamericana": 0,
           "libertadores": 0
         },
         "Grêmio": {
-          "rebaixamento": 66.51,
-          "sulamericana": 0.25,
+          "rebaixamento": 31.62,
+          "sulamericana": 0.96,
           "libertadores": 0
         },
         "Remo": {
