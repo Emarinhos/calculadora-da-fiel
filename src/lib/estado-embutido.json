@@ -607,6 +607,18 @@
   },
   "noticias": [
     {
+      "titulo": "Ministério Público protocola pedido de intervenção judicial no Corinthians",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544644/ministerio-publico-protocola-pedido-de-intervencao-judicial-no-corinthians",
+      "data": "2026-11-24"
+    },
+    {
+      "titulo": "Ministério Público pede intervenção judicial no Corinthians",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/23/ministerio-publico-pede-intervencao-judicial-no-corinthians.ghtml",
+      "data": "2026-11-23"
+    },
+    {
       "titulo": "Cuiabá cobra punições a Corinthians e Santos: \"Os dois maiores caloteiros do Brasil\"",
       "fonte": "ge",
       "url": "https://ge.globo.com/mt/futebol/times/cuiaba/noticia/2026/11/23/cuiaba-cobra-punicoes-a-corinthians-e-santos-os-dois-maiores-caloteiros-do-brasil.ghtml",
@@ -637,45 +649,33 @@
       "data": "2026-11-23"
     },
     {
-      "titulo": "Atacante do Corinthians exalta mentalidade de Seedorf e destaca versatilidade em campo",
+      "titulo": "Corinthians inaugura segunda loja oficial em Jundiaí com presença de ídolos do clube",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544600/atacante-do-corinthians-exalta-mentalidade-de-seedorf-e-destaca-versatilidade-em-campo",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544609/corinthians-inaugura-segunda-loja-oficial-em-jundiai-com-presenca-de-idolos-do-clube",
       "data": "2026-11-23"
     },
     {
-      "titulo": "Técnico do Corinthians explica desenvolvimento de joia da base e pede cautela com expectativas",
+      "titulo": "Corinthians Sub-20 volta a perder por dois gols de diferença depois de quatro meses",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544552/tecnico-do-corinthians-explica-desenvolvimento-de-joia-da-base-e-pede-cautela-com-expectativas",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544574/corinthians-sub-20-volta-a-perder-por-dois-gols-de-diferenca-depois-de-quatro-meses",
       "data": "2026-11-23"
     },
     {
-      "titulo": "Zagueiro do Corinthians avalia ano turbulento e exalta evolução defensiva com Seedorf",
+      "titulo": "Julia Passero analisa postura diante do Red Bull Bragantino e relembra ano conturbado do Corinthians",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544601/zagueiro-do-corinthians-avalia-ano-turbulento-e-exalta-evolucao-defensiva-com-seedorf",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544619/julia-passero-analisa-postura-diante-do-red-bull-bragantino-e-relembra-ano-conturbado-do-corinthians",
       "data": "2026-11-23"
     },
     {
-      "titulo": "Atacante se aproxima do pódio da artilharia durante eliminação do Corinthians no Paulistão Feminino",
+      "titulo": "Corinthians amplia jejum contra o Palmeiras no Sub-20 após derrota na final do Paulista",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544531/atacante-se-aproxima-do-podio-da-artilharia-durante-eliminacao-do-corinthians-no-paulistao-feminino",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544568/corinthians-amplia-jejum-contra-o-palmeiras-no-sub-20-apos-derrota-na-final-do-paulista",
       "data": "2026-11-23"
     },
     {
-      "titulo": "Zagueiro do Corinthians elogia postura de Seedorf e relembra transferência frustrada para Itália",
+      "titulo": "Dupla do Corinthians destaca mentalidade de Seedorf e impacto imediato no espírito da equipe",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544598/zagueiro-do-corinthians-elogia-postura-de-seedorf-e-relembra-transferencia-frustrada-para-italia",
-      "data": "2026-11-23"
-    },
-    {
-      "titulo": "Técnico do Corinthians minimiza tabu contra o Palmeiras e vê disputa aberta para a final do Paulista",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544551/tecnico-do-corinthians-minimiza-tabu-contra-o-palmeiras-e-ve-disputa-aberta-para-a-final-do-paulista",
-      "data": "2026-11-23"
-    },
-    {
-      "titulo": "Atacante do Corinthians despista sobre permanência e prega foco na reta final da temporada",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544596/atacante-do-corinthians-despista-sobre-permanencia-e-prega-foco-na-reta-final-da-temporada",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544599/dupla-do-corinthians-destaca-mentalidade-de-seedorf-e-impacto-imediato-no-espirito-da-equipe",
       "data": "2026-11-23"
     }
   ]
