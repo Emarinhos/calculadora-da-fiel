@@ -1,6 +1,6 @@
 {
   "versao": 2,
-  "atualizadoEm": "2026-11-24",
+  "atualizadoEm": "2026-11-25",
   "fonte": "ogol.com.br",
   "base": {
     "pontos": 32,
@@ -352,7 +352,8 @@
         "visitante": "Corinthians",
         "data": "2026-11-25",
         "hora": "20:00",
-        "tv": null
+        "tv": "Premiere",
+        "tvConsultadaEm": "2026-11-25"
       },
       {
         "rodada": 37,
@@ -600,6 +601,66 @@
   },
   "noticias": [
     {
+      "titulo": "Respeito, análise e confiança: como Seedorf prepara o Corinthians para encarar o Atlético-MG",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/25/respeito-analise-e-confianca-como-seedorf-prepara-o-corinthians-para-encarar-o-atletico-mg.ghtml",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Eleições do Corinthians: Zé Mendes detalha plano para aprovar SAF e propõe refundação do clube",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/25/eleicoes-do-corinthians-ze-mendes-detalha-plano-para-aprovar-saf-e-propoe-refundacao-do-clube.ghtml",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Atlético-MG x Corinthians: onde assistir ao vivo, horário e escalações",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/mg/futebol/brasileirao-serie-a/noticia/2026/11/25/atletico-mg-x-corinthians-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Corinthians nunca venceu o Atlético-MG com árbitro catarinense no apito, veja o retrospecto",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544740/corinthians-nunca-venceu-o-atletico-mg-com-arbitro-catarinense-no-apito-veja-o-retrospecto",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Eleições MT: confira as opiniões dos candidatos à presidência sobre temas importantes do Corinthians",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544623/eleicoes-mt-confira-as-opinioes-dos-candidatos-a-presidencia-sobre-temas-importantes-do-corinthians",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Corinthians visita a Liga São Caetano para chegar à grande decisão do Paulista de Futsal; saiba tudo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544722/corinthians-visita-a-liga-sao-caetano-para-chegar-a-grande-decisao-do-paulista-de-futsal-saiba-tudo",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Corinthians estreia na Copinha Feminina diante do Ação; saiba tudo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544699/corinthians-estreia-na-copinha-feminina-diante-do-acao-saiba-tudo",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Saiba onde assistir à partida entre Corinthians e Atlético Mineiro pelo Brasileirão",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544705/saiba-onde-assistir-a-partida-entre-corinthians-e-atletico-mineiro-pelo-brasileirao",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Últimas do Corinthians: provável escalação, solicitação da Justiça e atacante em fim de contrato",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544731/ultimas-do-corinthians-provavel-escalacao-solicitacao-da-justica-e-atacante-em-fim-de-contrato",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Corinthians visita o Atlético Mineiro para tentar sair do Z4 do Brasileirão; saiba tudo",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544701/corinthians-visita-o-atletico-mineiro-para-tentar-sair-do-z4-do-brasileirao-saiba-tudo",
+      "data": "2026-11-25"
+    },
+    {
       "titulo": "Com Garro, Corinthians chega a Belo Horizonte para jogo contra o Atlético-MG; veja relacionados",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/24/com-garro-corinthians-chega-a-belo-horizonte-para-jogo-contra-o-atletico-mg-veja-relacionados.ghtml",
@@ -609,66 +670,6 @@
       "titulo": "Copinha 2027: veja clubes, grupos, regulamento e sedes da competição",
       "fonte": "ge",
       "url": "https://ge.globo.com/sp/ribeirao-preto-e-regiao/futebol/copa-sp-de-futebol-junior/noticia/2026/11/24/copinha-2027-veja-clubes-grupos-regulamento-e-sedes-da-competicao.ghtml",
-      "data": "2026-11-24"
-    },
-    {
-      "titulo": "Série A tem um gigante rebaixado e quase 50% de chance de \"dobradinha\" na B",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/mg/futebol/noticia/2026/11/24/serie-a-tem-um-gigante-rebaixado-e-quase-50percent-de-chance-de-dobradinha-na-b.ghtml",
-      "data": "2026-11-24"
-    },
-    {
-      "titulo": "Taça da Copinha 2027 vai para estratosfera em campanha da FPF; veja vídeo",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/sp/ribeirao-preto-e-regiao/futebol/copa-sp-de-futebol-junior/noticia/2026/11/24/taca-da-copinha-2027-vai-para-estratosfera-em-campanha-da-fpf-veja-video.ghtml",
-      "data": "2026-11-24"
-    },
-    {
-      "titulo": "Juíza pede esclarecimentos ao MP em processo de intervenção judicial no Corinthians",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/24/juiza-pede-esclarecimentos-ao-mp-em-processo-de-intervencao-judicial-no-corinthians.ghtml",
-      "data": "2026-11-24"
-    },
-    {
-      "titulo": "Corinthians feminino estuda contratação de técnico da base do Palmeiras masculino para 2027",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/24/corinthians-feminino-estuda-contratacao-de-tecnico-da-base-do-palmeiras-masculino-para-2027.ghtml",
-      "data": "2026-11-24"
-    },
-    {
-      "titulo": "Treino do Corinthians: Seedorf prepara mudanças na escalação para enfrentar o Atlético-MG",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/24/treino-do-corinthians-seedorf-prepara-mudancas-na-escalacao-para-enfrentar-o-atletico-mg.ghtml",
-      "data": "2026-11-24"
-    },
-    {
-      "titulo": "Corinthians critica pedido de intervenção judicial e alerta sobre riscos às negociações",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/24/corinthians-critica-pedido-de-intervencao-judicial-e-alerta-sobre-riscos-as-negociacoes.ghtml",
-      "data": "2026-11-24"
-    },
-    {
-      "titulo": "Corinthians inaugura duas lojas oficiais na Grande São Paulo com presença de ídolos do clube",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544676/corinthians-inaugura-duas-lojas-oficiais-na-grande-sao-paulo-com-presenca-de-idolos-do-clube",
-      "data": "2026-11-24"
-    },
-    {
-      "titulo": "Corinthians busca primeira vitória na Arena MRV em decisão pelo Campeonato Brasileiro",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544591/corinthians-busca-primeira-vitoria-na-arena-mrv-em-decisao-pelo-campeonato-brasileiro",
-      "data": "2026-11-24"
-    },
-    {
-      "titulo": "Corinthians inicia troca dos painéis de LED da Neo Química Arena para renovar peças tecnológicas",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544727/corinthians-inicia-troca-dos-paineis-de-led-da-neo-quimica-arena-para-renovar-pecas-tecnologicas",
-      "data": "2026-11-24"
-    },
-    {
-      "titulo": "VÍDEO: Veja como foi o desembarque do Corinthians em Belo Horizonte para enfrentar o Atlético-MG",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130880/veja-como-foi-o-desembarque-do-corinthians-em-belo-horizonte-para-enfrentar-o-atletico-mg",
       "data": "2026-11-24"
     }
   ]
