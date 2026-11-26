@@ -1,6 +1,6 @@
 {
   "versao": 2,
-  "atualizadoEm": "2026-11-25",
+  "atualizadoEm": "2026-11-26",
   "fonte": "ogol.com.br",
   "base": {
     "pontos": 32,
@@ -360,21 +360,30 @@
         "mandante": "Fluminense",
         "visitante": "Cruzeiro",
         "data": "2026-11-27",
-        "hora": "20:00"
+        "hora": "20:00",
+        "tv": "SporTV e Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-26"
       },
       {
         "rodada": 37,
         "mandante": "Botafogo",
         "visitante": "Bahia",
         "data": "2026-11-28",
-        "hora": "21:00"
+        "hora": "21:00",
+        "tv": "Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-26"
       },
       {
         "rodada": 37,
         "mandante": "São Paulo",
         "visitante": "Remo",
         "data": "2026-11-26",
-        "hora": "20:00"
+        "hora": "20:00",
+        "tv": "Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-26"
       },
       {
         "rodada": 37,
@@ -382,14 +391,19 @@
         "visitante": "Grêmio",
         "data": "2026-11-29",
         "hora": "18:30",
-        "tv": null
+        "tv": null,
+        "streaming": "Prime Video",
+        "tvConsultadaEm": "2026-11-26"
       },
       {
         "rodada": 37,
         "mandante": "Mirassol",
         "visitante": "Athletico Paranaense",
         "data": "2026-11-29",
-        "hora": "18:30"
+        "hora": "18:30",
+        "tv": "Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-26"
       },
       {
         "rodada": 37,
@@ -403,21 +417,30 @@
         "mandante": "Internacional",
         "visitante": "Red Bull Bragantino",
         "data": "2026-11-29",
-        "hora": "18:30"
+        "hora": "18:30",
+        "tv": "Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-26"
       },
       {
         "rodada": 37,
         "mandante": "Coritiba",
         "visitante": "Flamengo",
         "data": "2026-11-29",
-        "hora": "16:00"
+        "hora": "16:00",
+        "tv": "Globo e Premiere",
+        "streaming": null,
+        "tvConsultadaEm": "2026-11-26"
       },
       {
         "rodada": 37,
         "mandante": "Vitória",
         "visitante": "Santos",
         "data": "2026-11-29",
-        "hora": "16:00"
+        "hora": "16:00",
+        "tv": "Globo e Premiere",
+        "streaming": "ge tv",
+        "tvConsultadaEm": "2026-11-26"
       },
       {
         "rodada": 38,
@@ -601,76 +624,76 @@
   },
   "noticias": [
     {
-      "titulo": "Respeito, análise e confiança: como Seedorf prepara o Corinthians para encarar o Atlético-MG",
+      "titulo": "Corinthians pode se salvar do rebaixamento na próxima rodada; veja cenários",
       "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/25/respeito-analise-e-confianca-como-seedorf-prepara-o-corinthians-para-encarar-o-atletico-mg.ghtml",
-      "data": "2026-11-25"
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/26/corinthians-pode-se-salvar-do-rebaixamento-na-proxima-rodada-veja-cenarios.ghtml",
+      "data": "2026-11-26"
     },
     {
-      "titulo": "Eleições do Corinthians: Zé Mendes detalha plano para aprovar SAF e propõe refundação do clube",
+      "titulo": "Análise: Corinthians abre mão de atacar e perde dois pontos com estratégia de Seedorf",
       "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/25/eleicoes-do-corinthians-ze-mendes-detalha-plano-para-aprovar-saf-e-propoe-refundacao-do-clube.ghtml",
-      "data": "2026-11-25"
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/26/analise-corinthians-abre-mao-de-atacar-e-perde-dois-pontos-com-estrategia-de-seedorf.ghtml",
+      "data": "2026-11-26"
     },
     {
-      "titulo": "Atlético-MG x Corinthians: onde assistir ao vivo, horário e escalações",
+      "titulo": "Eleições do Corinthians: Rozallah propõe corte de até R$ 100 milhões e cessão da arena a fundo privado",
       "fonte": "ge",
-      "url": "https://ge.globo.com/mg/futebol/brasileirao-serie-a/noticia/2026/11/25/atletico-mg-x-corinthians-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml",
-      "data": "2026-11-25"
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/26/eleicoes-do-corinthians-rozallah-propoe-corte-de-ate-r-100-milhoes-e-cessao-da-arena-a-fundo-privado.ghtml",
+      "data": "2026-11-26"
     },
     {
-      "titulo": "Corinthians nunca venceu o Atlético-MG com árbitro catarinense no apito, veja o retrospecto",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544740/corinthians-nunca-venceu-o-atletico-mg-com-arbitro-catarinense-no-apito-veja-o-retrospecto",
-      "data": "2026-11-25"
-    },
-    {
-      "titulo": "Eleições MT: confira as opiniões dos candidatos à presidência sobre temas importantes do Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544623/eleicoes-mt-confira-as-opinioes-dos-candidatos-a-presidencia-sobre-temas-importantes-do-corinthians",
-      "data": "2026-11-25"
-    },
-    {
-      "titulo": "Corinthians visita a Liga São Caetano para chegar à grande decisão do Paulista de Futsal; saiba tudo",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544722/corinthians-visita-a-liga-sao-caetano-para-chegar-a-grande-decisao-do-paulista-de-futsal-saiba-tudo",
-      "data": "2026-11-25"
-    },
-    {
-      "titulo": "Corinthians estreia na Copinha Feminina diante do Ação; saiba tudo",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544699/corinthians-estreia-na-copinha-feminina-diante-do-acao-saiba-tudo",
-      "data": "2026-11-25"
-    },
-    {
-      "titulo": "Saiba onde assistir à partida entre Corinthians e Atlético Mineiro pelo Brasileirão",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544705/saiba-onde-assistir-a-partida-entre-corinthians-e-atletico-mineiro-pelo-brasileirao",
-      "data": "2026-11-25"
-    },
-    {
-      "titulo": "Últimas do Corinthians: provável escalação, solicitação da Justiça e atacante em fim de contrato",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544731/ultimas-do-corinthians-provavel-escalacao-solicitacao-da-justica-e-atacante-em-fim-de-contrato",
-      "data": "2026-11-25"
-    },
-    {
-      "titulo": "Corinthians visita o Atlético Mineiro para tentar sair do Z4 do Brasileirão; saiba tudo",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544701/corinthians-visita-o-atletico-mineiro-para-tentar-sair-do-z4-do-brasileirao-saiba-tudo",
-      "data": "2026-11-25"
-    },
-    {
-      "titulo": "Com Garro, Corinthians chega a Belo Horizonte para jogo contra o Atlético-MG; veja relacionados",
+      "titulo": "Brasileirão 2026: veja onde assistir ao vivo aos jogos da 37ª rodada",
       "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/24/com-garro-corinthians-chega-a-belo-horizonte-para-jogo-contra-o-atletico-mg-veja-relacionados.ghtml",
-      "data": "2026-11-24"
+      "url": "https://ge.globo.com/ba/futebol/brasileirao-serie-a/noticia/2026/11/26/brasileirao-2026-veja-onde-assistir-ao-vivo-aos-jogos-da-37a-rodada.ghtml",
+      "data": "2026-11-26"
     },
     {
-      "titulo": "Copinha 2027: veja clubes, grupos, regulamento e sedes da competição",
+      "titulo": "Últimas do Corinthians: empate no Brasileirão, resposta do MP e tabela do Paulistão",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544828/ultimas-do-corinthians-empate-no-brasileirao-resposta-do-mp-e-tabela-do-paulistao",
+      "data": "2026-11-26"
+    },
+    {
+      "titulo": "Seedorf exalta ponto conquistado diante do Atlético e analisa desempenho do Corinthians na Arena MRV",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544816/seedorf-exalta-ponto-conquistado-diante-do-atletico-e-analisa-desempenho-do-corinthians-na-arena-mrv",
+      "data": "2026-11-26"
+    },
+    {
+      "titulo": "Seedorf explica mudanças no Corinthians e lamenta empate: \"Os três pontos estavam próximos\"",
       "fonte": "ge",
-      "url": "https://ge.globo.com/sp/ribeirao-preto-e-regiao/futebol/copa-sp-de-futebol-junior/noticia/2026/11/24/copinha-2027-veja-clubes-grupos-regulamento-e-sedes-da-competicao.ghtml",
-      "data": "2026-11-24"
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/25/seedorf-explica-mudancas-no-corinthians-e-lamenta-empate-os-tres-pontos-estavam-proximos.ghtml",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Atuações do Corinthians: Kaio César é o melhor em campo na Arena MRV; dê suas notas",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/25/atuacoes-do-corinthians-kaio-cesar-e-o-melhor-em-campo-na-arena-mrv-de-suas-notas.ghtml",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Favoritismos #37: dicas, palpites e chances no Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/11/25/favoritismos-37-dicas-palpites-e-chances-no-brasileirao.ghtml",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "Palpites e dicas para Corinthians x Grêmio pelo Brasileirão",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/gato-mestre/dicas/noticia/2026/11/25/palpites-e-dicas-para-corinthians-x-gremio-pelo-brasileirao.ghtml",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "VÍDEO: Gramado sintético, lesão no joelho e mais: zona mista de Garro após Atlético-mg 1x1 Corinthians",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130902/gramado-sintetico-lesao-no-joelho-e-mais-zona-mista-de-garro-apos-atletico-mg-1x1-corinthians",
+      "data": "2026-11-25"
+    },
+    {
+      "titulo": "VÍDEO: Empate no fim e clima no vestiário: Kaio César fala na zona mista após Atlético-MG 1x1 Corinthians",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/videos-do-corinthians/130901/empate-no-fim-e-clima-no-vestiario-kaio-cesar-fala-na-zona-mista-apos-atletico-mg-1x1-corinthians",
+      "data": "2026-11-25"
     }
   ]
 }
