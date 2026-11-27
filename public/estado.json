@@ -1,6 +1,6 @@
 {
   "versao": 2,
-  "atualizadoEm": "2026-11-26",
+  "atualizadoEm": "2026-11-27",
   "fonte": "ogol.com.br",
   "base": {
     "pontos": 32,
@@ -363,7 +363,7 @@
         "hora": "20:00",
         "tv": "SporTV e Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-26"
+        "tvConsultadaEm": "2026-11-27"
       },
       {
         "rodada": 37,
@@ -373,7 +373,7 @@
         "hora": "21:00",
         "tv": "Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-26"
+        "tvConsultadaEm": "2026-11-27"
       },
       {
         "rodada": 37,
@@ -383,7 +383,7 @@
         "hora": "18:30",
         "tv": null,
         "streaming": "Prime Video",
-        "tvConsultadaEm": "2026-11-26"
+        "tvConsultadaEm": "2026-11-27"
       },
       {
         "rodada": 37,
@@ -393,7 +393,7 @@
         "hora": "18:30",
         "tv": "Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-26"
+        "tvConsultadaEm": "2026-11-27"
       },
       {
         "rodada": 37,
@@ -410,7 +410,7 @@
         "hora": "18:30",
         "tv": "Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-26"
+        "tvConsultadaEm": "2026-11-27"
       },
       {
         "rodada": 37,
@@ -420,7 +420,7 @@
         "hora": "16:00",
         "tv": "Globo e Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-26"
+        "tvConsultadaEm": "2026-11-27"
       },
       {
         "rodada": 37,
@@ -430,7 +430,7 @@
         "hora": "16:00",
         "tv": "Globo e Premiere",
         "streaming": "ge tv",
-        "tvConsultadaEm": "2026-11-26"
+        "tvConsultadaEm": "2026-11-27"
       },
       {
         "rodada": 38,
@@ -614,6 +614,18 @@
   },
   "noticias": [
     {
+      "titulo": "Justiça nega intervenção imediata no Corinthians e impõe restrições à diretoria",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/26/justica-nega-intervencao-no-corinthians-e-impoe-restricoes-a-diretoria.ghtml",
+      "data": "2026-11-26"
+    },
+    {
+      "titulo": "Corinthians retorna de Belo Horizonte e inicia preparação com reservas para enfrentar o Grêmio",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/26/corinthians-retorna-de-belo-horizonte-e-inicia-preparacao-com-reservas-para-enfrentar-o-gremio.ghtml",
+      "data": "2026-11-26"
+    },
+    {
       "titulo": "Corinthians anuncia Lucas Macorin, ex-Palmeiras, como técnico do feminino",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/26/corinthians-anuncia-lucas-macorin-ex-palmeiras-como-tecnico-do-feminino.ghtml",
@@ -650,39 +662,27 @@
       "data": "2026-11-26"
     },
     {
-      "titulo": "Corinthians pode se salvar do rebaixamento na próxima rodada; veja cenários",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/26/corinthians-pode-se-salvar-do-rebaixamento-na-proxima-rodada-veja-cenarios.ghtml",
-      "data": "2026-11-26"
-    },
-    {
-      "titulo": "Análise: Corinthians abre mão de atacar e perde dois pontos com estratégia de Seedorf",
-      "fonte": "ge",
-      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/26/analise-corinthians-abre-mao-de-atacar-e-perde-dois-pontos-com-estrategia-de-seedorf.ghtml",
-      "data": "2026-11-26"
-    },
-    {
-      "titulo": "Kaio César fica a um gol de igualar dupla artilheira do Corinthians na temporada",
+      "titulo": "Corinthians conhece adversário da final do Paulista de Futsal; confira",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544845/kaio-cesar-fica-a-um-gol-de-igualar-dupla-artilheira-do-corinthians-na-temporada",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544897/corinthians-conhece-adversario-da-final-do-paulista-de-futsal-confira",
       "data": "2026-11-26"
     },
     {
-      "titulo": "Corinthians inicia treinamentos de olho em decisão contra o Grêmio no Brasileirão",
+      "titulo": "Camisas oficiais do Corinthians pela metade do preço na loja da Nike",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544879/corinthians-inicia-treinamentos-de-olho-em-decisao-contra-o-gremio-no-brasileirao",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544896/camisas-oficiais-do-corinthians-pela-metade-do-preco-na-loja-da-nike",
       "data": "2026-11-26"
     },
     {
-      "titulo": "Corinthians anuncia novo treinador para equipe de futebol feminino",
+      "titulo": "Garro critica gramado sintético e celebra retorno ao Corinthians após problema no joelho",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544877/corinthians-anuncia-novo-treinador-para-equipe-de-futebol-feminino",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544844/garro-critica-gramado-sintetico-e-celebra-retorno-ao-corinthians-apos-problema-no-joelho",
       "data": "2026-11-26"
     },
     {
-      "titulo": "Corinthians emplaca maior sequência invicta desde julho em empate contra o Atlético-MG",
+      "titulo": "Justiça nega intervenção imediata no Corinthians, mas prevê reavaliação do caso pós-eleições",
       "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544804/corinthians-emplaca-maior-sequencia-invicta-desde-julho-em-empate-contra-o-atletico-mg",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544894/justica-nega-intervencao-imediata-no-corinthians-mas-preve-reavaliacao-do-caso-pos-eleicoes",
       "data": "2026-11-26"
     }
   ]
