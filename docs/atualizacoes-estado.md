@@ -35,3 +35,4 @@
 - 2026-11-23 23:08 (automático, ESPN): Internacional 2x5 Vitória; Botafogo 1x1 São Paulo; Santos 0x2 Grêmio. Corinthians: 40 pts em 35 jogos.
 - 2026-11-24 20:51 (automático, ESPN): Chapecoense 3x0 Palmeiras. Corinthians: 40 pts em 35 jogos.
 - 2026-11-25 22:10 (automático, ESPN): Atlético Mineiro 1x1 Corinthians. Rodada 36 encerrada: Corinthians em 15º. Corinthians: 41 pts em 36 jogos.
+- 2026-11-26 22:07 (automático, ESPN): São Paulo 3x1 Remo. Corinthians: 41 pts em 36 jogos.
