@@ -1,6 +1,6 @@
 {
   "versao": 2,
-  "atualizadoEm": "2026-11-27",
+  "atualizadoEm": "2026-11-28",
   "fonte": "ogol.com.br",
   "base": {
     "pontos": 32,
@@ -363,7 +363,7 @@
         "hora": "21:00",
         "tv": "Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-27"
+        "tvConsultadaEm": "2026-11-28"
       },
       {
         "rodada": 37,
@@ -373,7 +373,7 @@
         "hora": "18:30",
         "tv": null,
         "streaming": "Prime Video",
-        "tvConsultadaEm": "2026-11-27"
+        "tvConsultadaEm": "2026-11-28"
       },
       {
         "rodada": 37,
@@ -383,7 +383,7 @@
         "hora": "18:30",
         "tv": "Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-27"
+        "tvConsultadaEm": "2026-11-28"
       },
       {
         "rodada": 37,
@@ -400,7 +400,7 @@
         "hora": "18:30",
         "tv": "Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-27"
+        "tvConsultadaEm": "2026-11-28"
       },
       {
         "rodada": 37,
@@ -410,7 +410,7 @@
         "hora": "16:00",
         "tv": "Globo e Premiere",
         "streaming": null,
-        "tvConsultadaEm": "2026-11-27"
+        "tvConsultadaEm": "2026-11-28"
       },
       {
         "rodada": 37,
@@ -420,7 +420,7 @@
         "hora": "16:00",
         "tv": "Globo e Premiere",
         "streaming": "ge tv",
-        "tvConsultadaEm": "2026-11-27"
+        "tvConsultadaEm": "2026-11-28"
       },
       {
         "rodada": 38,
@@ -604,6 +604,12 @@
   },
   "noticias": [
     {
+      "titulo": "Corinthians escolhe novo presidente neste sábado; conheça os candidatos e suas propostas",
+      "fonte": "ge",
+      "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/28/corinthians-escolhe-novo-presidente-neste-sabado-conheca-os-candidatos-e-suas-propostas.ghtml",
+      "data": "2026-11-28"
+    },
+    {
       "titulo": "Treino do Corinthians: Seedorf faz trabalho tático, mas mantém titulares no regenerativo",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/27/treino-do-corinthians-seedorf-faz-trabalho-tatico-mas-mantem-titulares-no-regenerativo.ghtml",
@@ -625,6 +631,18 @@
       "titulo": "Eleições Corinthians: Janikian descarta SAF, promete aporte e avalia arena em pelo menos R$ 1 bi",
       "fonte": "ge",
       "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/27/eleicoes-corinthians-janikian-descarta-saf-promete-aporte-financeiro-e-avalia-arena-em-r-1-bi.ghtml",
+      "data": "2026-11-27"
+    },
+    {
+      "titulo": "Novo técnico do Corinthians exalta grandeza das Brabas e projeta desafios no comando da equipe",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544935/novo-tecnico-do-corinthians-exalta-grandeza-das-brabas-e-projeta-desafios-no-comando-da-equipe",
+      "data": "2026-11-27"
+    },
+    {
+      "titulo": "Organizadas do Corinthians convocam torcedores para a porta do Parque São Jorge durante as eleições",
+      "fonte": "Meu Timão",
+      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544965/organizadas-do-corinthians-convocam-torcedores-para-a-porta-do-parque-sao-jorge-durante-as-eleicoes",
       "data": "2026-11-27"
     },
     {
@@ -655,24 +673,6 @@
       "titulo": "VÍDEO: Zé Mendes: \"Uma das eleições mais importantes das últimas décadas\" | Eleição Corinthians",
       "fonte": "Meu Timão",
       "url": "https://www.meutimao.com.br/videos-do-corinthians/130936/ze-mendes-uma-das-eleicoes-mais-importantes-das-ultimas-decadas-eleicao-corinthians",
-      "data": "2026-11-27"
-    },
-    {
-      "titulo": "Atacante do Corinthians busca marca inédita na carreira em meio à fase goleadora",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544848/atacante-do-corinthians-busca-marca-inedita-na-carreira-em-meio-a-fase-goleadora",
-      "data": "2026-11-27"
-    },
-    {
-      "titulo": "VÍDEO: Ilmar Schiavenato: \"Não sou a favor nem contra, eu sou aquilo que dá certo\" | Eleição Corinthians",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/videos-do-corinthians/130935/ilmar-schiavenato-nao-sou-a-favor-nem-contra-eu-sou-aquilo-que-da-certo-eleicao-corinthians",
-      "data": "2026-11-27"
-    },
-    {
-      "titulo": "Corinthians detalha venda de ingressos visitantes para o duelo contra o Remo pelo Brasileirão",
-      "fonte": "Meu Timão",
-      "url": "https://www.meutimao.com.br/noticias-do-corinthians/544959/corinthians-detalha-venda-de-ingressos-visitantes-para-o-duelo-contra-o-remo-pelo-brasileirao",
       "data": "2026-11-27"
     }
   ]
